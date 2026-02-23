@@ -528,6 +528,91 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
 
+/* ─── PROGRAMMING VIEW ───────────────────────────────────── */
+.pv { flex-direction:row; }
+.pv-missions {
+  width:220px; flex-shrink:0; background:var(--surface); border-right:1px solid var(--border);
+  overflow-y:auto; padding:14px;
+}
+.pv-missions h3 { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px; }
+.mission {
+  border:1.5px solid var(--border); border-radius:10px; padding:11px; margin-bottom:8px;
+  cursor:pointer; transition:.15s; background:var(--surface);
+}
+.mission:hover { border-color:var(--indigo); transform:translateX(2px); }
+.mission.active { border-color:var(--indigo); background:var(--indigo-bg); }
+.mission.done { border-color:var(--green); background:var(--green-bg); opacity:.8; }
+.mission-num { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; margin-bottom:3px; }
+.mission-title { font-size:13px; font-weight:700; color:var(--text); }
+.mission-desc { font-size:11px; color:var(--muted); margin-top:4px; line-height:1.5; }
+.mission-diff { display:inline-flex; gap:2px; margin-top:6px; }
+.diff-dot { width:6px; height:6px; border-radius:50%; background:var(--border); }
+.diff-dot.on { background:var(--amber); }
+
+.pv-workspace { flex:1; display:flex; flex-direction:column; background:#f1f5f9; position:relative; min-width:0; }
+.pv-toolbar {
+  padding:9px 14px; background:var(--surface); border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:8px; flex-shrink:0;
+}
+.run-btn {
+  padding:7px 20px; background:var(--green); color:#fff; border:none; border-radius:8px;
+  font-size:13px; font-weight:700; cursor:pointer; font-family:inherit;
+  box-shadow:0 2px 8px rgba(16,185,129,.3); transition:.15s; display:flex; align-items:center; gap:6px;
+}
+.run-btn:hover { background:#059669; transform:scale(1.03); }
+.clear-btn {
+  padding:7px 12px; background:var(--bg); color:var(--muted); border:1.5px solid var(--border);
+  border-radius:8px; font-size:12px; cursor:pointer; font-family:inherit; transition:.15s;
+}
+.clear-btn:hover { border-color:var(--red); color:var(--red); }
+.pv-hint { font-size:11.5px; color:var(--muted); flex:1; font-style:italic; }
+
+#blocklyDiv { flex:1; width:100%; border:none; }
+
+.pv-output {
+  width:290px; flex-shrink:0; background:var(--surface); border-left:1px solid var(--border);
+  display:flex; flex-direction:column; overflow:hidden;
+}
+.pv-otabs { display:flex; border-bottom:1px solid var(--border); background:var(--surface); }
+.pv-otab {
+  flex:1; padding:9px 6px; font-size:12px; font-weight:500; background:none; border:none;
+  cursor:pointer; color:var(--muted); border-bottom:2px solid transparent; transition:.12s;
+}
+.pv-otab.active { color:var(--indigo); border-bottom-color:var(--indigo); font-weight:600; }
+
+.out-panel { flex:1; overflow-y:auto; padding:14px; display:none; }
+.out-panel.active { display:block; }
+
+.code-pre {
+  font-family:'Fira Code','Courier New',monospace; font-size:11.5px;
+  background:var(--bg); border-radius:8px; padding:12px; color:#334155;
+  line-height:1.8; white-space:pre; overflow-x:auto; min-height:60px;
+  border:1px solid var(--border);
+}
+.console-pre {
+  font-family:monospace; font-size:13px; background:#0f172a; color:#e2e8f0;
+  border-radius:8px; padding:12px; line-height:1.8; white-space:pre-wrap; min-height:60px;
+}
+.con-ok  { color:#86efac; }
+.con-err { color:#fca5a5; }
+.con-sys { color:#94a3b8; font-style:italic; }
+
+.teach-wrap { display:flex; flex-direction:column; gap:10px; }
+.teach-card {
+  background:var(--indigo-bg); border:1px solid #c7d2fe; border-radius:10px;
+  padding:12px; font-size:12.5px; line-height:1.65; color:var(--text2);
+  animation:fadeUp .3s ease;
+}
+.teach-card-tag {
+  font-size:9px; font-weight:700; color:var(--indigo); text-transform:uppercase;
+  letter-spacing:.1em; margin-bottom:5px;
+}
+.elisa-badge {
+  display:inline-flex; align-items:center; gap:5px; padding:3px 9px;
+  background:linear-gradient(135deg,var(--indigo-bg),#f3e8ff); border:1px solid #c7d2fe;
+  border-radius:6px; font-size:10px; font-weight:600; color:var(--indigo); margin-top:8px;
+}
+
 /* ─── RESPONSIVE ────────────────────────────────────────── */
 @media(max-width:768px){
   .sv-sidebar,.sv-resources { display:none; }
@@ -551,6 +636,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
     <button class="tab active" onclick="setView('sv',this)">👤 Alumno</button>
     <button class="tab" onclick="setView('tv',this)">📊 Docente</button>
     <button class="tab" onclick="setView('iv',this)">🏛️ Instituciones</button>
+    <button class="tab" onclick="setView('pv',this)">💻 Programar</button>
   </div>
   <div class="header-right">
     <span class="badge-anep">ANEP · Bachillerato</span>
@@ -935,6 +1021,52 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 </div>
 </div>
 
+<!-- ══ PROGRAMMING VIEW ════════════════════════════════════ -->
+<div class="view pv" id="view-pv">
+
+  <!-- Missions panel -->
+  <aside class="pv-missions">
+    <h3>🎯 Misiones</h3>
+    <div id="missionList"></div>
+    <div style="margin-top:16px;padding:10px;background:var(--bg);border-radius:8px;">
+      <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:5px">Inspirado en</div>
+      <div style="font-size:12px;font-weight:600;color:var(--indigo)">🧩 Elisa</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5">Block-based + AI agents — programación visual para todos</div>
+    </div>
+  </aside>
+
+  <!-- Blockly workspace -->
+  <div class="pv-workspace">
+    <div class="pv-toolbar">
+      <button class="run-btn" onclick="runCode()">▶ Ejecutar</button>
+      <button class="clear-btn" onclick="clearWorkspace()">✕ Limpiar</button>
+      <span class="pv-hint" id="pvHint">Arrastrá bloques al área de trabajo y presioná ▶ Ejecutar</span>
+    </div>
+    <div id="blocklyDiv"></div>
+  </div>
+
+  <!-- Output panel -->
+  <aside class="pv-output">
+    <div class="pv-otabs">
+      <button class="pv-otab active" onclick="switchOTab('code',this)">{ } Código</button>
+      <button class="pv-otab" onclick="switchOTab('console',this)">▶ Salida</button>
+      <button class="pv-otab" onclick="switchOTab('teach',this)">💡 Tutor</button>
+    </div>
+    <div class="out-panel active" id="out-code">
+      <div class="code-pre" id="codeDisplay">// Armá tu programa con bloques
+// y presioná ▶ Ejecutar</div>
+    </div>
+    <div class="out-panel" id="out-console">
+      <div class="console-pre" id="consoleDisplay"><span class="con-sys">// La salida aparece aquí...</span></div>
+    </div>
+    <div class="out-panel" id="out-teach">
+      <div class="teach-wrap" id="teachWrap">
+        <div style="font-size:12px;color:var(--muted);font-style:italic">Ejecutá tu código para ver explicaciones del tutor 💡</div>
+      </div>
+    </div>
+  </aside>
+</div>
+
 <!-- DRAWER -->
 <div class="drawer-overlay" id="drawer" onclick="if(event.target===this)closeDrawer()">
   <div class="drawer">
@@ -1254,6 +1386,286 @@ function closeDrawer() {
 // ── Init ──────────────────────────────────────────────────
 initGrid();
 document.getElementById('messages').scrollTop = 99999;
+</script>
+
+<!-- Blockly CDN -->
+<script src="https://unpkg.com/blockly/blockly.min.js"></script>
+<script>
+// ══ PROGRAMMING MODULE ════════════════════════════════════
+
+// ─ Missions ───────────────────────────────────────────────
+const MISSIONS = [
+  {
+    id:1, emoji:'🟢', title:'Hola Mundo', diff:1,
+    desc:'Imprimí el mensaje "¡Hola, mundo!" en la consola.',
+    hint:'Usá el bloque "imprimir" de la sección Texto.',
+    check: out => out.includes('¡Hola, mundo!') || out.includes('Hola, mundo') || out.toLowerCase().includes('hola'),
+    teach: [
+      { tag:'Salida por consola', text:'El bloque <strong>imprimir</strong> muestra texto en la consola. En lenguajes como Python es <code>print()</code>, en JavaScript <code>console.log()</code>. Es lo primero que aprende todo programador.' }
+    ]
+  },
+  {
+    id:2, emoji:'🟡', title:'Suma de números', diff:2,
+    desc:'Calculá cuánto es 25 + 37 e imprimí el resultado.',
+    hint:'Combiná el bloque "imprimir" con el bloque de suma (+).',
+    check: out => out.includes('62'),
+    teach: [
+      { tag:'Operaciones aritméticas', text:'Los bloques de matemáticas representan <strong>operadores</strong>. Una computadora puede hacer millones de sumas por segundo — lo que la hace poderosa es que las aplica sistemáticamente.' },
+      { tag:'Expresiones', text:'Cuando anidás bloques (un bloque dentro de otro), creás una <strong>expresión</strong>. Primero se evalúa lo de adentro, luego lo de afuera — igual que en matemáticas con los paréntesis.' }
+    ]
+  },
+  {
+    id:3, emoji:'🔵', title:'Variables', diff:2,
+    desc:'Guardá tu nombre en una variable llamada "nombre" e imprimí un saludo personalizado.',
+    hint:'Creá una variable "nombre" y usá el bloque "asignar".',
+    check: out => out.length > 0,
+    teach: [
+      { tag:'Variables', text:'Una <strong>variable</strong> es un cajón con nombre donde guardás un valor. Se llama "variable" porque su contenido puede cambiar mientras el programa corre. Es el concepto más fundamental de la programación.' },
+      { tag:'Memoria', text:'Cuando asignás una variable, la computadora reserva un pequeño espacio en su <strong>memoria RAM</strong> para guardar ese valor. El nombre de la variable es tu forma de referirte a ese espacio.' }
+    ]
+  },
+  {
+    id:4, emoji:'🟠', title:'Condicional', diff:3,
+    desc:'Si una variable "edad" es mayor o igual a 18, imprimí "Mayor de edad", sino "Menor de edad".',
+    hint:'Usá el bloque "si... hacer... sino..." de Lógica.',
+    check: out => out.includes('Mayor') || out.includes('Menor') || out.includes('mayor') || out.includes('menor'),
+    teach: [
+      { tag:'Estructuras condicionales', text:'El bloque <strong>si/sino</strong> es la base de toda decisión en programación. La computadora evalúa una condición (verdadero/falso) y elige qué camino tomar. Es como un semáforo para el código.' },
+      { tag:'Lógica booleana', text:'Las condiciones usan <strong>lógica booleana</strong>: solo puede ser verdadero (1) o falso (0). George Boole la inventó en 1847 — mucho antes de que existieran las computadoras. ¡Visionario!' }
+    ]
+  },
+  {
+    id:5, emoji:'🔴', title:'Bucle', diff:3,
+    desc:'Imprimí los números del 1 al 5 usando un bucle.',
+    hint:'Usá el bloque "repetir con i de 1 a 5" de Bucles.',
+    check: out => ['1','2','3','4','5'].every(n => out.includes(n)),
+    teach: [
+      { tag:'Bucles (loops)', text:'Un <strong>bucle</strong> repite instrucciones un número de veces o mientras se cumpla una condición. Sin bucles, para imprimir 1 a 1000 tendrías que escribir 1000 líneas. Con un bucle: 3 líneas.' },
+      { tag:'Variable de iteración', text:'La variable <code>i</code> del bucle se llama <strong>iterador</strong> o <strong>índice</strong>. Empieza en 1, sube a 2, 3, 4, 5, y cuando llega a 6 el bucle termina. Podés usarla dentro del bucle.' }
+    ]
+  }
+];
+
+let currentMission = 0;
+let workspace = null;
+let doneMissions = new Set();
+
+function initMissions() {
+  const list = document.getElementById('missionList');
+  MISSIONS.forEach((m, i) => {
+    const div = document.createElement('div');
+    div.className = 'mission' + (i === 0 ? ' active' : '');
+    div.id = 'mission-' + i;
+    div.onclick = () => selectMission(i);
+    const dots = [1,2,3].map(d => `<div class="diff-dot ${d<=m.diff?'on':''}"></div>`).join('');
+    div.innerHTML = `
+      <div class="mission-num">${m.emoji} Misión ${m.id}</div>
+      <div class="mission-title">${m.title}</div>
+      <div class="mission-desc">${m.desc}</div>
+      <div class="mission-diff">${dots}</div>`;
+    list.appendChild(div);
+  });
+  document.getElementById('pvHint').textContent = MISSIONS[0].hint;
+}
+
+function selectMission(i) {
+  currentMission = i;
+  document.querySelectorAll('.mission').forEach((m,j) => {
+    m.classList.toggle('active', j === i && !doneMissions.has(j));
+  });
+  document.getElementById('pvHint').textContent = MISSIONS[i].hint;
+  clearWorkspace();
+}
+
+// ─ Blockly setup ──────────────────────────────────────────
+const TOOLBOX = {
+  kind: 'categoryToolbox',
+  contents: [
+    {
+      kind: 'category', name: '📤 Texto', colour: '#4f46e5',
+      contents: [
+        { kind:'block', type:'text_print' },
+        { kind:'block', type:'text' },
+        { kind:'block', type:'text_join' },
+        { kind:'block', type:'text_length' },
+      ]
+    },
+    {
+      kind: 'category', name: '🔢 Matemáticas', colour: '#10b981',
+      contents: [
+        { kind:'block', type:'math_number' },
+        { kind:'block', type:'math_arithmetic' },
+        { kind:'block', type:'math_single' },
+        { kind:'block', type:'math_round' },
+        { kind:'block', type:'math_random_int' },
+      ]
+    },
+    {
+      kind: 'category', name: '🔀 Lógica', colour: '#f59e0b',
+      contents: [
+        { kind:'block', type:'controls_if' },
+        { kind:'block', type:'logic_compare' },
+        { kind:'block', type:'logic_operation' },
+        { kind:'block', type:'logic_boolean' },
+        { kind:'block', type:'logic_negate' },
+      ]
+    },
+    {
+      kind: 'category', name: '🔁 Bucles', colour: '#ef4444',
+      contents: [
+        { kind:'block', type:'controls_repeat_ext' },
+        { kind:'block', type:'controls_whileUntil' },
+        { kind:'block', type:'controls_for' },
+        { kind:'block', type:'controls_forEach' },
+      ]
+    },
+    {
+      kind: 'category', name: '📦 Variables', colour: '#8b5cf6',
+      custom: 'VARIABLE'
+    },
+    {
+      kind: 'category', name: '⚙️ Funciones', colour: '#0ea5e9',
+      custom: 'PROCEDURE'
+    },
+  ]
+};
+
+function initBlockly() {
+  if (!window.Blockly || document.getElementById('blocklyDiv').childElementCount > 0) return;
+  workspace = Blockly.inject('blocklyDiv', {
+    toolbox: TOOLBOX,
+    grid: { spacing:20, length:3, colour:'#e2e8f0', snap:true },
+    zoom: { controls:true, wheel:true, startScale:1.0, maxScale:3, minScale:.3, scaleSpeed:1.2 },
+    move: { scrollbars:true, drag:true, wheel:false },
+    trashcan: true,
+    theme: Blockly.Themes.Zelos,
+  });
+  workspace.addChangeListener(() => {
+    const code = Blockly.JavaScript.workspaceToCode(workspace);
+    document.getElementById('codeDisplay').textContent = code || '// (workspace vacío)';
+  });
+}
+
+// ─ Run code ────────────────────────────────────────────────
+function runCode() {
+  if (!workspace) return;
+  const code = Blockly.JavaScript.workspaceToCode(workspace);
+  if (!code.trim()) {
+    showConsole(['<span class="con-sys">⚠️ El workspace está vacío. Agregá algunos bloques primero.</span>']);
+    switchOTab('console', document.querySelectorAll('.pv-otab')[1]);
+    return;
+  }
+  const lines = [];
+  const fakeConsole = {
+    log: (...args) => lines.push(`<span class="con-ok">${escHtml(args.map(String).join(' '))}</span>`),
+    error: (...args) => lines.push(`<span class="con-err">❌ ${escHtml(args.join(' '))}</span>`),
+    warn: (...args) => lines.push(`<span class="con-err">⚠️ ${escHtml(args.join(' '))}</span>`),
+  };
+  try {
+    // eslint-disable-next-line no-new-func
+    const fn = new Function('console', 'alert', code);
+    fn(fakeConsole, (msg) => lines.push(`<span class="con-ok">${escHtml(String(msg))}</span>`));
+    lines.push(`<span class="con-sys">— Ejecución completada —</span>`);
+  } catch(e) {
+    lines.push(`<span class="con-err">❌ Error: ${escHtml(e.message)}</span>`);
+  }
+  showConsole(lines);
+  const rawOutput = lines.map(l => l.replace(/<[^>]+>/g,'')).join('\n');
+  checkMission(rawOutput);
+  showTeachingMoment(code);
+  switchOTab('console', document.querySelectorAll('.pv-otab')[1]);
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function showConsole(lines) {
+  document.getElementById('consoleDisplay').innerHTML = lines.join('\n') || '<span class="con-sys">// (sin salida)</span>';
+}
+
+// ─ Mission checker ─────────────────────────────────────────
+function checkMission(output) {
+  const m = MISSIONS[currentMission];
+  if (m.check(output)) {
+    doneMissions.add(currentMission);
+    const mEl = document.getElementById('mission-' + currentMission);
+    if (mEl) {
+      mEl.classList.remove('active');
+      mEl.classList.add('done');
+      mEl.querySelector('.mission-num').textContent = '✅ Misión ' + m.id + ' — ¡Completada!';
+    }
+    // Add success message to console
+    document.getElementById('consoleDisplay').innerHTML +=
+      `\n<span style="color:#34d399;font-weight:bold">🎉 ¡Misión "${m.title}" completada!</span>`;
+    // Auto-advance
+    if (currentMission < MISSIONS.length - 1) {
+      setTimeout(() => selectMission(currentMission + 1), 800);
+    }
+    switchOTab('teach', document.querySelectorAll('.pv-otab')[2]);
+  }
+}
+
+// ─ Teaching moments ────────────────────────────────────────
+function showTeachingMoment(code) {
+  const m = MISSIONS[currentMission];
+  const wrap = document.getElementById('teachWrap');
+  wrap.innerHTML = '';
+
+  // Mission-specific teaches
+  const teaches = m.teach || [];
+
+  // Generic detections
+  if (code.includes('for') || code.includes('while'))
+    teaches.push({ tag:'Eficiencia algorítmica', text:'Los bucles son la base de la <strong>eficiencia</strong> en programación. Un algoritmo que usa bucles correctamente puede resolver en segundos lo que le tomaría horas a un humano.' });
+  if (code.includes('if'))
+    teaches.push({ tag:'Flujo de control', text:'Las condiciones crean <strong>bifurcaciones</strong> en el flujo del programa. Es la capacidad de tomar decisiones lo que hace a los programas verdaderamente útiles.' });
+
+  if (teaches.length === 0)
+    teaches.push({ tag:'Primeros pasos', text:'¡Bien! Estás ejecutando tu primer código. La programación es el arte de darle instrucciones precisas a una máquina. Cada bloque que usás representa una instrucción.' });
+
+  teaches.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'teach-card';
+    card.innerHTML = `<div class="teach-card-tag">${t.tag}</div>${t.text}`;
+    wrap.appendChild(card);
+  });
+
+  // Elisa credit
+  const badge = document.createElement('div');
+  badge.innerHTML = `<div class="elisa-badge">🧩 Inspirado en <a href="https://github.com/zoidbergclawd/elisa" target="_blank" style="color:inherit">Elisa</a> — block-based AI programming</div>`;
+  wrap.appendChild(badge);
+}
+
+// ─ Tab switching ───────────────────────────────────────────
+function switchOTab(id, btn) {
+  document.querySelectorAll('.out-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.pv-otab').forEach(b => b.classList.remove('active'));
+  document.getElementById('out-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+function clearWorkspace() {
+  if (workspace) workspace.clear();
+  document.getElementById('codeDisplay').textContent = '// (workspace limpiado)';
+  document.getElementById('consoleDisplay').innerHTML = '<span class="con-sys">// La salida aparece aquí...</span>';
+  document.getElementById('teachWrap').innerHTML = '<div style="font-size:12px;color:var(--muted);font-style:italic">Ejecutá tu código para ver explicaciones del tutor 💡</div>';
+}
+
+// ─ Lazy init on tab switch ────────────────────────────────
+const _origSetView = setView;
+window.setView = function(id, btn) {
+  _origSetView(id, btn);
+  if (id === 'pv') {
+    setTimeout(() => {
+      if (!workspace) {
+        initBlockly();
+        initMissions();
+      }
+      if (workspace) Blockly.svgResize(workspace);
+    }, 100);
+  }
+};
 </script>
 </body>
 </html>
