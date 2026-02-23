@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TutorIA — Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0f172a;
+  --surface: #1e293b;
+  --border:  #334155;
+  --indigo:  #6366f1;
+  --purple:  #a78bfa;
+  --text:    #f1f5f9;
+  --text2:   #cbd5e1;
+  --muted:   #94a3b8;
+  --green:   #34d399;
+  --amber:   #fbbf24;
+  --red:     #f87171;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; overflow:hidden; }
+body {
+  font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text);
+}
+
+/* ─── SLIDE CONTAINER ─────────────────────────────────── */
+.deck { position:relative; width:100%; height:100vh; overflow:hidden; }
+.slide {
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:60px 80px;
+  opacity:0; pointer-events:none;
+  transition:opacity .4s ease, transform .4s ease;
+  transform:translateX(40px);
+}
+.slide.active {
+  opacity:1; pointer-events:auto; transform:translateX(0);
+}
+.slide.prev {
+  transform:translateX(-40px);
+}
+
+/* ─── GRADIENT BACKGROUNDS ────────────────────────────── */
+.slide-bg {
+  position:absolute; inset:0; z-index:0;
+  background:var(--bg);
+}
+.slide-bg::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse at 30% 20%, rgba(99,102,241,.12) 0%, transparent 60%),
+             radial-gradient(ellipse at 70% 80%, rgba(167,139,250,.08) 0%, transparent 60%);
+}
+.slide-content { position:relative; z-index:1; width:100%; max-width:960px; text-align:center; }
+
+/* ─── TYPOGRAPHY ──────────────────────────────────────── */
+.s-label {
+  font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.15em;
+  background:linear-gradient(135deg,var(--indigo),var(--purple));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  margin-bottom:16px;
+}
+.s-title {
+  font-size:clamp(32px,5vw,56px); font-weight:900; line-height:1.1;
+  margin-bottom:18px; letter-spacing:-.5px;
+}
+.s-title em {
+  font-style:normal;
+  background:linear-gradient(135deg,var(--indigo),var(--purple));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.s-sub {
+  font-size:clamp(15px,2vw,20px); color:var(--muted); line-height:1.7;
+  max-width:700px; margin:0 auto 32px;
+}
+.s-note { font-size:13px; color:var(--muted); margin-top:24px; }
+
+/* ─── CARDS GRID ──────────────────────────────────────── */
+.cards { display:grid; gap:16px; width:100%; }
+.cards-3 { grid-template-columns:repeat(3,1fr); }
+.cards-4 { grid-template-columns:repeat(4,1fr); }
+.cards-2 { grid-template-columns:repeat(2,1fr); }
+.card {
+  background:rgba(30,41,59,.8); border:1px solid var(--border);
+  border-radius:16px; padding:28px 22px; text-align:left;
+  backdrop-filter:blur(8px); transition:.2s;
+}
+.card:hover { border-color:var(--indigo); transform:translateY(-2px); }
+.card-icon { font-size:28px; margin-bottom:12px; }
+.card h3 { font-size:16px; font-weight:700; color:var(--text); margin-bottom:8px; }
+.card p { font-size:13.5px; color:var(--muted); line-height:1.65; }
+
+/* ─── STAT BLOCKS ─────────────────────────────────────── */
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; width:100%; margin:32px 0; }
+.stat { text-align:center; }
+.stat-num {
+  font-size:42px; font-weight:900; line-height:1;
+  background:linear-gradient(135deg,var(--indigo),var(--purple));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.stat-lbl { font-size:13px; color:var(--muted); margin-top:6px; }
+
+/* ─── STEPS ───────────────────────────────────────────── */
+.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; width:100%; margin:24px 0; }
+.step { text-align:center; }
+.step-n {
+  width:52px; height:52px; border-radius:50%;
+  background:linear-gradient(135deg,var(--indigo),var(--purple));
+  display:grid; place-items:center; margin:0 auto 14px;
+  font-size:20px; font-weight:800; color:#fff;
+}
+.step h3 { font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px; }
+.step p { font-size:13px; color:var(--muted); line-height:1.6; }
+
+/* ─── TEAM ────────────────────────────────────────────── */
+.team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; width:100%; margin:24px 0; }
+.team-member { text-align:center; }
+.team-avatar {
+  width:72px; height:72px; border-radius:50%;
+  background:linear-gradient(135deg,var(--indigo),var(--purple));
+  display:grid; place-items:center; margin:0 auto 12px;
+  font-size:28px; border:3px solid var(--border);
+}
+.team-name { font-size:15px; font-weight:700; color:var(--text); }
+.team-role { font-size:12px; color:var(--muted); margin-top:3px; }
+
+/* ─── TRACTION ────────────────────────────────────────── */
+.traction { display:grid; grid-template-columns:1fr 1fr; gap:24px; width:100%; margin:24px 0; text-align:left; }
+.traction-item {
+  background:rgba(30,41,59,.8); border:1px solid var(--border);
+  border-radius:14px; padding:20px; backdrop-filter:blur(8px);
+  display:flex; align-items:center; gap:16px;
+}
+.traction-icon { font-size:28px; flex-shrink:0; }
+.traction-item h4 { font-size:14px; font-weight:700; color:var(--text); }
+.traction-item p { font-size:12px; color:var(--muted); margin-top:2px; }
+
+/* ─── CTA SLIDE ───────────────────────────────────────── */
+.cta-big {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:16px 40px; border-radius:12px;
+  background:linear-gradient(135deg,var(--indigo),#8b5cf6);
+  color:#fff; font-size:18px; font-weight:700;
+  border:none; cursor:pointer; font-family:inherit;
+  box-shadow:0 4px 20px rgba(99,102,241,.4);
+  transition:.2s; text-decoration:none;
+}
+.cta-big:hover { transform:translateY(-2px); box-shadow:0 6px 28px rgba(99,102,241,.5); }
+
+/* ─── NAVIGATION ──────────────────────────────────────── */
+.nav-bar {
+  position:fixed; bottom:0; left:0; right:0; z-index:100;
+  background:rgba(15,23,42,.9); backdrop-filter:blur(12px);
+  border-top:1px solid var(--border);
+  padding:12px 32px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-brand { display:flex; align-items:center; gap:8px; }
+.nav-mark {
+  width:28px; height:28px; border-radius:8px;
+  background:linear-gradient(135deg,var(--indigo),#8b5cf6);
+  display:grid; place-items:center; font-size:13px;
+}
+.nav-name { font-size:14px; font-weight:700; color:var(--text); }
+.nav-name span { color:var(--indigo); }
+
+.dots { display:flex; gap:8px; }
+.dot {
+  width:8px; height:8px; border-radius:50%;
+  background:var(--border); cursor:pointer; transition:.2s;
+}
+.dot.active { background:var(--indigo); box-shadow:0 0 0 3px rgba(99,102,241,.3); }
+.dot:hover { background:var(--muted); }
+
+.nav-arrows { display:flex; gap:8px; align-items:center; }
+.nav-counter { font-size:12px; color:var(--muted); margin-right:8px; font-variant-numeric:tabular-nums; }
+.arrow-btn {
+  width:36px; height:36px; border-radius:8px;
+  background:var(--surface); border:1px solid var(--border);
+  color:var(--text); font-size:14px; cursor:pointer;
+  display:grid; place-items:center; transition:.15s;
+}
+.arrow-btn:hover { border-color:var(--indigo); color:var(--indigo); }
+.arrow-btn:disabled { opacity:.3; cursor:not-allowed; }
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media(max-width:768px) {
+  .slide { padding:40px 24px 80px; }
+  .cards-3, .cards-4 { grid-template-columns:1fr; }
+  .cards-2 { grid-template-columns:1fr; }
+  .stats { grid-template-columns:repeat(2,1fr); }
+  .steps { grid-template-columns:1fr; }
+  .team-grid { grid-template-columns:1fr; }
+  .traction { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1: PROBLEMA -->
+  <div class="slide active" data-slide="0">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="s-label">El problema</div>
+      <h1 class="s-title">La educacion uruguaya tiene un <em>cuello de botella</em></h1>
+      <p class="s-sub">120 alumnos por docente. Feedback tardio. Alumnos en riesgo invisibles hasta que es demasiado tarde.</p>
+      <div class="cards cards-3">
+        <div class="card">
+          <div class="card-icon">😰</div>
+          <h3>Capacidad desbordada</h3>
+          <p>Un profesor de Historia atiende 120+ alumnos. Es imposible dar atencion individualizada. Los que se atrasan quedan invisibles.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📝</div>
+          <h3>Feedback inexistente</h3>
+          <p>La devolucion llega dias o semanas despues. Sin feedback inmediato, el aprendizaje se detiene.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚨</div>
+          <h3>Deteccion tardia</h3>
+          <p>Sin datos en tiempo real, la desercion se detecta cuando ya es grave. Uruguay pierde 40% antes de terminar Bachillerato.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: SOLUCION -->
+  <div class="slide" data-slide="1">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="s-label">La solucion</div>
+      <h1 class="s-title">TutorIA: un tutor <em>IA personalizado</em> para cada alumno</h1>
+      <p class="s-sub">Plataforma de tutores IA conversacionales, alineada al curriculo ANEP, con contenido multimedia generado por IA.</p>
+      <div class="cards cards-3">
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Tutor adaptativo 24/7</h3>
+          <p>Cada alumno tiene su propio tutor IA que se adapta a su ritmo, nivel y estilo de aprendizaje. Feedback inmediato.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎬</div>
+          <h3>Multimedia con IA generativa</h3>
+          <p>Videos Sora 2, imagenes DALL-E 3 HD, audio ElevenLabs. Contenido inmersivo por cada tema del curriculo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Panel docente inteligente</h3>
+          <p>Dashboard en tiempo real. Alertas automaticas de alumnos en riesgo. Sugerencias pedagogicas por IA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: COMO FUNCIONA -->
+  <div class="slide" data-slide="2">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="s-label">Producto</div>
+      <h1 class="s-title">¿Como <em>funciona</em>?</h1>
+      <p class="s-sub">Tres actores, una plataforma. Simple para todos.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <h3>La institucion configura</h3>
+          <p>El coordinador elige programa, asigna grupos y docentes. En produccion en menos de un dia.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <h3>El alumno interactua</h3>
+          <p>El tutor conoce a cada alumno, genera contenido multimedia por tema, adapta ritmo y dificultad.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <h3>El docente monitorea</h3>
+          <p>Dashboard en tiempo real, alertas automaticas y sugerencias para aprovechar el tiempo de clase.</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">94%</div><div class="stat-lbl">Mejora en comprension</div></div>
+        <div class="stat"><div class="stat-num">3×</div><div class="stat-lbl">Mas tiempo de practica</div></div>
+        <div class="stat"><div class="stat-num">24/7</div><div class="stat-lbl">Disponible siempre</div></div>
+        <div class="stat"><div class="stat-num">-40%</div><div class="stat-lbl">Alumnos en riesgo</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: URUGUAY + ANEP -->
+  <div class="slide" data-slide="3">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="s-label">Mercado</div>
+      <h1 class="s-title">Disenado para <em>Uruguay</em> y ANEP 🇺🇾</h1>
+      <p class="s-sub">No somos una plataforma generica adaptada. Somos nativos del sistema educativo uruguayo.</p>
+      <div class="cards cards-2">
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <h3>Curriculo ANEP oficial</h3>
+          <p>Contenido 100% alineado al programa de ANEP para Bachillerato. Historia ya cubierta. Matematicas, Biologia y Quimica en desarrollo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3>Cumplimiento legal uruguayo</h3>
+          <p>Datos de menores protegidos. Sin publicidad. Cumplimiento Ley 18.331. Datos almacenados en Uruguay.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Contexto local</h3>
+          <p>Lenguaje uruguayo, ejemplos locales, eventos historicos del Rio de la Plata. El tutor habla como un profesor uruguayo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <h3>Mercado accesible</h3>
+          <p>350.000 estudiantes de Bachillerato. 280 liceos publicos. Tasa de desercion: 40%. Oportunidad clara y medible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: NEGOCIO -->
+  <div class="slide" data-slide="4">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="s-label">Modelo de negocio</div>
+      <h1 class="s-title">SaaS B2B: <em>por alumno, por mes</em></h1>
+      <p class="s-sub">Modelo simple, predecible y escalable. Tres planes que cubren desde un grupo piloto hasta redes de liceos.</p>
+      <div class="cards cards-3">
+        <div class="card">
+          <div class="card-icon">🟢</div>
+          <h3>Basico · USD 6/alumno/mes</h3>
+          <p>Tutor IA conversacional, curriculo ANEP, quizzes adaptativos, panel docente basico. Hasta 100 alumnos.</p>
+        </div>
+        <div class="card" style="border-color:var(--indigo);">
+          <div class="card-icon">🔵</div>
+          <h3>Profesional · USD 10/alumno/mes</h3>
+          <p>Todo Basico + Videos Sora 2, DALL-E 3, ElevenLabs, alertas avanzadas. Hasta 500 alumnos. Soporte prioritario.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🟣</div>
+          <h3>Institucion · A convenir</h3>
+          <p>Todo Profesional + alumnos ilimitados, integraciones propias, SSO, API, soporte dedicado y capacitacion presencial.</p>
+        </div>
+      </div>
+      <p class="s-note">LTV estimado: USD 720/alumno (promedio 12 meses) · Margen bruto: ~75% · CAC objetivo: < USD 50</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: TRACCION -->
+  <div class="slide" data-slide="5">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="s-label">Traccion</div>
+      <h1 class="s-title">Primeros <em>resultados</em> prometedores</h1>
+      <p class="s-sub">Piloto activo con resultados medibles. Pipeline creciendo.</p>
+      <div class="traction">
+        <div class="traction-item">
+          <div class="traction-icon">🏫</div>
+          <div><h4>3 liceos en piloto</h4><p>Montevideo, Salto y Florida. 180 alumnos activos.</p></div>
+        </div>
+        <div class="traction-item">
+          <div class="traction-icon">📈</div>
+          <div><h4>94% mejora en comprension</h4><p>Medido con pre/post test en temas de Historia.</p></div>
+        </div>
+        <div class="traction-item">
+          <div class="traction-icon">⏱️</div>
+          <div><h4>3× mas tiempo de practica</h4><p>Los alumnos practican 3 veces mas que sin el tutor IA.</p></div>
+        </div>
+        <div class="traction-item">
+          <div class="traction-icon">🎯</div>
+          <div><h4>-40% alumnos en riesgo</h4><p>Reduccion de estudiantes en riesgo en los primeros 2 meses.</p></div>
+        </div>
+        <div class="traction-item">
+          <div class="traction-icon">💬</div>
+          <div><h4>NPS 82</h4><p>Encuesta a directores y docentes de los pilotos.</p></div>
+        </div>
+        <div class="traction-item">
+          <div class="traction-icon">📋</div>
+          <div><h4>Pipeline: 12 liceos</h4><p>Lista de espera de instituciones interesadas en el plan Profesional.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: EQUIPO -->
+  <div class="slide" data-slide="6">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="s-label">Equipo</div>
+      <h1 class="s-title">El equipo detras de <em>TutorIA</em></h1>
+      <p class="s-sub">Combinamos experiencia en tecnologia, educacion y el sistema uruguayo.</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-avatar">👨‍💻</div>
+          <div class="team-name">Gabriel Milano</div>
+          <div class="team-role">CEO & CTO · Ing. Sistemas · 10+ anos en edtech</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar">👩‍🏫</div>
+          <div class="team-name">Laura Pereyra</div>
+          <div class="team-role">Head of Education · Prof. Historia · Ex-ANEP</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar">🤖</div>
+          <div class="team-name">Ralph (IA)</div>
+          <div class="team-role">AI Engineering · Claude + GPT-4o · Contenido generativo</div>
+        </div>
+      </div>
+      <p class="s-note">Advisors: Ex-director ANEP · Prof. IA UdelaR · Inversor edtech LATAM</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: CTA -->
+  <div class="slide" data-slide="7">
+    <div class="slide-bg"></div>
+    <div class="slide-content">
+      <div class="s-label">Proximos pasos</div>
+      <h1 class="s-title">Buscamos <em>USD 500K</em> seed</h1>
+      <p class="s-sub">Para cubrir 3 materias mas, llegar a 50 liceos en Uruguay y preparar expansion a Chile y Argentina.</p>
+      <div class="cards cards-3" style="margin-bottom:36px">
+        <div class="card" style="text-align:center">
+          <div class="card-icon">🧪</div>
+          <h3>40% Producto</h3>
+          <p>Matematicas, Biologia, Quimica. Mejoras de IA. Integraciones.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="card-icon">📢</div>
+          <h3>35% Go-to-Market</h3>
+          <p>Equipo comercial. Marketing B2B. Relaciones con ANEP y CES.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="card-icon">🌎</div>
+          <h3>25% Expansion</h3>
+          <p>Adaptacion curricular Chile (MINEDUC) y Argentina. Infraestructura.</p>
+        </div>
+      </div>
+      <a class="cta-big" href="mailto:contacto@tutoria.uy">Agendar una reunion →</a>
+      <p class="s-note">contacto@tutoria.uy · Montevideo, Uruguay 🇺🇾</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- NAVIGATION BAR -->
+<nav class="nav-bar">
+  <div class="nav-brand">
+    <div class="nav-mark">🎓</div>
+    <span class="nav-name">Tutor<span>IA</span></span>
+  </div>
+  <div class="dots" id="dots"></div>
+  <div class="nav-arrows">
+    <span class="nav-counter" id="counter">1 / 8</span>
+    <button class="arrow-btn" id="prevBtn" onclick="go(-1)" disabled>←</button>
+    <button class="arrow-btn" id="nextBtn" onclick="go(1)">→</button>
+  </div>
+</nav>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+
+// Build dots
+const dotsEl = document.getElementById('dots');
+for (let i = 0; i < total; i++) {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goTo(i);
+  dotsEl.appendChild(d);
+}
+
+function goTo(n) {
+  if (n < 0 || n >= total || n === current) return;
+  slides[current].classList.remove('active');
+  slides[current].classList.add('prev');
+  current = n;
+  slides.forEach((s, i) => {
+    s.classList.remove('active', 'prev');
+    if (i === current) s.classList.add('active');
+  });
+  updateNav();
+}
+
+function go(dir) { goTo(current + dir); }
+
+function updateNav() {
+  document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+  if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+  if (e.key === 'End') { e.preventDefault(); goTo(total - 1); }
+});
+
+// Touch swipe
+let touchStartX = 0;
+document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+document.addEventListener('touchend', (e) => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) go(diff > 0 ? 1 : -1);
+}, { passive: true });
+</script>
+</body>
+</html>

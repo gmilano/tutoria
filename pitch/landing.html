@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TutorIA — Un tutor IA para cada alumno</title>
+<meta name="description" content="Plataforma de tutores IA personalizada para el bachillerato uruguayo, alineada 100% al currículum ANEP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f8fafc;
+  --surface:   #ffffff;
+  --border:    #e2e8f0;
+  --indigo:    #4f46e5;
+  --indigo-l:  #6366f1;
+  --indigo-bg: #eef2ff;
+  --indigo-d:  #3730a3;
+  --purple:    #8b5cf6;
+  --green:     #10b981;
+  --green-bg:  #ecfdf5;
+  --amber:     #f59e0b;
+  --red:       #ef4444;
+  --text:      #0f172a;
+  --text2:     #334155;
+  --muted:     #64748b;
+  --muted2:    #94a3b8;
+  --shadow:    0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.1);
+  --radius:    14px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:16px; scroll-behavior:smooth; }
+body { font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; }
+
+/* ─── NAV ─────────────────────────────────────────────── */
+.nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(255,255,255,.88); backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 24px; height:60px;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:box-shadow .3s;
+}
+.nav.scrolled { box-shadow:var(--shadow-md); }
+.nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.nav-mark {
+  width:36px; height:36px; border-radius:10px;
+  background:linear-gradient(135deg,var(--indigo),var(--purple));
+  display:grid; place-items:center; font-size:18px;
+  box-shadow:0 2px 8px rgba(79,70,229,.3);
+}
+.nav-brand { font-size:18px; font-weight:800; color:var(--text); letter-spacing:-.3px; }
+.nav-brand span { color:var(--indigo); }
+.nav-links { display:flex; align-items:center; gap:8px; }
+.nav-links a {
+  font-size:13.5px; font-weight:500; color:var(--muted); text-decoration:none;
+  padding:6px 14px; border-radius:8px; transition:.15s;
+}
+.nav-links a:hover { color:var(--text); background:var(--bg); }
+.nav-cta {
+  padding:8px 20px; background:var(--indigo); color:#fff; border:none;
+  border-radius:8px; font-size:13.5px; font-weight:600; cursor:pointer;
+  font-family:inherit; transition:.15s;
+  box-shadow:0 2px 8px rgba(79,70,229,.3);
+}
+.nav-cta:hover { background:var(--indigo-l); transform:translateY(-1px); }
+
+/* ─── CONTAINER ───────────────────────────────────────── */
+.container { max-width:1080px; margin:0 auto; padding:0 24px; }
+
+/* ─── HERO ────────────────────────────────────────────── */
+.hero {
+  padding:140px 24px 80px; text-align:center;
+}
+.hero-pill {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 16px; border-radius:24px;
+  background:var(--indigo-bg); color:var(--indigo);
+  font-size:13px; font-weight:600; margin-bottom:24px;
+}
+.hero h1 {
+  font-size:clamp(32px,5vw,52px); font-weight:900; line-height:1.12;
+  color:var(--text); margin-bottom:18px; letter-spacing:-.5px;
+}
+.hero h1 em {
+  font-style:normal;
+  background:linear-gradient(135deg,var(--indigo),var(--purple));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.hero-sub {
+  font-size:clamp(15px,2vw,18px); color:var(--muted); line-height:1.7;
+  max-width:600px; margin:0 auto 32px;
+}
+.hero-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn-primary {
+  padding:13px 30px; background:var(--indigo); color:#fff; border:none;
+  border-radius:10px; font-size:15px; font-weight:600; cursor:pointer;
+  font-family:inherit; box-shadow:0 3px 12px rgba(79,70,229,.35);
+  transition:.2s; text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+}
+.btn-primary:hover { background:var(--indigo-l); transform:translateY(-2px); box-shadow:0 6px 20px rgba(79,70,229,.4); }
+.btn-secondary {
+  padding:13px 30px; border:1.5px solid var(--border); color:var(--text2);
+  background:var(--surface); border-radius:10px; font-size:15px; font-weight:500;
+  cursor:pointer; font-family:inherit; transition:.2s; text-decoration:none;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.btn-secondary:hover { border-color:var(--indigo); color:var(--indigo); }
+.hero-badge {
+  margin-top:28px; font-size:12px; color:var(--muted2);
+}
+.hero-badge strong { color:var(--muted); }
+
+/* ─── SECTION UTILITIES ───────────────────────────────── */
+section { padding:80px 0; }
+.section-label {
+  font-size:12px; font-weight:700; color:var(--indigo); text-transform:uppercase;
+  letter-spacing:.1em; text-align:center; margin-bottom:8px;
+}
+.section-title {
+  font-size:clamp(24px,3.5vw,34px); font-weight:800; text-align:center;
+  color:var(--text); margin-bottom:8px; letter-spacing:-.3px;
+}
+.section-sub {
+  font-size:15px; color:var(--muted); text-align:center;
+  max-width:560px; margin:0 auto 44px; line-height:1.7;
+}
+
+/* ─── ANIMATE ON SCROLL ──────────────────────────────── */
+.reveal {
+  opacity:0; transform:translateY(24px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity:1; transform:translateY(0);
+}
+
+/* ─── PROBLEM CARDS ──────────────────────────────────── */
+.problems { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.problem-card {
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:28px 24px; box-shadow:var(--shadow); transition:.2s;
+}
+.problem-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.problem-icon {
+  width:48px; height:48px; border-radius:12px;
+  display:grid; place-items:center; font-size:22px; margin-bottom:16px;
+}
+.problem-card:nth-child(1) .problem-icon { background:#fef2f2; }
+.problem-card:nth-child(2) .problem-icon { background:#fffbeb; }
+.problem-card:nth-child(3) .problem-icon { background:#fdf2f8; }
+.problem-card h3 { font-size:16px; font-weight:700; color:var(--text); margin-bottom:8px; }
+.problem-card p { font-size:14px; color:var(--muted); line-height:1.65; }
+
+/* ─── SOLUTION ───────────────────────────────────────── */
+.solution-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+}
+.solution-text h2 {
+  font-size:clamp(24px,3vw,32px); font-weight:800; color:var(--text);
+  margin-bottom:14px; line-height:1.2;
+}
+.solution-text h2 em {
+  font-style:normal; color:var(--indigo);
+}
+.solution-text p {
+  font-size:15px; color:var(--muted); line-height:1.75; margin-bottom:20px;
+}
+.solution-text ul {
+  list-style:none; margin-bottom:24px;
+}
+.solution-text li {
+  font-size:14px; color:var(--text2); padding:6px 0;
+  display:flex; align-items:center; gap:10px;
+}
+.solution-text li::before {
+  content:''; width:20px; height:20px; border-radius:50%; flex-shrink:0;
+  background:var(--green-bg); display:grid; place-items:center;
+}
+.solution-text li::after { content:none; }
+.check-list li { position:relative; padding-left:30px; }
+.check-list li::before {
+  content:'✓'; position:absolute; left:0; top:6px;
+  width:20px; height:20px; border-radius:50%; background:var(--green-bg);
+  color:var(--green); font-size:11px; font-weight:700;
+  display:grid; place-items:center;
+}
+.solution-media {
+  border-radius:16px; overflow:hidden;
+  box-shadow:var(--shadow-lg); border:1px solid var(--border);
+}
+.solution-img {
+  width:100%; display:block;
+  background:linear-gradient(135deg,#e0e7ff,#ddd6fe);
+  min-height:260px;
+}
+.solution-img-placeholder {
+  width:100%; aspect-ratio:4/3;
+  background:linear-gradient(135deg,#e0e7ff,#ddd6fe);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+}
+.solution-img-placeholder .emoji { font-size:56px; }
+.solution-img-placeholder .caption { font-size:12px; color:var(--indigo); font-weight:500; }
+.solution-badge {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:6px 14px; background:var(--surface);
+  border-top:1px solid var(--border);
+  font-size:11px; font-weight:600; color:var(--indigo);
+}
+.solution-video {
+  background:linear-gradient(135deg,#1e1b4b,#312e81);
+  aspect-ratio:16/9; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:8px; cursor:pointer;
+  transition:.2s; position:relative;
+}
+.solution-video:hover { opacity:.9; }
+.solution-video .play { font-size:40px; }
+.solution-video .label { font-size:12px; color:#a5b4fc; font-weight:500; }
+.solution-video .sora { position:absolute; top:10px; right:10px; background:rgba(79,70,229,.8); color:#fff; font-size:10px; font-weight:700; padding:3px 8px; border-radius:6px; }
+
+/* ─── FEATURES ───────────────────────────────────────── */
+.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.feature-card {
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:24px; box-shadow:var(--shadow); transition:.2s;
+}
+.feature-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.feature-emoji { font-size:28px; margin-bottom:12px; }
+.feature-card h3 { font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px; }
+.feature-card p { font-size:13.5px; color:var(--muted); line-height:1.65; }
+
+/* ─── TESTIMONIALS ───────────────────────────────────── */
+.testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.testimonial {
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:28px 24px; box-shadow:var(--shadow); transition:.2s;
+}
+.testimonial:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.testimonial-stars { font-size:14px; margin-bottom:12px; color:var(--amber); letter-spacing:2px; }
+.testimonial-quote {
+  font-size:14px; color:var(--text2); line-height:1.7;
+  margin-bottom:18px; font-style:italic;
+}
+.testimonial-author { display:flex; align-items:center; gap:12px; }
+.testimonial-avatar {
+  width:40px; height:40px; border-radius:10px;
+  display:grid; place-items:center; font-size:14px; font-weight:700;
+  color:#fff; flex-shrink:0;
+}
+.testimonial-name { font-size:13px; font-weight:600; color:var(--text); }
+.testimonial-role { font-size:12px; color:var(--muted); }
+
+/* ─── PRICING ────────────────────────────────────────── */
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.pricing-card {
+  background:var(--surface); border:1.5px solid var(--border); border-radius:var(--radius);
+  padding:32px 24px; box-shadow:var(--shadow); position:relative; transition:.2s;
+}
+.pricing-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.pricing-card.featured { border-color:var(--indigo); }
+.pricing-badge {
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  background:var(--indigo); color:#fff; font-size:11px; font-weight:700;
+  padding:4px 14px; border-radius:20px; white-space:nowrap;
+}
+.pricing-name {
+  font-size:13px; font-weight:700; color:var(--muted);
+  text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px;
+}
+.pricing-price { font-size:36px; font-weight:900; color:var(--text); line-height:1; }
+.pricing-unit { font-size:13px; color:var(--muted); }
+.pricing-desc { font-size:13px; color:var(--muted); margin:10px 0 18px; line-height:1.5; }
+.pricing-list { list-style:none; margin-bottom:24px; }
+.pricing-list li {
+  font-size:13px; color:var(--text2); padding:5px 0;
+  display:flex; align-items:center; gap:8px;
+}
+.pricing-list li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
+.pricing-btn { width:100%; }
+
+/* ─── CTA ────────────────────────────────────────────── */
+.cta-section {
+  background:linear-gradient(135deg,var(--indigo-bg),#f3e8ff);
+  border:1.5px solid #c7d2fe; border-radius:20px;
+  padding:64px 40px; text-align:center; margin-bottom:24px;
+}
+.cta-section h2 {
+  font-size:clamp(24px,3vw,32px); font-weight:800; color:var(--text);
+  margin-bottom:10px;
+}
+.cta-section p { font-size:15px; color:var(--muted); margin-bottom:28px; line-height:1.7; }
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+.footer {
+  border-top:1px solid var(--border); padding:40px 0; margin-top:40px;
+}
+.footer-inner {
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+}
+.footer-brand { display:flex; align-items:center; gap:10px; }
+.footer-mark {
+  width:30px; height:30px; border-radius:8px;
+  background:linear-gradient(135deg,var(--indigo),var(--purple));
+  display:grid; place-items:center; font-size:14px;
+}
+.footer-text { font-size:14px; font-weight:700; color:var(--text); }
+.footer-text span { color:var(--indigo); }
+.footer-copy { font-size:12px; color:var(--muted2); }
+.footer-flag { font-size:13px; color:var(--muted); display:flex; align-items:center; gap:6px; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:768px) {
+  .nav-links a { display:none; }
+  .problems, .features-grid, .testimonials-grid, .pricing-grid { grid-template-columns:1fr; }
+  .solution-grid { grid-template-columns:1fr; gap:32px; }
+  .solution-media { order:-1; }
+  .hero { padding:110px 20px 60px; }
+  section { padding:56px 0; }
+  .cta-section { padding:40px 24px; }
+}
+@media(min-width:769px) and (max-width:1024px) {
+  .problems, .features-grid, .testimonials-grid, .pricing-grid { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="#">
+    <div class="nav-mark">🎓</div>
+    <span class="nav-brand">Tutor<span>IA</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="#problema">Problema</a>
+    <a href="#solucion">Solucion</a>
+    <a href="#features">Features</a>
+    <a href="#precios">Precios</a>
+    <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Solicitar demo</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="reveal">
+    <div class="hero-pill">🇺🇾 Diseñado para el sistema educativo uruguayo</div>
+    <h1>Un tutor <em>IA personalizado</em><br>para cada alumno de tu institucion</h1>
+    <p class="hero-sub">TutorIA acompaña a cada estudiante con inteligencia artificial adaptativa, alineada al curriculo ANEP, con contenido multimedia generado por IA. Resultados medibles desde el primer mes.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#cta">Solicitar demo gratuita →</a>
+      <a class="btn-secondary" href="../demo/">Ver demo en vivo</a>
+    </div>
+    <p class="hero-badge">Sin costo de setup · <strong>30 dias de prueba gratis</strong> · Cancelacion en cualquier momento</p>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="container">
+    <div class="section-label reveal">El desafio</div>
+    <h2 class="section-title reveal">Los liceos uruguayos enfrentan 3 problemas criticos</h2>
+    <p class="section-sub reveal">Cada uno de estos desafios afecta directamente los resultados de tus alumnos y la carga de tu equipo docente.</p>
+    <div class="problems">
+      <div class="problem-card reveal">
+        <div class="problem-icon">😰</div>
+        <h3>Capacidad docente desbordada</h3>
+        <p>Un profesor de Historia atiende 120+ alumnos. Es imposible dar retroalimentacion individual a cada uno. Los que se atrasan quedan invisibles hasta que es demasiado tarde.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">📝</div>
+        <h3>Feedback tardio o inexistente</h3>
+        <p>Los alumnos reciben devolucion dias o semanas despues. Para entonces, ya olvidaron el contexto. El feedback inmediato es clave para el aprendizaje y hoy no existe.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">🚨</div>
+        <h3>Deteccion tardia de alumnos en riesgo</h3>
+        <p>Sin datos en tiempo real, los docentes detectan problemas cuando ya son graves: inasistencias, bajas notas en el parcial. Para entonces, la desercion esta en camino.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCION -->
+<section id="solucion" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="solution-grid">
+      <div class="solution-text reveal">
+        <div class="section-label" style="text-align:left">La solucion</div>
+        <h2>TutorIA: inteligencia artificial que <em>complementa</em> al docente</h2>
+        <p>Un tutor IA conversacional que se adapta a cada alumno, genera contenido multimedia por tema y alerta al docente cuando un estudiante necesita atencion.</p>
+        <ul class="check-list">
+          <li>Tutor adaptativo 24/7 por alumno</li>
+          <li>100% alineado al curriculo ANEP</li>
+          <li>Videos Sora 2, imagenes DALL-E 3, audio ElevenLabs</li>
+          <li>Panel docente con alertas en tiempo real</li>
+          <li>Deteccion automatica de alumnos en riesgo</li>
+        </ul>
+        <a class="btn-primary" href="#precios">Ver planes y precios →</a>
+      </div>
+      <div class="solution-media reveal">
+        <img class="solution-img" src="../demo/img/bastilla.png" alt="TutorIA en accion"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="solution-img-placeholder" style="display:none">
+          <div class="emoji">🏰</div>
+          <div class="caption">Contenido generado con DALL-E 3 HD</div>
+        </div>
+        <div class="solution-badge">🎨 Imagen generada con DALL-E 3 HD para cada tema del curriculo</div>
+        <div class="solution-video" onclick="this.innerHTML='<div style=\'text-align:center;padding:20px\'><div style=\'font-size:40px;margin-bottom:8px\'>🎬</div><div style=\'color:#a5b4fc;font-size:12px\'>Integracion Sora 2 activa en produccion</div></div>'">
+          <div class="sora">Sora 2</div>
+          <div class="play">▶️</div>
+          <div class="label">Video generado con IA · 30 segundos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="section-label reveal">Capacidades</div>
+    <h2 class="section-title reveal">Todo lo que tu institucion necesita</h2>
+    <p class="section-sub reveal">Una plataforma completa que potencia el trabajo docente y mejora los resultados de cada alumno.</p>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-emoji">🧠</div>
+        <h3>Tutor adaptativo con IA</h3>
+        <p>Cada alumno tiene su propio tutor que se adapta a su ritmo, estilo de aprendizaje e historial. No hay dos experiencias iguales.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-emoji">📋</div>
+        <h3>Curriculo ANEP oficial</h3>
+        <p>Contenido 100% alineado al programa de ANEP. Historia de Bachillerato cubierta y validada por docentes uruguayos.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-emoji">🎬</div>
+        <h3>Multimedia con IA generativa</h3>
+        <p>Cada tema genera video con Sora 2, imagenes con DALL-E 3 HD y narracion con ElevenLabs. Aprendizaje inmersivo y moderno.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-emoji">📊</div>
+        <h3>Panel del docente en tiempo real</h3>
+        <p>Los docentes ven el progreso en vivo, reciben alertas de alumnos en riesgo y sugerencias pedagogicas automaticas.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-emoji">🔒</div>
+        <h3>Privacidad y cumplimiento legal</h3>
+        <p>Datos de menores protegidos. Sin publicidad. Cumplimiento con la Ley 18.331 de proteccion de datos personales de Uruguay.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-emoji">👩‍🏫</div>
+        <h3>Complementa, no reemplaza</h3>
+        <p>El tutor IA maneja la practica individual y el seguimiento. El docente se enfoca en lo que solo el puede dar: conexion humana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label reveal">Testimonios</div>
+    <h2 class="section-title reveal">Lo que dicen los directores</h2>
+    <p class="section-sub reveal">Instituciones de todo Uruguay ya estan transformando su ensenanza con TutorIA.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"En dos meses redujimos un 40% los alumnos en riesgo de Bachillerato. El panel del docente fue un game-changer: ahora detectamos problemas la misma semana, no en el parcial."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--indigo),var(--purple))">MR</div>
+          <div>
+            <div class="testimonial-name">Prof. Maria Rodriguez</div>
+            <div class="testimonial-role">Directora · Liceo N°7, Montevideo</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Nuestros alumnos del interior ahora tienen acceso a un tutor personalizado 24/7. La brecha con Montevideo se achica. El contenido multimedia los engancha de una forma que no esperabamos."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--green),#0ea5e9)">CA</div>
+          <div>
+            <div class="testimonial-name">Prof. Carlos Alvarez</div>
+            <div class="testimonial-role">Director · Liceo Departamental, Salto</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Lo que mas me convencio fue el alineamiento con ANEP. No es una plataforma generica: esta pensada para nuestro programa, nuestros contenidos, nuestros alumnos uruguayos."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--amber),#f43f5e)">LF</div>
+          <div>
+            <div class="testimonial-name">Prof. Laura Fernandez</div>
+            <div class="testimonial-role">Directora · Liceo N°1, Florida</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="container">
+    <div class="section-label reveal">Precios</div>
+    <h2 class="section-title reveal">Planes para instituciones uruguayas</h2>
+    <p class="section-sub reveal">Sin costos de setup · Prueba gratuita de 30 dias · Cancelacion en cualquier momento</p>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Basico</div>
+        <div><span class="pricing-price">USD 6</span> <span class="pricing-unit">/ alumno / mes</span></div>
+        <div class="pricing-desc">Ideal para empezar con un grupo piloto y medir resultados.</div>
+        <ul class="pricing-list">
+          <li>Tutor conversacional IA</li>
+          <li>Curriculo ANEP completo</li>
+          <li>Quiz adaptativo por tema</li>
+          <li>Panel docente basico</li>
+          <li>Hasta 100 alumnos</li>
+          <li>Soporte por email</li>
+        </ul>
+        <button class="btn-secondary pricing-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Empezar gratis</button>
+      </div>
+      <div class="pricing-card featured reveal">
+        <div class="pricing-badge">MAS ELEGIDO</div>
+        <div class="pricing-name">Profesional</div>
+        <div><span class="pricing-price">USD 10</span> <span class="pricing-unit">/ alumno / mes</span></div>
+        <div class="pricing-desc">Experiencia completa con contenido multimedia generado por IA.</div>
+        <ul class="pricing-list">
+          <li>Todo lo del plan Basico</li>
+          <li>Videos generados con Sora 2</li>
+          <li>Imagenes DALL-E 3 HD por tema</li>
+          <li>Audio narracion ElevenLabs</li>
+          <li>Panel avanzado + alertas</li>
+          <li>Hasta 500 alumnos</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <button class="btn-primary pricing-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Solicitar demo →</button>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Institucion</div>
+        <div><span class="pricing-price" style="font-size:26px">A convenir</span></div>
+        <div class="pricing-desc">Para redes de liceos, departamentos o ANEP directamente.</div>
+        <ul class="pricing-list">
+          <li>Todo lo Profesional</li>
+          <li>Alumnos ilimitados</li>
+          <li>Integracion con sistemas propios</li>
+          <li>API y SSO</li>
+          <li>Soporte dedicado 24/7</li>
+          <li>Capacitacion presencial</li>
+        </ul>
+        <button class="btn-secondary pricing-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Contactar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-section reveal">
+      <h2>¿Listo para transformar tu institucion?</h2>
+      <p>Agendamos una demo personalizada de 30 minutos para tu equipo directivo.<br>Sin compromiso. Sin costo. Solo resultados.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="alert('¡Gracias! En la version real aqui se abre el calendario para agendar.')">Solicitar demo gratuita →</button>
+        <a class="btn-secondary" href="mailto:contacto@tutoria.uy">contacto@tutoria.uy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-mark">🎓</div>
+        <span class="footer-text">Tutor<span>IA</span></span>
+      </div>
+      <div class="footer-copy">© 2025 TutorIA. Hecho con ❤️ en Uruguay.</div>
+      <div class="footer-flag">🇺🇾 Montevideo, Uruguay</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Nav scroll effect ────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// ── IntersectionObserver reveal ──────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
