@@ -1174,7 +1174,7 @@ function toggleAI() {
   aiActive = !aiActive;
   toggle.classList.toggle('on', aiActive);
   if (aiActive) {
-    if (!apiKey) {
+    if (!USE_PROXY && !apiKey) {
       status.className = 'settings-status err';
       status.textContent = '⚠️ Ingresá tu API Key de OpenAI primero';
       aiActive = false;
@@ -1182,11 +1182,26 @@ function toggleAI() {
       return;
     }
     status.className = 'settings-status ok';
-    status.textContent = '✅ Tutor IA real activado (gpt-4o-mini)';
+    status.textContent = USE_PROXY
+      ? '✅ Tutor IA real activado (servidor)'
+      : '✅ Tutor IA real activado (gpt-4o-mini)';
   } else {
     status.className = 'settings-status off';
     status.textContent = '💤 Usando respuestas estáticas de demo';
   }
+}
+
+// Auto-activate real AI on Vercel
+if (USE_PROXY) {
+  document.addEventListener('DOMContentLoaded', () => {
+    aiActive = true;
+    const toggle = document.getElementById('aiToggle');
+    const status = document.getElementById('settingsStatus');
+    const keyField = document.querySelector('.settings-field');
+    if (toggle) toggle.classList.add('on');
+    if (status) { status.className = 'settings-status ok'; status.textContent = '✅ Tutor IA real activo'; }
+    if (keyField) keyField.style.display = 'none'; // hide key input on proxy
+  });
 }
 
 function escapeHtml(text) {
@@ -1195,24 +1210,54 @@ function escapeHtml(text) {
   return d.innerHTML;
 }
 
+// Auto-detect proxy vs direct API
+const USE_PROXY = !window.location.hostname.includes('github.io');
+const PROXY_URL = '/api/chat';
+
 async function fetchAIResponse(userMsg) {
   chatHistory.push({ role: 'user', content: userMsg });
-  const resp = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + apiKey
-    },
-    body: JSON.stringify({
-      model: 'gpt-4o-mini',
-      messages: chatHistory,
-      max_tokens: 500,
-      temperature: 0.7
-    })
-  });
-  if (!resp.ok) throw new Error('API error: ' + resp.status);
-  const data = await resp.json();
-  const reply = data.choices[0].message.content;
+  const history = chatHistory.filter(m => m.role !== 'system');
+
+  let reply;
+
+  if (USE_PROXY) {
+    // Backend proxy (Vercel) — key is server-side
+    const resp = await fetch(PROXY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: history,
+        subject: 'Historia',
+        topic: 'Revolución Francesa 1789',
+        year: '4°'
+      })
+    });
+    if (!resp.ok) {
+      const e = await resp.json();
+      throw new Error(e.error || 'Error del servidor');
+    }
+    const data = await resp.json();
+    reply = data.reply;
+  } else {
+    // GitHub Pages — direct call, needs user API key
+    const resp = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + apiKey
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: chatHistory,
+        max_tokens: 600,
+        temperature: 0.75
+      })
+    });
+    if (!resp.ok) throw new Error('API error: ' + resp.status);
+    const data = await resp.json();
+    reply = data.choices[0].message.content;
+  }
+
   chatHistory.push({ role: 'assistant', content: reply });
   return reply;
 }
