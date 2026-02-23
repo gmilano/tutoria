@@ -12,6 +12,7 @@ import mediaRoutes    from './routes/media.js';
 import chatRoutes     from './routes/chat.js';
 import gamesRoutes     from './routes/games.js';
 import resourcesRoutes from './routes/resources.js';
+import voiceRoutes     from './routes/voice.js';
 
 // ── Curriculum cache ─────────────────────────────────────────
 const curriculumCache = {};
@@ -82,6 +83,7 @@ app.use('/api/media',    mediaRoutes);
 app.use('/api/chat',     chatRoutes);
 app.use('/api/games',     gamesRoutes);
 app.use('/api/resources', resourcesRoutes);
+app.use('/api/voice',     voiceRoutes);
 
 // ── /api/verify-code — access gate ───────────────────────
 app.post('/api/verify-code', (req, res) => {

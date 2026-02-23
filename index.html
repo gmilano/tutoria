@@ -128,7 +128,8 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 
 .messages { flex:1; min-height:0; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; background:var(--bg); }
 
-.msg { display:flex; gap:10px; animation:fadeUp .25s ease; }
+.msg { display:flex; gap:10px; animation:fadeUp .25s ease; overflow:visible; }
+.msg > div { overflow:visible; }
 .msg.tutor   { align-self:flex-start; max-width:88%; }
 .msg.student { align-self:flex-end;   flex-direction:row-reverse; max-width:78%; }
 .avatar {
@@ -139,12 +140,12 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 .student .avatar { background:linear-gradient(135deg,var(--green),var(--sky)); color:#fff; }
 /* ── Media controls ──────────────────────────────────── */
 .msg-actions {
-  display:flex;gap:6px;margin-top:5px;flex-wrap:wrap;
+  display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;position:relative;z-index:10;overflow:visible;
 }
 .msg-action-btn {
   display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border:1px solid var(--border);
   border-radius:20px;font-size:11px;cursor:pointer;background:var(--bg);color:var(--text2);
-  transition:all 0.15s;font-family:inherit;
+  transition:all 0.15s;font-family:inherit;white-space:nowrap;flex-shrink:0;
 }
 .msg-action-btn:hover { background:var(--surface);color:var(--text); }
 .msg-action-btn.active { background:var(--indigo);color:#fff;border-color:var(--indigo); }
@@ -1041,6 +1042,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
         <div class="topic-progress-bar"><div class="topic-progress-fill" style="width:60%"></div></div>
         <span class="topic-pct">60%</span>
       </div>
+      <button id="voiceModeBtn" onclick="toggleVoiceMode()" style="padding:6px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:4px;font-weight:600;color:var(--text)">🎙️ Voz</button>
       <button class="mobile-resources-btn" onclick="toggleMobileResources()" title="Recursos del tema">📚</button>
       <button class="settings-btn" onclick="toggleHistory()" title="Historial de sesiones" style="font-size:14px">📋</button>
       <button class="settings-btn" id="settingsBtn" onclick="toggleSettings()" title="Configuración">⚙️</button>
@@ -1467,6 +1469,18 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 <div class="game-modal" id="gameModal" onclick="if(event.target===this)closeGame()">
   <button class="game-modal-close" onclick="closeGame()">✕</button>
   <iframe id="gameIframe" sandbox="allow-scripts"></iframe>
+</div>
+
+<!-- VOICE MODE PANEL -->
+<div id="voicePanel" style="display:none;position:fixed;inset:0;z-index:600;background:linear-gradient(135deg,#1e1b4b,#312e81);flex-direction:column;align-items:center;justify-content:center;gap:20px">
+  <div id="voiceAvatar" style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#4f46e5,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:0 0 0 0 rgba(99,102,241,0.7);transition:box-shadow .3s">🤖</div>
+  <div id="voiceStatus" style="color:white;font-size:16px;font-weight:600;text-align:center">Iniciando...</div>
+  <div id="voiceTranscript" style="color:rgba(255,255,255,0.7);font-size:14px;max-width:300px;text-align:center;min-height:40px"></div>
+  <div style="display:flex;gap:16px;margin-top:20px">
+    <button onclick="toggleMute()" id="muteBtn" style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:white;font-size:22px;cursor:pointer">🎤</button>
+    <button onclick="endVoiceMode()" style="width:56px;height:56px;border-radius:50%;background:#ef4444;border:none;color:white;font-size:22px;cursor:pointer">📵</button>
+  </div>
+  <div style="color:rgba(255,255,255,0.5);font-size:12px;position:absolute;bottom:40px">Hablando sobre: <span id="voiceTopicLabel"></span></div>
 </div>
 
 <!-- DRAWER OVERLAY + LEFT DRAWER (mobile) -->
@@ -2940,6 +2954,132 @@ function toggleMobileResources() {
 function closeMobileResources() {
   document.getElementById('mobileResourcesSheet').classList.remove('open');
   document.getElementById('mobileResourcesOverlay').classList.remove('open');
+}
+
+// ── Voice Mode (Realtime WebRTC) ──────────────────────────
+let voiceSession = null;
+let peerConnection = null;
+let dataChannel = null;
+let localStream = null;
+let isMuted = false;
+
+async function toggleVoiceMode() {
+  const panel = document.getElementById('voicePanel');
+  if (panel.style.display !== 'none') {
+    endVoiceMode();
+    return;
+  }
+  panel.style.display = 'flex';
+  document.getElementById('voiceStatus').textContent = 'Conectando...';
+  document.getElementById('voiceTopicLabel').textContent = currentTopic;
+
+  try {
+    // 1. Obtener ephemeral token del backend
+    const tokenRes = await fetch('/api/voice/session', {
+      method: 'POST',
+      headers: { ...getAuthHeaders(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        subject: currentSubject?.nombre || 'Historia',
+        topic: currentTopic,
+        studentName: currentUser?.name
+      })
+    });
+    const tokenData = await tokenRes.json();
+    if (!tokenData.token) throw new Error(tokenData.error || 'No se pudo obtener sesión de voz');
+
+    // 2. Crear RTCPeerConnection
+    peerConnection = new RTCPeerConnection();
+
+    // 3. Audio del servidor → speaker
+    const audioEl = document.createElement('audio');
+    audioEl.autoplay = true;
+    audioEl.id = 'voiceAudioEl';
+    document.body.appendChild(audioEl);
+    peerConnection.ontrack = e => { audioEl.srcObject = e.streams[0]; };
+
+    // 4. Micrófono del usuario → stream
+    localStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    peerConnection.addTrack(localStream.getTracks()[0]);
+
+    // 5. Data channel para eventos
+    dataChannel = peerConnection.createDataChannel('oai-events');
+    dataChannel.onmessage = handleVoiceEvent;
+
+    // 6. Crear offer
+    const offer = await peerConnection.createOffer();
+    await peerConnection.setLocalDescription(offer);
+
+    // 7. Enviar offer a OpenAI Realtime
+    const sdpRes = await fetch('https://api.openai.com/v1/realtime?model=gpt-4o-mini-realtime-preview', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenData.token}`,
+        'Content-Type': 'application/sdp'
+      },
+      body: offer.sdp
+    });
+    const answerSdp = await sdpRes.text();
+    await peerConnection.setRemoteDescription({ type: 'answer', sdp: answerSdp });
+
+    document.getElementById('voiceStatus').textContent = '🟢 Escuchando...';
+    voiceSession = { active: true };
+  } catch (e) {
+    document.getElementById('voiceStatus').textContent = '❌ ' + e.message;
+    setTimeout(() => { if (!voiceSession?.active) endVoiceMode(); }, 3000);
+  }
+}
+
+function handleVoiceEvent(e) {
+  try {
+    const event = JSON.parse(e.data);
+    if (event.type === 'input_audio_buffer.speech_started') {
+      document.getElementById('voiceStatus').textContent = '👂 Escuchando...';
+      document.getElementById('voiceAvatar').style.boxShadow = '0 0 0 20px rgba(99,102,241,0.3)';
+    }
+    if (event.type === 'input_audio_buffer.speech_stopped') {
+      document.getElementById('voiceStatus').textContent = '🤔 Pensando...';
+      document.getElementById('voiceAvatar').style.boxShadow = '0 0 0 0 rgba(99,102,241,0)';
+    }
+    if (event.type === 'response.audio_transcript.delta') {
+      document.getElementById('voiceTranscript').textContent += event.delta;
+    }
+    if (event.type === 'response.audio_transcript.done') {
+      document.getElementById('voiceStatus').textContent = '🟢 Escuchando...';
+      const transcript = event.transcript;
+      if (transcript) {
+        chatHistory.push({ role: 'assistant', content: transcript });
+        renderTutorMsg(transcript);
+        document.getElementById('voiceTranscript').textContent = '';
+      }
+    }
+    if (event.type === 'conversation.item.input_audio_transcription.completed') {
+      const userText = event.transcript;
+      if (userText) {
+        chatHistory.push({ role: 'user', content: userText });
+      }
+    }
+  } catch { /* ignore JSON parse errors */ }
+}
+
+function toggleMute() {
+  if (!localStream) return;
+  isMuted = !isMuted;
+  localStream.getAudioTracks().forEach(t => t.enabled = !isMuted);
+  document.getElementById('muteBtn').textContent = isMuted ? '🔇' : '🎤';
+  document.getElementById('voiceStatus').textContent = isMuted ? '🔇 Silenciado' : '🟢 Escuchando...';
+}
+
+function endVoiceMode() {
+  if (peerConnection) { peerConnection.close(); peerConnection = null; }
+  if (localStream) { localStream.getTracks().forEach(t => t.stop()); localStream = null; }
+  const audioEl = document.getElementById('voiceAudioEl');
+  if (audioEl) audioEl.remove();
+  document.getElementById('voicePanel').style.display = 'none';
+  document.getElementById('voiceTranscript').textContent = '';
+  voiceSession = null;
+  isMuted = false;
+  document.getElementById('muteBtn').textContent = '🎤';
+  saveSession();
 }
 
 // ── Store functions ────────────────────────────────────────
