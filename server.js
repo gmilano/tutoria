@@ -18,6 +18,15 @@ app.use('/demo/img',   express.static(join(__dirname, 'demo/img')));
 app.use('/pitch',      express.static(join(__dirname, 'pitch')));
 app.use(express.static(__dirname)); // index.html, etc.
 
+// ── /api/verify-code — access gate ───────────────────────
+app.post('/api/verify-code', (req, res) => {
+  const { code } = req.body;
+  const expected = process.env.ACCESS_CODE;
+  if (!expected) return res.json({ ok: true }); // no code required
+  if (code === expected) return res.json({ ok: true });
+  res.status(401).json({ ok: false, error: 'Código incorrecto' });
+});
+
 // ── /api/models — what's available ───────────────────────
 app.get('/api/models', async (req, res) => {
   const models = [];
