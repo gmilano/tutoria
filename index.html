@@ -707,25 +707,42 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
     </div>
     <div class="settings-panel" id="settingsPanel">
       <h4>⚙️ Configuración del tutor</h4>
-      <div class="settings-field">
+      <!-- Aviso modo demo (solo GitHub Pages) -->
+      <div id="demoNotice" style="display:none;background:var(--indigo-bg);border:1px solid #c7d2fe;border-radius:8px;padding:10px;margin-bottom:12px;font-size:12px;color:var(--text2);line-height:1.6">
+        <div style="font-weight:700;color:var(--indigo);margin-bottom:4px">🎓 Modo demo</div>
+        Respuestas ilustrativas. Para IA real con claves server-side, deployá en Railway.
+        <a href="https://github.com/gmilano/tutoria" target="_blank" style="display:block;margin-top:6px;color:var(--indigo);font-weight:600">🚀 Ver instrucciones de deploy →</a>
+      </div>
+
+      <!-- Selector modelo (solo con servidor) -->
+      <div class="settings-field" id="modelField">
         <label>Modelo</label>
         <select id="modelSelect" onchange="onModelChange()" style="width:100%;padding:6px 8px;border:1.5px solid var(--border);border-radius:7px;font-size:12px;font-family:inherit;background:var(--bg);color:var(--text);outline:none;">
           <option value="auto">🤖 Auto (servidor decide)</option>
           <option value="openai">☁️ OpenAI gpt-4o-mini</option>
-          <option value="ollama:qwen2.5:14b">🏠 Local — Qwen2.5:14b (Ollama)</option>
-          <option value="ollama:deepseek-r1:8b">🏠 Local — DeepSeek-R1:8b</option>
-          <option value="ollama:qwen2.5:7b">🏠 Local — Qwen2.5:7b (rápido)</option>
+          <option value="ollama:qwen2.5:14b">🏠 Qwen2.5:14b — local ($0)</option>
+          <option value="ollama:deepseek-r1:8b">🏠 DeepSeek-R1:8b — local ($0)</option>
+          <option value="ollama:qwen2.5:7b">🏠 Qwen2.5:7b — local rápido</option>
         </select>
       </div>
+
+      <!-- Key (solo GitHub Pages sin proxy) -->
       <div class="settings-field" id="keyField">
         <label>OpenAI API Key</label>
-        <input type="password" id="apiKeyInput" placeholder="sk-..." oninput="saveApiKey()">
+        <input type="password" id="apiKeyInput" placeholder="sk-... (opcional)" oninput="saveApiKey()">
       </div>
+
       <div class="toggle-row">
-        <span>Activar tutor IA real</span>
+        <span>Tutor IA real</span>
         <button class="toggle" id="aiToggle" onclick="toggleAI()"></button>
       </div>
       <div class="settings-status" id="settingsStatus"></div>
+    </div>
+
+    <div id="demoBanner" style="display:none;padding:7px 18px;background:#fffbeb;border-bottom:1px solid #fde68a;font-size:12px;color:#92400e;display:flex;align-items:center;gap:8px;flex-shrink:0;">
+      <span>🎓 Modo demo</span>
+      <span style="color:#b45309">— Respuestas ilustrativas del tutor.</span>
+      <a href="https://github.com/gmilano/tutoria" target="_blank" style="margin-left:auto;color:#4f46e5;font-weight:600;text-decoration:none">Deploy IA real en Railway →</a>
     </div>
 
     <div class="messages" id="messages">
@@ -822,7 +839,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 
     <!-- DALL-E image -->
     <div class="res-card">
-      <img class="res-img" src="img/bastilla.png" alt="La toma de la Bastilla"
+      <img class="res-img" src="demo/img/bastilla.png" alt="La toma de la Bastilla"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="res-img-placeholder" style="display:none">
         <div class="emoji">🏰</div>
@@ -1131,12 +1148,58 @@ function addFollowUp() {
   msgs.scrollTop = msgs.scrollHeight;
 }
 
-// ── Chat ──────────────────────────────────────────────────
-const REPLIES = [
-  'El Período del Terror fue cuando Robespierre y el Comité de Salvación Pública ejecutaron a miles de "enemigos de la revolución". Paradójicamente, Robespierre mismo terminó guillotinado en el 9 Termidor (1794). La revolución se devoró a sus propios hijos.',
-  'Exacto. Esa es una de las grandes enseñanzas de la Revolución: los movimientos radicales tienden a radicalizarse hasta destruirse. ¿Querés ver cómo Napoleón aprovechó ese caos para tomar el poder?',
-  'Perfecto análisis. Napoleón llegó al poder con el golpe del 18 Brumario (1799), presentándose como el hombre fuerte que traería orden tras el caos revolucionario. Era el fin de la República y el inicio del Consulado.',
-];
+// ── Chat demo responses (por materia) ────────────────────
+const SUBJECT_REPLIES = {
+  'historia': [
+    'El Período del Terror (1793-94) fue cuando Robespierre y el Comité de Salvación Pública ejecutaron a miles de "enemigos de la revolución". Paradójicamente, Robespierre mismo terminó guillotinado en el 9 Termidor. La revolución se devoró a sus propios hijos. ¿Por qué creés que los procesos revolucionarios radicales terminan así?',
+    'Napoleón llegó al poder con el golpe del 18 Brumario (1799), presentándose como el hombre fuerte que traería orden. Era el fin de la República y el inicio del Consulado. Su genio fue combinar los ideales revolucionarios (Código Napoleónico) con el poder autoritario. ¿Qué diferencia hay entre un reformador y un dictador?',
+    'El Congreso de Viena (1815) intentó restaurar el orden anterior a la Revolución. Las potencias ganadoras dividieron Europa según el principio de legitimidad dinástica. Pero era imposible borrar 25 años de cambios: las ideas de libertad e igualdad ya no podían contenerse. ¿Qué dejó la Revolución que ningún congreso pudo deshacer?',
+    'Artigas fue el gran articulador de la resistencia oriental y el proyecto federal rioplatense. Su Liga Federal fue la primera propuesta de integración regional con equidad entre los pueblos. Fue derrotado por la traición de Buenos Aires y la invasión portuguesa, no por sus ideas. ¿Cuál fue su mayor aporte al pensamiento político latinoamericano?',
+  ],
+  'matematica': [
+    'Excelente aproximación. El concepto de límite es la base de todo el cálculo: nos permite hablar de lo que "tiende a pasar" sin necesidad de llegar. La indeterminación 0/0 no significa que no exista valor, sino que hay que trabajar algebraicamente para encontrarlo. ¿Podés intentar factorizar el numerador para resolver la indeterminación?',
+    'Perfecto. La derivada mide la tasa instantánea de cambio. Geométricamente, es la pendiente de la recta tangente en ese punto. En economía la usan para encontrar máximos de ganancia; en física, para velocidad instantánea. ¿Qué significa que la derivada valga cero en un punto?',
+    'Muy bien. La integral es el proceso inverso a la derivada (Teorema Fundamental del Cálculo). Geométricamente representa el área bajo la curva. Newton y Leibniz la descubrieron independientemente en el siglo XVII — uno de los grandes debates de la historia de las matemáticas. ¿Podés aplicar la regla de sustitución para resolver esta integral?',
+  ],
+  'biologia': [
+    'Perfecto. La mitosis produce dos células hijas genéticamente idénticas a la madre — es el proceso de crecimiento y reparación. La meiosis produce cuatro células con la mitad del material genético — exclusiva de la reproducción sexual. Esta reducción es lo que permite que, al fecundarse dos gametos, se restaure el número cromosómico de la especie. ¿Por qué la variabilidad genética que produce la meiosis es ventajosa para la especie?',
+    'Excelente. Darwin observó que las variaciones hereditarias que aumentan la probabilidad de supervivencia y reproducción se transmiten más frecuentemente. No es "el más fuerte" sino el más adaptado al entorno en ese momento. El ambiente cambia, y lo que hoy es ventajoso mañana puede no serlo. ¿Cómo explicarías la resistencia bacteriana a los antibióticos desde la selección natural?',
+    'Muy bien. CRISPR-Cas9 funciona como tijeras moleculares guiadas: el ARN guía lleva a la proteína Cas9 exactamente hasta la secuencia de ADN que queremos cortar. Después podemos eliminar un gen, corregirlo o insertar uno nuevo. Las aplicaciones médicas son enormes, pero los debates éticos también. ¿Cuál creés que debería ser el límite ético de la edición genética?',
+  ],
+  'fisica': [
+    'Bien planteado. La Segunda Ley de Newton (F=ma) nos dice que una fuerza neta sobre un objeto produce aceleración proporcional. Si aumentás la fuerza, la aceleración aumenta. Si aumentás la masa, la aceleración disminuye. Es la ley más útil de la mecánica clásica. ¿Podés aplicarla para calcular la aceleración de un objeto de 5 kg con una fuerza de 20 N?',
+    'E=mc² es posiblemente la ecuación más famosa de la ciencia. Nos dice que masa y energía son equivalentes, intercambiables. La pequeña cantidad de masa que se "pierde" en una reacción nuclear libera una cantidad enorme de energía (c² ≈ 9×10¹⁶ m²/s²). Es la base de la energía nuclear y las estrellas. ¿Por qué creés que Einstein tardó años en aceptar sus propias implicaciones?',
+  ],
+  'quimica': [
+    'Muy bien. El modelo de Bohr fue revolucionario: los electrones solo pueden estar en órbitas con energías específicas (cuantizadas). Cuando "saltan" a una órbita de menor energía, emiten un fotón con exactamente esa diferencia de energía. Eso explica el espectro de líneas del hidrógeno. ¿Por qué este modelo se quedó corto para explicar átomos con más de un electrón?',
+    'El pH mide la concentración de iones H⁺ en solución: pH = -log[H⁺]. Escala de 0 a 14: ácido (<7), neutro (=7), básico (>7). El estómago tiene pH ~1-2 (muy ácido), la sangre ~7.4 (levemente básico — si se altera, es peligroso). ¿Por qué los antiácidos alivian la acidez estomacal desde el punto de vista químico?',
+  ],
+  'economia': [
+    'Perfecto. En el equilibrio de mercado, la cantidad demandada iguala a la ofrecida. Si el precio sube por encima del equilibrio, hay superávit (sobra oferta). Si baja, hay escasez (falta oferta). El precio actúa como señal que coordina las decisiones de millones de personas sin ningún coordinador central — eso es lo que Adam Smith llamó "la mano invisible". ¿Pensás que el mercado siempre llega solo al equilibrio?',
+    'El PBI mide el valor total de bienes y servicios finales producidos en un país en un período. El PBI real descuenta la inflación, mostrando el crecimiento verdadero. Uruguay tiene un PBI per cápita alto para la región (~USD 18.000), pero con distribución desigual. ¿Qué limitaciones tiene el PBI como medida de bienestar?',
+  ],
+  'informatica': [
+    'Muy bien. Un algoritmo es una secuencia finita de pasos bien definidos para resolver un problema. La clave es "bien definido": sin ambigüedades, ejecutable mecánicamente. Un algoritmo puede ser ineficiente (lento) aunque correcto. La ciencia de la computación estudia cómo resolver problemas de forma eficiente. ¿Podés describir en pasos el algoritmo para hacer un mate?',
+    'Python es un lenguaje de alto nivel: muy cercano al lenguaje humano, fácil de leer. JavaScript es el lenguaje de la web. Ambos son interpretados (se ejecutan línea a línea). La variable es el concepto más fundamental: un nombre que referencia un valor en memoria. ¿Podés decirme qué va a imprimir este código: x=5; y=x*2; print(y)?',
+  ],
+  'lengua': [
+    'Excelente observación. El modernismo latinoamericano (Rubén Darío, Herrera y Reissig) fue la primera gran revolución literaria autóctona: rompió con el español académico, tomó musicalidad del simbolismo francés y afirmó la identidad latinoamericana frente a España. Rodó en "Ariel" planteó el gran debate: espiritualismo latinoamericano vs. materialismo anglosajón. ¿Qué posición tomarías vos en ese debate hoy?',
+    'García Márquez en "Cien años de soledad" mezcló lo maravilloso con lo cotidiano de tal forma que resulta imposible separarlos — eso es el realismo mágico. No es fantasía pura, sino la visión de una cultura donde lo sobrenatural tiene lugar en la vida diaria. Benedetti, en cambio, apostó por la cotidianeidad urbana y el compromiso político. ¿Qué estrategia te parece más honesta literariamente?',
+  ],
+  'default': [
+    'Muy buena pregunta. En la enseñanza universitaria clásica hay un dicho: "La mejor forma de aprender algo es tener que explicárselo a alguien más". Al formular tu pregunta ya demostraste comprensión del tema. ¿Podés desarrollar tu idea un poco más?',
+    'Perfecto análisis. Estás conectando conceptos de forma muy natural — eso es exactamente lo que busca el aprendizaje profundo (vs. memorización superficial). Te hago una pregunta para ir más lejos: ¿cómo relacionarías esto con lo que vimos en la unidad anterior?',
+    'Excelente. Hay muchas perspectivas válidas sobre esto. Lo importante es que podás fundamentar tu posición con evidencia y razonamiento. ¿Cuál creés que sería el contraargumento más fuerte a tu postura?',
+  ]
+};
+
+function getDemoReply() {
+  const subjectId = currentSubject?.id || '';
+  const key = Object.keys(SUBJECT_REPLIES).find(k => subjectId.includes(k)) || 'default';
+  const replies = SUBJECT_REPLIES[key];
+  return replies[ri++ % replies.length];
+}
+
 let ri = 0;
 const now = () => new Date().toLocaleTimeString('es',{hour:'2-digit',minute:'2-digit'});
 
@@ -1146,7 +1209,7 @@ let currentTopic = 'Revolución Francesa (1789)';
 
 async function loadSubject(subjectId) {
   try {
-    const resp = await fetch('../curriculum/anep-bachillerato-completo.json');
+    const resp = await fetch('curriculum/anep-bachillerato-completo.json');
     const data = await resp.json();
     const subj = data.materias.find(m => m.id === subjectId);
     if (!subj) return;
@@ -1278,7 +1341,7 @@ function toggleAI() {
   aiActive = !aiActive;
   toggle.classList.toggle('on', aiActive);
   if (aiActive) {
-    if (!selectedModel.startsWith('ollama') && !USE_PROXY && !apiKey) {
+    if (!selectedModel.startsWith('ollama:') && !USE_PROXY && !apiKey) {
       status.className = 'settings-status err';
       status.textContent = '⚠️ Ingresá tu API Key de OpenAI primero';
       aiActive = false;
@@ -1286,8 +1349,8 @@ function toggleAI() {
       return;
     }
     status.className = 'settings-status ok';
-    const modelLabel = selectedModel.startsWith('ollama')
-      ? `🏠 ${OLLAMA_MODELS[selectedModel]?.name} (local, $0)`
+    const modelLabel = selectedModel.startsWith('ollama:')
+      ? `🏠 ${selectedModel.replace('ollama:','')} (local, $0)`
       : USE_PROXY ? '☁️ servidor' : '☁️ gpt-4o-mini';
     status.textContent = `✅ Tutor IA real — ${modelLabel}`;
   } else {
@@ -1296,18 +1359,31 @@ function toggleAI() {
   }
 }
 
-// Auto-activate real AI on Vercel
-if (USE_PROXY) {
-  document.addEventListener('DOMContentLoaded', () => {
+// ── Init según contexto de deployment ────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle      = document.getElementById('aiToggle');
+  const status      = document.getElementById('settingsStatus');
+  const modelField  = document.getElementById('modelField');
+  const keyField    = document.getElementById('keyField');
+  const demoNotice  = document.getElementById('demoNotice');
+  const banner      = document.getElementById('demoBanner');
+
+  if (USE_PROXY) {
+    // Servidor local / Railway / Vercel — IA real disponible, claves server-side
+    if (keyField)   keyField.style.display   = 'none';   // no mostrar key
+    if (demoNotice) demoNotice.style.display = 'none';
     aiActive = true;
-    const toggle = document.getElementById('aiToggle');
-    const status = document.getElementById('settingsStatus');
-    const keyField = document.querySelector('.settings-field');
     if (toggle) toggle.classList.add('on');
     if (status) { status.className = 'settings-status ok'; status.textContent = '✅ Tutor IA real activo'; }
-    if (keyField) keyField.style.display = 'none'; // hide key input on proxy
-  });
-}
+  } else {
+    // GitHub Pages — modo demo, sin servidor
+    if (modelField) modelField.style.display = 'none';   // no mostrar selector modelo
+    if (demoNotice) demoNotice.style.display = 'block';
+    if (banner)     banner.style.display     = 'flex';
+    if (status)     status.textContent       = '🎓 Modo demo — respuestas ilustrativas';
+    // aiActive = false → sendMsg usa getDemoReply()
+  }
+});
 
 function escapeHtml(text) {
   const d = document.createElement('div');
@@ -1407,7 +1483,7 @@ function sendMsg() {
       typ.remove();
       const rm = document.createElement('div');
       rm.className = 'msg tutor';
-      rm.innerHTML = `<div class="avatar">🤖</div><div><div class="bubble">${REPLIES[ri++ % REPLIES.length]}</div><div class="timestamp">${now()}</div></div>`;
+      rm.innerHTML = `<div class="avatar">🤖</div><div><div class="bubble">${getDemoReply()}</div><div class="timestamp">${now()}</div></div>`;
       msgs.appendChild(rm);
       msgs.scrollTop = msgs.scrollHeight;
       const status = document.getElementById('settingsStatus');
@@ -1421,7 +1497,7 @@ function sendMsg() {
       typ.remove();
       const rm = document.createElement('div');
       rm.className = 'msg tutor';
-      rm.innerHTML = `<div class="avatar">🤖</div><div><div class="bubble">${REPLIES[ri++ % REPLIES.length]}</div><div class="timestamp">${now()}</div></div>`;
+      rm.innerHTML = `<div class="avatar">🤖</div><div><div class="bubble">${getDemoReply()}</div><div class="timestamp">${now()}</div></div>`;
       msgs.appendChild(rm);
       msgs.scrollTop = msgs.scrollHeight;
     }, 1000 + Math.random() * 800);
