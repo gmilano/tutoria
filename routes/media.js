@@ -83,37 +83,31 @@ router.post('/image', requireAuth, async (req, res) => {
   }
 });
 
-// ── POST /api/media/video — Sora 2 (async) ───────────────
+// ── POST /api/media/video — Sora 2 ───────────────────────
+// Endpoint correcto: POST /v1/videos con {model, prompt} solo
 router.post('/video', requireAuth, async (req, res) => {
-  const { subject, topic, duration = 5 } = req.body;
+  const { subject, topic } = req.body;
   if (!OPENAI_API_KEY) return res.status(500).json({ error: 'Sin API key' });
 
-  const prompt = `Short educational video about "${topic}" for ${subject} class. Clear, engaging, educational content for Uruguayan high school students. Duration: ${duration} seconds.`;
+  const prompt = `Short educational video about "${topic}" for ${subject} class in Uruguay. Visual, engaging, pedagogically rich. No text overlays.`;
 
   try {
-    const r = await fetch('https://api.openai.com/v1/videos/generations', {
+    const r = await fetch('https://api.openai.com/v1/videos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${OPENAI_API_KEY}`
       },
-      body: JSON.stringify({
-        model: 'sora',
-        prompt,
-        size: '1280x720',
-        duration,
-        n: 1
-      })
+      body: JSON.stringify({ model: 'sora-2', prompt })
     });
 
     if (!r.ok) {
       const err = await r.json();
-      return res.status(r.status).json({ error: err.error?.message || 'Sora error', status: r.status });
+      return res.status(r.status).json({ error: err.error?.message || 'Sora error' });
     }
 
     const d = await r.json();
-    // Sora returns a job ID — client polls /api/media/video/:id
-    res.json({ jobId: d.id, status: d.status || 'queued' });
+    res.json({ jobId: d.id, status: d.status, progress: d.progress || 0, seconds: d.seconds });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -124,7 +118,7 @@ router.get('/video/:jobId', requireAuth, async (req, res) => {
   if (!OPENAI_API_KEY) return res.status(500).json({ error: 'Sin API key' });
 
   try {
-    const r = await fetch(`https://api.openai.com/v1/videos/generations/${req.params.jobId}`, {
+    const r = await fetch(`https://api.openai.com/v1/videos/${req.params.jobId}`, {
       headers: { 'Authorization': `Bearer ${OPENAI_API_KEY}` }
     });
 
@@ -134,11 +128,14 @@ router.get('/video/:jobId', requireAuth, async (req, res) => {
     }
 
     const d = await r.json();
+    // When completed: status='completed', d.url or d.content[0].url has the video
+    const url = d.url || d.content?.[0]?.url || d.data?.[0]?.url;
     res.json({
       jobId: d.id,
-      status: d.status,         // 'queued' | 'processing' | 'completed' | 'failed'
-      url: d.data?.[0]?.url,    // available when completed
-      progress: d.progress || 0
+      status: d.status,       // 'queued' | 'processing' | 'completed' | 'failed'
+      url,
+      progress: d.progress || 0,
+      seconds: d.seconds
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
