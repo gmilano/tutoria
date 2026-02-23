@@ -1,0 +1,513 @@
+{
+  "version": "2024",
+  "sistema": "ANEP/CES — Uruguay",
+  "descripcion": "Programa completo bachillerato uruguayo 4°, 5° y 6° año, todas las orientaciones",
+
+  "orientaciones": [
+    { "id": "comun",     "nombre": "4° año (Común a todas)",    "color": "#4f46e5" },
+    { "id": "bio",       "nombre": "Ciencias Biológicas",        "color": "#10b981" },
+    { "id": "fis-mat",   "nombre": "Ciencias Físico-Matemáticas","color": "#0ea5e9" },
+    { "id": "eco",       "nombre": "Ciencias Económicas",        "color": "#f59e0b" },
+    { "id": "social-hum","nombre": "Ciencias Sociales y Humanidades","color": "#8b5cf6" },
+    { "id": "arte",      "nombre": "Arte",                       "color": "#ec4899" },
+    { "id": "tecnologia","nombre": "Tecnología",                 "color": "#14b8a6" }
+  ],
+
+  "materias": [
+
+    {
+      "id": "matematica-4",
+      "nombre": "Matemática",
+      "año": "4°", "orientacion": "comun", "emoji": "📐", "color": "#0ea5e9",
+      "descripcion": "Álgebra, geometría analítica, funciones y cálculo introductorio",
+      "unidades": [
+        {
+          "id": "u1", "titulo": "Lógica y Conjuntos",
+          "temas": [
+            { "titulo": "Proposiciones y conectivos lógicos", "conceptosClave": ["conjunción","disyunción","negación","implicación","bicondicional"], "quiz": [
+              { "pregunta": "¿Qué conectivo representa 'y'?", "opciones": ["Disyunción","Conjunción","Negación","Implicación"], "correcta": 1, "explicacion": "La conjunción (∧) representa 'y' y es verdadera solo si ambos operandos son verdaderos." }
+            ]},
+            { "titulo": "Teoría de conjuntos", "conceptosClave": ["unión","intersección","complemento","diferencia","producto cartesiano"], "quiz": [
+              { "pregunta": "Si A={1,2,3} y B={2,3,4}, ¿cuál es A∩B?", "opciones": ["{1,2,3,4}","{2,3}","{1,4}","{1,2,3}"], "correcta": 1, "explicacion": "La intersección contiene los elementos comunes a ambos conjuntos: 2 y 3." }
+            ]}
+          ]
+        },
+        {
+          "id": "u2", "titulo": "Números Reales y Complejos",
+          "temas": [
+            { "titulo": "Números reales: propiedades y operaciones", "conceptosClave": ["racionales","irracionales","valor absoluto","intervalos","densidad"], "quiz": [] },
+            { "titulo": "Números complejos", "conceptosClave": ["parte real","parte imaginaria","módulo","argumento","forma polar"], "quiz": [
+              { "pregunta": "¿Cuánto es i² ?", "opciones": ["1","-1","i","-i"], "correcta": 1, "explicacion": "Por definición, i² = -1. Esta es la propiedad fundamental de la unidad imaginaria." }
+            ]}
+          ]
+        },
+        {
+          "id": "u3", "titulo": "Álgebra y Polinomios",
+          "temas": [
+            { "titulo": "Polinomios: operaciones y factorización", "conceptosClave": ["grado","raíces","teorema del resto","factorización","divisibilidad"], "quiz": [] },
+            { "titulo": "Ecuaciones e inecuaciones", "conceptosClave": ["ecuación de 2° grado","discriminante","fórmula cuadrática","inecuaciones lineales"], "quiz": [
+              { "pregunta": "¿Qué indica el discriminante (Δ) en una ecuación cuadrática?", "opciones": ["El valor de las raíces","La naturaleza de las raíces","El vértice de la parábola","El eje de simetría"], "correcta": 1, "explicacion": "Δ>0: dos raíces reales distintas; Δ=0: raíz doble; Δ<0: raíces complejas." }
+            ]}
+          ]
+        },
+        {
+          "id": "u4", "titulo": "Funciones",
+          "temas": [
+            { "titulo": "Concepto y propiedades de función", "conceptosClave": ["dominio","codominio","imagen","inyectiva","sobreyectiva","biyectiva"], "quiz": [] },
+            { "titulo": "Funciones elementales: lineal, cuadrática, exponencial, logarítmica", "conceptosClave": ["pendiente","vértice","asíntota","crecimiento exponencial"], "quiz": [] },
+            { "titulo": "Funciones trigonométricas", "conceptosClave": ["seno","coseno","tangente","período","amplitud","identidades"], "quiz": [] }
+          ]
+        },
+        {
+          "id": "u5", "titulo": "Geometría Analítica",
+          "temas": [
+            { "titulo": "Recta en el plano", "conceptosClave": ["pendiente","intercepto","paralelismo","perpendicularidad"], "quiz": [] },
+            { "titulo": "Cónicas: circunferencia, elipse, parábola, hipérbola", "conceptosClave": ["foco","directriz","excentricidad","vértice"], "quiz": [] }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "lengua-4",
+      "nombre": "Lengua Española y Literatura",
+      "año": "4°", "orientacion": "comun", "emoji": "📚", "color": "#8b5cf6",
+      "descripcion": "Lengua, comunicación y literatura hispanoamericana",
+      "unidades": [
+        {
+          "id": "u1", "titulo": "Comunicación y Lenguaje",
+          "temas": [
+            { "titulo": "El signo lingüístico y el lenguaje", "conceptosClave": ["significado","significante","arbitrariedad","linealidad"], "quiz": [] },
+            { "titulo": "Variedades de la lengua", "conceptosClave": ["dialecto","sociolecto","registro","jerga","variación diacrónica"], "quiz": [] }
+          ]
+        },
+        {
+          "id": "u2", "titulo": "Morfosintaxis",
+          "temas": [
+            { "titulo": "El sustantivo y el adjetivo", "conceptosClave": ["género","número","caso","concordancia"], "quiz": [] },
+            { "titulo": "El verbo: modos y tiempos", "conceptosClave": ["indicativo","subjuntivo","imperativo","aspecto","perífrasis"], "quiz": [] },
+            { "titulo": "La oración: estructura y análisis sintáctico", "conceptosClave": ["sujeto","predicado","complemento directo","indirecto","circunstancial"], "quiz": [] }
+          ]
+        },
+        {
+          "id": "u3", "titulo": "Literatura Hispanoamericana",
+          "temas": [
+            { "titulo": "Modernismo: Rubén Darío y el Río de la Plata", "conceptosClave": ["estética","simbolismo","parnasianismo","José Enrique Rodó"], "quiz": [
+              { "pregunta": "¿Quién escribió 'Ariel' (1900), obra fundamental del pensamiento latinoamericano?", "opciones": ["Rubén Darío","José Enrique Rodó","Horacio Quiroga","Julio Herrera y Reissig"], "correcta": 1, "explicacion": "José Enrique Rodó, escritor uruguayo, escribió Ariel como un llamado a la juventud latinoamericana a defender sus valores espirituales frente al materialismo." }
+            ]},
+            { "titulo": "Boom latinoamericano", "conceptosClave": ["realismo mágico","García Márquez","Cortázar","Vargas Llosa","Onetti"], "quiz": [] },
+            { "titulo": "Literatura uruguaya: Benedetti, Galeano", "conceptosClave": ["poesía social","testimonio","compromiso político","identidad"], "quiz": [] }
+          ]
+        },
+        {
+          "id": "u4", "titulo": "Textos y Discursos",
+          "temas": [
+            { "titulo": "Géneros periodísticos: noticia, crónica, editorial", "conceptosClave": ["objetividad","pirámide invertida","opinión","argumentación"], "quiz": [] },
+            { "titulo": "El ensayo argumentativo", "conceptosClave": ["tesis","argumentos","contraargumentación","conclusión"], "quiz": [] }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "historia-4",
+      "nombre": "Historia",
+      "año": "4°", "orientacion": "comun", "emoji": "🏰", "color": "#ef4444",
+      "descripcion": "Historia universal del mundo moderno y contemporáneo",
+      "unidades": [
+        { "id": "u1", "titulo": "El Mundo Moderno", "temas": [
+          { "titulo": "Renacimiento y Humanismo", "conceptosClave": ["antropocentrismo","perspectiva","imprenta","humanismo"], "quiz": [] },
+          { "titulo": "Reformas Religiosas", "conceptosClave": ["Lutero","Calvino","Iglesia Anglicana","Contrarreforma","Concilio de Trento"], "quiz": [] },
+          { "titulo": "Expansión Europea y colonialismo", "conceptosClave": ["Conquista de América","encomienda","mestizaje","resistencia indígena"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Las Revoluciones", "temas": [
+          { "titulo": "La Ilustración", "conceptosClave": ["razón","enciclopedia","contrato social","Montesquieu","Voltaire","Rousseau"], "quiz": [
+            { "pregunta": "¿Quién formuló la teoría de la separación de poderes en 'El espíritu de las leyes'?", "opciones": ["Rousseau","Voltaire","Montesquieu","Locke"], "correcta": 2, "explicacion": "Montesquieu propuso dividir el poder en ejecutivo, legislativo y judicial para evitar el absolutismo." }
+          ]},
+          { "titulo": "Revolución Francesa (1789)", "conceptosClave": ["Bastilla","Tercer Estado","Declaración de Derechos","Terror","Directorio"], "quiz": [
+            { "pregunta": "¿Qué fecha se considera inicio de la Revolución Francesa?", "opciones": ["14 de julio de 1789","4 de agosto de 1789","26 de agosto de 1789","21 de enero de 1793"], "correcta": 0, "explicacion": "El 14 de julio de 1789, la toma de la Bastilla simbolizó el inicio de la Revolución. Hoy es el feriado nacional de Francia." }
+          ]},
+          { "titulo": "El ciclo revolucionario: EE.UU. y América Latina", "conceptosClave": ["Independencia norteamericana","Bolívar","San Martín","Artigas"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Industrialización y Capitalismo", "temas": [
+          { "titulo": "Primera Revolución Industrial", "conceptosClave": ["máquina de vapor","proletariado","burguesía","fábrica","urbanización"], "quiz": [] },
+          { "titulo": "Movimiento obrero y socialismo", "conceptosClave": ["Marx","Engels","sindicatos","huelga","plusvalía","Capital"], "quiz": [] },
+          { "titulo": "Imperialismo europeo en África y Asia", "conceptosClave": ["Conferencia de Berlín","colonia","metrópoli","resistencia"], "quiz": [] }
+        ]},
+        { "id": "u4", "titulo": "Uruguay en el siglo XIX", "temas": [
+          { "titulo": "Independencia y formación del Estado", "conceptosClave": ["Artigas","Liga Federal","Provincia Oriental","Congreso de 1813"], "quiz": [] },
+          { "titulo": "Batllismo y Estado de Bienestar", "conceptosClave": ["José Batlle y Ordóñez","divorcio","voto femenino","8 horas laborales"], "quiz": [
+            { "pregunta": "¿Quién lideró las reformas que convirtieron a Uruguay en el 'primer estado de bienestar latinoamericano'?", "opciones": ["Fructuoso Rivera","José Batlle y Ordóñez","Luis Batlle Berres","Gabriel Terra"], "correcta": 1, "explicacion": "José Batlle y Ordóñez (presidente 1903-1907 y 1911-1915) impulsó la jornada de 8 horas, el divorcio, la educación laica y la separación de la Iglesia del Estado." }
+          ]}
+        ]}
+      ]
+    },
+
+    {
+      "id": "geografia-4",
+      "nombre": "Geografía",
+      "año": "4°", "orientacion": "comun", "emoji": "🌍", "color": "#10b981",
+      "descripcion": "Geografía física, humana y regional del mundo y Uruguay",
+      "unidades": [
+        { "id": "u1", "titulo": "Geografía Física", "temas": [
+          { "titulo": "Litosfera: relieve y tectónica de placas", "conceptosClave": ["placas tectónicas","sismos","volcanes","erosión","tipos de relieve"], "quiz": [] },
+          { "titulo": "Hidrosfera: océanos y aguas continentales", "conceptosClave": ["corrientes marinas","ciclo hidrológico","cuencas","acuíferos"], "quiz": [] },
+          { "titulo": "Atmósfera y clima", "conceptosClave": ["presión atmosférica","vientos","climas del mundo","cambio climático"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Geografía Humana", "temas": [
+          { "titulo": "Población mundial: distribución y dinámica", "conceptosClave": ["densidad","natalidad","mortalidad","migración","transición demográfica"], "quiz": [] },
+          { "titulo": "Urbanización: ciudades y problemas urbanos", "conceptosClave": ["megalópolis","segregación","transporte","servicios básicos"], "quiz": [] },
+          { "titulo": "Economía mundial: globalización y desigualdad", "conceptosClave": ["FMI","OMC","Norte-Sur","deuda externa","trabajo informal"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Uruguay: Territorio y Sociedad", "temas": [
+          { "titulo": "Territorio uruguayo: regiones y recursos naturales", "conceptosClave": ["cuchillas","litoral atlántico","cuenca del Plata","suelos","forestación"], "quiz": [] },
+          { "titulo": "Población uruguaya: características y tendencias", "conceptosClave": ["envejecimiento","emigración","asentamientos irregulares","Montevideo-interior"], "quiz": [] },
+          { "titulo": "Economía uruguaya: agro, industria y servicios", "conceptosClave": ["agro-exportación","turismo","UPM","ZFU","ANCAP"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "biologia-4",
+      "nombre": "Biología",
+      "año": "4°", "orientacion": "comun", "emoji": "🧬", "color": "#10b981",
+      "descripcion": "Célula, genética, evolución y ecología",
+      "unidades": [
+        { "id": "u1", "titulo": "La Célula", "temas": [
+          { "titulo": "Estructura celular: procariota y eucariota", "conceptosClave": ["membrana plasmática","núcleo","mitocondria","cloroplasto","ribosoma"], "quiz": [
+            { "pregunta": "¿Cuál es la diferencia principal entre una célula procariota y una eucariota?", "opciones": ["La presencia de mitocondrias","La presencia de núcleo definido","El tamaño celular","La presencia de membrana"], "correcta": 1, "explicacion": "Las células eucariotas tienen núcleo con envoltura nuclear que contiene el ADN. Las procariotas carecen de esta estructura definida." }
+          ]},
+          { "titulo": "División celular: mitosis y meiosis", "conceptosClave": ["interfase","profase","metafase","anafase","telofase","gametos","diploidía"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Genética", "temas": [
+          { "titulo": "Leyes de Mendel y herencia", "conceptosClave": ["genotipo","fenotipo","alelo dominante","recesivo","cuadro de Punnett"], "quiz": [
+            { "pregunta": "Si Aa × Aa, ¿qué proporción de descendientes será AA (homocigota dominante)?", "opciones": ["25%","50%","75%","100%"], "correcta": 0, "explicacion": "El cuadro de Punnett para Aa×Aa da: AA(25%), Aa(50%), aa(25%). Solo AA es homocigota dominante." }
+          ]},
+          { "titulo": "ADN, ARN y síntesis de proteínas", "conceptosClave": ["nucleótido","doble hélice","replicación","transcripción","traducción","codón"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Evolución", "temas": [
+          { "titulo": "Teoría de Darwin y selección natural", "conceptosClave": ["variación","adaptación","fitness","especiación","Galápagos"], "quiz": [] },
+          { "titulo": "Evidencias de la evolución", "conceptosClave": ["fósiles","anatomía comparada","biogeografía","filogenia","ADN"], "quiz": [] }
+        ]},
+        { "id": "u4", "titulo": "Ecología", "temas": [
+          { "titulo": "Ecosistemas y cadenas tróficas", "conceptosClave": ["productor","consumidor","descomponedor","nicho ecológico","biodiversidad"], "quiz": [] },
+          { "titulo": "Crisis ambiental y desarrollo sostenible", "conceptosClave": ["cambio climático","deforestación","ODS","economía circular","Uruguay ambiental"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "fisica-4",
+      "nombre": "Física",
+      "año": "4°", "orientacion": "comun", "emoji": "⚡", "color": "#f59e0b",
+      "descripcion": "Mecánica, termodinámica, electricidad y ondas",
+      "unidades": [
+        { "id": "u1", "titulo": "Cinemática y Dinámica", "temas": [
+          { "titulo": "Movimiento rectilíneo uniforme y uniformemente acelerado", "conceptosClave": ["velocidad","aceleración","MRU","MRUA","caída libre"], "quiz": [] },
+          { "titulo": "Leyes de Newton", "conceptosClave": ["inercia","fuerza","acción-reacción","peso","normal","fricción"], "quiz": [
+            { "pregunta": "¿Qué enuncia la Segunda Ley de Newton?", "opciones": ["Todo cuerpo permanece en reposo si no actúa una fuerza neta","F = m·a","A toda acción le corresponde una reacción igual y opuesta","La fuerza gravitacional es inversamente proporcional al cuadrado de la distancia"], "correcta": 1, "explicacion": "La Segunda Ley de Newton establece que la fuerza neta sobre un objeto es igual a su masa multiplicada por su aceleración: F=ma." }
+          ]}
+        ]},
+        { "id": "u2", "titulo": "Trabajo, Energía y Potencia", "temas": [
+          { "titulo": "Energía mecánica: cinética y potencial", "conceptosClave": ["trabajo","energía cinética","energía potencial gravitatoria","conservación de la energía"], "quiz": [] },
+          { "titulo": "Calor y termodinámica básica", "conceptosClave": ["temperatura","calor específico","dilatación","cambios de estado","leyes de la termodinámica"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Electricidad y Magnetismo", "temas": [
+          { "titulo": "Carga eléctrica y Ley de Coulomb", "conceptosClave": ["conductor","aislante","campo eléctrico","potencial eléctrico","capacitor"], "quiz": [] },
+          { "titulo": "Circuitos eléctricos", "conceptosClave": ["voltaje","intensidad","resistencia","Ley de Ohm","series y paralelo","potencia eléctrica"], "quiz": [] }
+        ]},
+        { "id": "u4", "titulo": "Ondas y Luz", "temas": [
+          { "titulo": "Ondas mecánicas: sonido", "conceptosClave": ["frecuencia","amplitud","longitud de onda","velocidad","resonancia","efecto Doppler"], "quiz": [] },
+          { "titulo": "Óptica geométrica", "conceptosClave": ["reflexión","refracción","lentes","espejos","índice de refracción"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "quimica-4",
+      "nombre": "Química",
+      "año": "4°", "orientacion": "comun", "emoji": "🧪", "color": "#ec4899",
+      "descripcion": "Química general: átomo, tabla periódica, enlace y reacciones",
+      "unidades": [
+        { "id": "u1", "titulo": "Estructura Atómica", "temas": [
+          { "titulo": "Modelos atómicos: Thomson, Rutherford, Bohr, mecánica cuántica", "conceptosClave": ["protón","neutrón","electrón","número atómico","número másico","orbital"], "quiz": [
+            { "pregunta": "¿Quién propuso el modelo atómico planetario con un núcleo denso central?", "opciones": ["Thomson","Rutherford","Bohr","Schrödinger"], "correcta": 1, "explicacion": "Rutherford, a partir del experimento del papel de oro (1911), propuso que el átomo tiene un núcleo pequeño, denso y positivo, con electrones orbitando alrededor." }
+          ]},
+          { "titulo": "Tabla periódica: propiedades y tendencias", "conceptosClave": ["período","grupo","metales","no metales","metaloides","electronegatividad","radio atómico"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Enlace Químico", "temas": [
+          { "titulo": "Enlace iónico y covalente", "conceptosClave": ["ion","catión","anión","electronegatvidad","polar","apolar","VSEPR"], "quiz": [] },
+          { "titulo": "Nomenclatura y formulación inorgánica", "conceptosClave": ["óxido","hidróxido","ácido","sal","stock","IUPAC"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Reacciones Químicas", "temas": [
+          { "titulo": "Estequiometría", "conceptosClave": ["mol","masa molar","número de Avogadro","reactivo limitante","rendimiento"], "quiz": [] },
+          { "titulo": "Velocidad de reacción y equilibrio", "conceptosClave": ["energía de activación","catalizador","equilibrio químico","Le Chatelier"], "quiz": [] },
+          { "titulo": "Ácidos, bases y sales", "conceptosClave": ["pH","indicadores","neutralización","buffer","Brønsted-Lowry"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "ingles-4",
+      "nombre": "Inglés",
+      "año": "4°", "orientacion": "comun", "emoji": "🇬🇧", "color": "#14b8a6",
+      "descripcion": "Inglés nivel B1-B2: gramática, comprensión y producción",
+      "unidades": [
+        { "id": "u1", "titulo": "Gramática Avanzada", "temas": [
+          { "titulo": "Tiempos verbales: perfect tenses y conditionals", "conceptosClave": ["present perfect","past perfect","future perfect","zero/first/second/third conditional"], "quiz": [
+            { "pregunta": "Which sentence uses the Second Conditional correctly?", "opciones": ["If it rains, I will stay home","If I were rich, I would travel the world","If he had studied, he would have passed","I wish I had more time"], "correcta": 1, "explicacion": "The Second Conditional (If + past simple, would + infinitive) expresses hypothetical present/future situations that are unlikely or imaginary." }
+          ]},
+          { "titulo": "Pasiva y reported speech", "conceptosClave": ["passive voice","agent","reported speech","say/tell","backshift"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Comprensión y Producción", "temas": [
+          { "titulo": "Reading: textos académicos y literarios", "conceptosClave": ["skimming","scanning","inference","cohesion","coherence"], "quiz": [] },
+          { "titulo": "Writing: essay structure and argumentation", "conceptosClave": ["thesis statement","topic sentence","evidence","conclusion","linkers"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "informatica-4",
+      "nombre": "Informática",
+      "año": "4°", "orientacion": "comun", "emoji": "💻", "color": "#6366f1",
+      "descripcion": "Fundamentos de computación, redes, programación y seguridad digital",
+      "unidades": [
+        { "id": "u1", "titulo": "Hardware y Software", "temas": [
+          { "titulo": "Arquitectura de computadoras: von Neumann", "conceptosClave": ["CPU","RAM","ROM","bus","periféricos","ALU","unidad de control"], "quiz": [] },
+          { "titulo": "Sistemas operativos", "conceptosClave": ["kernel","proceso","memoria virtual","sistema de archivos","Linux","Windows"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Redes e Internet", "temas": [
+          { "titulo": "Redes: conceptos y protocolos", "conceptosClave": ["TCP/IP","DNS","HTTP","router","switch","topología","WiFi"], "quiz": [] },
+          { "titulo": "Seguridad informática", "conceptosClave": ["malware","phishing","cifrado","VPN","contraseñas seguras","HTTPS"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Programación", "temas": [
+          { "titulo": "Algoritmos y pensamiento computacional", "conceptosClave": ["pseudocódigo","diagrama de flujo","secuencia","condición","bucle"], "quiz": [
+            { "pregunta": "¿Qué estructura de control permite repetir instrucciones mientras se cumpla una condición?", "opciones": ["Secuencia","Selección (if)","Iteración (loop)","Función"], "correcta": 2, "explicacion": "La iteración (bucle/loop) repite un bloque de código mientras la condición sea verdadera. Existen while, for, do-while según el lenguaje." }
+          ]},
+          { "titulo": "Programación en Python/JavaScript: variables, funciones", "conceptosClave": ["variable","tipo de dato","función","parámetro","retorno","depuración"], "quiz": [] }
+        ]},
+        { "id": "u4", "titulo": "Ciudadanía Digital", "temas": [
+          { "titulo": "Derechos digitales y privacidad", "conceptosClave": ["datos personales","GDPR","propiedad intelectual","licencias Creative Commons"], "quiz": [] },
+          { "titulo": "Inteligencia Artificial: conceptos básicos", "conceptosClave": ["machine learning","deep learning","sesgo algorítmico","ética de la IA","chatbots"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "matematica-5-fis-mat",
+      "nombre": "Matemática",
+      "año": "5°", "orientacion": "fis-mat", "emoji": "📐", "color": "#0ea5e9",
+      "descripcion": "Cálculo diferencial e integral, álgebra lineal",
+      "unidades": [
+        { "id": "u1", "titulo": "Límites y Continuidad", "temas": [
+          { "titulo": "Límite de una función: definición y propiedades", "conceptosClave": ["límite lateral","límite al infinito","indeterminación","regla de L'Hôpital"], "quiz": [] },
+          { "titulo": "Continuidad y discontinuidades", "conceptosClave": ["discontinuidad evitable","esencial","de salto","teorema del valor intermedio"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Derivadas", "temas": [
+          { "titulo": "Derivada: definición y reglas de derivación", "conceptosClave": ["tasa de cambio","derivada de potencias","regla de la cadena","derivada compuesta"], "quiz": [] },
+          { "titulo": "Aplicaciones de la derivada", "conceptosClave": ["máximos y mínimos","recta tangente","concavidad","inflexión","optimización"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Integrales", "temas": [
+          { "titulo": "Integral indefinida: técnicas de integración", "conceptosClave": ["primitiva","integración directa","sustitución","partes","fracciones parciales"], "quiz": [] },
+          { "titulo": "Integral definida: Teorema Fundamental del Cálculo", "conceptosClave": ["área bajo la curva","Riemann","volumen de revolución","trabajo"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "fisica-5-fis-mat",
+      "nombre": "Física",
+      "año": "5°", "orientacion": "fis-mat", "emoji": "⚡", "color": "#f59e0b",
+      "descripcion": "Física moderna, relatividad, quantum y electromagnetismo avanzado",
+      "unidades": [
+        { "id": "u1", "titulo": "Electromagnetismo", "temas": [
+          { "titulo": "Campo magnético y Ley de Faraday", "conceptosClave": ["fuerza de Lorentz","inducción magnética","flujo","FEM inducida"], "quiz": [] },
+          { "titulo": "Corriente alterna y oscilaciones LC", "conceptosClave": ["reactancia","impedancia","resonancia","transformador","potencia reactiva"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Física Moderna", "temas": [
+          { "titulo": "Relatividad especial de Einstein", "conceptosClave": ["dilatación temporal","contracción de Lorentz","E=mc²","invariancia de la velocidad de la luz"], "quiz": [
+            { "pregunta": "¿Qué expresa la ecuación E = mc²?", "opciones": ["La velocidad de la luz en el vacío","La equivalencia entre masa y energía","La ley de gravitación universal","La energía cinética de un fotón"], "correcta": 1, "explicacion": "E=mc² establece que la masa en reposo (m) puede convertirse en energía (E) y viceversa. c es la velocidad de la luz, ~3×10⁸ m/s." }
+          ]},
+          { "titulo": "Física cuántica: efecto fotoeléctrico, dualidad onda-partícula", "conceptosClave": ["fotón","cuanto de energía","principio de incertidumbre de Heisenberg","función de onda"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "quimica-5-bio",
+      "nombre": "Química",
+      "año": "5°", "orientacion": "bio", "emoji": "🧪", "color": "#ec4899",
+      "descripcion": "Química orgánica: hidrocarburos, biomoléculas y reacciones orgánicas",
+      "unidades": [
+        { "id": "u1", "titulo": "Química Orgánica Básica", "temas": [
+          { "titulo": "Hidrocarburos: alcanos, alquenos, alquinos y aromáticos", "conceptosClave": ["cadena carbonada","isómero","IUPAC orgánica","benceno","resonancia"], "quiz": [] },
+          { "titulo": "Grupos funcionales: alcohol, éter, aldehído, cetona, ácido carboxílico", "conceptosClave": ["oxidación","reducción","esterificación","saponificación"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Bioquímica", "temas": [
+          { "titulo": "Carbohidratos: monosacáridos, disacáridos, polisacáridos", "conceptosClave": ["glucosa","fructosa","sacarosa","almidón","celulosa","glucólisis"], "quiz": [] },
+          { "titulo": "Proteínas y enzimas", "conceptosClave": ["aminoácido","enlace peptídico","estructura proteica","enzima","sustrato","cofactor"], "quiz": [] },
+          { "titulo": "Lípidos y ácidos nucleicos", "conceptosClave": ["triglicérido","fosfolípido","ADN","ARN","nucleótido","base nitrogenada"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "economia-5-eco",
+      "nombre": "Economía",
+      "año": "5°", "orientacion": "eco", "emoji": "💰", "color": "#f59e0b",
+      "descripcion": "Micro y macroeconomía, mercados, política económica y Uruguay",
+      "unidades": [
+        { "id": "u1", "titulo": "Microeconomía", "temas": [
+          { "titulo": "Oferta y demanda: equilibrio de mercado", "conceptosClave": ["precio de equilibrio","elasticidad","excedente","fallo de mercado"], "quiz": [
+            { "pregunta": "¿Qué sucede en el mercado cuando el precio está por encima del equilibrio?", "opciones": ["Escasez","Exceso de demanda","Exceso de oferta (superávit)","Equilibrio estable"], "correcta": 2, "explicacion": "Si el precio supera el de equilibrio, la cantidad ofrecida excede la demandada, creando un superávit. Los vendedores bajarán precios para vender." }
+          ]},
+          { "titulo": "Teoría de la empresa y costos", "conceptosClave": ["costo fijo","costo variable","costo marginal","beneficio máximo","estructuras de mercado"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Macroeconomía", "temas": [
+          { "titulo": "PBI, inflación y desempleo", "conceptosClave": ["PBI nominal","PBI real","IPC","tasa de inflación","curva de Phillips","desempleo friccional"], "quiz": [] },
+          { "titulo": "Política fiscal y monetaria", "conceptosClave": ["gasto público","impuestos","déficit","deuda pública","tasa de interés","BCU"], "quiz": [] },
+          { "titulo": "Economía uruguaya: estructura y desafíos", "conceptosClave": ["exportaciones","diversificación","OPP","INIA","Plan Ceibal","informalidad"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Comercio Internacional", "temas": [
+          { "titulo": "Teoría del comercio: ventajas comparativas y absolutas", "conceptosClave": ["Ricardo","Smith","libre comercio","proteccionismo","arancel","Mercosur"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "contabilidad-5-eco",
+      "nombre": "Contabilidad",
+      "año": "5°", "orientacion": "eco", "emoji": "📊", "color": "#10b981",
+      "descripcion": "Fundamentos contables, estados financieros y gestión empresarial",
+      "unidades": [
+        { "id": "u1", "titulo": "Fundamentos Contables", "temas": [
+          { "titulo": "Ecuación patrimonial y partida doble", "conceptosClave": ["activo","pasivo","patrimonio neto","débito","crédito","asiento contable"], "quiz": [
+            { "pregunta": "¿Cuál es la ecuación patrimonial básica?", "opciones": ["Activo = Pasivo","Activo = Pasivo + Patrimonio Neto","Patrimonio = Activo - Pasivo × 2","Pasivo = Activo + Patrimonio"], "correcta": 1, "explicacion": "La ecuación fundamental es A = P + PN: los activos de una empresa se financian con deudas (pasivo) o fondos propios (patrimonio neto)." }
+          ]},
+          { "titulo": "Plan de cuentas y libro diario", "conceptosClave": ["cuentas T","mayor general","balance de comprobación","PCGA"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Estados Financieros", "temas": [
+          { "titulo": "Balance general y estado de resultados", "conceptosClave": ["activo corriente","activo fijo","pasivo corriente","ingresos","egresos","resultado del ejercicio"], "quiz": [] },
+          { "titulo": "Análisis financiero básico: ratios", "conceptosClave": ["liquidez","rentabilidad","endeudamiento","ROE","ROA"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "derecho-5-eco",
+      "nombre": "Derecho",
+      "año": "5°", "orientacion": "eco", "emoji": "⚖️", "color": "#8b5cf6",
+      "descripcion": "Derecho constitucional, civil, laboral y empresarial uruguayo",
+      "unidades": [
+        { "id": "u1", "titulo": "Derecho Constitucional", "temas": [
+          { "titulo": "Constitución de Uruguay: estructura y derechos", "conceptosClave": ["poderes del Estado","derechos fundamentales","garantías constitucionales","referéndum","plebiscito"], "quiz": [] },
+          { "titulo": "Derecho internacional de los derechos humanos", "conceptosClave": ["DUDH","CIDH","tortura","asilo","refugio"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Derecho Privado", "temas": [
+          { "titulo": "Derecho civil: personas, familia y contratos", "conceptosClave": ["persona jurídica","capacidad","contrato","obligación","responsabilidad civil"], "quiz": [] },
+          { "titulo": "Derecho laboral: contrato de trabajo y derechos", "conceptosClave": ["MTSS","sindicato","negociación colectiva","licencia","indemnización"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "sociologia-5-social",
+      "nombre": "Sociología",
+      "año": "5°", "orientacion": "social-hum", "emoji": "👥", "color": "#8b5cf6",
+      "descripcion": "Sociología clásica y contemporánea, Uruguay como objeto de estudio",
+      "unidades": [
+        { "id": "u1", "titulo": "Los Clásicos de la Sociología", "temas": [
+          { "titulo": "Marx: estructura social y conflicto", "conceptosClave": ["clase social","modo de producción","superestructura","alienación","lucha de clases"], "quiz": [] },
+          { "titulo": "Durkheim: solidaridad y anomia", "conceptosClave": ["hecho social","solidaridad mecánica/orgánica","anomia","integración social"], "quiz": [
+            { "pregunta": "¿Qué concepto de Durkheim describe el estado de desregulación y falta de normas en la sociedad?", "opciones": ["Alienación","Anomia","Habitus","Dominación racional"], "correcta": 1, "explicacion": "La anomia (Durkheim) es la condición donde las normas sociales son débiles o ausentes, produciendo desorientación. Se manifiesta, por ejemplo, en épocas de crisis social." }
+          ]},
+          { "titulo": "Weber: acción social y dominación", "conceptosClave": ["acción social","tipo ideal","dominación carismática/tradicional/racional","burocracia"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Sociología de Uruguay", "temas": [
+          { "titulo": "Estructura social uruguaya: clases, desigualdad, movilidad", "conceptosClave": ["Gini","quintiles","meritocracia","herencia social","Plan de Equidad"], "quiz": [] },
+          { "titulo": "Familia, género y diversidad en Uruguay", "conceptosClave": ["matrimonio igualitario","ley trans","violencia doméstica","feminismo","INMUJERES"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "historia-5-social",
+      "nombre": "Historia",
+      "año": "5°", "orientacion": "social-hum", "emoji": "🏰", "color": "#ef4444",
+      "descripcion": "Historia del siglo XX: guerras, totalitarismos, Guerra Fría y descolonización",
+      "unidades": [
+        { "id": "u1", "titulo": "El Mundo en el Siglo XX (primera mitad)", "temas": [
+          { "titulo": "Primera Guerra Mundial y sus consecuencias", "conceptosClave": ["Triple Alianza","Triple Entente","trincheras","Armisticio","Tratado de Versalles","Sociedad de Naciones"], "quiz": [] },
+          { "titulo": "Totalitarismos: fascismo, nazismo, estalinismo", "conceptosClave": ["Mussolini","Hitler","Stalin","partido único","propaganda","campos de concentración"], "quiz": [
+            { "pregunta": "¿Qué sistema económico-político adoptó la URSS bajo Stalin?", "opciones": ["Capitalismo de Estado","Fascismo","Estalinismo (socialismo real)","Socialdemocracia"], "correcta": 2, "explicacion": "El estalinismo fue un modelo de socialismo burocrático autoritario con planificación central, colectivización forzada y represión política masiva (Gulag)." }
+          ]},
+          { "titulo": "Segunda Guerra Mundial y el Holocausto", "conceptosClave": ["Blitzkrieg","Resistencia","Shoá","Nuremberg","bomba atómica","ONU"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Guerra Fría y Mundo Bipolar", "temas": [
+          { "titulo": "Guerra Fría: EE.UU. vs URSS", "conceptosClave": ["OTAN","Pacto de Varsovia","carrera armamentista","Plan Marshall","Doctrina Truman"], "quiz": [] },
+          { "titulo": "Descolonización en África y Asia", "conceptosClave": ["No alineados","Bandung","Nehru","Nkrumah","neocolonialismo","Tercer Mundo"], "quiz": [] },
+          { "titulo": "América Latina en la Guerra Fría: revoluciones y dictaduras", "conceptosClave": ["Cuba","Allende","Doctrina de Seguridad Nacional","Plan Cóndor","DDHH"], "quiz": [] }
+        ]},
+        { "id": "u3", "titulo": "Uruguay en el Siglo XX", "temas": [
+          { "titulo": "Dictadura cívico-militar (1973-1985)", "conceptosClave": ["golpe de Estado","Tupamaros","desaparecidos","COMIPAZ","Ley de Caducidad"], "quiz": [] },
+          { "titulo": "Transición democrática y Uruguay actual", "conceptosClave": ["Frente Amplio","Sanguinetti","Lacalle","referendum","legalización del cannabis","UPM 2"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "literatura-5-social",
+      "nombre": "Literatura",
+      "año": "5°", "orientacion": "social-hum", "emoji": "📖", "color": "#8b5cf6",
+      "descripcion": "Literatura universal y latinoamericana: análisis, corrientes y autores",
+      "unidades": [
+        { "id": "u1", "titulo": "Literatura Universal", "temas": [
+          { "titulo": "Grecia clásica: épica y tragedia", "conceptosClave": ["Homero","Ilíada","Odisea","tragedia griega","Sófocles","catarsis"], "quiz": [] },
+          { "titulo": "Cervantes y el Quijote", "conceptosClave": ["novela moderna","metaficción","ideal vs. realidad","intertextualidad"], "quiz": [] },
+          { "titulo": "Romanticismo, realismo y naturalismo", "conceptosClave": ["Víctor Hugo","Flaubert","Zola","determinismo","naturalismo"], "quiz": [] },
+          { "titulo": "Vanguardias del siglo XX", "conceptosClave": ["surrealismo","Kafka","Camus","existencialismo","absurdo","Beckett"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Literatura Latinoamericana Profunda", "temas": [
+          { "titulo": "Indigenismo y negrismo", "conceptosClave": ["Arguedas","Nicolás Guillén","identidad","otredad"], "quiz": [] },
+          { "titulo": "El Boom: Cortázar, García Márquez, Fuentes, Vargas Llosa", "conceptosClave": ["realismo mágico","Rayuela","Cien años de soledad","experimentación formal"], "quiz": [] },
+          { "titulo": "Literatura uruguaya profunda: Onetti, Benedetti, Levrero", "conceptosClave": ["Santa María","El pozo","Inventario","Mario Levrero","realismo sucio"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "biologia-6-bio",
+      "nombre": "Biología",
+      "año": "6°", "orientacion": "bio", "emoji": "🧬", "color": "#10b981",
+      "descripcion": "Fisiología humana, neurociencia, biotecnología y biología molecular",
+      "unidades": [
+        { "id": "u1", "titulo": "Fisiología Humana", "temas": [
+          { "titulo": "Sistema nervioso: neurona, sinapsis, SNC/SNP", "conceptosClave": ["neurona","axón","dendrita","sinapsis","neurotransmisor","plasticidad neuronal"], "quiz": [] },
+          { "titulo": "Sistema endócrino: hormonas y regulación", "conceptosClave": ["hipotálamo","hipófisis","retroalimentación","insulina","cortisol"], "quiz": [] },
+          { "titulo": "Reproducción humana y desarrollo", "conceptosClave": ["gametogénesis","fecundación","embarazo","parto","reproducción asistida"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Biotecnología", "temas": [
+          { "titulo": "Ingeniería genética y CRISPR", "conceptosClave": ["ADN recombinante","plásmido","organismo transgénico","CRISPR-Cas9","terapia génica"], "quiz": [] },
+          { "titulo": "Bioética: dilemas contemporáneos", "conceptosClave": ["clonación","células madre","eugenesia","OMG","propiedad intelectual sobre genes"], "quiz": [] }
+        ]}
+      ]
+    },
+
+    {
+      "id": "matematica-6-fis-mat",
+      "nombre": "Matemática",
+      "año": "6°", "orientacion": "fis-mat", "emoji": "📐", "color": "#0ea5e9",
+      "descripcion": "Álgebra lineal, estadística inferencial y análisis vectorial",
+      "unidades": [
+        { "id": "u1", "titulo": "Álgebra Lineal", "temas": [
+          { "titulo": "Matrices y determinantes", "conceptosClave": ["operaciones matriciales","determinante","inversa","rango","sistemas de ecuaciones"], "quiz": [] },
+          { "titulo": "Espacios vectoriales y transformaciones lineales", "conceptosClave": ["base","dimensión","autovalor","autovector","diagonalización"], "quiz": [] }
+        ]},
+        { "id": "u2", "titulo": "Estadística Inferencial", "temas": [
+          { "titulo": "Distribuciones de probabilidad", "conceptosClave": ["distribución normal","binomial","Poisson","variable aleatoria","esperanza"], "quiz": [] },
+          { "titulo": "Intervalos de confianza y pruebas de hipótesis", "conceptosClave": ["nivel de significancia","p-valor","error tipo I/II","t de Student","chi-cuadrado"], "quiz": [] }
+        ]}
+      ]
+    }
+  ]
+}

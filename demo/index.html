@@ -649,67 +649,55 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
   <!-- Sidebar -->
   <aside class="sv-sidebar">
     <div class="sv-sidebar-header">
-      <h3>Programa</h3>
-      <p>4° año · Historia</p>
+      <h3>Materia</h3>
+      <select id="subjectSelect" onchange="loadSubject(this.value)"
+        style="width:100%;margin:6px 0 4px;padding:5px 7px;border:1.5px solid var(--border);border-radius:7px;font-size:12px;font-weight:500;font-family:inherit;background:var(--bg);color:var(--text);outline:none;cursor:pointer;">
+        <optgroup label="4° año — Común">
+          <option value="historia-4">🏰 Historia</option>
+          <option value="matematica-4">📐 Matemática</option>
+          <option value="lengua-4">📚 Lengua y Literatura</option>
+          <option value="geografia-4">🌍 Geografía</option>
+          <option value="biologia-4">🧬 Biología</option>
+          <option value="fisica-4">⚡ Física</option>
+          <option value="quimica-4">🧪 Química</option>
+          <option value="ingles-4">🇬🇧 Inglés</option>
+          <option value="informatica-4">💻 Informática</option>
+        </optgroup>
+        <optgroup label="5° — Físico-Matemáticas">
+          <option value="matematica-5-fis-mat">📐 Matemática 5°</option>
+          <option value="fisica-5-fis-mat">⚡ Física 5°</option>
+        </optgroup>
+        <optgroup label="5° — Ciencias Biológicas">
+          <option value="quimica-5-bio">🧪 Química Orgánica</option>
+          <option value="biologia-4">🧬 Biología 5°</option>
+        </optgroup>
+        <optgroup label="5° — Económicas">
+          <option value="economia-5-eco">💰 Economía</option>
+          <option value="contabilidad-5-eco">📊 Contabilidad</option>
+          <option value="derecho-5-eco">⚖️ Derecho</option>
+        </optgroup>
+        <optgroup label="5° — Sociales y Humanidades">
+          <option value="historia-5-social">🏰 Historia 5°</option>
+          <option value="sociologia-5-social">👥 Sociología</option>
+          <option value="literatura-5-social">📖 Literatura</option>
+        </optgroup>
+        <optgroup label="6° — Avanzadas">
+          <option value="biologia-6-bio">🧬 Biología 6°</option>
+          <option value="matematica-6-fis-mat">📐 Matemática 6°</option>
+        </optgroup>
+      </select>
+      <p id="subjectMeta" style="font-size:11px;color:var(--indigo);font-weight:500">4° año · Historia universal</p>
     </div>
-
-    <div class="unit">
-      <button class="unit-btn" onclick="toggleTopics(this)">
-        <div class="unit-dot done"></div>
-        <span>U1 · Mundo Moderno</span>
-      </button>
-      <div class="unit-topics">
-        <div class="topic-row done"><span class="topic-icon">✓</span> Renacimiento</div>
-        <div class="topic-row done"><span class="topic-icon">✓</span> Reformas Religiosas</div>
-        <div class="topic-row done"><span class="topic-icon">✓</span> Expansión Europea</div>
-      </div>
-    </div>
-
-    <div class="unit">
-      <button class="unit-btn" onclick="toggleTopics(this)">
-        <div class="unit-dot active"></div>
-        <span style="color:var(--indigo)">U2 · Revoluciones</span>
-      </button>
-      <div class="unit-topics">
-        <div class="topic-row done"><span class="topic-icon">✓</span> La Ilustración</div>
-        <div class="topic-row current"><span class="topic-icon">▶</span> Revolución Francesa</div>
-        <div class="topic-row"><span class="topic-icon" style="opacity:.3">○</span> Napoleón</div>
-        <div class="topic-row"><span class="topic-icon" style="opacity:.3">○</span> Congreso de Viena</div>
-      </div>
-    </div>
-
-    <div class="unit">
-      <button class="unit-btn" onclick="toggleTopics(this)">
-        <div class="unit-dot pending"></div>
-        <span>U3 · Industrialización</span>
-      </button>
-      <div class="unit-topics" style="display:none">
-        <div class="topic-row"><span class="topic-icon" style="opacity:.3">○</span> Rev. Industrial</div>
-        <div class="topic-row"><span class="topic-icon" style="opacity:.3">○</span> Mov. Obrero</div>
-        <div class="topic-row"><span class="topic-icon" style="opacity:.3">○</span> Imperialismo</div>
-      </div>
-    </div>
-
-    <div class="unit">
-      <button class="unit-btn" onclick="toggleTopics(this)">
-        <div class="unit-dot pending"></div>
-        <span>U4 · Uruguay s.XIX</span>
-      </button>
-      <div class="unit-topics" style="display:none">
-        <div class="topic-row"><span class="topic-icon" style="opacity:.3">○</span> Independencia</div>
-        <div class="topic-row"><span class="topic-icon" style="opacity:.3">○</span> Batllismo</div>
-        <div class="topic-row"><span class="topic-icon" style="opacity:.3">○</span> Crisis y Dictadura</div>
-      </div>
-    </div>
+    <div id="curriculumTree"></div>
   </aside>
 
   <!-- Chat -->
   <main class="sv-chat">
     <div class="chat-topbar">
-      <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--indigo),var(--purple));display:grid;place-items:center;font-size:18px;flex-shrink:0;">🏰</div>
+      <div id="topbarIcon" style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--indigo),var(--purple));display:grid;place-items:center;font-size:18px;flex-shrink:0;">🏰</div>
       <div class="chat-topbar-info">
-        <div class="chat-topbar-title">La Revolución Francesa (1789)</div>
-        <div class="chat-topbar-sub">U2 · Revoluciones del siglo XVIII · 4° año Bachillerato</div>
+        <div class="chat-topbar-title" id="topbarTitle">La Revolución Francesa (1789)</div>
+        <div class="chat-topbar-sub" id="topbarSub">U2 · Revoluciones del siglo XVIII · 4° año Bachillerato</div>
       </div>
       <div class="topic-progress-wrap">
         <div class="topic-progress-bar"><div class="topic-progress-fill" style="width:60%"></div></div>
@@ -1150,6 +1138,89 @@ const REPLIES = [
 let ri = 0;
 const now = () => new Date().toLocaleTimeString('es',{hour:'2-digit',minute:'2-digit'});
 
+// ── Curriculum loader ─────────────────────────────────────
+let currentSubject = null;
+let currentTopic = 'Revolución Francesa (1789)';
+
+async function loadSubject(subjectId) {
+  try {
+    const resp = await fetch('../curriculum/anep-bachillerato-completo.json');
+    const data = await resp.json();
+    const subj = data.materias.find(m => m.id === subjectId);
+    if (!subj) return;
+    currentSubject = subj;
+    renderCurriculumTree(subj);
+    updateSystemPrompt(subj);
+    document.getElementById('subjectMeta').textContent = `${subj.año} · ${subj.descripcion}`;
+  } catch(e) {
+    console.warn('Curriculum load failed, using inline data', e);
+  }
+}
+
+function renderCurriculumTree(subj) {
+  const tree = document.getElementById('curriculumTree');
+  tree.innerHTML = '';
+  subj.unidades.forEach((u, ui) => {
+    const unitDiv = document.createElement('div');
+    unitDiv.className = 'unit';
+    const isFirst = ui === 0;
+    const btn = document.createElement('button');
+    btn.className = 'unit-btn';
+    btn.onclick = () => toggleTopics(btn);
+    btn.innerHTML = `<div class="unit-dot ${isFirst?'active':'pending'}"></div><span>${u.titulo}</span>`;
+    unitDiv.appendChild(btn);
+
+    const topicDiv = document.createElement('div');
+    topicDiv.className = 'unit-topics';
+    if (!isFirst) topicDiv.style.display = 'none';
+    u.temas.forEach((t, ti) => {
+      const row = document.createElement('div');
+      row.className = 'topic-row' + (isFirst && ti === 0 ? ' current' : '');
+      row.onclick = () => selectTopic(t, subj, u);
+      row.innerHTML = `<span class="topic-icon">${isFirst && ti===0?'▶':'○'}</span> ${t.titulo}`;
+      topicDiv.appendChild(row);
+    });
+    unitDiv.appendChild(topicDiv);
+    tree.appendChild(unitDiv);
+  });
+  // Set first topic as active
+  if (subj.unidades[0]?.temas[0]) {
+    selectTopic(subj.unidades[0].temas[0], subj, subj.unidades[0]);
+  }
+}
+
+function selectTopic(tema, subj, unit) {
+  currentTopic = tema.titulo;
+  document.getElementById('topbarTitle').textContent = `${subj.emoji} ${tema.titulo}`;
+  document.getElementById('topbarSub').textContent = `${unit.titulo} · ${subj.año} · ${subj.nombre} — Bachillerato ANEP`;
+  updateSystemPrompt(subj, tema);
+  // Reset chat with new topic greeting
+  chatHistory.length = 0;
+  chatHistory.push({ role: 'system', content: buildSystemPrompt(subj, tema) });
+}
+
+function buildSystemPrompt(subj, tema) {
+  const conceptos = tema?.conceptosClave?.join(', ') || '';
+  return `Eres TutorIA, tutor de ${subj.nombre} para ${subj.año} año de bachillerato uruguayo (programa ANEP/CES).
+Orientación: ${subj.descripcion}
+Tema actual: ${tema?.titulo || 'Introducción a la materia'}
+${conceptos ? 'Conceptos clave del tema: ' + conceptos : ''}
+
+Instrucciones:
+- Respondé siempre en español rioplatense (vos, etc.)
+- Estilo pedagógico, cercano y motivador
+- Máximo 3 párrafos cortos por respuesta
+- Al finalizar tu respuesta, hacé una pregunta reflexiva
+- Usá emojis ocasionalmente para hacer el aprendizaje más amigable
+- Si el alumno pregunta algo fuera del tema, redirigilo gentilmente`;
+}
+
+function updateSystemPrompt(subj, tema) {
+  if (chatHistory.length > 0 && chatHistory[0].role === 'system') {
+    chatHistory[0].content = buildSystemPrompt(subj, tema);
+  }
+}
+
 // ── Settings panel ────────────────────────────────────────
 let aiActive = false;
 let apiKey = '';
@@ -1160,8 +1231,10 @@ const OLLAMA_MODELS = {
   'ollama-deepseek': { name:'DeepSeek-R1:8b', model:'deepseek-r1:8b', base:'http://localhost:11434' },
 };
 
-const SYSTEM_PROMPT = 'Eres TutorIA, tutor Historia 4° bachillerato ANEP Uruguay. Tema actual: Revolución Francesa 1789. Responde en español pedagógico, máximo 3 párrafos cortos.';
+const SYSTEM_PROMPT = 'Eres TutorIA, tutor de Historia para 4° bachillerato ANEP Uruguay. Tema: Revolución Francesa 1789. Responde en español rioplatense, pedagógico, máximo 3 párrafos cortos. Hacé una pregunta al final.';
 const chatHistory = [{ role: 'system', content: SYSTEM_PROMPT }];
+// Load default subject on startup
+window.addEventListener('load', () => loadSubject('historia-4'));
 
 function onModelChange() {
   selectedModel = document.getElementById('modelSelect').value;
