@@ -18,6 +18,7 @@ model Organization {
 
   users       User[]
   assignments Assignment[]
+  games       Game[]
 
   @@map("organizations")
 }
@@ -42,6 +43,7 @@ model User {
   chatSessions   ChatSession[]
   progress       Progress[]
   assignedTo     Assignment[] @relation("AssignmentStudents")
+  games          Game[]
 
   @@map("users")
 }
@@ -99,6 +101,25 @@ model Assignment {
   students    User[]   @relation("AssignmentStudents")
 
   @@map("assignments")
+}
+
+// ── Juego generado por IA ─────────────────────────────────
+model Game {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  subject     String
+  topic       String
+  htmlContent String   @db.Text
+  published   Boolean  @default(false)
+  plays       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  orgId       String
+  org         Organization @relation(fields: [orgId], references: [id])
+  @@map("games")
 }
 
 // ── Enums ─────────────────────────────────────────────────

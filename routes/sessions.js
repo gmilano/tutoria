@@ -15,6 +15,15 @@ router.get('/', requireAuth, async (req, res) => {
   res.json({ sessions });
 });
 
+// ── GET /api/sessions/subject/:subjectName — sesión más reciente por materia ──
+router.get('/subject/:subjectName', requireAuth, async (req, res) => {
+  const session = await prisma.chatSession.findFirst({
+    where: { userId: req.user.id, subject: req.params.subjectName },
+    orderBy: { updatedAt: 'desc' }
+  });
+  res.json({ session: session || null });
+});
+
 // ── GET /api/sessions/:id — historial de una sesión ───────
 router.get('/:id', requireAuth, async (req, res) => {
   const session = await prisma.chatSession.findFirst({

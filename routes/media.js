@@ -1,8 +1,10 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/auth.js';
+import multer from 'multer';
 
 const router = Router();
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 
 // ── POST /api/media/tts — Text-to-Speech ─────────────────
 // Returns MP3 audio buffer for the tutor's response
@@ -158,6 +160,31 @@ router.get('/video/:jobId/content', async (req, res) => {
     res.send(Buffer.from(buf));
   } catch (e) {
     res.status(500).end();
+  }
+});
+
+// ── POST /api/media/transcribe — Whisper STT ────────────
+router.post('/transcribe', requireAuth, upload.single('file'), async (req, res) => {
+  const file = req.file;
+  if (!file) return res.status(400).json({ error: 'No file' });
+  if (!OPENAI_API_KEY) return res.status(500).json({ error: 'Sin API key' });
+
+  try {
+    const form = new FormData();
+    form.append('file', new Blob([file.buffer], { type: file.mimetype }), 'audio.webm');
+    form.append('model', 'whisper-1');
+    form.append('language', 'es');
+
+    const r = await fetch('https://api.openai.com/v1/audio/transcriptions', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${OPENAI_API_KEY}` },
+      body: form
+    });
+
+    const d = await r.json();
+    res.json({ text: d.text || '' });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
   }
 });
 

@@ -9,6 +9,8 @@ import authRoutes     from './routes/auth.js';
 import progressRoutes from './routes/progress.js';
 import sessionRoutes  from './routes/sessions.js';
 import mediaRoutes    from './routes/media.js';
+import chatRoutes     from './routes/chat.js';
+import gamesRoutes    from './routes/games.js';
 
 // ── Curriculum cache ─────────────────────────────────────────
 const curriculumCache = {};
@@ -63,7 +65,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
 
 // Serve static files — demo/ and root
 app.use('/curriculum', express.static(join(__dirname, 'curriculum')));
@@ -76,6 +78,8 @@ app.use('/api/auth',     authRoutes);
 app.use('/api/progress', progressRoutes);
 app.use('/api/sessions', sessionRoutes);
 app.use('/api/media',    mediaRoutes);
+app.use('/api/chat',     chatRoutes);
+app.use('/api/games',    gamesRoutes);
 
 // ── /api/verify-code — access gate ───────────────────────
 app.post('/api/verify-code', (req, res) => {
