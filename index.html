@@ -720,6 +720,14 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
     <div class="settings-panel" id="settingsPanel">
       <h4>⚙️ Configuración del tutor</h4>
       <div class="settings-field">
+        <label>Modelo</label>
+        <select id="modelSelect" onchange="onModelChange()" style="width:100%;padding:6px 8px;border:1.5px solid var(--border);border-radius:7px;font-size:12px;font-family:inherit;background:var(--bg);color:var(--text);outline:none;">
+          <option value="openai">☁️ OpenAI gpt-4o-mini</option>
+          <option value="ollama">🏠 Local — Qwen2.5:14b (Ollama)</option>
+          <option value="ollama-deepseek">🏠 Local — DeepSeek-R1:8b (Ollama)</option>
+        </select>
+      </div>
+      <div class="settings-field" id="keyField">
         <label>OpenAI API Key</label>
         <input type="password" id="apiKeyInput" placeholder="sk-..." oninput="saveApiKey()">
       </div>
@@ -1145,8 +1153,27 @@ const now = () => new Date().toLocaleTimeString('es',{hour:'2-digit',minute:'2-d
 // ── Settings panel ────────────────────────────────────────
 let aiActive = false;
 let apiKey = '';
+let selectedModel = 'openai'; // 'openai' | 'ollama' | 'ollama-deepseek'
+
+const OLLAMA_MODELS = {
+  'ollama':          { name:'Qwen2.5:14b', model:'qwen2.5:14b',      base:'http://localhost:11434' },
+  'ollama-deepseek': { name:'DeepSeek-R1:8b', model:'deepseek-r1:8b', base:'http://localhost:11434' },
+};
+
 const SYSTEM_PROMPT = 'Eres TutorIA, tutor Historia 4° bachillerato ANEP Uruguay. Tema actual: Revolución Francesa 1789. Responde en español pedagógico, máximo 3 párrafos cortos.';
 const chatHistory = [{ role: 'system', content: SYSTEM_PROMPT }];
+
+function onModelChange() {
+  selectedModel = document.getElementById('modelSelect').value;
+  const keyField = document.getElementById('keyField');
+  const status = document.getElementById('settingsStatus');
+  const isLocal = selectedModel.startsWith('ollama');
+  if (keyField) keyField.style.display = isLocal ? 'none' : '';
+  if (isLocal && status) {
+    status.className = 'settings-status';
+    status.textContent = '🏠 Modelo local via Ollama — costo $0';
+  }
+}
 
 function toggleSettings() {
   const panel = document.getElementById('settingsPanel');
@@ -1174,7 +1201,7 @@ function toggleAI() {
   aiActive = !aiActive;
   toggle.classList.toggle('on', aiActive);
   if (aiActive) {
-    if (!USE_PROXY && !apiKey) {
+    if (!selectedModel.startsWith('ollama') && !USE_PROXY && !apiKey) {
       status.className = 'settings-status err';
       status.textContent = '⚠️ Ingresá tu API Key de OpenAI primero';
       aiActive = false;
@@ -1182,9 +1209,10 @@ function toggleAI() {
       return;
     }
     status.className = 'settings-status ok';
-    status.textContent = USE_PROXY
-      ? '✅ Tutor IA real activado (servidor)'
-      : '✅ Tutor IA real activado (gpt-4o-mini)';
+    const modelLabel = selectedModel.startsWith('ollama')
+      ? `🏠 ${OLLAMA_MODELS[selectedModel]?.name} (local, $0)`
+      : USE_PROXY ? '☁️ servidor' : '☁️ gpt-4o-mini';
+    status.textContent = `✅ Tutor IA real — ${modelLabel}`;
   } else {
     status.className = 'settings-status off';
     status.textContent = '💤 Usando respuestas estáticas de demo';
@@ -1211,47 +1239,51 @@ function escapeHtml(text) {
 }
 
 // Auto-detect proxy vs direct API
-const USE_PROXY = !window.location.hostname.includes('github.io');
+const USE_PROXY = !window.location.hostname.includes('github.io') &&
+                  !window.location.hostname.includes('localhost') &&
+                  window.location.hostname !== '';
 const PROXY_URL = '/api/chat';
 
 async function fetchAIResponse(userMsg) {
   chatHistory.push({ role: 'user', content: userMsg });
-  const history = chatHistory.filter(m => m.role !== 'system');
 
   let reply;
 
-  if (USE_PROXY) {
-    // Backend proxy (Vercel) — key is server-side
-    const resp = await fetch(PROXY_URL, {
+  if (selectedModel.startsWith('ollama')) {
+    // ── Local Ollama ─────────────────────────────────────
+    const cfg = OLLAMA_MODELS[selectedModel];
+    const resp = await fetch(`${cfg.base}/v1/chat/completions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        messages: history,
-        subject: 'Historia',
-        topic: 'Revolución Francesa 1789',
-        year: '4°'
+        model: cfg.model,
+        messages: chatHistory,
+        stream: false,
+        options: { temperature: 0.75, num_predict: 600 }
       })
     });
-    if (!resp.ok) {
-      const e = await resp.json();
-      throw new Error(e.error || 'Error del servidor');
-    }
+    if (!resp.ok) throw new Error(`Ollama error ${resp.status} — ¿está corriendo? (ollama serve)`);
+    const data = await resp.json();
+    reply = data.choices?.[0]?.message?.content || data.message?.content;
+
+  } else if (USE_PROXY) {
+    // ── Vercel backend proxy ─────────────────────────────
+    const history = chatHistory.filter(m => m.role !== 'system');
+    const resp = await fetch(PROXY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: history, subject: 'Historia', topic: 'Revolución Francesa 1789', year: '4°' })
+    });
+    if (!resp.ok) { const e = await resp.json(); throw new Error(e.error || 'Error del servidor'); }
     const data = await resp.json();
     reply = data.reply;
+
   } else {
-    // GitHub Pages — direct call, needs user API key
+    // ── OpenAI directo (GitHub Pages + key) ──────────────
     const resp = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + apiKey
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: chatHistory,
-        max_tokens: 600,
-        temperature: 0.75
-      })
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey },
+      body: JSON.stringify({ model: 'gpt-4o-mini', messages: chatHistory, max_tokens: 600, temperature: 0.75 })
     });
     if (!resp.ok) throw new Error('API error: ' + resp.status);
     const data = await resp.json();
