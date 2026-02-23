@@ -1,0 +1,1190 @@
+{
+  "materia": "Historia",
+  "nivel": "Bachillerato",
+  "sistema": "ANEP - CES Uruguay",
+  "version": "2024",
+  "años": [
+    {
+      "año": 4,
+      "nombre": "Historia Universal — Mundo Moderno y Contemporáneo",
+      "descripcion": "El mundo entre los siglos XV y XIX. Transformaciones económicas, políticas y sociales que configuraron el mundo moderno.",
+      "unidades": [
+        {
+          "id": "4-U1",
+          "titulo": "El mundo en los umbrales de la modernidad",
+          "descripcion": "Transformaciones del siglo XV-XVI: humanismo, Renacimiento, expansión europea.",
+          "temas": [
+            {
+              "id": "4-U1-T1",
+              "titulo": "El Renacimiento y el Humanismo",
+              "conceptosClave": ["humanismo", "antropocentrismo", "teocentrismo", "mecenazgo", "reforma cultural"],
+              "objetivosAprendizaje": [
+                "Comprender el cambio de visión del mundo del teocentrismo al antropocentrismo",
+                "Identificar los principales representantes del humanismo renacentista",
+                "Analizar el papel de la imprenta en la difusión de las ideas"
+              ],
+              "preguntasGuia": [
+                "¿Qué cambios en la forma de pensar trajo el Renacimiento?",
+                "¿Por qué Italia fue el centro del Renacimiento?",
+                "¿Cómo influyó la imprenta en la difusión del conocimiento?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿Qué corriente filosófica del Renacimiento colocaba al ser humano en el centro del universo?",
+                  "opciones": ["Teocentrismo", "Humanismo", "Escolástica", "Feudalismo"],
+                  "correcta": 1,
+                  "explicacion": "El Humanismo renacentista colocó al ser humano (anthropos) en el centro, en contraste con el teocentrismo medieval que ponía a Dios en el centro de todo."
+                },
+                {
+                  "pregunta": "¿Cuál fue el inventor de la imprenta de tipos móviles en Europa (1440)?",
+                  "opciones": ["Leonardo da Vinci", "Nicolás Copérnico", "Johannes Gutenberg", "Erasmo de Rotterdam"],
+                  "correcta": 2,
+                  "explicacion": "Johannes Gutenberg inventó la imprenta de tipos móviles alrededor de 1440, revolucionando la difusión del conocimiento."
+                },
+                {
+                  "pregunta": "¿Qué significa que el Renacimiento fue un 'renacimiento' cultural?",
+                  "opciones": [
+                    "Surgió una cultura completamente nueva sin referencia al pasado",
+                    "Se recuperaron y reinterpretaron los valores de la cultura grecolatina",
+                    "Los artistas nacieron de nuevo gracias a la religión",
+                    "Europa vivió un crecimiento demográfico sin precedentes"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El Renacimiento implicó retomar los ideales de la Antigüedad clásica griega y romana, reinterpretándolos desde una nueva perspectiva humanista."
+                }
+              ]
+            },
+            {
+              "id": "4-U1-T2",
+              "titulo": "Las Reformas Religiosas del siglo XVI",
+              "conceptosClave": ["Reforma Protestante", "Lutero", "Calvino", "Contrarreforma", "Concilio de Trento", "guerras de religión"],
+              "objetivosAprendizaje": [
+                "Explicar las causas de la Reforma Protestante",
+                "Diferenciar las corrientes protestantes: luteranismo, calvinismo, anglicanismo",
+                "Analizar la respuesta de la Iglesia Católica: la Contrarreforma"
+              ],
+              "preguntasGuia": [
+                "¿Por qué Martín Lutero se enfrentó a la Iglesia Católica?",
+                "¿Qué consecuencias tuvo la división del cristianismo en Europa?",
+                "¿Cómo respondió la Iglesia Católica a la Reforma?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿En qué año Martín Lutero publicó sus 95 tesis?",
+                  "opciones": ["1492", "1517", "1543", "1563"],
+                  "correcta": 1,
+                  "explicacion": "En 1517, Lutero publicó sus 95 tesis en Wittenberg, cuestionando las indulgencias y otros aspectos de la Iglesia Católica."
+                },
+                {
+                  "pregunta": "¿Cuál fue la respuesta oficial de la Iglesia Católica a la Reforma Protestante?",
+                  "opciones": ["La Inquisición española", "El Concilio de Trento", "La Guerra de los Treinta Años", "La bula Exsurge Domine"],
+                  "correcta": 1,
+                  "explicacion": "El Concilio de Trento (1545-1563) fue la respuesta oficial de la Iglesia para reformarse internamente y combatir al protestantismo."
+                },
+                {
+                  "pregunta": "El anglicanismo fue una reforma impulsada principalmente por:",
+                  "opciones": ["Juan Calvino en Ginebra", "Enrique VIII de Inglaterra", "Ulrico Zuinglio en Suiza", "Ignacio de Loyola"],
+                  "correcta": 1,
+                  "explicacion": "Enrique VIII de Inglaterra se separó de Roma en 1534 para fundar la Iglesia Anglicana, motivado principalmente por razones políticas y personales."
+                }
+              ]
+            },
+            {
+              "id": "4-U1-T3",
+              "titulo": "La expansión europea y el encuentro de culturas",
+              "conceptosClave": ["conquista", "colonización", "evangelización", "encomienda", "mestizaje", "resistencia indígena"],
+              "objetivosAprendizaje": [
+                "Analizar las motivaciones de la expansión europea",
+                "Comprender el impacto de la conquista en las poblaciones americanas",
+                "Reflexionar críticamente sobre el concepto de 'descubrimiento'"
+              ],
+              "preguntasGuia": [
+                "¿Cuáles fueron las motivaciones económicas y religiosas de la expansión europea?",
+                "¿Cómo afectó la conquista a las poblaciones indígenas americanas?",
+                "¿Por qué algunos historiadores prefieren hablar de 'encuentro de culturas' en lugar de 'descubrimiento'?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿Qué sistema de trabajo obligatorio se impuso a los indígenas en América española?",
+                  "opciones": ["El feudalismo", "La encomienda", "La mita", "El yanaconazgo"],
+                  "correcta": 1,
+                  "explicacion": "La encomienda fue el sistema por el cual los colonizadores españoles recibían indígenas para trabajar a cambio de evangelizarlos, lo que en la práctica fue una forma de esclavitud."
+                },
+                {
+                  "pregunta": "La Controversia de Valladolid (1550) debatió principalmente:",
+                  "opciones": [
+                    "Los derechos de los esclavos africanos",
+                    "Si los indígenas tenían alma y qué derechos les correspondían",
+                    "Los límites entre las colonias españolas y portuguesas",
+                    "La evangelización del norte de África"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Bartolomé de las Casas y Juan Ginés de Sepúlveda debatieron sobre la humanidad y los derechos de los pueblos indígenas americanos."
+                },
+                {
+                  "pregunta": "¿Qué tratado dividió el mundo entre España y Portugal en 1494?",
+                  "opciones": ["Tratado de Utrecht", "Tratado de Tordesillas", "Bula Papal Inter Caetera", "Tratado de Madrid"],
+                  "correcta": 1,
+                  "explicacion": "El Tratado de Tordesillas (1494) fijó una línea imaginaria que dividía las tierras 'descubiertas' entre España (oeste) y Portugal (este)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-U2",
+          "titulo": "Las Revoluciones del siglo XVIII",
+          "descripcion": "La Ilustración, la Revolución Americana y la Revolución Francesa como puntos de quiebre de la modernidad.",
+          "temas": [
+            {
+              "id": "4-U2-T1",
+              "titulo": "La Ilustración: razón y crítica del Antiguo Régimen",
+              "conceptosClave": ["razón", "progreso", "tolerancia", "contrato social", "enciclopedia", "despotismo ilustrado"],
+              "objetivosAprendizaje": [
+                "Identificar los principios fundamentales del pensamiento ilustrado",
+                "Relacionar a los pensadores ilustrados con sus ideas principales",
+                "Comprender la crítica ilustrada al absolutismo y la Iglesia"
+              ],
+              "preguntasGuia": [
+                "¿Qué papel otorgaba la Ilustración a la razón humana?",
+                "¿Cómo cuestionaron los ilustrados al Antiguo Régimen?",
+                "¿Qué fue la Enciclopedia y por qué fue revolucionaria?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿Quién planteó la teoría del contrato social y la soberanía popular?",
+                  "opciones": ["Voltaire", "Montesquieu", "Jean-Jacques Rousseau", "Denis Diderot"],
+                  "correcta": 2,
+                  "explicacion": "Rousseau planteó en 'El contrato social' (1762) que la soberanía reside en el pueblo y que el gobierno debe basarse en un acuerdo entre los ciudadanos."
+                },
+                {
+                  "pregunta": "La separación de poderes (ejecutivo, legislativo, judicial) fue propuesta por:",
+                  "opciones": ["John Locke", "Montesquieu", "Voltaire", "Rousseau"],
+                  "correcta": 1,
+                  "explicacion": "Montesquieu en 'El espíritu de las leyes' (1748) propuso la separación de poderes para evitar la tiranía, principio que adoptaron las constituciones modernas."
+                },
+                {
+                  "pregunta": "La Enciclopedia fue un proyecto que buscaba principalmente:",
+                  "opciones": [
+                    "Defender los privilegios de la Iglesia",
+                    "Compilar y difundir el conocimiento científico y filosófico",
+                    "Legitimar el poder de los monarcas absolutos",
+                    "Crear una nueva religión basada en la razón"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La Enciclopedia (1751-1772), dirigida por Diderot y D'Alembert, compiló el conocimiento humano con una visión crítica y racional, desafiando la autoridad eclesiástica."
+                }
+              ]
+            },
+            {
+              "id": "4-U2-T2",
+              "titulo": "La Revolución Francesa (1789)",
+              "conceptosClave": ["libertad", "igualdad", "fraternidad", "Declaración de Derechos", "Terror", "napoleonismo", "Antiguo Régimen"],
+              "objetivosAprendizaje": [
+                "Explicar las causas económicas, sociales y políticas de la Revolución",
+                "Analizar las etapas de la Revolución Francesa",
+                "Evaluar el impacto de la Revolución en el mundo contemporáneo"
+              ],
+              "preguntasGuia": [
+                "¿Por qué estalló la Revolución Francesa en 1789?",
+                "¿Qué significaron los valores 'Liberté, Égalité, Fraternité'?",
+                "¿Cómo llegó Napoleón al poder tras la Revolución?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿Qué fue la toma de la Bastilla el 14 de julio de 1789?",
+                  "opciones": [
+                    "Una batalla entre el ejército francés y el prusiano",
+                    "El asalto popular a la prisión símbolo del absolutismo real",
+                    "La proclamación de la República Francesa",
+                    "El inicio de la guerra con Inglaterra"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La Bastilla era una prisión símbolo del poder absoluto del rey. Su toma por el pueblo parisino el 14 de julio marcó el inicio simbólico de la Revolución."
+                },
+                {
+                  "pregunta": "El período del 'Terror' (1793-1794) se caracterizó por:",
+                  "opciones": [
+                    "La invasión extranjera a Francia",
+                    "El gobierno moderado de los girondinos",
+                    "Las ejecuciones masivas bajo Robespierre y el Comité de Salvación Pública",
+                    "El reinado constitucional de Luis XVI"
+                  ],
+                  "correcta": 2,
+                  "explicacion": "Durante el Terror, Robespierre y el Comité de Salvación Pública ejecutaron a miles de personas consideradas 'enemigas de la Revolución', incluyendo a Luis XVI y María Antonieta."
+                },
+                {
+                  "pregunta": "¿Qué principio fundamental estableció la Declaración de los Derechos del Hombre y del Ciudadano (1789)?",
+                  "opciones": [
+                    "El derecho divino de los reyes",
+                    "La soberanía de la nobleza",
+                    "La libertad y la igualdad como derechos naturales de todos los hombres",
+                    "El dominio de la Iglesia sobre el Estado"
+                  ],
+                  "correcta": 2,
+                  "explicacion": "La Declaración proclamó que todos los hombres nacen libres e iguales en derechos, principio que influyó en todas las constituciones posteriores."
+                }
+              ]
+            },
+            {
+              "id": "4-U2-T3",
+              "titulo": "Napoleón y la expansión de los ideales revolucionarios",
+              "conceptosClave": ["Imperio napoleónico", "Código Civil", "bloqueo continental", "guerras napoleónicas", "derrota en Waterloo"],
+              "objetivosAprendizaje": [
+                "Comprender cómo Napoleón consolidó y exportó los cambios revolucionarios",
+                "Analizar el Código Civil napoleónico y su influencia",
+                "Evaluar las consecuencias del Imperio napoleónico en Europa"
+              ],
+              "preguntasGuia": [
+                "¿Fue Napoleón continuador o traicionador de la Revolución?",
+                "¿Por qué el Código Napoleónico fue tan influyente?",
+                "¿Qué factores llevaron a la derrota de Napoleón?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿En qué año Napoleón fue derrotado definitivamente en Waterloo?",
+                  "opciones": ["1812", "1814", "1815", "1821"],
+                  "correcta": 2,
+                  "explicacion": "La batalla de Waterloo (18 de junio de 1815) fue la derrota definitiva de Napoleón frente a las fuerzas aliadas de Wellington y Blücher."
+                },
+                {
+                  "pregunta": "El Código Civil napoleónico (1804) fue revolucionario porque:",
+                  "opciones": [
+                    "Restableció los privilegios de la nobleza",
+                    "Unificó las leyes civiles basándose en los principios de igualdad e igualdad ante la ley",
+                    "Impuso el catolicismo como religión obligatoria",
+                    "Eliminó la propiedad privada"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El Código Civil unificó el derecho civil francés basándose en principios ilustrados: igualdad ante la ley, propiedad privada, libertad de contrato. Influyó en Uruguay y muchos países."
+                },
+                {
+                  "pregunta": "La campaña de Rusia (1812) fue desastrosa para Napoleón principalmente por:",
+                  "opciones": [
+                    "La superioridad militar del ejército ruso",
+                    "La traición de sus generales",
+                    "El frío invernal y la táctica de 'tierra quemada' rusa",
+                    "La falta de armamento"
+                  ],
+                  "correcta": 2,
+                  "explicacion": "Los rusos utilizaron la táctica de 'tierra quemada' y el duro invierno destruyó al ejército napoleónico. De los 600.000 soldados que entraron, menos de 100.000 regresaron."
+                }
+              ]
+            },
+            {
+              "id": "4-U2-T4",
+              "titulo": "El Congreso de Viena y el orden restaurador",
+              "conceptosClave": ["Restauración", "Santa Alianza", "legitimismo", "equilibrio de poder", "movimientos liberales y nacionalistas"],
+              "objetivosAprendizaje": [
+                "Analizar los principios del orden europeo post-napoleónico",
+                "Comprender la tensión entre restauración y liberalismo",
+                "Relacionar el Congreso de Viena con los movimientos de independencia americanos"
+              ],
+              "preguntasGuia": [
+                "¿Qué buscaron las potencias europeas en el Congreso de Viena?",
+                "¿Por qué el orden restaurador fue resistido?",
+                "¿Cómo se relaciona el Congreso de Viena con la independencia de Uruguay?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "El Congreso de Viena (1814-1815) fue convocado principalmente para:",
+                  "opciones": [
+                    "Crear la primera organización internacional",
+                    "Reorganizar Europa y restaurar el orden anterior a la Revolución Francesa",
+                    "Juzgar a Napoleón Bonaparte",
+                    "Establecer el libre comercio en Europa"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Las grandes potencias (Austria, Rusia, Prusia, Gran Bretaña) se reunieron para restablecer el 'equilibrio de poderes' y los principios de legitimidad monárquica."
+                },
+                {
+                  "pregunta": "¿Cuál fue el principal principio defendido por Metternich en el Congreso de Viena?",
+                  "opciones": ["La democracia liberal", "El legitimismo y la restauración monárquica", "El nacionalismo", "El libre comercio"],
+                  "correcta": 1,
+                  "explicacion": "Metternich (Austria) defendió el 'legitimismo': el derecho de las dinastías tradicionales a gobernar y la oposición a cualquier cambio revolucionario."
+                },
+                {
+                  "pregunta": "Los movimientos carbonarios en Italia y los liberales en España fueron expresiones de:",
+                  "opciones": [
+                    "Apoyo al orden restaurador",
+                    "Resistencia popular contra la restauración absolutista",
+                    "Movimientos de independencia colonial",
+                    "Reformas promovidas por la Iglesia"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Fueron movimientos secretos que buscaban constituciones liberales y unificación nacional, en directa oposición a los principios restauradores del Congreso de Viena."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-U3",
+          "titulo": "Industrialización y cuestión social",
+          "descripcion": "La Revolución Industrial y sus consecuencias sociales, el surgimiento del movimiento obrero.",
+          "temas": [
+            {
+              "id": "4-U3-T1",
+              "titulo": "La Revolución Industrial",
+              "conceptosClave": ["máquina de vapor", "fábrica", "proletariado", "burguesía industrial", "urbanización", "capitalismo"],
+              "objetivosAprendizaje": [
+                "Explicar las condiciones que permitieron la industrialización en Inglaterra",
+                "Analizar los cambios en las condiciones de trabajo y vida",
+                "Comprender el surgimiento de las clases sociales industriales"
+              ],
+              "preguntasGuia": [
+                "¿Por qué la Revolución Industrial comenzó en Inglaterra?",
+                "¿Cómo cambió la vida cotidiana de los trabajadores con la industrialización?",
+                "¿Qué es el capitalismo industrial?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿Cuál fue el gran motor tecnológico de la primera Revolución Industrial?",
+                  "opciones": ["La electricidad", "La máquina de vapor", "El petróleo", "La energía nuclear"],
+                  "correcta": 1,
+                  "explicacion": "La máquina de vapor, perfeccionada por James Watt en 1769, fue el motor de la primera Revolución Industrial, aplicada a hiladoras, telares y ferrocarriles."
+                },
+                {
+                  "pregunta": "La clase social que vendía su fuerza de trabajo en las fábricas a cambio de un salario se llamaba:",
+                  "opciones": ["Burguesía", "Nobleza", "Proletariado", "Campesinado"],
+                  "correcta": 2,
+                  "explicacion": "El proletariado industrial era la nueva clase obrera que solo poseía su capacidad de trabajo (proles) y debía venderla para sobrevivir."
+                },
+                {
+                  "pregunta": "El trabajo infantil en las fábricas del siglo XIX fue:",
+                  "opciones": [
+                    "Excepcional y muy regulado",
+                    "Generalizado y en condiciones muy duras",
+                    "Voluntario y bien remunerado",
+                    "Prohibido desde el inicio"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Niños desde los 5-6 años trabajaban hasta 16 horas en condiciones peligrosas. Las primeras leyes de protección infantil no llegaron hasta mediados del siglo XIX."
+                }
+              ]
+            },
+            {
+              "id": "4-U3-T2",
+              "titulo": "El movimiento obrero y el socialismo",
+              "conceptosClave": ["sindicalismo", "socialismo utópico", "marxismo", "anarquismo", "lucha de clases", "Internacional Obrera"],
+              "objetivosAprendizaje": [
+                "Distinguir las corrientes del pensamiento socialista",
+                "Comprender el surgimiento del sindicalismo como respuesta a la explotación",
+                "Analizar los principios del marxismo"
+              ],
+              "preguntasGuia": [
+                "¿Qué propusieron Marx y Engels en el Manifiesto Comunista?",
+                "¿Cuál es la diferencia entre socialismo y anarquismo?",
+                "¿Por qué surgieron los sindicatos?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "El Manifiesto Comunista (1848) fue escrito por:",
+                  "opciones": ["Proudhon y Bakunin", "Saint-Simon y Fourier", "Marx y Engels", "Lasalle y Bernstein"],
+                  "correcta": 2,
+                  "explicacion": "Karl Marx y Friedrich Engels escribieron el Manifiesto Comunista en 1848, sentando las bases del comunismo científico con el análisis materialista de la historia."
+                },
+                {
+                  "pregunta": "Según Marx, ¿qué es la plusvalía?",
+                  "opciones": [
+                    "El salario justo que recibe el trabajador",
+                    "La ganancia del capitalista que no retribuye al trabajador",
+                    "El valor de las materias primas",
+                    "Los impuestos pagados al Estado"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La plusvalía es el valor que el trabajador produce más allá de lo que recibe como salario y que el capitalista se apropia. Es el fundamento de la explotación según Marx."
+                },
+                {
+                  "pregunta": "El anarquismo se diferencia del marxismo principalmente en:",
+                  "opciones": [
+                    "Su rechazo a la propiedad privada",
+                    "Su rechazo al Estado como forma de organización",
+                    "Su apoyo al capitalismo",
+                    "Su defensa de la religión"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Los anarquistas (Bakunin, Kropotkin) rechazaban toda forma de Estado, incluyendo la 'dictadura del proletariado' propuesta por Marx."
+                }
+              ]
+            },
+            {
+              "id": "4-U3-T3",
+              "titulo": "El imperialismo y el reparto del mundo",
+              "conceptosClave": ["imperialismo", "colonialismo", "Conferencia de Berlín", "racismo científico", "resistencia anticolonial"],
+              "objetivosAprendizaje": [
+                "Explicar las motivaciones económicas del imperialismo",
+                "Analizar críticamente la ideología colonialista",
+                "Identificar las formas de resistencia de los pueblos colonizados"
+              ],
+              "preguntasGuia": [
+                "¿Por qué las potencias europeas se lanzaron a colonizar África y Asia en el siglo XIX?",
+                "¿Qué argumentos usaron para justificar el colonialismo?",
+                "¿Cómo resistieron los pueblos colonizados?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "La Conferencia de Berlín (1884-85) fue convocada para:",
+                  "opciones": [
+                    "Hacer la paz entre Francia y Alemania",
+                    "Repartir formalmente el continente africano entre las potencias europeas",
+                    "Crear la Cruz Roja Internacional",
+                    "Establecer el patrón oro en Europa"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Las potencias europeas se reunieron en Berlín para ordenar el reparto de África, estableciendo reglas para la ocupación colonial. Africa fue dividida sin consultar a sus pueblos."
+                },
+                {
+                  "pregunta": "El 'racismo científico' del siglo XIX servía para:",
+                  "opciones": [
+                    "Promover la igualdad entre las razas",
+                    "Justificar ideológicamente la dominación colonial",
+                    "Estudiar las diferencias genéticas entre humanos",
+                    "Proteger a las minorías étnicas"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Teorías pseudocientíficas afirmaban que la 'raza blanca' era superior, legitimando así la dominación colonial como una 'misión civilizadora'."
+                },
+                {
+                  "pregunta": "¿Cuál fue la única nación africana que resistió exitosamente la colonización europea?",
+                  "opciones": ["Marruecos", "Egipto", "Etiopía (Abisinia)", "Sudáfrica"],
+                  "correcta": 2,
+                  "explicacion": "Etiopía derrotó a Italia en la batalla de Adua (1896), siendo la única nación africana en mantener su independencia durante el período imperialista."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-U4",
+          "titulo": "Uruguay en el siglo XIX: de la Banda Oriental a la nación",
+          "descripcion": "El proceso de independencia uruguayo y la construcción del Estado nacional.",
+          "temas": [
+            {
+              "id": "4-U4-T1",
+              "titulo": "La Banda Oriental: de la colonia a la independencia",
+              "conceptosClave": ["Artigas", "Liga Federal", "Provincias Unidas", "invasión lusitana", "Cisplatina"],
+              "objetivosAprendizaje": [
+                "Comprender el papel de Artigas en el proceso emancipador",
+                "Analizar los factores externos e internos que condicionaron la independencia",
+                "Explicar por qué Uruguay surgió como Estado independiente en 1830"
+              ],
+              "preguntasGuia": [
+                "¿Por qué Artigas es considerado el 'Padre de la Patria' uruguaya?",
+                "¿Qué papel jugaron Brasil y Argentina en la independencia de Uruguay?",
+                "¿Qué fue el Congreso de la Florida?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿En qué año se declaró la independencia de Uruguay?",
+                  "opciones": ["1811", "1820", "1825", "1830"],
+                  "correcta": 2,
+                  "explicacion": "En 1825 los 33 Orientales liderados por Juan Antonio Lavalleja declararon la independencia. En 1828 el Tratado del Río de Janeiro la reconoció internacionalmente, y en 1830 se promulgó la primera Constitución."
+                },
+                {
+                  "pregunta": "¿Qué propuso Artigas en las 'Instrucciones del Año XIII'?",
+                  "opciones": [
+                    "La centralización del poder en Buenos Aires",
+                    "La confederación de provincias con amplia autonomía local y reforma agraria",
+                    "La anexión de la Banda Oriental a Brasil",
+                    "El establecimiento de la monarquía"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Las Instrucciones del Año XIII propusieron una confederación con autonomía provincial, la soberanía popular y una reforma agraria que beneficiara a los más pobres."
+                },
+                {
+                  "pregunta": "El período en que la Banda Oriental fue dominada por Brasil (1820-1825) se conoce como:",
+                  "opciones": ["La Reconquista", "La Provincia Cisplatina", "El Protectorado", "La Patria Vieja"],
+                  "correcta": 1,
+                  "explicacion": "Entre 1820 y 1825 la Banda Oriental fue anexada por el Imperio de Brasil como 'Provincia Cisplatina', período que culminó con la rebelión de los 33 Orientales."
+                }
+              ]
+            },
+            {
+              "id": "4-U4-T2",
+              "titulo": "El Uruguay batllista y el Estado de bienestar temprano",
+              "conceptosClave": ["Batlle y Ordóñez", "estado interventor", "laicismo", "divorico", "8 horas de trabajo", "voto femenino"],
+              "objetivosAprendizaje": [
+                "Analizar las reformas del batllismo en Uruguay (1903-1929)",
+                "Comprender el modelo de Estado de bienestar uruguayo",
+                "Evaluar la importancia de las reformas sociales batllistas"
+              ],
+              "preguntasGuia": [
+                "¿Qué hizo tan especial el Uruguay de Batlle y Ordóñez?",
+                "¿Cuáles fueron las principales reformas sociales del batllismo?",
+                "¿Por qué Uruguay fue llamado 'la Suiza de América'?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "José Batlle y Ordóñez gobernó Uruguay en dos períodos: 1903-1907 y:",
+                  "opciones": ["1910-1914", "1911-1915", "1915-1919", "1920-1924"],
+                  "correcta": 1,
+                  "explicacion": "Batlle y Ordóñez gobernó en 1903-1907 y 1911-1915, implementando las reformas que transformaron Uruguay en un Estado de bienestar avanzado para su época."
+                },
+                {
+                  "pregunta": "¿Cuál de las siguientes NO fue una reforma del batllismo?",
+                  "opciones": [
+                    "La jornada laboral de 8 horas",
+                    "La separación de la Iglesia y el Estado",
+                    "El sufragio femenino (1927)",
+                    "La ley de divorcio"
+                  ],
+                  "correcta": 2,
+                  "explicacion": "El voto femenino en Uruguay fue aprobado en 1927 y ejercido por primera vez en 1938, no durante el período batllista estricto, aunque se gestó en ese contexto reformista."
+                },
+                {
+                  "pregunta": "La estatización de los ferrocarriles, el Banco República y ANCAP fue parte de:",
+                  "opciones": [
+                    "El modelo neoliberal",
+                    "El modelo batllista de Estado interventor y empresas públicas",
+                    "La política dictatorial de Terra",
+                    "Las exigencias del FMI"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Batlle impulsó la creación de empresas del Estado para controlar sectores estratégicos, modelo que persistió en Uruguay durante décadas."
+                }
+              ]
+            },
+            {
+              "id": "4-U4-T3",
+              "titulo": "Crisis y dictadura: Uruguay en el siglo XX",
+              "conceptosClave": ["crisis de 1929", "Gabriel Terra", "neobatllismo", "Tupamaros", "dictadura cívico-militar", "transición democrática"],
+              "objetivosAprendizaje": [
+                "Analizar el impacto de la crisis del 29 en Uruguay",
+                "Comprender el contexto que llevó a la dictadura de 1973",
+                "Reflexionar sobre la importancia de la democracia y los derechos humanos"
+              ],
+              "preguntasGuia": [
+                "¿Cómo afectó la crisis económica de 1929 al Uruguay?",
+                "¿Qué fue el Movimiento de Liberación Nacional - Tupamaros?",
+                "¿Qué pasó en Uruguay entre 1973 y 1985?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿En qué año comenzó la dictadura cívico-militar en Uruguay?",
+                  "opciones": ["1968", "1971", "1973", "1976"],
+                  "correcta": 2,
+                  "explicacion": "El 27 de junio de 1973, el presidente Juan María Bordaberry disolvió el parlamento con el apoyo de las Fuerzas Armadas, iniciando la dictadura que duró hasta 1985."
+                },
+                {
+                  "pregunta": "El plebiscito de 1980 fue relevante porque:",
+                  "opciones": [
+                    "Aprobó la Constitución dictatorial",
+                    "El pueblo uruguayo rechazó la propuesta constitucional de la dictadura",
+                    "Instaló el gobierno militar definitivamente",
+                    "Aprobó la privatización de empresas públicas"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El 30 de noviembre de 1980, el 57% de los uruguayos votó 'No' a la constitución propuesta por la dictadura, lo que marcó el inicio del fin del régimen."
+                },
+                {
+                  "pregunta": "La transición democrática en Uruguay culminó con las elecciones de:",
+                  "opciones": ["1982", "1984", "1985", "1989"],
+                  "correcta": 1,
+                  "explicacion": "Las elecciones de noviembre de 1984 (con algunas restricciones) dieron el triunfo a Julio María Sanguinetti, quien asumió en marzo de 1985 restaurando la democracia."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "año": 5,
+      "nombre": "Historia del siglo XX — El mundo en conflicto",
+      "descripcion": "Los grandes conflictos del siglo XX: guerras mundiales, totalitarismos, Guerra Fría y movimientos de liberación.",
+      "unidades": [
+        {
+          "id": "5-U1",
+          "titulo": "La Primera Guerra Mundial y la crisis del orden liberal",
+          "descripcion": "Causas, desarrollo y consecuencias de la Gran Guerra (1914-1918).",
+          "temas": [
+            {
+              "id": "5-U1-T1",
+              "titulo": "Causas y estallido de la Primera Guerra Mundial",
+              "conceptosClave": ["nacionalismo", "imperialismo", "militarismo", "sistema de alianzas", "atentado de Sarajevo"],
+              "objetivosAprendizaje": [
+                "Analizar las causas estructurales y el detonante de la guerra",
+                "Comprender el sistema de alianzas que convirtió un conflicto local en guerra mundial",
+                "Evaluar el papel del nacionalismo en el conflicto"
+              ],
+              "preguntasGuia": [
+                "¿Por qué el asesinato de un archiduque desencadenó una guerra mundial?",
+                "¿Qué papel jugó el nacionalismo en el estallido de la guerra?",
+                "¿Cuáles eran los dos bloques enfrentados?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿Quién fue asesinado en Sarajevo el 28 de junio de 1914?",
+                  "opciones": ["El kaiser Guillermo II", "El archiduque Francisco Fernando de Austria", "El zar Nicolás II", "El presidente Poincaré"],
+                  "correcta": 1,
+                  "explicacion": "El archiduque Francisco Fernando, heredero del Imperio Austro-Húngaro, fue asesinado por el joven nacionalista serbio Gavrilo Princip, desencadenando la cadena de alianzas que llevó a la guerra."
+                },
+                {
+                  "pregunta": "La Triple Entente estaba formada por:",
+                  "opciones": [
+                    "Alemania, Austria-Hungría, Italia",
+                    "Francia, Gran Bretaña, Rusia",
+                    "Francia, España, Portugal",
+                    "Rusia, Serbia, Bulgaria"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La Triple Entente unía a Francia, Gran Bretaña y Rusia, frente a la Triple Alianza (o Tríplice) de Alemania, Austria-Hungría e Italia."
+                },
+                {
+                  "pregunta": "¿Por qué la guerra de trincheras fue tan devastadora?",
+                  "opciones": [
+                    "Porque las armas eran muy primitivas",
+                    "Porque creó un equilibrio estático con enormes bajas y sin avances significativos",
+                    "Porque se usaron armas nucleares por primera vez",
+                    "Porque los soldados no tenían entrenamiento"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La guerra de trincheras (frente occidental) creó un frente estático donde millones de soldados murieron por avanzar pocos kilómetros. Batallas como Verdún y el Somme causaron millones de muertos."
+                }
+              ]
+            },
+            {
+              "id": "5-U1-T2",
+              "titulo": "La Revolución Rusa de 1917",
+              "conceptosClave": ["Revolución de Febrero", "Revolución de Octubre", "Lenin", "bolcheviques", "soviets", "socialismo en un país"],
+              "objetivosAprendizaje": [
+                "Explicar las causas de las dos revoluciones de 1917",
+                "Comprender la llegada al poder de los bolcheviques",
+                "Analizar el impacto global de la Revolución Rusa"
+              ],
+              "preguntasGuia": [
+                "¿Por qué Rusia tuvo dos revoluciones en 1917?",
+                "¿Qué propuso Lenin en sus 'Tesis de Abril'?",
+                "¿Cómo afectó la Revolución Rusa al mundo?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "El lema de los bolcheviques en 1917 era:",
+                  "opciones": ["'Un pueblo, un Reich, un Führer'", "'Paz, Pan, Tierra'", "'Libertad, Igualdad, Fraternidad'", "'El proletariado no tiene patria'"],
+                  "correcta": 1,
+                  "explicacion": "'Paz, Pan, Tierra' resumía las demandas populares: salir de la guerra, alimento para el pueblo hambriento, y reforma agraria. Fue el programa que dio el triunfo a los bolcheviques."
+                },
+                {
+                  "pregunta": "¿Qué fue el Soviet de Petrogrado?",
+                  "opciones": [
+                    "El palacio del zar",
+                    "Un consejo de representantes obreros y soldados",
+                    "El partido político de Lenin",
+                    "La guardia personal del zar"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Los soviets eran consejos elegidos por obreros y soldados. El Soviet de Petrogrado fue un centro de poder paralelo al gobierno provisional en 1917."
+                },
+                {
+                  "pregunta": "El Tratado de Brest-Litovsk (1918) fue firmado por Rusia para:",
+                  "opciones": [
+                    "Entrar en la Primera Guerra Mundial",
+                    "Salir de la Primera Guerra Mundial cediendo territorios a Alemania",
+                    "Crear la Unión Soviética",
+                    "Reconocer la independencia de Finlandia"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Lenin firmó la paz con Alemania en condiciones desventajosas (perdiendo Polonia, Finlandia, los países bálticos) para poder consolidar la revolución internamente."
+                }
+              ]
+            },
+            {
+              "id": "5-U1-T3",
+              "titulo": "El período de entreguerras y el ascenso de los totalitarismos",
+              "conceptosClave": ["crisis de 1929", "fascismo", "nazismo", "Hitler", "Mussolini", "antisemitismo", "estado totalitario"],
+              "objetivosAprendizaje": [
+                "Analizar cómo la crisis económica facilitó el ascenso de los totalitarismos",
+                "Caracterizar los elementos del fascismo y el nazismo",
+                "Reflexionar sobre el peligro del antisemitismo y la intolerancia"
+              ],
+              "preguntasGuia": [
+                "¿Por qué la crisis económica de 1929 favoreció a Hitler?",
+                "¿Qué diferencia el fascismo del nazismo?",
+                "¿Cómo llegó Hitler al poder por vías democráticas?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿En qué año llegó Hitler al poder en Alemania?",
+                  "opciones": ["1929", "1931", "1933", "1935"],
+                  "correcta": 2,
+                  "explicacion": "Hitler fue nombrado canciller el 30 de enero de 1933 por el presidente Hindenburg, aprovechando la crisis económica y el descontento con la República de Weimar."
+                },
+                {
+                  "pregunta": "Las Leyes de Nuremberg (1935) establecieron:",
+                  "opciones": [
+                    "La rearme de Alemania",
+                    "La discriminación legal y la privación de ciudadanía a los judíos alemanes",
+                    "La alianza entre Alemania e Italia",
+                    "La anexión de Austria a Alemania"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Las Leyes de Nuremberg privaron a los judíos alemanes de la ciudadanía y prohibieron los matrimonios entre judíos y alemanes, siendo el fundamento legal del Holocausto."
+                },
+                {
+                  "pregunta": "La 'Noche de los Cristales Rotos' (Kristallnacht, 1938) fue:",
+                  "opciones": [
+                    "Un ataque militar a Francia",
+                    "Una pogrom organizada por el Estado nazi contra judíos en Alemania y Austria",
+                    "El inicio de la Segunda Guerra Mundial",
+                    "Un bombardeo aliado a Berlín"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "En la noche del 9 al 10 de noviembre de 1938, las SA destruyeron sinagogas, negocios y hogares judíos en toda Alemania y Austria, marcando la escalada de la violencia nazi."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5-U2",
+          "titulo": "La Segunda Guerra Mundial y el Holocausto",
+          "descripcion": "El conflicto más devastador de la historia y el genocidio del pueblo judío.",
+          "temas": [
+            {
+              "id": "5-U2-T1",
+              "titulo": "El desarrollo de la Segunda Guerra Mundial",
+              "conceptosClave": ["Blitzkrieg", "resistencia", "Holocausto", "bomba atómica", "ONU", "derechos humanos"],
+              "objetivosAprendizaje": [
+                "Reconstruir los principales hitos del conflicto",
+                "Analizar el papel de los distintos actores",
+                "Reflexionar sobre las consecuencias del conflicto para la humanidad"
+              ],
+              "preguntasGuia": [
+                "¿Qué fue la 'Blitzkrieg' o guerra relámpago?",
+                "¿Por qué Hiroshima y Nagasaki fueron bombardeadas con bombas atómicas?",
+                "¿Qué consecuencias tuvo la guerra para el orden mundial?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "¿En qué fecha comenzó la Segunda Guerra Mundial?",
+                  "opciones": ["1 de septiembre de 1939", "7 de diciembre de 1941", "1 de enero de 1940", "22 de junio de 1941"],
+                  "correcta": 0,
+                  "explicacion": "El 1 de septiembre de 1939, Alemania invadió Polonia con la táctica Blitzkrieg, lo que llevó a Gran Bretaña y Francia a declararle la guerra el 3 de septiembre."
+                },
+                {
+                  "pregunta": "El Holocausto fue el genocidio sistemático de:",
+                  "opciones": [
+                    "Solo los judíos europeos",
+                    "Los judíos (6 millones), junto a gitanos, discapacitados, homosexuales y opositores políticos",
+                    "Los prisioneros de guerra aliados",
+                    "Los pueblos eslavos de la URSS"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El Holocausto (Shoah) mató a 6 millones de judíos, pero también a cientos de miles de gitanos, personas con discapacidad, homosexuales, testigos de Jehová y opositores políticos."
+                },
+                {
+                  "pregunta": "¿Qué organización internacional se creó tras la Segunda Guerra Mundial para mantener la paz?",
+                  "opciones": ["La Sociedad de Naciones", "La ONU (Organización de Naciones Unidas)", "La OTAN", "El Banco Mundial"],
+                  "correcta": 1,
+                  "explicacion": "La ONU fue fundada en 1945 para reemplazar a la fallida Sociedad de Naciones y mantener la paz internacional, siendo aprobada la Declaración Universal de DDHH en 1948."
+                }
+              ]
+            },
+            {
+              "id": "5-U2-T2",
+              "titulo": "La Guerra Fría: dos mundos en tensión",
+              "conceptosClave": ["EEUU", "URSS", "capitalismo", "comunismo", "carrera armamentista", "Cuba", "Muro de Berlín", "détente"],
+              "objetivosAprendizaje": [
+                "Caracterizar el mundo bipolar de la Guerra Fría",
+                "Analizar los principales conflictos de la Guerra Fría",
+                "Comprender el impacto de la Guerra Fría en América Latina"
+              ],
+              "preguntasGuia": [
+                "¿Por qué se llamó 'Guerra Fría' si no hubo combates directos entre EEUU y la URSS?",
+                "¿Qué fue la 'crisis de los misiles' de 1962?",
+                "¿Cómo afectó la Guerra Fría a América Latina?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "La 'Doctrina Truman' (1947) estableció:",
+                  "opciones": [
+                    "El Plan Marshall de ayuda económica a Europa",
+                    "El apoyo estadounidense a países amenazados por el comunismo",
+                    "La creación de la OTAN",
+                    "El reconocimiento del Estado de Israel"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Truman proclamó que EEUU apoyaría a cualquier nación que resistiera la expansión comunista, siendo la base de la política de 'contención' durante la Guerra Fría."
+                },
+                {
+                  "pregunta": "¿Qué fue el Muro de Berlín?",
+                  "opciones": [
+                    "Una barrera construida por Alemania Occidental para protegerse",
+                    "Una barrera construida por la RDA (Alemania comunista) para impedir la emigración al oeste",
+                    "Un monumento conmemorativo de la Segunda Guerra Mundial",
+                    "La frontera entre Francia y Alemania"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El Muro de Berlín fue construido en 1961 por la RDA para impedir que sus ciudadanos huyeran a Berlín Occidental. Fue el símbolo de la División de Europa hasta su caída en 1989."
+                },
+                {
+                  "pregunta": "La crisis de los misiles de Cuba (1962) fue relevante porque:",
+                  "opciones": [
+                    "Cuba invadió Florida",
+                    "El mundo estuvo al borde de una guerra nuclear",
+                    "La URSS ocupó Cuba militarmente",
+                    "EEUU bombardeó La Habana"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Kennedy y Khrushchev protagonizaron una tensión de 13 días cuando EEUU descubrió misiles soviéticos en Cuba. Fue el momento más cercano a una guerra nuclear durante la Guerra Fría."
+                }
+              ]
+            },
+            {
+              "id": "5-U2-T3",
+              "titulo": "Descolonización y Tercer Mundo",
+              "conceptosClave": ["descolonización", "No Alineados", "Gandhi", "Mandela", "apartheid", "neocolonialismo"],
+              "objetivosAprendizaje": [
+                "Analizar el proceso de descolonización en Asia y África",
+                "Comprender el movimiento de los No Alineados",
+                "Reflexionar sobre las herencias del colonialismo en el mundo actual"
+              ],
+              "preguntasGuia": [
+                "¿Por qué los países colonizados pudieron independizarse después de 1945?",
+                "¿Qué fue el 'apartheid' en Sudáfrica?",
+                "¿Qué es el neocolonialismo?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "Gandhi lideró la independencia de India principalmente a través de:",
+                  "opciones": [
+                    "La lucha armada contra el ejército británico",
+                    "La resistencia no violenta y la desobediencia civil",
+                    "Negociaciones secretas con el gobierno británico",
+                    "Alianzas militares con la URSS"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Gandhi desarrolló el 'Satyagraha' (resistencia no violenta): boicots, huelgas, marchas pacíficas. La marcha de la sal de 1930 fue un ejemplo emblemático."
+                },
+                {
+                  "pregunta": "El apartheid en Sudáfrica fue un sistema de:",
+                  "opciones": [
+                    "Cooperación entre las diferentes razas",
+                    "Segregación racial institucionalizada y discriminación legal",
+                    "Autonomía de las comunidades negras",
+                    "Educación bilingüe"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El apartheid (segregación en afrikáans) fue el sistema de discriminación racial legal en Sudáfrica desde 1948 hasta 1994, cuando Nelson Mandela fue elegido presidente."
+                },
+                {
+                  "pregunta": "La Conferencia de Bandung (1955) fue importante porque:",
+                  "opciones": [
+                    "Fundó la OTAN",
+                    "Reunió a países asiáticos y africanos recién independizados para rechazar el colonialismo",
+                    "Estableció la Unión Africana",
+                    "Firmó la paz en la guerra de Corea"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "29 países de Asia y África se reunieron en Bandung proclamando el anticolonialismo, la no alineación y la cooperación Sur-Sur, dando origen al movimiento de los No Alineados."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5-U3",
+          "titulo": "América Latina en el siglo XX",
+          "descripcion": "Procesos políticos, sociales y económicos en América Latina durante el siglo XX.",
+          "temas": [
+            {
+              "id": "5-U3-T1",
+              "titulo": "Populismo y desarrollo en América Latina",
+              "conceptosClave": ["populismo", "Perón", "Vargas", "sustitución de importaciones", "industrialización", "movimiento obrero latinoamericano"],
+              "objetivosAprendizaje": [
+                "Caracterizar el populismo latinoamericano",
+                "Analizar el modelo de desarrollo por sustitución de importaciones",
+                "Comparar los casos de Perón y Vargas"
+              ],
+              "preguntasGuia": [
+                "¿Qué es el populismo y por qué surgió en América Latina?",
+                "¿Qué fue el peronismo en Argentina?",
+                "¿Cómo se relaciona el populismo con los movimientos obreros?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "El modelo de 'sustitución de importaciones' buscaba:",
+                  "opciones": [
+                    "Exportar más productos primarios",
+                    "Desarrollar la industria nacional para dejar de importar manufacturas",
+                    "Abrir las economías al libre comercio internacional",
+                    "Reducir el gasto público"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La ISI (Industrialización por Sustitución de Importaciones) buscaba desarrollar industria local para no depender de las importaciones de países industrializados."
+                },
+                {
+                  "pregunta": "Juan Domingo Perón gobernó Argentina en dos períodos, siendo derrocado en 1955 por:",
+                  "opciones": ["Una revolución popular", "Un golpe militar llamado 'Revolución Libertadora'", "Elecciones que perdió", "Una invasión extranjera"],
+                  "correcta": 1,
+                  "explicacion": "El golpe de 1955, llamado 'Revolución Libertadora', derrocó a Perón. El peronismo quedó proscripto durante 18 años."
+                },
+                {
+                  "pregunta": "¿Qué fue la CEPAL y cuál fue su aporte teórico?",
+                  "opciones": [
+                    "Un partido político latinoamericano",
+                    "La Comisión Económica para América Latina, que desarrolló la teoría de la dependencia",
+                    "Una institución financiera del FMI",
+                    "Un tratado de libre comercio"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La CEPAL (ONU) analizó la relación asimétrica entre países centrales y periféricos, desarrollando la teoría de la dependencia con figuras como Prebisch y Cardoso."
+                }
+              ]
+            },
+            {
+              "id": "5-U3-T2",
+              "titulo": "Revoluciones y dictaduras en América Latina",
+              "conceptosClave": ["Revolución Cubana", "Che Guevara", "Plan Cóndor", "desaparecidos", "transiciones democráticas"],
+              "objetivosAprendizaje": [
+                "Analizar la Revolución Cubana y su impacto regional",
+                "Comprender el Plan Cóndor y la coordinación represiva",
+                "Reflexionar sobre los crímenes de lesa humanidad y la memoria"
+              ],
+              "preguntasGuia": [
+                "¿Cómo llegó Castro al poder en Cuba?",
+                "¿Qué fue el Plan Cóndor?",
+                "¿Por qué es importante recordar los crímenes de las dictaduras?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "La Revolución Cubana triunfó en:",
+                  "opciones": ["1953", "1956", "1959", "1962"],
+                  "correcta": 2,
+                  "explicacion": "El 1 de enero de 1959, las fuerzas guerrilleras lideradas por Fidel Castro y el Che Guevara derrocaron a la dictadura de Batista."
+                },
+                {
+                  "pregunta": "El Plan Cóndor fue:",
+                  "opciones": [
+                    "Un plan de desarrollo económico latinoamericano",
+                    "La coordinación entre dictaduras latinoamericanas para perseguir opositores políticos",
+                    "Un programa de ayuda de EEUU a Latinoamérica",
+                    "Una alianza militar regional"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El Plan Cóndor (1975) coordinó a las dictaduras de Chile, Argentina, Uruguay, Paraguay, Bolivia y Brasil para perseguir, torturar y asesinar opositores políticos."
+                },
+                {
+                  "pregunta": "Las 'Madres de Plaza de Mayo' en Argentina representaron:",
+                  "opciones": [
+                    "Un movimiento político de izquierda",
+                    "La resistencia de familiares de desaparecidos y la lucha por los derechos humanos",
+                    "Un sindicato de trabajadoras",
+                    "Un partido político opositor"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Las Madres comenzaron a marchar en la Plaza de Mayo en 1977, reclamando información sobre sus hijos desaparecidos durante la dictadura argentina, convirtiéndose en símbolo mundial de DDHH."
+                }
+              ]
+            },
+            {
+              "id": "5-U3-T3",
+              "titulo": "Uruguay contemporáneo: democracia y desafíos",
+              "conceptosClave": ["Ley de Caducidad", "MERCOSUR", "Frente Amplio", "políticas sociales", "Uruguay progresista"],
+              "objetivosAprendizaje": [
+                "Analizar los desafíos de la transición democrática en Uruguay",
+                "Comprender las transformaciones políticas y sociales de Uruguay post-dictadura",
+                "Reflexionar sobre los derechos humanos en la historia reciente"
+              ],
+              "preguntasGuia": [
+                "¿Qué fue la Ley de Caducidad y por qué fue controversial?",
+                "¿Qué cambios trajo el Frente Amplio al gobierno desde 2005?",
+                "¿Cuáles son los principales desafíos del Uruguay actual?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "La Ley de Caducidad (1986) en Uruguay:",
+                  "opciones": [
+                    "Juzgó a todos los militares involucrados en crímenes de la dictadura",
+                    "Concedió amnistía a los militares por crímenes cometidos durante la dictadura",
+                    "Creó una comisión de la verdad",
+                    "Restableció los derechos de los exiliados"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La Ley de Caducidad (conocida como 'Ley de Impunidad') amnistió a policías y militares por los crímenes cometidos durante la dictadura, siendo muy debatida hasta hoy."
+                },
+                {
+                  "pregunta": "Uruguay fue el primer país del mundo en:",
+                  "opciones": [
+                    "Reconocer el matrimonio igualitario",
+                    "Legalizar y regular el mercado de cannabis",
+                    "Establecer el voto electrónico",
+                    "Prohibir los combustibles fósiles"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "En 2013, Uruguay se convirtió en el primer país del mundo en legalizar la producción, distribución y venta regulada de cannabis bajo control estatal."
+                },
+                {
+                  "pregunta": "¿Cuál fue la principal política social del primer gobierno del Frente Amplio (2005)?",
+                  "opciones": [
+                    "La privatización de ANCAP",
+                    "El Plan de Emergencia Social (PANES) para reducir la pobreza extrema",
+                    "La eliminación de las empresas públicas",
+                    "La firma del ALCA"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El PANES (Plan de Atención Nacional a la Emergencia Social) fue implementado por el gobierno de Tabaré Vázquez para atender a la población en situación de pobreza extrema."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "año": 6,
+      "nombre": "Historia Contemporánea — Globalización y desafíos del siglo XXI",
+      "descripcion": "El mundo desde la caída del Muro de Berlín hasta la actualidad: globalización, multipolaridad y nuevos desafíos.",
+      "unidades": [
+        {
+          "id": "6-U1",
+          "titulo": "El fin de la Guerra Fría y la nueva era",
+          "descripcion": "La caída del comunismo soviético, la globalización y el nuevo orden mundial.",
+          "temas": [
+            {
+              "id": "6-U1-T1",
+              "titulo": "El derrumbe de la URSS y el fin de la bipolaridad",
+              "conceptosClave": ["Gorbachov", "Perestroika", "Glasnost", "caída del Muro", "URSS", "Yeltsin"],
+              "objetivosAprendizaje": [
+                "Analizar las causas del colapso soviético",
+                "Comprender el impacto de la caída del Muro de Berlín",
+                "Reflexionar sobre las consecuencias del fin de la bipolaridad"
+              ],
+              "preguntasGuia": [
+                "¿Por qué colapsó la Unión Soviética?",
+                "¿Qué significó la caída del Muro de Berlín para el mundo?",
+                "¿Surgió un mundo unipolar o multipolar después de 1991?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "El Muro de Berlín cayó en:",
+                  "opciones": ["9 de noviembre de 1989", "1 de enero de 1990", "25 de diciembre de 1991", "3 de octubre de 1990"],
+                  "correcta": 0,
+                  "explicacion": "El 9 de noviembre de 1989, el gobierno de la RDA anunció la apertura de las fronteras y miles de berlineses comenzaron a derribar el muro, símbolo del fin de la Guerra Fría."
+                },
+                {
+                  "pregunta": "Las reformas de Gorbachov en la URSS fueron:",
+                  "opciones": [
+                    "Solo económicas",
+                    "Perestroika (reestructuración económica) y Glasnost (transparencia política)",
+                    "Solo militares",
+                    "La privatización total de la economía"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Gorbachov intentó reformar el sistema soviético con la Perestroika (reestructuración) y la Glasnost (apertura y transparencia), pero las reformas desencadenaron fuerzas que no pudo controlar."
+                },
+                {
+                  "pregunta": "¿Cuándo se disolvió oficialmente la Unión Soviética?",
+                  "opciones": ["9 de noviembre de 1989", "3 de octubre de 1990", "25 de diciembre de 1991", "1 de enero de 1992"],
+                  "correcta": 2,
+                  "explicacion": "El 25 de diciembre de 1991, Gorbachov renunció y la bandera soviética fue arriada del Kremlin, marcando la disolución oficial de la URSS."
+                }
+              ]
+            },
+            {
+              "id": "6-U1-T2",
+              "titulo": "Globalización: economía, cultura y tecnología",
+              "conceptosClave": ["globalización", "neoliberalismo", "FMI", "OMC", "internet", "movimiento antiglobalización"],
+              "objetivosAprendizaje": [
+                "Definir y caracterizar el proceso de globalización",
+                "Analizar críticamente las consecuencias de la globalización",
+                "Comprender los movimientos de resistencia a la globalización"
+              ],
+              "preguntasGuia": [
+                "¿Qué es la globalización y cuándo comenzó a acelerarse?",
+                "¿Quiénes ganan y quiénes pierden con la globalización?",
+                "¿Qué es el Consenso de Washington?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "El 'Consenso de Washington' (1989) propuso principalmente:",
+                  "opciones": [
+                    "La cooperación entre países en desarrollo",
+                    "Privatizaciones, desregulación y apertura comercial para países en desarrollo",
+                    "Un modelo de economía mixta",
+                    "La creación del euro"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "El Consenso de Washington reunió las políticas del FMI, Banco Mundial y Tesoro de EEUU: privatizaciones, reducción del Estado, desregulación y libre comercio como receta para el desarrollo."
+                },
+                {
+                  "pregunta": "La 'brecha digital' se refiere a:",
+                  "opciones": [
+                    "La diferencia entre televisores análogos y digitales",
+                    "La desigualdad en el acceso a internet y tecnologías entre países y grupos sociales",
+                    "Los diferentes sistemas operativos",
+                    "La velocidad diferente de conexión a internet"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La brecha digital es una forma de desigualdad social y económica: quienes tienen acceso a tecnología tienen más oportunidades educativas y laborales que quienes no."
+                },
+                {
+                  "pregunta": "Las manifestaciones de Seattle (1999) marcaron el surgimiento de:",
+                  "opciones": [
+                    "El movimiento ecologista",
+                    "El movimiento antiglobalización que cuestionaba las políticas del FMI y la OMC",
+                    "El movimiento feminista global",
+                    "Los partidos verdes europeos"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "Las protestas contra la cumbre de la OMC en Seattle en 1999 fueron el punto de visibilidad del movimiento altermundialista, que cuestionaba las consecuencias sociales de la globalización neoliberal."
+                }
+              ]
+            },
+            {
+              "id": "6-U1-T3",
+              "titulo": "El mundo multipolar: conflictos y desafíos del siglo XXI",
+              "conceptosClave": ["11-S", "terrorismo", "cambio climático", "migraciones", "China", "multipolaridad"],
+              "objetivosAprendizaje": [
+                "Analizar los atentados del 11-S y sus consecuencias",
+                "Comprender el ascenso de China como potencia global",
+                "Reflexionar sobre los desafíos globales del siglo XXI"
+              ],
+              "preguntasGuia": [
+                "¿Cómo cambió el mundo después del 11 de septiembre de 2001?",
+                "¿Por qué China se convirtió en la segunda economía mundial?",
+                "¿Cuáles son los principales desafíos globales del siglo XXI?"
+              ],
+              "quiz": [
+                {
+                  "pregunta": "Los atentados del 11 de septiembre de 2001 en EEUU desencadenaron:",
+                  "opciones": [
+                    "La invasión de Irak (2003) y Afganistán (2001) y la llamada 'guerra contra el terrorismo'",
+                    "La creación de la ONU",
+                    "La crisis económica de 2008",
+                    "La guerra entre EEUU y Rusia"
+                  ],
+                  "correcta": 0,
+                  "explicacion": "Tras el 11-S, EEUU invadió Afganistán (2001) buscando a Al-Qaeda e Irak (2003) bajo la justificación de armas de destrucción masiva, iniciando la 'guerra global contra el terrorismo'."
+                },
+                {
+                  "pregunta": "El Acuerdo de París (2015) buscó:",
+                  "opciones": [
+                    "Establecer el libre comercio entre Europa y EEUU",
+                    "Comprometer a los países a reducir sus emisiones para frenar el cambio climático",
+                    "Resolver el conflicto en Siria",
+                    "Regular la migración internacional"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "195 países firmaron el Acuerdo de París para limitar el calentamiento global a menos de 2°C respecto a niveles preindustriales, el mayor acuerdo climático de la historia."
+                },
+                {
+                  "pregunta": "¿Qué fue la 'Primavera Árabe' (2010-2012)?",
+                  "opciones": [
+                    "Un período de prosperidad económica en el mundo árabe",
+                    "Una ola de protestas y revoluciones populares en países del norte de África y Oriente Medio",
+                    "Un acuerdo de paz entre Israel y Palestina",
+                    "Una crisis del petróleo"
+                  ],
+                  "correcta": 1,
+                  "explicacion": "La Primavera Árabe fue una serie de levantamientos populares que derrocaron gobiernos en Túnez, Egipto y Libia, e iniciaron guerras civiles en Siria y Yemen, transformando el mundo árabe."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
