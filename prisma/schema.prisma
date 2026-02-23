@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── Liceo / Institución ───────────────────────────────────
+model Organization {
+  id        String   @id @default(cuid())
+  name      String                          // "Liceo Nº 23 Montevideo"
+  slug      String   @unique               // "liceo-23-mvd"
+  city      String?
+  plan      Plan     @default(TRIAL)
+  maxUsers  Int      @default(50)
+  createdAt DateTime @default(now())
+
+  users       User[]
+  assignments Assignment[]
+
+  @@map("organizations")
+}
+
+// ── Usuario (alumno / docente / director) ─────────────────
+model User {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  passwordHash   String
+  name           String
+  role           Role     @default(STUDENT)
+  year           String?                   // "4°", "5°", "6°"
+  group          String?                   // "4°B"
+  avatarEmoji    String   @default("🎓")
+  active         Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  lastSeenAt     DateTime?
+
+  orgId          String
+  org            Organization @relation(fields: [orgId], references: [id])
+
+  chatSessions   ChatSession[]
+  progress       Progress[]
+  assignedTo     Assignment[] @relation("AssignmentStudents")
+
+  @@map("users")
+}
+
+// ── Sesión de chat ────────────────────────────────────────
+model ChatSession {
+  id        String   @id @default(cuid())
+  subject   String                          // "Historia"
+  topic     String                          // "Revolución Francesa"
+  year      String                          // "4°"
+  messages  Json                            // [{role, content, timestamp}]
+  summary   String?                         // resumen auto-generado
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("chat_sessions")
+}
+
+// ── Progreso por alumno / materia / tema ──────────────────
+model Progress {
+  id          String   @id @default(cuid())
+  subject     String
+  topicId     String
+  topicName   String
+  completed   Boolean  @default(false)
+  quizScore   Int?                          // 0-100
+  timeSpentMs Int      @default(0)
+  attempts    Int      @default(0)
+  lastStudied DateTime?
+  updatedAt   DateTime @updatedAt
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, subject, topicId])
+  @@map("progress")
+}
+
+// ── Asignaciones del docente ──────────────────────────────
+model Assignment {
+  id          String   @id @default(cuid())
+  title       String                        // "Estudiar Revolución Francesa"
+  subject     String
+  topicId     String
+  dueDate     DateTime?
+  instructions String?
+  createdAt   DateTime @default(now())
+
+  orgId       String
+  org         Organization @relation(fields: [orgId], references: [id])
+
+  students    User[]   @relation("AssignmentStudents")
+
+  @@map("assignments")
+}
+
+// ── Enums ─────────────────────────────────────────────────
+enum Role {
+  STUDENT
+  TEACHER
+  DIRECTOR
+  ADMIN
+}
+
+enum Plan {
+  TRIAL       // 30 días gratis, hasta 50 alumnos
+  STARTER     // USD 6/alumno/mes
+  PRO         // USD 8/alumno/mes + analytics
+  ENTERPRISE  // USD 10/alumno/mes + custom
+}

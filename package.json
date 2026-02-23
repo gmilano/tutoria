@@ -5,13 +5,18 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "build": "prisma generate && prisma migrate deploy",
     "start": "node server.js",
     "dev": "node --watch server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "@prisma/client": "^7.4.1",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.3",
     "node-fetch": "^3.3.2",
-    "cors": "^2.8.5"
+    "prisma": "^7.4.1"
   }
 }

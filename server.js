@@ -4,6 +4,9 @@ import cors from 'cors';
 import { createServer } from 'http';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import authRoutes     from './routes/auth.js';
+import progressRoutes from './routes/progress.js';
+import sessionRoutes  from './routes/sessions.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -17,6 +20,11 @@ app.use('/curriculum', express.static(join(__dirname, 'curriculum')));
 app.use('/demo/img',   express.static(join(__dirname, 'demo/img')));
 app.use('/pitch',      express.static(join(__dirname, 'pitch')));
 app.use(express.static(__dirname)); // index.html, etc.
+
+// ── Auth / Progress / Sessions routes ────────────────────
+app.use('/api/auth',     authRoutes);
+app.use('/api/progress', progressRoutes);
+app.use('/api/sessions', sessionRoutes);
 
 // ── /api/verify-code — access gate ───────────────────────
 app.post('/api/verify-code', (req, res) => {
