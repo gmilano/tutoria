@@ -1269,6 +1269,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
     <button class="store-tab active" onclick="switchStoreTab('create',this)">✨ Crear</button>
     <button class="store-tab" onclick="switchStoreTab('gallery',this)">🎮 Galería</button>
     <button class="store-tab" onclick="switchStoreTab('my',this)">📦 Mis juegos</button>
+    <button class="store-tab" onclick="switchStoreTab('assets',this)">🗂️ Mis recursos</button>
   </div>
 
   <div id="storeCreate" class="store-create">
@@ -1344,6 +1345,14 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
   <div id="storeMy" style="display:none;flex:1;overflow-y:auto">
     <div class="store-gallery">
       <div class="store-grid" id="myGamesGrid"></div>
+    </div>
+  </div>
+
+  <!-- Mis recursos: imágenes, videos, audios guardados -->
+  <div id="storeAssets" style="display:none;flex:1;overflow-y:auto;padding:14px">
+    <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:12px">Imágenes, videos y audios guardados</div>
+    <div id="myAssetsGrid" style="display:flex;flex-direction:column;gap:8px">
+      <div style="padding:24px;color:var(--muted);font-style:italic;text-align:center">Cargando...</div>
     </div>
   </div>
 </div>
@@ -1742,11 +1751,16 @@ async function generateResourceImage(topic, subject) {
     });
     const d = await r.json();
     if (d.url) {
+      const imgUrl = d.url;
       container.innerHTML = `
         <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border)">
-          <img src="${d.url}" style="width:100%;display:block" alt="${escapeHtml(topic)}">
-          <div style="padding:6px 10px;background:var(--surface);font-size:10px;color:var(--muted)">
-            🖼️ DALL-E 3 HD · ${escapeHtml(topic)}
+          <img src="${imgUrl}" style="width:100%;display:block" alt="${escapeHtml(topic)}">
+          <div style="padding:6px 10px;background:var(--surface);display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:10px;color:var(--muted)">🖼️ DALL-E 3 HD · ${escapeHtml(topic)}</span>
+            <button onclick="saveImageAsset('${imgUrl.replace(/'/g,"\\'")}','${topic.replace(/'/g,"\\'")}','${subject.replace(/'/g,"\\'")}',this)"
+              style="padding:3px 8px;background:var(--indigo);color:#fff;border:none;border-radius:5px;font-size:10px;font-weight:600;cursor:pointer;font-family:inherit">
+              💾
+            </button>
           </div>
         </div>`;
     }
@@ -1995,17 +2009,79 @@ async function generateImage() {
 
     if (!r.ok) throw new Error(d.error || 'Error generando imagen');
 
+    const imgUrl = d.url;
     const inner = modal.querySelector('.media-modal-inner');
     inner.innerHTML = `
       <button onclick="this.closest('.media-modal').remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer">✕</button>
       <div style="font-weight:700;font-size:16px;margin-bottom:12px">🖼️ ${subject} — ${topic}</div>
-      <img src="${d.url}" alt="${topic}" style="width:100%;border-radius:8px">
-      <div style="font-size:11px;color:#9ca3af;margin-top:8px">${d.revised_prompt?.slice(0,120) || ''}...</div>`;
+      <img src="${imgUrl}" alt="${topic}" style="width:100%;border-radius:8px">
+      <div style="font-size:11px;color:#9ca3af;margin-top:6px">${d.revised_prompt?.slice(0,120) || ''}...</div>
+      <button id="saveImgBtn" onclick="saveImageAsset('${imgUrl.replace(/'/g,"\\'")}','${topic.replace(/'/g,"\\'")}','${subject.replace(/'/g,"\\'")}',this)"
+        style="margin-top:10px;width:100%;padding:8px;background:var(--indigo);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">
+        💾 Guardar imagen
+      </button>`;
   } catch (e) {
     clearInterval(tick);
     modal.querySelector('#imgStatus').textContent = '❌ ' + e.message;
     modal.querySelector('#imgStatus').style.color = '#ef4444';
   }
+}
+
+// ── Guardar assets (imagen / video / audio) ───────────────
+async function saveImageAsset(url, topic, subject, btn) {
+  btn.textContent = '⏳ Guardando...'; btn.disabled = true;
+  try {
+    const r = await fetch('/api/media/save/image', {
+      method: 'POST', headers: getAuthHeaders(),
+      body: JSON.stringify({ url, title: `${subject} — ${topic}`, subject, topic })
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error);
+    btn.textContent = '✅ Guardado en Mis recursos';
+    btn.style.background = '#10b981';
+  } catch (e) { btn.textContent = '❌ Error: ' + e.message; btn.disabled = false; }
+}
+
+async function saveVideoAsset(jobId, topic, subject, btn) {
+  btn.textContent = '⏳ Descargando y guardando...'; btn.disabled = true;
+  try {
+    const r = await fetch('/api/media/save/video', {
+      method: 'POST', headers: getAuthHeaders(),
+      body: JSON.stringify({ jobId, title: `${subject} — ${topic}`, subject, topic })
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error);
+    btn.textContent = `✅ Guardado (${Math.round(d.size/1024)}KB)`;
+    btn.style.background = '#10b981';
+  } catch (e) { btn.textContent = '❌ ' + e.message; btn.disabled = false; }
+}
+
+async function loadMyAssets() {
+  try {
+    const r = await fetch('/api/media/assets', { headers: getAuthHeaders() });
+    if (!r.ok) return;
+    const d = await r.json();
+    const container = document.getElementById('myAssetsGrid');
+    if (!container) return;
+    if (!d.assets?.length) {
+      container.innerHTML = '<div style="padding:24px;color:var(--muted);font-style:italic;text-align:center">Todavía no guardaste nada.<br>Generá imágenes o videos y usá el botón 💾</div>';
+      return;
+    }
+    container.innerHTML = d.assets.map(a => `
+      <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--surface)">
+        <div style="padding:8px 10px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)">
+          <span style="font-size:20px">${a.type==='image'?'🖼️':a.type==='video'?'🎬':'🔊'}</span>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escapeHtml(a.title)}</div>
+            <div style="font-size:10px;color:var(--muted)">${a.subject||''} · ${Math.round((a.size||0)/1024)}KB · ${new Date(a.createdAt).toLocaleDateString('es')}</div>
+          </div>
+          <a href="/api/media/asset/${a.id}" target="_blank" rel="noopener"
+            style="padding:4px 10px;background:var(--indigo-bg);color:var(--indigo);border:1px solid #c7d2fe;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;white-space:nowrap">
+            ${a.type==='video'?'▶ Ver':a.type==='image'?'🖼 Ver':'🔊 Escuchar'}
+          </a>
+        </div>
+      </div>`).join('');
+  } catch { /* ignore */ }
 }
 
 let videoJobId = null;
@@ -2066,7 +2142,11 @@ async function generateVideo() {
           inner.innerHTML = `
             <button onclick="this.closest('.media-modal').remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer">✕</button>
             <div style="font-weight:700;font-size:16px;margin-bottom:12px">🎬 ${subject} — ${topic}</div>
-            <video controls autoplay src="${status.url}" style="width:100%;border-radius:8px"></video>`;
+            <video controls autoplay src="${status.url}" style="width:100%;border-radius:8px"></video>
+            <button id="saveVidBtn" onclick="saveVideoAsset('${videoJobId}','${topic.replace(/'/g,"\\'")}','${subject.replace(/'/g,"\\'")}',this)"
+              style="margin-top:10px;width:100%;padding:8px;background:var(--indigo);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">
+              💾 Guardar video
+            </button>`;
         } else if (status.status === 'failed') {
           clearInterval(window._videoPoller);
         }
@@ -2690,8 +2770,10 @@ function switchStoreTab(tab, btn) {
   document.getElementById('storeCreate').style.display = tab === 'create' ? '' : 'none';
   document.getElementById('storeGallery').style.display = tab === 'gallery' ? 'flex' : 'none';
   document.getElementById('storeMy').style.display = tab === 'my' ? 'flex' : 'none';
+  document.getElementById('storeAssets').style.display = tab === 'assets' ? 'flex' : 'none';
   if (tab === 'gallery') loadGallery();
   if (tab === 'my') loadMyGames();
+  if (tab === 'assets') loadMyAssets();
 }
 
 async function generateGame() {

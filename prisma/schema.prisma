@@ -19,6 +19,7 @@ model Organization {
   users       User[]
   assignments Assignment[]
   games       Game[]
+  mediaAssets MediaAsset[]
 
   @@map("organizations")
 }
@@ -44,6 +45,7 @@ model User {
   progress       Progress[]
   assignedTo     Assignment[] @relation("AssignmentStudents")
   games          Game[]
+  mediaAssets    MediaAsset[]
 
   @@map("users")
 }
@@ -120,6 +122,26 @@ model Game {
   orgId       String
   org         Organization @relation(fields: [orgId], references: [id])
   @@map("games")
+}
+
+model MediaAsset {
+  id        String   @id @default(cuid())
+  type      String   // 'image' | 'video' | 'audio'
+  title     String
+  subject   String?
+  topic     String?
+  mimeType  String   @default("image/png")
+  data      Bytes?   // binary: imágenes y audios (<5MB)
+  jobId     String?  // Sora job ID para videos grandes
+  size      Int?     // bytes
+  createdAt DateTime @default(now())
+
+  userId    String
+  user      User         @relation(fields: [userId], references: [id])
+  orgId     String
+  org       Organization @relation(fields: [orgId], references: [id])
+
+  @@map("media_assets")
 }
 
 // ── Enums ─────────────────────────────────────────────────

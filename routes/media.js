@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { requireAuth } from '../lib/auth.js';
 import multer from 'multer';
+import prisma from '../lib/db.js';
 
 const router = Router();
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
@@ -186,6 +187,59 @@ router.post('/transcribe', requireAuth, upload.single('file'), async (req, res) 
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+// ── POST /api/media/save/image — descarga y guarda imagen ──
+router.post('/save/image', requireAuth, async (req, res) => {
+  const { url, title, subject, topic } = req.body;
+  if (!url) return res.status(400).json({ error: 'url requerida' });
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('No se pudo descargar la imagen');
+    const buf = Buffer.from(await r.arrayBuffer());
+    const mimeType = r.headers.get('content-type') || 'image/png';
+    const asset = await prisma.mediaAsset.create({
+      data: { type: 'image', title: title || 'Imagen', subject, topic, mimeType, data: buf, size: buf.length, userId: req.user.id, orgId: req.user.orgId }
+    });
+    res.json({ assetId: asset.id, size: buf.length });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// ── POST /api/media/save/video — guarda referencia Sora ───
+router.post('/save/video', requireAuth, async (req, res) => {
+  const { jobId, title, subject, topic } = req.body;
+  if (!jobId) return res.status(400).json({ error: 'jobId requerido' });
+  try {
+    // Descargar y guardar el video como bytes
+    const r = await fetch(`https://api.openai.com/v1/videos/${jobId}/content`, {
+      headers: { 'Authorization': `Bearer ${OPENAI_API_KEY}` }
+    });
+    if (!r.ok) throw new Error('Video no disponible aún');
+    const buf = Buffer.from(await r.arrayBuffer());
+    const asset = await prisma.mediaAsset.create({
+      data: { type: 'video', title: title || 'Video', subject, topic, mimeType: 'video/mp4', data: buf, size: buf.length, jobId, userId: req.user.id, orgId: req.user.orgId }
+    });
+    res.json({ assetId: asset.id, size: buf.length });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// ── GET /api/media/assets — lista mis assets ───────────────
+router.get('/assets', requireAuth, async (req, res) => {
+  const assets = await prisma.mediaAsset.findMany({
+    where: { userId: req.user.id },
+    orderBy: { createdAt: 'desc' },
+    select: { id: true, type: true, title: true, subject: true, topic: true, mimeType: true, size: true, createdAt: true }
+  });
+  res.json({ assets });
+});
+
+// ── GET /api/media/asset/:id — servir el asset ─────────────
+router.get('/asset/:id', requireAuth, async (req, res) => {
+  const asset = await prisma.mediaAsset.findFirst({ where: { id: req.params.id, userId: req.user.id } });
+  if (!asset || !asset.data) return res.status(404).end();
+  res.set('Content-Type', asset.mimeType);
+  res.set('Cache-Control', 'private, max-age=86400');
+  res.send(asset.data);
 });
 
 export default router;
