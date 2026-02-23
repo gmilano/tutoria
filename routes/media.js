@@ -128,17 +128,36 @@ router.get('/video/:jobId', requireAuth, async (req, res) => {
     }
 
     const d = await r.json();
-    // When completed: status='completed', d.url or d.content[0].url has the video
-    const url = d.url || d.content?.[0]?.url || d.data?.[0]?.url;
+    // Video content served via our proxy endpoint when completed
+    const url = d.status === 'completed'
+      ? `/api/media/video/${d.id}/content`
+      : null;
     res.json({
       jobId: d.id,
-      status: d.status,       // 'queued' | 'processing' | 'completed' | 'failed'
+      status: d.status,       // 'queued' | 'in_progress' | 'completed' | 'failed'
       url,
       progress: d.progress || 0,
       seconds: d.seconds
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
+  }
+});
+
+// ── GET /api/media/video/:jobId/content — stream video ────
+router.get('/video/:jobId/content', async (req, res) => {
+  if (!OPENAI_API_KEY) return res.status(500).end();
+  try {
+    const r = await fetch(`https://api.openai.com/v1/videos/${req.params.jobId}/content`, {
+      headers: { 'Authorization': `Bearer ${OPENAI_API_KEY}` }
+    });
+    if (!r.ok) return res.status(r.status).end();
+    res.set('Content-Type', r.headers.get('content-type') || 'video/mp4');
+    res.set('Cache-Control', 'public, max-age=3600');
+    const buf = await r.arrayBuffer();
+    res.send(Buffer.from(buf));
+  } catch (e) {
+    res.status(500).end();
   }
 });
 
