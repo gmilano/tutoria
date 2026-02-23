@@ -2,12 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
 <title>TutorIA — Demo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
+  --vh: 1vh;
   --bg:        #f4f6fb;
   --surface:   #ffffff;
   --surface2:  #f8fafc;
@@ -31,9 +32,10 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,.1), 0 2px 4px rgba(0,0,0,.06);
   --shadow-lg: 0 10px 30px rgba(0,0,0,.12);
 }
+@supports (height: 100dvh) { :root { --app-height: 100dvh; } }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { font-size:15px; }
-body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); overflow:hidden; height:100vh; }
+body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); overflow:hidden; height:100dvh; }
 
 /* ─── HEADER ─────────────────────────────────────────────── */
 .header {
@@ -67,7 +69,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 }
 
 /* ─── LAYOUT ─────────────────────────────────────────────── */
-.view { display:none; height:calc(100vh - 58px); overflow:hidden; }
+.view { display:none; height:calc(100dvh - 58px); overflow:hidden; }
 .view.active { display:flex; }
 
 /* ─── STUDENT VIEW ─────────────────────────────────────────── */
@@ -124,7 +126,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 .topic-progress-fill { height:100%; background:linear-gradient(90deg,var(--indigo),var(--purple)); border-radius:3px; }
 .topic-pct { font-size:12px; font-weight:700; color:var(--indigo); }
 
-.messages { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; background:var(--bg); }
+.messages { flex:1; min-height:0; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; background:var(--bg); }
 
 .msg { display:flex; gap:10px; animation:fadeUp .25s ease; }
 .msg.tutor   { align-self:flex-start; max-width:88%; }
@@ -196,8 +198,9 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 .dot:nth-child(3) { animation-delay:.3s;  }
 
 .input-row {
-  padding:12px 14px; border-top:1px solid var(--border); display:flex; gap:8px;
-  background:var(--surface); flex-shrink:0;
+  padding:12px 14px; padding-bottom:max(12px, env(safe-area-inset-bottom, 8px));
+  border-top:1px solid var(--border); display:flex; gap:8px;
+  background:var(--surface); flex-shrink:0; position:sticky; bottom:0;
 }
 .msg-input {
   flex:1; border:1.5px solid var(--border); border-radius:10px;
@@ -701,7 +704,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 .chat-img-preview { max-width:200px; max-height:150px; border-radius:8px; margin-top:6px; }
 
 /* ─── STORE VIEW ───────────────────────────────────────── */
-.store-view { display:none; flex-direction:column; height:calc(100vh - 58px); overflow:hidden; }
+.store-view { display:none; flex-direction:column; height:calc(100dvh - 58px); overflow:hidden; }
 .store-view.active { display:flex; }
 .store-tabs { display:flex; gap:2px; background:var(--bg); border-radius:10px; padding:3px; margin:14px; align-self:center; }
 .store-tab {
@@ -769,19 +772,120 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 
 /* ─── RESPONSIVE ────────────────────────────────────────── */
 @media(max-width:768px){
+  /* Layout */
   .sv-sidebar,.sv-resources { display:none; }
   .tv-side { display:none; }
   .kpi-row { grid-template-columns:repeat(2,1fr); }
   .features,.steps,.plans { grid-template-columns:1fr; }
   .stats-band { grid-template-columns:repeat(2,1fr); }
   .hero h1 { font-size:28px; }
-  .msg-action-btn { padding:5px 10px; font-size:12px; }
   .bottom-nav { display:block; }
   .header .tabs { display:none; }
-  .view.sv.active { height:calc(100vh - 58px - 62px); }
-  .store-view.active { height:calc(100vh - 58px - 62px); }
-  .store-grid { grid-template-columns:repeat(2,1fr); }
+  .view.sv.active { height:calc(100dvh - 48px - 62px); }
+  .store-view.active { height:calc(100dvh - 48px - 62px); }
   .send-btn { opacity:1 !important; }
+
+  /* Input zoom prevention (iOS) */
+  input, textarea, select { font-size:16px !important; }
+
+  /* Tap targets — min 44px */
+  .bnav-btn { min-height:56px; }
+  .send-btn, .rec-btn { min-height:44px; min-width:44px; }
+  .msg-action-btn { padding:8px 12px; font-size:13px; min-height:36px; }
+
+  /* Header compact */
+  .header { height:48px; padding:0 12px; }
+  .logo-mark { width:28px; height:28px; font-size:14px; }
+  .logo-text { font-size:15px; }
+  .badge-anep { display:none; }
+  .hamburger-btn { display:flex !important; }
+
+  /* Topbar compact */
+  .chat-topbar { padding:8px 12px; min-height:48px; }
+  .chat-topbar-title { font-size:14px; }
+  .chat-topbar-sub { display:none; }
+  .mobile-resources-btn { display:inline-flex !important; }
+
+  /* Messages mobile */
+  .msg.tutor .bubble, .msg.student .bubble { max-width:88%; }
+  .msg.tutor { max-width:92%; }
+  .msg.student { max-width:88%; }
+  .msg-actions { flex-wrap:wrap; gap:4px; }
+  .avatar { width:28px; height:28px; font-size:12px; }
+  .view.sv .chat-area { padding:0; }
+  .msg { padding:8px 12px; }
+  .messages { padding:10px 8px; gap:10px; }
+
+  /* Auth gate — keyboard fix */
+  #authGate { overflow-y:auto !important; align-items:flex-start !important; padding-top:20px !important; }
+
+  /* Store mobile */
+  .store-grid { grid-template-columns:1fr; }
+  #gamePreview { height:280px !important; }
+  .game-modal iframe { height:100%; max-height:80dvh; }
+  #storeAssets .store-grid { grid-template-columns:1fr; }
+
+  /* Game workspace mobile */
+  #gameWorkspace { margin-top:8px; }
+  #gameWorkspace input { font-size:16px; }
+  #gameChatHistory { max-height:150px; }
+
+  /* Drawer */
+  #drawerOverlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:800; }
+  #drawerOverlay.open { display:block; }
+  #leftDrawer {
+    position:fixed; top:0; left:0; bottom:0; width:280px; max-width:85vw;
+    background:var(--surface); z-index:900; transform:translateX(-100%);
+    transition:transform .28s cubic-bezier(0.4,0,0.2,1);
+    overflow-y:auto; display:flex; flex-direction:column;
+    box-shadow:4px 0 20px rgba(0,0,0,0.15);
+    padding-top:env(safe-area-inset-top, 0);
+    padding-bottom:env(safe-area-inset-bottom, 0);
+  }
+  #leftDrawer.open { transform:translateX(0); }
+}
+
+/* ─── DRAWER STYLES ───────────────────────────────────── */
+#drawerOverlay { display:none; }
+#leftDrawer { display:none; }
+@media(max-width:768px) { #leftDrawer { display:flex; } }
+.drawer-user {
+  padding:20px 16px; background:linear-gradient(135deg,#4f46e5,#7c3aed); color:white;
+}
+.drawer-user-name { font-size:16px; font-weight:700; margin-top:8px; }
+.drawer-user-role { font-size:12px; opacity:.8; margin-top:2px; }
+.drawer-section { padding:8px 0; border-bottom:1px solid var(--border); }
+.drawer-section-title {
+  padding:8px 16px 4px; font-size:10px; font-weight:700; color:var(--muted);
+  text-transform:uppercase; letter-spacing:.05em;
+}
+.drawer-item {
+  display:flex; align-items:center; gap:12px; padding:12px 16px;
+  font-size:14px; cursor:pointer; transition:background .15s;
+  border:none; background:none; width:100%; text-align:left; font-family:inherit; color:var(--text);
+}
+.drawer-item:hover, .drawer-item:active { background:var(--indigo-bg); }
+.drawer-item .emoji { font-size:18px; width:24px; text-align:center; flex-shrink:0; }
+.drawer-item.active-subject { background:var(--indigo-bg); color:var(--indigo); font-weight:600; }
+.drawer-logout { color:var(--red); margin-top:auto; border-top:1px solid var(--border); }
+
+/* ─── MOBILE RESOURCES SHEET ──────────────────────────── */
+#mobileResourcesSheet {
+  position:fixed; bottom:0; left:0; right:0; max-height:70dvh; overflow-y:auto;
+  background:var(--surface); border-radius:16px 16px 0 0; padding:16px;
+  z-index:500; transform:translateY(100%); transition:transform .3s ease;
+  box-shadow:0 -8px 30px rgba(0,0,0,.15);
+}
+#mobileResourcesSheet.open { transform:translateY(0); }
+#mobileResourcesOverlay {
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:499;
+}
+#mobileResourcesOverlay.open { display:block; }
+.mobile-resources-btn {
+  display:none; background:none; border:none; font-size:20px; cursor:pointer; padding:4px;
+}
+.mobile-res-handle {
+  width:36px; height:4px; background:var(--border); border-radius:2px; margin:0 auto 12px;
 }
 </style>
 </head>
@@ -845,6 +949,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 
 <!-- HEADER -->
 <header class="header">
+  <button class="hamburger-btn" onclick="toggleMobileDrawer()" style="display:none;background:none;border:none;font-size:22px;cursor:pointer;padding:8px;color:var(--text)">☰</button>
   <a class="logo" href="#">
     <div class="logo-mark">🎓</div>
     <span class="logo-text">Tutor<span>IA</span></span>
@@ -936,6 +1041,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
         <div class="topic-progress-bar"><div class="topic-progress-fill" style="width:60%"></div></div>
         <span class="topic-pct">60%</span>
       </div>
+      <button class="mobile-resources-btn" onclick="toggleMobileResources()" title="Recursos del tema">📚</button>
       <button class="settings-btn" onclick="toggleHistory()" title="Historial de sesiones" style="font-size:14px">📋</button>
       <button class="settings-btn" id="settingsBtn" onclick="toggleSettings()" title="Configuración">⚙️</button>
     </div>
@@ -1361,6 +1467,44 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 <div class="game-modal" id="gameModal" onclick="if(event.target===this)closeGame()">
   <button class="game-modal-close" onclick="closeGame()">✕</button>
   <iframe id="gameIframe" sandbox="allow-scripts"></iframe>
+</div>
+
+<!-- DRAWER OVERLAY + LEFT DRAWER (mobile) -->
+<div id="drawerOverlay" onclick="closeMobileDrawer()"></div>
+<nav id="leftDrawer">
+  <div class="drawer-user">
+    <div style="font-size:32px">🎓</div>
+    <div class="drawer-user-name" id="drawerUserName">Estudiante</div>
+    <div class="drawer-user-role" id="drawerUserRole">Alumno/a</div>
+  </div>
+  <div class="drawer-section">
+    <div class="drawer-section-title">📚 Materias</div>
+    <button class="drawer-item active-subject" onclick="drawerLoadSubject('historia-4')"><span class="emoji">🏰</span> Historia</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('matematica-4')"><span class="emoji">📐</span> Matemática</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('lengua-4')"><span class="emoji">📚</span> Lengua y Literatura</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('geografia-4')"><span class="emoji">🌍</span> Geografía</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('biologia-4')"><span class="emoji">🧬</span> Biología</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('fisica-4')"><span class="emoji">⚡</span> Física</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('quimica-4')"><span class="emoji">🧪</span> Química</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('ingles-4')"><span class="emoji">🇬🇧</span> Inglés</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('informatica-4')"><span class="emoji">💻</span> Informática</button>
+    <button class="drawer-item" onclick="drawerLoadSubject('economia-5-eco')"><span class="emoji">💰</span> Economía</button>
+  </div>
+  <div class="drawer-section">
+    <div class="drawer-section-title">🗂️ Historial</div>
+    <div id="drawerSessionList" style="padding:4px 16px;font-size:12px;color:var(--muted);font-style:italic">Sin sesiones previas</div>
+  </div>
+  <button class="drawer-item drawer-logout" onclick="doLogout();closeMobileDrawer()"><span class="emoji">🚪</span> Cerrar sesión</button>
+</nav>
+
+<!-- MOBILE RESOURCES SHEET -->
+<div id="mobileResourcesOverlay" onclick="closeMobileResources()"></div>
+<div id="mobileResourcesSheet">
+  <div class="mobile-res-handle"></div>
+  <div class="res-section-title">Recursos del tema</div>
+  <div id="mobileResourcesContent">
+    <div style="text-align:center;padding:20px 0;color:var(--muted);font-size:13px">📚 Seleccioná un tema para ver recursos</div>
+  </div>
 </div>
 
 <!-- BOTTOM NAV (mobile) -->
@@ -2248,6 +2392,7 @@ function onAuthSuccess(user) {
   if (nameBadge) { nameBadge.textContent = user.name || user.email; nameBadge.style.display = ''; }
   document.getElementById('logoutBtn').style.display = '';
   loadSessions();
+  if (typeof updateDrawerUser === 'function') updateDrawerUser();
 }
 
 function doLogout() {
@@ -2308,6 +2453,7 @@ async function loadSessions() {
         <div style="font-size:9px;color:var(--muted2);margin-top:3px">${new Date(s.updatedAt).toLocaleDateString('es')}</div>
       </div>
     `).join('');
+    if (typeof updateDrawerSessions === 'function') updateDrawerSessions();
   } catch { /* ignore */ }
 }
 
@@ -2741,6 +2887,59 @@ function pickSubject(subjectId) {
   if (sel) sel.value = subjectId;
   // Switch to tutor view
   switchMobileView('sv', document.querySelector('.bnav-btn'));
+}
+
+// ── Drawer (mobile) ───────────────────────────────────────
+function toggleMobileDrawer() {
+  document.getElementById('leftDrawer').classList.toggle('open');
+  document.getElementById('drawerOverlay').classList.toggle('open');
+}
+function closeMobileDrawer() {
+  document.getElementById('leftDrawer').classList.remove('open');
+  document.getElementById('drawerOverlay').classList.remove('open');
+}
+function drawerLoadSubject(subjectId) {
+  closeMobileDrawer();
+  loadSubject(subjectId);
+  const sel = document.getElementById('subjectSelect');
+  if (sel) sel.value = subjectId;
+  // Update active state in drawer
+  document.querySelectorAll('#leftDrawer .drawer-item').forEach(it => it.classList.remove('active-subject'));
+  event.currentTarget.classList.add('active-subject');
+  switchMobileView('sv', document.querySelector('.bnav-btn'));
+}
+function updateDrawerUser() {
+  const nameEl = document.getElementById('drawerUserName');
+  const roleEl = document.getElementById('drawerUserRole');
+  const badge = document.getElementById('userNameBadge');
+  if (nameEl && badge) nameEl.textContent = badge.textContent || 'Estudiante';
+  if (roleEl) roleEl.textContent = 'Alumno/a · Bachillerato';
+}
+function updateDrawerSessions() {
+  const src = document.getElementById('sessionList');
+  const dst = document.getElementById('drawerSessionList');
+  if (src && dst) dst.innerHTML = src.innerHTML;
+}
+
+// ── Mobile resources sheet ────────────────────────────────
+function toggleMobileResources() {
+  const sheet = document.getElementById('mobileResourcesSheet');
+  const overlay = document.getElementById('mobileResourcesOverlay');
+  const isOpen = sheet.classList.contains('open');
+  if (isOpen) {
+    closeMobileResources();
+  } else {
+    // Copy resources content
+    const src = document.getElementById('resourcesContent');
+    const dst = document.getElementById('mobileResourcesContent');
+    if (src && dst) dst.innerHTML = src.innerHTML;
+    sheet.classList.add('open');
+    overlay.classList.add('open');
+  }
+}
+function closeMobileResources() {
+  document.getElementById('mobileResourcesSheet').classList.remove('open');
+  document.getElementById('mobileResourcesOverlay').classList.remove('open');
 }
 
 // ── Store functions ────────────────────────────────────────
