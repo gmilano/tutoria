@@ -1,0 +1,730 @@
+{
+  "id": "lengua-4",
+  "nombre": "Lengua Española y Literatura",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "📚",
+  "color": "#8b5cf6",
+  "descripcion": "Lengua, comunicación y literatura hispanoamericana",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Comunicación y Lenguaje",
+      "temas": [
+        {
+          "titulo": "El signo lingüístico y la comunicación",
+          "conceptosClave": [
+            "signo lingüístico",
+            "significante",
+            "significado",
+            "arbitrariedad",
+            "linealidad",
+            "Ferdinand de Saussure",
+            "funciones del lenguaje"
+          ],
+          "objetivos": [
+            "Comprender la naturaleza del signo lingüístico según la teoría de Saussure",
+            "Identificar las funciones del lenguaje (referencial, emotiva, apelativa, fática, metalingüística, poética) en textos diversos",
+            "Analizar la relación entre significante y significado en contextos comunicativos reales"
+          ],
+          "contenidos": [
+            "El signo lingüístico: definición, componentes (significante y significado), propiedades (arbitrariedad, linealidad, inmutabilidad y mutabilidad)",
+            "Modelo de comunicación de Jakobson: emisor, receptor, mensaje, canal, código, contexto y las funciones del lenguaje asociadas",
+            "Diferencia entre lengua, habla y norma; el concepto de competencia comunicativa"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Según Ferdinand de Saussure, ¿cuáles son los dos componentes del signo lingüístico?",
+              "opciones": [
+                "Emisor y receptor",
+                "Significante y significado",
+                "Lengua y habla",
+                "Sintaxis y semántica"
+              ],
+              "correcta": 1,
+              "explicacion": "Saussure definió el signo lingüístico como la unión de un significante (imagen acústica) y un significado (concepto mental). Son inseparables, como las dos caras de una misma moneda."
+            },
+            {
+              "pregunta": "¿Qué propiedad del signo lingüístico indica que la relación entre significante y significado no es natural ni lógica?",
+              "opciones": [
+                "Linealidad",
+                "Inmutabilidad",
+                "Arbitrariedad",
+                "Doble articulación"
+              ],
+              "correcta": 2,
+              "explicacion": "La arbitrariedad significa que no hay una razón intrínseca por la cual un significante se asocie a un significado determinado. Por ejemplo, el concepto 'perro' se expresa como 'dog' en inglés y 'chien' en francés, sin que ninguna forma sea más 'natural' que otra."
+            },
+            {
+              "pregunta": "En la oración '¡Silencio, por favor!', ¿qué función del lenguaje predomina?",
+              "opciones": [
+                "Referencial",
+                "Emotiva",
+                "Apelativa",
+                "Poética"
+              ],
+              "correcta": 2,
+              "explicacion": "La función apelativa (o conativa) busca influir en el comportamiento del receptor, como ocurre en órdenes, pedidos e instrucciones. En este caso, se busca que el receptor haga silencio."
+            }
+          ]
+        },
+        {
+          "titulo": "Variedades de la lengua",
+          "conceptosClave": [
+            "variedad lingüística",
+            "dialecto",
+            "sociolecto",
+            "registro",
+            "idiolecto",
+            "español rioplatense",
+            "norma culta"
+          ],
+          "objetivos": [
+            "Distinguir entre variedades geográficas (dialectos), sociales (sociolectos) y situacionales (registros) de la lengua española",
+            "Reconocer las características del español rioplatense uruguayo en relación con otras variedades del español",
+            "Valorar la diversidad lingüística y combatir prejuicios sobre hablas 'correctas' e 'incorrectas'"
+          ],
+          "contenidos": [
+            "Variedades diatópicas (geográficas): el español de América y sus diferencias con el español peninsular; rasgos del español rioplatense (voseo, yeísmo rehilado, léxico regional)",
+            "Variedades diastráticas (sociales): sociolecto, nivel culto, coloquial y vulgar; relación entre lengua y estratificación social",
+            "Variedades diafásicas (situacionales): registros formal e informal, adecuación al contexto comunicativo"
+          ],
+          "quiz": [
+            {
+              "pregunta": "El uso de 'vos' en lugar de 'tú' en Uruguay es un ejemplo de variedad:",
+              "opciones": [
+                "Diafásica (de registro)",
+                "Diacrónica (histórica)",
+                "Diatópica (geográfica)",
+                "Diastrática (social)"
+              ],
+              "correcta": 2,
+              "explicacion": "El voseo es un rasgo diatópico (geográfico) del español rioplatense, compartido por Uruguay y Argentina. Es una variedad regional que no implica incorrección, sino una diferencia dialectal respecto del tuteo."
+            },
+            {
+              "pregunta": "¿Qué concepto designa la variedad lingüística propia de un individuo, su forma particular de hablar?",
+              "opciones": [
+                "Dialecto",
+                "Sociolecto",
+                "Idiolecto",
+                "Cronolecto"
+              ],
+              "correcta": 2,
+              "explicacion": "El idiolecto es la variedad lingüística individual: la forma particular que tiene cada hablante de usar la lengua, influida por su origen geográfico, nivel sociocultural, edad, personalidad y experiencias."
+            },
+            {
+              "pregunta": "Un hablante que adapta su lenguaje según esté en una entrevista de trabajo o en una reunión con amigos está variando su:",
+              "opciones": [
+                "Dialecto",
+                "Sociolecto",
+                "Idiolecto",
+                "Registro"
+              ],
+              "correcta": 3,
+              "explicacion": "El registro es la variedad diafásica, es decir, la adaptación del habla según la situación comunicativa. Un mismo hablante utiliza un registro formal en contextos profesionales y uno informal en contextos familiares o de confianza."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Morfosintaxis",
+      "temas": [
+        {
+          "titulo": "Clases de palabras: sustantivo, adjetivo y verbo",
+          "conceptosClave": [
+            "sustantivo",
+            "adjetivo",
+            "verbo",
+            "morfema",
+            "flexión",
+            "categoría gramatical",
+            "conjugación verbal"
+          ],
+          "objetivos": [
+            "Clasificar y analizar morfológicamente sustantivos, adjetivos y verbos en textos de diversa índole",
+            "Reconocer los morfemas flexivos (género, número, tiempo, modo, persona) y derivativos (prefijos, sufijos)",
+            "Aplicar correctamente la conjugación verbal en los modos indicativo, subjuntivo e imperativo"
+          ],
+          "contenidos": [
+            "El sustantivo: clasificación semántica (concreto, abstracto, propio, común, colectivo), género y número; el adjetivo: clasificación (calificativo, determinativo), grados de significación (positivo, comparativo, superlativo)",
+            "El verbo: conjugación regular e irregular, tiempos simples y compuestos, modos (indicativo, subjuntivo, imperativo), formas no personales (infinitivo, gerundio, participio); perífrasis verbales",
+            "Análisis morfológico: raíz, prefijo, sufijo, desinencia; procesos de formación de palabras (derivación, composición, parasíntesis)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "En la oración 'Los estudiantes uruguayos presentaron un excelente trabajo', ¿qué clase de palabra es 'excelente'?",
+              "opciones": [
+                "Sustantivo",
+                "Adverbio",
+                "Adjetivo calificativo",
+                "Determinante"
+              ],
+              "correcta": 2,
+              "explicacion": "'Excelente' es un adjetivo calificativo porque expresa una cualidad del sustantivo 'trabajo'. Los adjetivos calificativos atribuyen propiedades o características a los sustantivos que acompañan."
+            },
+            {
+              "pregunta": "¿Cuál de las siguientes formas verbales está en modo subjuntivo?",
+              "opciones": [
+                "Escribimos",
+                "Escribiríamos",
+                "Escribamos",
+                "Escribiremos"
+              ],
+              "correcta": 2,
+              "explicacion": "'Escribamos' es presente del subjuntivo (nosotros). El modo subjuntivo expresa deseo, duda, posibilidad o subjetividad, a diferencia del indicativo que presenta hechos como reales y del condicional que expresa hipótesis."
+            },
+            {
+              "pregunta": "En la palabra 'indestructible', ¿cuál es la raíz?",
+              "opciones": [
+                "in-",
+                "destruc-",
+                "-ible",
+                "destruct-"
+              ],
+              "correcta": 3,
+              "explicacion": "La raíz es 'destruct-' (del latín destructum). 'In-' es un prefijo de negación y '-ible' es un sufijo que indica posibilidad. La palabra es parasintética porque combina prefijación y sufijación simultáneamente."
+            }
+          ]
+        },
+        {
+          "titulo": "La oración simple y compuesta",
+          "conceptosClave": [
+            "oración simple",
+            "oración compuesta",
+            "sujeto",
+            "predicado",
+            "coordinación",
+            "subordinación",
+            "yuxtaposición",
+            "complementos verbales"
+          ],
+          "objetivos": [
+            "Realizar el análisis sintáctico completo de oraciones simples identificando sujeto, predicado y complementos",
+            "Clasificar oraciones compuestas según la relación entre sus proposiciones (coordinación, subordinación, yuxtaposición)",
+            "Reconocer y utilizar correctamente las proposiciones subordinadas sustantivas, adjetivas y adverbiales"
+          ],
+          "contenidos": [
+            "La oración simple: sujeto (expreso, tácito, simple, compuesto) y predicado (verbal, nominal); complementos del verbo (OD, OI, circunstanciales, predicativo, agente)",
+            "La oración compuesta coordinada: copulativas (y, ni), disyuntivas (o), adversativas (pero, sino), consecutivas (luego, por tanto); la yuxtaposición",
+            "La oración compuesta subordinada: sustantivas (que + verbo), adjetivas o de relativo (que, quien, cual), adverbiales (temporales, causales, condicionales, concesivas, finales)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "En la oración 'Me regalaron un libro muy interesante', ¿qué función cumple 'un libro muy interesante'?",
+              "opciones": [
+                "Sujeto",
+                "Objeto directo",
+                "Objeto indirecto",
+                "Predicativo"
+              ],
+              "correcta": 1,
+              "explicacion": "'Un libro muy interesante' es el objeto directo (OD) porque es lo que se regaló. Se puede verificar sustituyéndolo por el pronombre 'lo': 'Me lo regalaron'. 'Me' cumple la función de objeto indirecto (a mí)."
+            },
+            {
+              "pregunta": "¿Qué tipo de oración compuesta es 'Estudié mucho, pero no aprobé el examen'?",
+              "opciones": [
+                "Coordinada copulativa",
+                "Coordinada adversativa",
+                "Subordinada concesiva",
+                "Yuxtapuesta"
+              ],
+              "correcta": 1,
+              "explicacion": "Es una oración coordinada adversativa porque el nexo 'pero' establece una relación de oposición o contraste entre dos proposiciones de igual jerarquía sintáctica. La primera proposición genera una expectativa que la segunda contradice."
+            },
+            {
+              "pregunta": "En 'El libro que leí ayer era de Onetti', la proposición 'que leí ayer' es subordinada:",
+              "opciones": [
+                "Sustantiva",
+                "Adverbial temporal",
+                "Adjetiva o de relativo",
+                "Causal"
+              ],
+              "correcta": 2,
+              "explicacion": "'Que leí ayer' es una subordinada adjetiva (o de relativo) porque modifica al sustantivo 'libro' de la misma forma que lo haría un adjetivo. El pronombre relativo 'que' sustituye a 'libro' dentro de la subordinada."
+            }
+          ]
+        },
+        {
+          "titulo": "Semántica y léxico",
+          "conceptosClave": [
+            "sinonimia",
+            "antonimia",
+            "polisemia",
+            "homonimia",
+            "campo semántico",
+            "denotación",
+            "connotación"
+          ],
+          "objetivos": [
+            "Distinguir entre significado denotativo y connotativo en textos literarios y no literarios",
+            "Identificar relaciones semánticas (sinonimia, antonimia, polisemia, homonimia, hiperonimia) para ampliar la competencia léxica",
+            "Analizar el uso de figuras retóricas basadas en el significado (metáfora, metonimia, sinécdoque) en textos literarios"
+          ],
+          "contenidos": [
+            "Relaciones de significado: sinonimia (total y parcial), antonimia (gradual, complementaria, recíproca), polisemia vs. homonimia, hiperonimia e hiponimia",
+            "Denotación y connotación: el significado literal frente al significado asociado, cultural y afectivo; su uso en publicidad, periodismo y literatura",
+            "Campos semánticos y campos léxicos; familias de palabras; el contexto como determinante del significado"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la diferencia entre polisemia y homonimia?",
+              "opciones": [
+                "La polisemia implica palabras con significados opuestos; la homonimia, significados iguales",
+                "La polisemia es una palabra con varios significados relacionados; la homonimia son palabras distintas que suenan igual",
+                "No hay diferencia, son sinónimos lingüísticos",
+                "La polisemia se da solo en verbos; la homonimia, solo en sustantivos"
+              ],
+              "correcta": 1,
+              "explicacion": "En la polisemia, una misma palabra tiene varios significados relacionados entre sí (ej. 'banco' como asiento y como institución, ambos derivados de 'mesa de cambio'). En la homonimia, palabras de origen distinto coinciden en su forma (ej. 'vino' del verbo venir y 'vino' la bebida)."
+            },
+            {
+              "pregunta": "En el verso 'sus cabellos de oro brillaban al sol', la expresión 'cabellos de oro' es un ejemplo de:",
+              "opciones": [
+                "Denotación",
+                "Metonimia",
+                "Metáfora",
+                "Hipérbole"
+              ],
+              "correcta": 2,
+              "explicacion": "Es una metáfora porque se establece una identificación entre el cabello rubio y el oro basada en una semejanza (color dorado, brillo). No se usa el significado literal (denotativo) sino uno figurado (connotativo) que asocia cualidades del oro al cabello."
+            },
+            {
+              "pregunta": "¿Qué tipo de antonimia presentan las palabras 'comprar' y 'vender'?",
+              "opciones": [
+                "Antonimia gradual",
+                "Antonimia complementaria",
+                "Antonimia recíproca",
+                "No son antónimos"
+              ],
+              "correcta": 2,
+              "explicacion": "Son antónimos recíprocos porque uno implica necesariamente al otro: no puede haber compra sin venta ni venta sin compra. Otros ejemplos son dar/recibir, enseñar/aprender, padre/hijo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Literatura Hispanoamericana",
+      "temas": [
+        {
+          "titulo": "El Modernismo hispanoamericano",
+          "conceptosClave": [
+            "Modernismo",
+            "Rubén Darío",
+            "José Enrique Rodó",
+            "Julio Herrera y Reissig",
+            "Delmira Agustini",
+            "esteticismo",
+            "Ariel",
+            "Azul"
+          ],
+          "objetivos": [
+            "Comprender el Modernismo como primer movimiento literario originado en Hispanoamérica y sus características estéticas",
+            "Analizar la obra de los modernistas uruguayos (Rodó, Herrera y Reissig, Delmira Agustini) y su aporte a la literatura continental",
+            "Interpretar fragmentos de Ariel de Rodó y poemas de Darío en su contexto histórico-cultural"
+          ],
+          "contenidos": [
+            "El Modernismo (1880-1920): contexto histórico (positivismo, imperialismo, crisis del 98), influencias (parnasianismo, simbolismo francés), características (esteticismo, musicalidad, exotismo, cosmopolitismo, renovación métrica)",
+            "Rubén Darío: Azul (1888) y Prosas profanas (1896) como obras fundacionales; José Enrique Rodó: Ariel (1900) y el arielismo como defensa de los valores espirituales latinoamericanos frente al utilitarismo",
+            "Modernismo uruguayo: Julio Herrera y Reissig (Los peregrinos de piedra) y su innovación metafórica; Delmira Agustini (Los cálices vacíos) y la ruptura con los modelos femeninos de la época"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué obra de Rubén Darío se considera el punto de partida del Modernismo hispanoamericano?",
+              "opciones": [
+                "Cantos de vida y esperanza",
+                "Prosas profanas",
+                "Azul",
+                "El canto errante"
+              ],
+              "correcta": 2,
+              "explicacion": "Azul (1888) es considerada la obra fundacional del Modernismo. Con ella, Darío inauguró una nueva estética literaria en lengua española, combinando influencias del parnasianismo y el simbolismo francés con una renovación del lenguaje poético."
+            },
+            {
+              "pregunta": "En Ariel (1900), José Enrique Rodó opone los valores de Ariel a los de Calibán. ¿Qué representa Calibán en su ensayo?",
+              "opciones": [
+                "La cultura grecolatina clásica",
+                "El materialismo y utilitarismo de la cultura norteamericana",
+                "La herencia indígena americana",
+                "El colonialismo español en América"
+              ],
+              "correcta": 1,
+              "explicacion": "Rodó usa los personajes de La tempestad de Shakespeare: Ariel simboliza los valores espirituales, estéticos e intelectuales de la cultura latinoamericana, mientras que Calibán representa el materialismo utilitarista que Rodó asociaba con la cultura estadounidense de la época."
+            },
+            {
+              "pregunta": "¿Cuál de los siguientes es un rasgo característico de la poesía modernista?",
+              "opciones": [
+                "Uso exclusivo del verso libre sin métrica",
+                "Temática social y denuncia política directa",
+                "Musicalidad, renovación métrica y búsqueda de la belleza formal",
+                "Rechazo de toda influencia literaria europea"
+              ],
+              "correcta": 2,
+              "explicacion": "El Modernismo se caracteriza por la búsqueda de la belleza formal, la musicalidad del verso, la renovación métrica (uso del alejandrino, el eneasílabo), el exotismo, y la influencia del parnasianismo y simbolismo francés. El 'arte por el arte' y el esteticismo son rasgos centrales."
+            }
+          ]
+        },
+        {
+          "titulo": "El Boom latinoamericano y la nueva narrativa",
+          "conceptosClave": [
+            "Boom latinoamericano",
+            "realismo mágico",
+            "Gabriel García Márquez",
+            "Julio Cortázar",
+            "Juan Carlos Onetti",
+            "Mario Vargas Llosa",
+            "Carlos Fuentes",
+            "renovación narrativa"
+          ],
+          "objetivos": [
+            "Caracterizar el Boom latinoamericano como fenómeno literario y editorial de las décadas de 1960-1970",
+            "Analizar las técnicas narrativas innovadoras del Boom (monólogo interior, pluralidad de voces, ruptura temporal, realismo mágico)",
+            "Estudiar la obra de Juan Carlos Onetti como precursor y figura central de la nueva narrativa rioplatense"
+          ],
+          "contenidos": [
+            "Contexto histórico del Boom: la Revolución Cubana, la Guerra Fría en América Latina, el auge editorial; precursores (Borges, Onetti, Rulfo, Asturias) y autores centrales (García Márquez, Cortázar, Vargas Llosa, Fuentes)",
+            "El realismo mágico: definición, características (convivencia de lo real y lo maravilloso, narración sin asombro), diferencia con lo real maravilloso de Carpentier; Cien años de soledad como obra paradigmática",
+            "Juan Carlos Onetti y la saga de Santa María: El astillero, Juntacadáveres, La vida breve; técnicas narrativas (atmósfera existencialista, antihéroes, tiempo circular, espacios ficticios como metáfora de la realidad)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál de los siguientes autores es considerado un precursor del Boom, anterior al movimiento pero fundamental para su desarrollo?",
+              "opciones": [
+                "Gabriel García Márquez",
+                "Juan Carlos Onetti",
+                "Carlos Fuentes",
+                "Mario Vargas Llosa"
+              ],
+              "correcta": 1,
+              "explicacion": "Juan Carlos Onetti (Uruguay, 1909-1994) es considerado un precursor del Boom. Con novelas como La vida breve (1950) y El astillero (1961), Onetti ya había realizado innovaciones narrativas fundamentales antes de que el Boom estallara como fenómeno editorial en los años 60."
+            },
+            {
+              "pregunta": "¿Qué característica define al realismo mágico?",
+              "opciones": [
+                "El rechazo total de la realidad en favor de mundos fantásticos",
+                "La presencia de elementos mágicos o sobrenaturales integrados naturalmente en la narración realista",
+                "La denuncia social explícita mediante alegorías políticas",
+                "El uso exclusivo de la primera persona narrativa"
+              ],
+              "correcta": 1,
+              "explicacion": "El realismo mágico integra elementos mágicos, sobrenaturales o insólitos dentro de una narración de tono realista, sin que los personajes ni el narrador manifiesten asombro. Lo extraordinario se presenta como parte natural de la cotidianidad, como ocurre en Cien años de soledad de García Márquez."
+            },
+            {
+              "pregunta": "La ciudad ficticia de Santa María, creada por Onetti, aparece por primera vez en:",
+              "opciones": [
+                "El pozo (1939)",
+                "La vida breve (1950)",
+                "El astillero (1961)",
+                "Juntacadáveres (1964)"
+              ],
+              "correcta": 1,
+              "explicacion": "Santa María aparece por primera vez en La vida breve (1950), donde el protagonista Brausen imagina esta ciudad como un espacio ficcional alternativo. A partir de allí, Santa María se convierte en el escenario recurrente de gran parte de la narrativa de Onetti."
+            }
+          ]
+        },
+        {
+          "titulo": "Literatura uruguaya contemporánea: Benedetti, Galeano y otras voces",
+          "conceptosClave": [
+            "Mario Benedetti",
+            "Eduardo Galeano",
+            "Idea Vilariño",
+            "Generación del 45",
+            "Generación Crítica",
+            "literatura testimonial",
+            "poesía coloquial"
+          ],
+          "objetivos": [
+            "Conocer la Generación del 45 (o Generación Crítica) y su importancia en la consolidación de la literatura uruguaya moderna",
+            "Analizar la obra de Mario Benedetti en sus diversos géneros (poesía, cuento, novela) y su compromiso social",
+            "Estudiar la prosa testimonial de Eduardo Galeano y su visión crítica de la historia latinoamericana"
+          ],
+          "contenidos": [
+            "La Generación del 45: contexto (crisis del modelo batllista, Guerra Fría), integrantes (Onetti, Benedetti, Vilariño, Idea, Carlos Real de Azúa, Ángel Rama, Emir Rodríguez Monegal), revista Marcha y su papel cultural",
+            "Mario Benedetti: La tregua (1960), Poemas de la oficina (1956), Inventario (1963-); la poesía coloquial, el empleado como personaje, el exilio como tema; Idea Vilariño: la poesía del desamparo y la brevedad expresiva",
+            "Eduardo Galeano: Las venas abiertas de América Latina (1971) y la literatura testimonial; la trilogía Memoria del fuego; el género crónica como herramienta de denuncia y recuperación de la memoria histórica"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué publicación periódica fue el principal vehículo de expresión de la Generación del 45 en Uruguay?",
+              "opciones": [
+                "Revista Sur",
+                "Semanario Marcha",
+                "Diario El País",
+                "Revista Número"
+              ],
+              "correcta": 1,
+              "explicacion": "El semanario Marcha (1939-1974), dirigido por Carlos Quijano, fue la publicación más influyente de la Generación del 45. Allí escribieron Benedetti, Onetti, Vilariño, Ángel Rama y otros, convirtiéndola en un espacio de debate cultural, político y literario fundamental para la cultura uruguaya."
+            },
+            {
+              "pregunta": "La novela La tregua (1960) de Mario Benedetti narra la historia de:",
+              "opciones": [
+                "Un guerrillero durante la dictadura uruguaya",
+                "Un empleado público próximo a jubilarse que vive un último amor",
+                "Un escritor exiliado que regresa a Montevideo",
+                "Un maestro rural en el interior de Uruguay"
+              ],
+              "correcta": 1,
+              "explicacion": "La tregua narra, en forma de diario íntimo, los últimos meses laborales de Martín Santomé, un oficinista viudo de 49 años que se enamora de una joven compañera de trabajo, Laura Avellaneda. La novela retrata la rutina gris del empleado montevideano y la posibilidad fugaz de la felicidad."
+            },
+            {
+              "pregunta": "¿Cuál es la tesis central de Las venas abiertas de América Latina (1971) de Eduardo Galeano?",
+              "opciones": [
+                "América Latina alcanzó su desarrollo gracias al comercio internacional",
+                "La literatura latinoamericana es superior a la europea",
+                "América Latina fue empobrecida sistemáticamente por la explotación colonial y neocolonial de sus recursos",
+                "Los pueblos indígenas lograron preservar sus culturas intactas"
+              ],
+              "correcta": 2,
+              "explicacion": "Galeano sostiene que la pobreza latinoamericana es resultado directo del saqueo sistemático de sus recursos naturales y humanos, desde la colonización española y portuguesa hasta el neocolonialismo económico de los siglos XIX y XX. La riqueza de los centros de poder se construyó sobre el empobrecimiento de la periferia."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Textos y Discursos",
+      "temas": [
+        {
+          "titulo": "Géneros periodísticos",
+          "conceptosClave": [
+            "noticia",
+            "crónica",
+            "editorial",
+            "columna de opinión",
+            "entrevista",
+            "objetividad",
+            "subjetividad",
+            "pirámide invertida"
+          ],
+          "objetivos": [
+            "Clasificar los géneros periodísticos en informativos (noticia, crónica, entrevista) y de opinión (editorial, columna, artículo)",
+            "Analizar críticamente la construcción de la información en los medios de comunicación, distinguiendo hechos de opiniones",
+            "Producir textos periodísticos respetando las convenciones de cada género"
+          ],
+          "contenidos": [
+            "Géneros informativos: la noticia (estructura de pirámide invertida, las 5W: qué, quién, cuándo, dónde, por qué), la crónica (narración cronológica con subjetividad del cronista), la entrevista (preparación, tipos de preguntas, edición)",
+            "Géneros de opinión: el editorial (voz del medio, sin firma), la columna (autor identificado, periodicidad), el artículo de opinión; diferencia entre informar y opinar; la argumentación en el discurso periodístico",
+            "Lectura crítica de medios: selección y jerarquización de la información, titular y bajada, paratexto, multimodalidad en medios digitales; fake news y verificación de fuentes"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué estructura textual sigue la noticia periodística clásica?",
+              "opciones": [
+                "Estructura narrativa cronológica",
+                "Pirámide invertida: de lo más importante a lo menos importante",
+                "Estructura argumentativa con tesis y antítesis",
+                "Estructura circular que retoma el inicio al final"
+              ],
+              "correcta": 1,
+              "explicacion": "La noticia sigue la estructura de pirámide invertida: presenta primero la información más relevante (qué, quién, cuándo, dónde, por qué) y luego los detalles complementarios en orden decreciente de importancia. Esto permite al lector obtener lo esencial en el primer párrafo."
+            },
+            {
+              "pregunta": "¿Qué diferencia fundamental existe entre un editorial y una columna de opinión?",
+              "opciones": [
+                "El editorial es más extenso que la columna",
+                "El editorial expresa la posición del medio y no lleva firma; la columna lleva la firma de su autor",
+                "La columna es objetiva y el editorial es subjetivo",
+                "No hay diferencias, son sinónimos periodísticos"
+              ],
+              "correcta": 1,
+              "explicacion": "El editorial expresa la postura institucional del medio de comunicación y por eso no lleva firma individual; representa la voz del diario o periódico. La columna de opinión, en cambio, lleva la firma de su autor y expresa su opinión personal, que no necesariamente coincide con la del medio."
+            },
+            {
+              "pregunta": "¿Cuál de las siguientes preguntas NO corresponde a las '5W' de la noticia?",
+              "opciones": [
+                "What (Qué)",
+                "When (Cuándo)",
+                "How much (Cuánto)",
+                "Why (Por qué)"
+              ],
+              "correcta": 2,
+              "explicacion": "Las 5W de la noticia son: What (Qué), Who (Quién), When (Cuándo), Where (Dónde) y Why (Por qué). A veces se agrega How (Cómo), pero 'How much' (Cuánto) no forma parte de la fórmula clásica de las 5W del periodismo."
+            }
+          ]
+        },
+        {
+          "titulo": "El ensayo argumentativo",
+          "conceptosClave": [
+            "ensayo",
+            "tesis",
+            "argumento",
+            "contraargumento",
+            "refutación",
+            "tipos de argumentos",
+            "falacia",
+            "persuasión"
+          ],
+          "objetivos": [
+            "Comprender la estructura del ensayo argumentativo (introducción con tesis, desarrollo con argumentos y contraargumentos, conclusión)",
+            "Identificar y emplear diversos tipos de argumentos (de autoridad, por ejemplificación, por analogía, causa-efecto, datos estadísticos)",
+            "Reconocer falacias argumentativas y evaluar la solidez de los razonamientos en textos de opinión"
+          ],
+          "contenidos": [
+            "El ensayo como género: definición, características (subjetividad, rigor intelectual, libertad formal, diálogo con el lector), tradición ensayística latinoamericana (Rodó, Mariátegui, Octavio Paz, Galeano)",
+            "Estructura argumentativa: tesis (posición que se defiende), argumentos (razones que la sostienen), contraargumentos (objeciones posibles) y refutación; estrategias de persuasión (logos, ethos, pathos)",
+            "Tipos de argumentos: de autoridad, por ejemplificación, por analogía, de causa-efecto, estadísticos; falacias comunes (ad hominem, falsa dicotomía, generalización apresurada, apelación a la emoción, pendiente resbaladiza)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "En un ensayo argumentativo, ¿qué es la tesis?",
+              "opciones": [
+                "Un resumen del texto completo",
+                "La posición o idea central que el autor defiende a lo largo del ensayo",
+                "La conclusión final del ensayo",
+                "Una cita de autoridad que abre el texto"
+              ],
+              "correcta": 1,
+              "explicacion": "La tesis es la afirmación central que el autor se propone defender mediante argumentos. Es la columna vertebral del ensayo argumentativo: todo el desarrollo se organiza para sostenerla, y la conclusión retoma y refuerza esta idea con los argumentos presentados."
+            },
+            {
+              "pregunta": "Si alguien dice 'No debemos escuchar su propuesta sobre educación porque reprobó matemáticas en el liceo', ¿qué falacia comete?",
+              "opciones": [
+                "Falsa dicotomía",
+                "Generalización apresurada",
+                "Ad hominem",
+                "Pendiente resbaladiza"
+              ],
+              "correcta": 2,
+              "explicacion": "Es una falacia ad hominem porque ataca a la persona (su historial académico) en lugar de refutar sus argumentos sobre educación. Una argumentación válida debe evaluar la propuesta en sí misma, no las características personales de quien la formula."
+            },
+            {
+              "pregunta": "¿Qué tipo de argumento utiliza un ensayista cuando cita la opinión de un especialista reconocido para respaldar su tesis?",
+              "opciones": [
+                "Argumento por analogía",
+                "Argumento estadístico",
+                "Argumento de autoridad",
+                "Argumento por ejemplificación"
+              ],
+              "correcta": 2,
+              "explicacion": "El argumento de autoridad consiste en citar las palabras o la opinión de un experto, investigador o institución reconocida en el tema para dar mayor credibilidad a la tesis. Es válido siempre que la autoridad citada sea pertinente al tema tratado."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "titulo": "Producción Escrita",
+      "temas": [
+        {
+          "titulo": "Coherencia, cohesión y adecuación textual",
+          "conceptosClave": [
+            "coherencia",
+            "cohesión",
+            "adecuación",
+            "conectores discursivos",
+            "referencia",
+            "sustitución",
+            "progresión temática"
+          ],
+          "objetivos": [
+            "Comprender y aplicar los principios de coherencia (unidad temática, progresión, no contradicción) en la producción de textos",
+            "Utilizar mecanismos de cohesión textual (conectores, referencia pronominal, sustitución léxica, elipsis) para lograr textos fluidos y bien articulados",
+            "Adecuar los textos producidos al registro, propósito comunicativo y destinatario correspondientes"
+          ],
+          "contenidos": [
+            "Coherencia textual: unidad temática (un tema central), progresión temática (la información avanza de lo conocido a lo nuevo), no contradicción, relación entre las partes y el todo",
+            "Cohesión textual: mecanismos gramaticales (referencia anafórica y catafórica, sustitución, elipsis) y léxicos (sinónimos, hiperónimos, campos semánticos); conectores discursivos (aditivos, adversativos, causales, consecutivos, temporales, ordenadores)",
+            "Adecuación: ajuste del texto al contexto comunicativo (registro formal/informal, canal oral/escrito, propósito informativo/persuasivo/estético, destinatario)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué propiedad textual se refiere a la conexión gramatical y léxica entre las oraciones de un texto?",
+              "opciones": [
+                "Coherencia",
+                "Cohesión",
+                "Adecuación",
+                "Corrección"
+              ],
+              "correcta": 1,
+              "explicacion": "La cohesión se refiere a los mecanismos lingüísticos (gramaticales y léxicos) que conectan las oraciones y párrafos entre sí: conectores, pronombres, sinónimos, elipsis, etc. La coherencia, en cambio, se refiere al sentido global y la unidad temática del texto."
+            },
+            {
+              "pregunta": "En el texto 'Benedetti escribió La tregua en 1960. Esta novela se convirtió en un éxito inmediato', ¿qué mecanismo de cohesión emplea 'Esta novela'?",
+              "opciones": [
+                "Elipsis",
+                "Conector adversativo",
+                "Sustitución léxica con referencia anafórica",
+                "Catáfora"
+              ],
+              "correcta": 2,
+              "explicacion": "'Esta novela' sustituye a 'La tregua' mencionada en la oración anterior (por eso es anafórica: remite hacia atrás). Combina una referencia demostrativa ('esta') con una sustitución léxica (reemplaza el título por su hiperónimo 'novela'), evitando la repetición y manteniendo la cohesión."
+            },
+            {
+              "pregunta": "¿Cuál de los siguientes conectores expresa una relación de consecuencia?",
+              "opciones": [
+                "Sin embargo",
+                "Por lo tanto",
+                "Además",
+                "En primer lugar"
+              ],
+              "correcta": 1,
+              "explicacion": "'Por lo tanto' es un conector consecutivo que introduce una consecuencia o conclusión derivada de lo anterior. 'Sin embargo' es adversativo, 'además' es aditivo y 'en primer lugar' es un ordenador del discurso."
+            }
+          ]
+        },
+        {
+          "titulo": "Proceso de escritura y redacción",
+          "conceptosClave": [
+            "planificación",
+            "textualización",
+            "revisión",
+            "borrador",
+            "párrafo",
+            "oración tópica",
+            "estilo"
+          ],
+          "objetivos": [
+            "Aplicar las etapas del proceso de escritura (planificación, textualización, revisión y edición) en la producción de textos académicos",
+            "Estructurar párrafos con oración tópica, desarrollo y cierre, manteniendo la unidad y la progresión temática",
+            "Revisar y corregir los propios textos atendiendo a la normativa ortográfica, la puntuación y la claridad expresiva"
+          ],
+          "contenidos": [
+            "Etapas del proceso de escritura: planificación (selección del tema, investigación, esquema, público destinatario), textualización (primer borrador, desarrollo de ideas), revisión (relectura crítica, corrección, reescritura) y edición final",
+            "El párrafo como unidad de composición: oración tópica (idea principal), oraciones de desarrollo (ejemplos, explicaciones, datos), oración de cierre; extensión y equilibrio entre párrafos",
+            "Normativa y estilo: ortografía (tildación, uso de b/v, s/c/z, h), puntuación (punto, coma, punto y coma, dos puntos, comillas, paréntesis, raya), vicios de estilo (redundancia, ambigüedad, cacofonía, pobreza léxica) y estrategias para evitarlos"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuáles son las tres grandes etapas del proceso de escritura?",
+              "opciones": [
+                "Lectura, escritura y publicación",
+                "Planificación, textualización y revisión",
+                "Investigación, redacción y evaluación",
+                "Borrador, corrección y impresión"
+              ],
+              "correcta": 1,
+              "explicacion": "El proceso de escritura comprende tres etapas fundamentales: planificación (qué se va a escribir, para quién, con qué propósito, cómo se organizará), textualización (redacción del borrador, puesta en palabras de las ideas) y revisión (relectura, corrección, reescritura y edición del texto)."
+            },
+            {
+              "pregunta": "¿Qué función cumple la oración tópica dentro de un párrafo?",
+              "opciones": [
+                "Cierra el párrafo con una conclusión",
+                "Presenta la idea principal que se desarrollará en el párrafo",
+                "Conecta el párrafo con el anterior",
+                "Introduce una cita de autoridad"
+              ],
+              "correcta": 1,
+              "explicacion": "La oración tópica (o tópico oracional) presenta la idea principal del párrafo. Generalmente aparece al inicio y funciona como eje organizador: las demás oraciones del párrafo la desarrollan, explican, ejemplifican o matizan."
+            },
+            {
+              "pregunta": "¿Cuál de las siguientes oraciones presenta un error de redundancia?",
+              "opciones": [
+                "El estudiante entregó su trabajo final a tiempo",
+                "Subió arriba por las escaleras rápidamente",
+                "La profesora explicó el tema con claridad",
+                "Los resultados fueron publicados en una revista académica"
+              ],
+              "correcta": 1,
+              "explicacion": "'Subió arriba' es un pleonasmo o redundancia, porque 'subir' ya implica movimiento hacia arriba. Lo correcto sería 'Subió por las escaleras rápidamente'. Evitar redundancias mejora la precisión y economía del lenguaje escrito."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,685 @@
+{
+  "id": "economia-5-eco",
+  "nombre": "Economía",
+  "año": "5°",
+  "orientacion": "eco",
+  "emoji": "💰",
+  "color": "#f59e0b",
+  "descripcion": "Micro y macroeconomía, mercados, política económica y Uruguay",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Microeconomía: mercados y precios",
+      "temas": [
+        {
+          "titulo": "Oferta, demanda y equilibrio de mercado",
+          "conceptosClave": [
+            "ley de la demanda",
+            "ley de la oferta",
+            "precio de equilibrio",
+            "cantidad de equilibrio",
+            "excedente del consumidor",
+            "excedente del productor",
+            "desplazamientos de curvas"
+          ],
+          "objetivos": [
+            "Comprender cómo la interacción entre oferta y demanda determina el precio y la cantidad de equilibrio en un mercado competitivo",
+            "Analizar los factores que desplazan las curvas de oferta y demanda y sus efectos sobre el equilibrio",
+            "Interpretar gráficamente situaciones de exceso de oferta y exceso de demanda"
+          ],
+          "contenidos": [
+            "Ley de la demanda: relación inversa entre precio y cantidad demandada; determinantes de la demanda (ingreso, precios de bienes relacionados, gustos, expectativas)",
+            "Ley de la oferta: relación directa entre precio y cantidad ofrecida; determinantes de la oferta (costos de producción, tecnología, expectativas, número de productores)",
+            "Equilibrio de mercado: punto donde oferta y demanda se intersectan; mecanismo de ajuste por precios; excedentes del consumidor y del productor como medidas de bienestar"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Si el precio de la carne vacuna sube, ¿qué ocurre con la demanda de carne de pollo (bien sustituto)?",
+              "opciones": [
+                "Disminuye la demanda de pollo",
+                "Aumenta la demanda de pollo",
+                "La demanda de pollo no se modifica",
+                "Disminuye la oferta de pollo"
+              ],
+              "correcta": 1,
+              "explicacion": "Al subir el precio de la carne vacuna (bien sustituto), los consumidores tienden a reemplazarla por pollo, lo que desplaza la curva de demanda de pollo hacia la derecha, aumentando su demanda."
+            },
+            {
+              "pregunta": "¿Qué situación se produce cuando el precio vigente en el mercado está por encima del precio de equilibrio?",
+              "opciones": [
+                "Exceso de demanda",
+                "Escasez del bien",
+                "Exceso de oferta",
+                "Equilibrio estable"
+              ],
+              "correcta": 2,
+              "explicacion": "Cuando el precio está por encima del equilibrio, la cantidad ofrecida supera a la cantidad demandada, generándose un exceso de oferta (o sobrante). Los productores tenderán a bajar el precio para vender el excedente."
+            },
+            {
+              "pregunta": "Una mejora tecnológica en la producción de soja produce:",
+              "opciones": [
+                "Un desplazamiento de la curva de demanda de soja hacia la derecha",
+                "Un desplazamiento de la curva de oferta de soja hacia la izquierda",
+                "Un desplazamiento de la curva de oferta de soja hacia la derecha, reduciendo el precio de equilibrio",
+                "Un movimiento a lo largo de la curva de oferta sin cambio en el equilibrio"
+              ],
+              "correcta": 2,
+              "explicacion": "Una mejora tecnológica reduce los costos de producción, lo que desplaza la curva de oferta hacia la derecha. Esto genera un nuevo equilibrio con mayor cantidad y menor precio."
+            }
+          ]
+        },
+        {
+          "titulo": "Elasticidad precio de la demanda y de la oferta",
+          "conceptosClave": [
+            "elasticidad precio de la demanda",
+            "demanda elástica",
+            "demanda inelástica",
+            "elasticidad unitaria",
+            "elasticidad ingreso",
+            "elasticidad cruzada",
+            "elasticidad precio de la oferta"
+          ],
+          "objetivos": [
+            "Calcular e interpretar la elasticidad precio de la demanda y comprender sus determinantes",
+            "Distinguir entre bienes con demanda elástica e inelástica y su impacto en el ingreso total de las empresas",
+            "Aplicar los conceptos de elasticidad ingreso y elasticidad cruzada para clasificar bienes"
+          ],
+          "contenidos": [
+            "Elasticidad precio de la demanda: fórmula del punto medio, interpretación del coeficiente; determinantes (disponibilidad de sustitutos, porcentaje del ingreso, tiempo, necesidad vs. lujo)",
+            "Relación entre elasticidad e ingreso total: cuando la demanda es elástica, una baja de precio aumenta el ingreso total; cuando es inelástica, una suba de precio lo aumenta",
+            "Elasticidad ingreso (bienes normales, inferiores y de lujo) y elasticidad cruzada (sustitutos y complementarios); elasticidad de la oferta y el papel del horizonte temporal"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Un productor de leche sube el precio un 10% y la cantidad demandada cae solo un 3%. ¿Cómo es la demanda de leche?",
+              "opciones": [
+                "Elástica",
+                "Perfectamente elástica",
+                "Inelástica",
+                "Unitaria"
+              ],
+              "correcta": 2,
+              "explicacion": "La elasticidad precio es 3%/10% = 0,3, menor que 1, por lo tanto la demanda es inelástica. Esto es típico de bienes de primera necesidad como la leche, que tienen pocos sustitutos cercanos."
+            },
+            {
+              "pregunta": "Si la elasticidad ingreso de un bien es negativa, ese bien es:",
+              "opciones": [
+                "Un bien de lujo",
+                "Un bien normal",
+                "Un bien inferior",
+                "Un bien sustituto"
+              ],
+              "correcta": 2,
+              "explicacion": "Un bien inferior tiene elasticidad ingreso negativa: cuando el ingreso del consumidor aumenta, la cantidad demandada del bien disminuye. Ejemplo: transporte público cuando se puede acceder a auto propio."
+            },
+            {
+              "pregunta": "Si la elasticidad cruzada entre dos bienes es positiva, los bienes son:",
+              "opciones": [
+                "Complementarios",
+                "Independientes",
+                "Sustitutos",
+                "Inferiores"
+              ],
+              "correcta": 2,
+              "explicacion": "Una elasticidad cruzada positiva indica que al subir el precio de un bien aumenta la demanda del otro, lo que significa que son sustitutos. Ejemplo: Coca-Cola y Pepsi."
+            }
+          ]
+        },
+        {
+          "titulo": "Teoría de la empresa: producción, costos y estructuras de mercado",
+          "conceptosClave": [
+            "costos fijos",
+            "costos variables",
+            "costo marginal",
+            "costo medio",
+            "rendimientos decrecientes",
+            "competencia perfecta",
+            "monopolio",
+            "oligopolio",
+            "competencia monopolística"
+          ],
+          "objetivos": [
+            "Comprender la estructura de costos de una empresa y la ley de rendimientos marginales decrecientes",
+            "Analizar la maximización de beneficios mediante la regla de costo marginal igual a ingreso marginal",
+            "Diferenciar las estructuras de mercado (competencia perfecta, monopolio, oligopolio, competencia monopolística) y sus implicancias para el bienestar"
+          ],
+          "contenidos": [
+            "Función de producción en el corto plazo: producto total, medio y marginal; ley de rendimientos marginales decrecientes; costos fijos, variables, totales, medios y marginales",
+            "Maximización de beneficios: la empresa produce donde ingreso marginal = costo marginal (IMg = CMg); beneficio económico vs. beneficio contable; decisión de producir o cerrar en el corto plazo",
+            "Estructuras de mercado: competencia perfecta (muchos productores, bien homogéneo, precio aceptante), monopolio (un solo oferente, barreras de entrada, pérdida de eficiencia), oligopolio (pocos oferentes, interdependencia estratégica), competencia monopolística (diferenciación de producto)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "En una empresa, el costo de alquiler del local es un ejemplo de:",
+              "opciones": [
+                "Costo variable",
+                "Costo marginal",
+                "Costo fijo",
+                "Costo de oportunidad"
+              ],
+              "correcta": 2,
+              "explicacion": "El alquiler es un costo fijo porque no varía con el nivel de producción: la empresa paga el mismo alquiler produzca 100 o 1000 unidades. Se diferencia de los costos variables (materia prima, energía) que sí cambian con la producción."
+            },
+            {
+              "pregunta": "¿Cuál es la regla de maximización de beneficios para cualquier empresa?",
+              "opciones": [
+                "Producir donde el costo total es mínimo",
+                "Producir donde el ingreso total es máximo",
+                "Producir donde el ingreso marginal iguala al costo marginal",
+                "Producir donde el precio iguala al costo medio"
+              ],
+              "correcta": 2,
+              "explicacion": "La regla universal de maximización de beneficios es producir la cantidad donde IMg = CMg. Si IMg > CMg conviene producir más; si IMg < CMg conviene producir menos."
+            },
+            {
+              "pregunta": "¿Qué caracteriza a un mercado oligopólico?",
+              "opciones": [
+                "Un único vendedor con poder absoluto de mercado",
+                "Muchos vendedores con productos diferenciados",
+                "Pocos vendedores cuyas decisiones son interdependientes",
+                "Muchos vendedores con productos homogéneos y libre entrada"
+              ],
+              "correcta": 2,
+              "explicacion": "El oligopolio se caracteriza por la presencia de pocos oferentes que tienen poder de mercado y cuyas decisiones afectan a los demás, generando interdependencia estratégica. Ejemplos en Uruguay: telecomunicaciones, combustibles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Macroeconomía: indicadores y ciclo económico",
+      "temas": [
+        {
+          "titulo": "Producto Bruto Interno, crecimiento y ciclo económico",
+          "conceptosClave": [
+            "Producto Bruto Interno (PBI)",
+            "PBI nominal",
+            "PBI real",
+            "PBI per cápita",
+            "crecimiento económico",
+            "ciclo económico",
+            "recesión",
+            "expansión",
+            "valor agregado"
+          ],
+          "objetivos": [
+            "Comprender qué mide el PBI, sus métodos de cálculo y sus limitaciones como indicador de bienestar",
+            "Distinguir entre PBI nominal y real, y calcular la tasa de crecimiento económico",
+            "Identificar las fases del ciclo económico y sus efectos sobre el empleo y la producción"
+          ],
+          "contenidos": [
+            "Definición y medición del PBI: enfoque del gasto (C + I + G + XN), del ingreso y del valor agregado; PBI nominal vs. real (deflactor del PBI); PBI per cápita como aproximación al nivel de vida",
+            "Crecimiento económico: factores de largo plazo (capital físico, capital humano, tecnología, instituciones); productividad como motor fundamental; diferencia entre crecimiento y desarrollo",
+            "Ciclo económico: fases (expansión, auge, recesión, depresión); indicadores procíclicos y contracíclicos; efectos sobre el empleo, la inversión y el consumo"
+          ],
+          "quiz": [
+            {
+              "pregunta": "El PBI de un país se calcula por el enfoque del gasto como:",
+              "opciones": [
+                "PBI = C + I + G + X",
+                "PBI = C + I + G + (X − M)",
+                "PBI = C + I + G − X + M",
+                "PBI = C × I × G × (X − M)"
+              ],
+              "correcta": 1,
+              "explicacion": "Por el enfoque del gasto, PBI = Consumo + Inversión + Gasto público + Exportaciones netas (X − M). Las importaciones se restan porque representan producción de otros países."
+            },
+            {
+              "pregunta": "¿Cuál es la diferencia principal entre PBI nominal y PBI real?",
+              "opciones": [
+                "El PBI nominal descuenta la inflación y el PBI real no",
+                "El PBI real se mide en precios constantes de un año base, eliminando el efecto de la inflación",
+                "No hay diferencia, son sinónimos",
+                "El PBI real solo cuenta los bienes tangibles"
+              ],
+              "correcta": 1,
+              "explicacion": "El PBI real se calcula a precios constantes de un año base, eliminando la variación de precios. Así se puede comparar la producción física entre períodos. El PBI nominal usa precios corrientes y puede subir solo por inflación sin aumento real de producción."
+            },
+            {
+              "pregunta": "Una recesión económica se define técnicamente como:",
+              "opciones": [
+                "Un trimestre de crecimiento negativo del PBI",
+                "Dos o más trimestres consecutivos de caída del PBI real",
+                "Cualquier período con desempleo superior al 10%",
+                "Un año con inflación superior al 50%"
+              ],
+              "correcta": 1,
+              "explicacion": "Técnicamente, una recesión se define como dos o más trimestres consecutivos de caída del PBI real. Se caracteriza por reducción de la producción, aumento del desempleo y caída de la inversión."
+            }
+          ]
+        },
+        {
+          "titulo": "Inflación, desempleo y curva de Phillips",
+          "conceptosClave": [
+            "inflación",
+            "Índice de Precios al Consumo (IPC)",
+            "inflación de demanda",
+            "inflación de costos",
+            "hiperinflación",
+            "tasa de desempleo",
+            "desempleo friccional",
+            "desempleo estructural",
+            "curva de Phillips",
+            "estanflación"
+          ],
+          "objetivos": [
+            "Comprender las causas y consecuencias de la inflación y los métodos para medirla (IPC, deflactor del PBI)",
+            "Clasificar los tipos de desempleo y comprender el concepto de tasa natural de desempleo",
+            "Analizar la relación entre inflación y desempleo a través de la curva de Phillips en el corto y largo plazo"
+          ],
+          "contenidos": [
+            "Inflación: definición (aumento sostenido y generalizado del nivel de precios), medición mediante el IPC y canasta básica; causas: inflación de demanda (exceso de gasto agregado) e inflación de costos (aumento de insumos, salarios o tipo de cambio); consecuencias redistributivas y sobre la competitividad",
+            "Desempleo: tasa de desempleo y tasa de actividad; tipos: friccional (búsqueda entre empleos), estructural (desajuste de habilidades), cíclico (ligado a la recesión); tasa natural de desempleo; costos económicos y sociales del desempleo",
+            "Curva de Phillips: relación inversa de corto plazo entre inflación y desempleo; expectativas adaptativas y la curva de Phillips de largo plazo (vertical en la tasa natural); estanflación como fenómeno que desafía la relación de Phillips de corto plazo"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué tipo de inflación se genera cuando aumentan los costos de producción (por ejemplo, el precio del petróleo)?",
+              "opciones": [
+                "Inflación de demanda",
+                "Inflación de costos (o de oferta)",
+                "Inflación inercial",
+                "Deflación"
+              ],
+              "correcta": 1,
+              "explicacion": "La inflación de costos ocurre cuando suben los precios de los insumos (petróleo, materias primas, salarios), lo que desplaza la oferta agregada hacia la izquierda, generando mayor nivel de precios y menor producción."
+            },
+            {
+              "pregunta": "Un ingeniero que dejó su empleo para buscar uno mejor está experimentando desempleo:",
+              "opciones": [
+                "Estructural",
+                "Cíclico",
+                "Friccional",
+                "Estacional"
+              ],
+              "correcta": 2,
+              "explicacion": "El desempleo friccional se produce cuando un trabajador deja voluntariamente un empleo para buscar otro mejor. Es transitorio, existe siempre en la economía y no es considerado problemático."
+            },
+            {
+              "pregunta": "La curva de Phillips de corto plazo muestra una relación:",
+              "opciones": [
+                "Directa entre inflación y desempleo",
+                "Inversa entre inflación y desempleo",
+                "Directa entre PBI y desempleo",
+                "Inversa entre tipo de cambio e inflación"
+              ],
+              "correcta": 1,
+              "explicacion": "La curva de Phillips de corto plazo muestra una relación inversa (trade-off) entre inflación y desempleo: cuando el desempleo baja, la inflación tiende a subir, y viceversa. En el largo plazo, sin embargo, esta relación desaparece."
+            }
+          ]
+        },
+        {
+          "titulo": "Política fiscal y política monetaria",
+          "conceptosClave": [
+            "política fiscal",
+            "gasto público",
+            "impuestos",
+            "déficit fiscal",
+            "deuda pública",
+            "multiplicador del gasto",
+            "política monetaria",
+            "tasa de interés",
+            "oferta monetaria",
+            "Banco Central",
+            "política expansiva",
+            "política contractiva"
+          ],
+          "objetivos": [
+            "Comprender los instrumentos de la política fiscal (gasto público e impuestos) y sus efectos sobre la demanda agregada",
+            "Analizar los instrumentos de la política monetaria y el rol del Banco Central en el control de la inflación y el estímulo económico",
+            "Evaluar las ventajas y limitaciones de las políticas de estabilización en economías como la uruguaya"
+          ],
+          "contenidos": [
+            "Política fiscal: gasto público e impuestos como herramientas de estabilización; política fiscal expansiva (aumento del gasto o reducción de impuestos) y contractiva; efecto multiplicador del gasto; déficit fiscal, superávit y deuda pública; política fiscal en Uruguay (DGI, estructura tributaria: IVA, IRPF, IRAE)",
+            "Política monetaria: funciones del Banco Central (emisión, regulación bancaria, reservas internacionales); instrumentos: tasa de política monetaria, operaciones de mercado abierto, encajes bancarios; política monetaria expansiva y contractiva; transmisión a la economía real",
+            "Coordinación y limitaciones: retardos de las políticas económicas; efecto desplazamiento (crowding out); restricciones en economías pequeñas y abiertas como Uruguay; rol del BCU como banco central con meta de inflación"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Si el gobierno quiere estimular la economía durante una recesión mediante política fiscal, debe:",
+              "opciones": [
+                "Reducir el gasto público y aumentar impuestos",
+                "Aumentar el gasto público y/o reducir impuestos",
+                "Aumentar la tasa de interés",
+                "Vender bonos en el mercado abierto"
+              ],
+              "correcta": 1,
+              "explicacion": "Una política fiscal expansiva implica aumentar el gasto público y/o reducir impuestos para inyectar demanda agregada a la economía, estimulando la producción y el empleo. Las opciones 3 y 4 corresponden a política monetaria contractiva."
+            },
+            {
+              "pregunta": "¿Qué instrumento utiliza el Banco Central para contraer la oferta monetaria?",
+              "opciones": [
+                "Reducir la tasa de interés de referencia",
+                "Comprar bonos del gobierno en el mercado abierto",
+                "Vender bonos del gobierno en el mercado abierto",
+                "Reducir el encaje bancario"
+              ],
+              "correcta": 2,
+              "explicacion": "Cuando el Banco Central vende bonos, retira dinero de circulación (los compradores entregan pesos a cambio de los bonos), lo que contrae la oferta monetaria. Esto tiende a subir las tasas de interés y enfriar la economía para controlar la inflación."
+            },
+            {
+              "pregunta": "El efecto multiplicador del gasto público significa que:",
+              "opciones": [
+                "El gobierno siempre gasta más de lo que recauda",
+                "Un aumento del gasto público genera un aumento del PBI mayor que el gasto inicial",
+                "Los impuestos se multiplican cada año",
+                "La deuda pública se duplica en cada período"
+              ],
+              "correcta": 1,
+              "explicacion": "El multiplicador indica que cada peso de gasto público adicional genera un aumento del PBI superior a ese peso, porque el ingreso que recibe un agente se gasta parcialmente, generando ingreso para otro, y así sucesivamente. El tamaño del multiplicador depende de la propensión marginal a consumir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Economía uruguaya y estructura productiva",
+      "temas": [
+        {
+          "titulo": "Estructura productiva y sectores económicos del Uruguay",
+          "conceptosClave": [
+            "sector primario",
+            "sector secundario",
+            "sector terciario",
+            "estructura productiva",
+            "agro",
+            "agroindustria",
+            "servicios",
+            "turismo",
+            "tecnología de la información",
+            "matriz energética"
+          ],
+          "objetivos": [
+            "Analizar la composición del PBI uruguayo por sectores económicos y su evolución histórica",
+            "Comprender la importancia del sector agropecuario y agroindustrial en la economía uruguaya",
+            "Identificar los sectores emergentes (TIC, logística, turismo) y los desafíos de diversificación productiva"
+          ],
+          "contenidos": [
+            "Sector primario: ganadería bovina (carne y lana), agricultura (soja, arroz, trigo, forestación), lechería; dependencia de recursos naturales y clima; cadenas agroindustriales (frigoríficos, lácteos, celulosa)",
+            "Sector secundario e industrialización: industria manufacturera, construcción y zonas francas (UPM, Zonamerica); historia de la industrialización sustitutiva de importaciones y apertura comercial; desafíos de competitividad y escala",
+            "Sector terciario: creciente peso de los servicios en el PBI; turismo como fuente de divisas; desarrollo de tecnologías de la información y servicios globales; transformación energética: Uruguay como referente en energías renovables (eólica, solar, biomasa)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es el sector económico que más contribuye al PBI uruguayo en la actualidad?",
+              "opciones": [
+                "Sector primario (agropecuario)",
+                "Sector secundario (industria)",
+                "Sector terciario (servicios)",
+                "Sector cuaternario (investigación)"
+              ],
+              "correcta": 2,
+              "explicacion": "El sector terciario (servicios) representa más del 60% del PBI uruguayo, incluyendo comercio, transporte, finanzas, turismo y servicios al gobierno. Sin embargo, el sector agropecuario sigue siendo clave para las exportaciones."
+            },
+            {
+              "pregunta": "La forestación y las plantas de celulosa en Uruguay son ejemplo de:",
+              "opciones": [
+                "Industria sustitutiva de importaciones",
+                "Cadena agroindustrial orientada a la exportación",
+                "Economía informal",
+                "Servicios financieros"
+              ],
+              "correcta": 1,
+              "explicacion": "La forestación (eucaliptus y pinos) y las plantas de celulosa (UPM, Montes del Plata) son un ejemplo de cadena agroindustrial: el sector primario (plantaciones) se integra con el secundario (procesamiento industrial) para exportar productos de mayor valor agregado."
+            },
+            {
+              "pregunta": "Uruguay se ha destacado en la región por su transformación en:",
+              "opciones": [
+                "Producción de petróleo y gas natural",
+                "Industria automotriz pesada",
+                "Generación de energía a partir de fuentes renovables",
+                "Minería de gran escala"
+              ],
+              "correcta": 2,
+              "explicacion": "Uruguay logró que más del 95% de su electricidad provenga de fuentes renovables (hidroeléctrica, eólica, solar y biomasa), convirtiéndose en un referente mundial en transición energética."
+            }
+          ]
+        },
+        {
+          "titulo": "Exportaciones, MERCOSUR e inserción internacional",
+          "conceptosClave": [
+            "exportaciones",
+            "importaciones",
+            "balanza comercial",
+            "MERCOSUR",
+            "socios comerciales",
+            "tipo de cambio",
+            "diversificación de mercados",
+            "TLC",
+            "acuerdos comerciales",
+            "China"
+          ],
+          "objetivos": [
+            "Analizar la composición y destino de las exportaciones uruguayas y su concentración en commodities",
+            "Comprender el rol de Uruguay en el MERCOSUR y los desafíos de la integración regional",
+            "Evaluar las estrategias de inserción comercial internacional y diversificación de mercados"
+          ],
+          "contenidos": [
+            "Exportaciones uruguayas: principales productos (carne bovina, celulosa, soja, lácteos, arroz, lana); concentración en commodities y dependencia de precios internacionales; principales destinos: China, Brasil, Unión Europea, Argentina, Estados Unidos",
+            "MERCOSUR: creación (Tratado de Asunción, 1991), objetivos de integración, arancel externo común; beneficios (acceso a mercados de la región) y dificultades (asimetrías entre socios, restricciones comerciales, dificultad para negociar individualmente)",
+            "Estrategias de inserción: búsqueda de acuerdos bilaterales y extra-MERCOSUR; acuerdo MERCOSUR-Unión Europea; diversificación de mercados y productos; rol del tipo de cambio en la competitividad exportadora; desafío de agregar valor a las exportaciones primarias"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es actualmente el principal destino de las exportaciones uruguayas?",
+              "opciones": [
+                "Argentina",
+                "Brasil",
+                "Estados Unidos",
+                "China"
+              ],
+              "correcta": 3,
+              "explicacion": "China se ha convertido en el principal socio comercial de Uruguay, siendo el mayor comprador de soja, carne bovina y celulosa. Esto refleja el crecimiento de China como potencia importadora de commodities y alimentos."
+            },
+            {
+              "pregunta": "El MERCOSUR fue creado por el Tratado de Asunción en:",
+              "opciones": [
+                "1985",
+                "1991",
+                "1995",
+                "2000"
+              ],
+              "correcta": 1,
+              "explicacion": "El MERCOSUR fue creado el 26 de marzo de 1991 mediante el Tratado de Asunción, firmado por Argentina, Brasil, Paraguay y Uruguay, con el objetivo de crear un mercado común con libre circulación de bienes, servicios y factores productivos."
+            },
+            {
+              "pregunta": "Un desafío central de la inserción internacional uruguaya es:",
+              "opciones": [
+                "La abundancia de recursos energéticos fósiles",
+                "El exceso de diversificación productiva",
+                "La alta dependencia de la exportación de materias primas con bajo valor agregado",
+                "La falta de acceso al mar"
+              ],
+              "correcta": 2,
+              "explicacion": "Uruguay exporta principalmente commodities (carne, soja, celulosa, lácteos) con relativamente bajo valor agregado. La dependencia de materias primas expone al país a la volatilidad de precios internacionales y limita la generación de empleo calificado."
+            }
+          ]
+        },
+        {
+          "titulo": "Banco Central del Uruguay, sistema financiero e informalidad",
+          "conceptosClave": [
+            "Banco Central del Uruguay (BCU)",
+            "política monetaria",
+            "meta de inflación",
+            "sistema financiero",
+            "bancos comerciales",
+            "inclusión financiera",
+            "informalidad laboral",
+            "evasión fiscal",
+            "Ley de Inclusión Financiera",
+            "seguridad social"
+          ],
+          "objetivos": [
+            "Comprender las funciones del BCU y su rol en la estabilidad macroeconómica del país",
+            "Analizar las características del sistema financiero uruguayo y las políticas de inclusión financiera",
+            "Evaluar las causas y consecuencias de la informalidad laboral y la evasión fiscal en Uruguay"
+          ],
+          "contenidos": [
+            "Banco Central del Uruguay: funciones (emisión de moneda, regulación del sistema financiero, administración de reservas internacionales, agente financiero del Estado); política monetaria basada en metas de inflación; manejo del tipo de cambio en un régimen de flotación",
+            "Sistema financiero: banca pública (BROU) y privada; mercado de valores (Bolsa de Valores de Montevideo); Ley de Inclusión Financiera (2014): bancarización, pagos electrónicos, formalización de transacciones; acceso al crédito y tasas de interés",
+            "Informalidad y evasión: definición de empleo informal (sin aportes a la seguridad social); magnitud en Uruguay y causas (costos de formalización, estructura del mercado laboral, actividades estacionales); consecuencias: pérdida de recaudación, desprotección del trabajador, competencia desleal; políticas para reducirla (monotributo, simplificación tributaria)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la principal función del Banco Central del Uruguay (BCU)?",
+              "opciones": [
+                "Otorgar préstamos directamente a las familias",
+                "Administrar el presupuesto del gobierno",
+                "Preservar la estabilidad de precios y regular el sistema financiero",
+                "Fijar los salarios mínimos del país"
+              ],
+              "correcta": 2,
+              "explicacion": "El BCU tiene como objetivo principal preservar la estabilidad de precios (controlar la inflación) y garantizar la solidez del sistema financiero. También emite moneda, administra reservas internacionales y actúa como agente financiero del Estado."
+            },
+            {
+              "pregunta": "La Ley de Inclusión Financiera de 2014 en Uruguay buscó principalmente:",
+              "opciones": [
+                "Eliminar todos los impuestos al consumo",
+                "Crear un banco estatal exclusivo para personas de bajos ingresos",
+                "Promover el uso de medios de pago electrónicos y la bancarización universal",
+                "Prohibir el uso de efectivo en todas las transacciones"
+              ],
+              "correcta": 2,
+              "explicacion": "La Ley de Inclusión Financiera promovió la bancarización universal (cuenta gratuita para todos), el pago de salarios y prestaciones por medios electrónicos, y beneficios fiscales para pagos con tarjeta, buscando formalizar la economía y reducir la evasión."
+            },
+            {
+              "pregunta": "Un trabajador informal en Uruguay se define como aquel que:",
+              "opciones": [
+                "Trabaja menos de 40 horas semanales",
+                "Trabaja en el sector primario",
+                "No realiza aportes a la seguridad social (BPS)",
+                "No tiene contrato escrito pero sí aporta a BPS"
+              ],
+              "correcta": 2,
+              "explicacion": "En Uruguay, un trabajador informal es aquel que no realiza aportes a la seguridad social (BPS). Esto implica que no accede a cobertura de salud, seguro de desempleo ni jubilación. La informalidad afecta especialmente al servicio doméstico, la construcción y el trabajo rural."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Comercio internacional y globalización",
+      "temas": [
+        {
+          "titulo": "Ventajas comparativas y fundamentos del comercio internacional",
+          "conceptosClave": [
+            "ventaja absoluta",
+            "ventaja comparativa",
+            "costo de oportunidad",
+            "especialización",
+            "términos de intercambio",
+            "división internacional del trabajo",
+            "David Ricardo"
+          ],
+          "objetivos": [
+            "Comprender el principio de ventaja comparativa y por qué los países se benefician del comercio",
+            "Distinguir entre ventaja absoluta y ventaja comparativa mediante ejemplos numéricos",
+            "Analizar cómo la especialización y el intercambio aumentan la producción y el bienestar global"
+          ],
+          "contenidos": [
+            "Ventaja absoluta (Adam Smith): un país produce un bien usando menos recursos que otro; ventaja comparativa (David Ricardo): un país se especializa en el bien donde tiene menor costo de oportunidad, incluso si no tiene ventaja absoluta en nada",
+            "Modelo ricardiano simplificado: ejemplo numérico con dos países y dos bienes; demostración de que el comercio basado en ventaja comparativa beneficia a ambos países; términos de intercambio como rango de precios de intercambio mutuamente beneficioso",
+            "Limitaciones del modelo clásico: supuestos simplificadores; modelo Heckscher-Ohlin (dotación de factores); efectos distributivos del comercio: hay ganadores y perdedores dentro de cada país"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Según David Ricardo, un país debe especializarse en producir el bien en el que tiene:",
+              "opciones": [
+                "Mayor cantidad de recursos naturales",
+                "Mayor ventaja absoluta",
+                "Menor costo de oportunidad (ventaja comparativa)",
+                "Mayor demanda interna"
+              ],
+              "correcta": 2,
+              "explicacion": "Ricardo demostró que incluso si un país es menos eficiente en todo, le conviene especializarse en el bien donde su desventaja es menor (menor costo de oportunidad). Así, ambos países ganan con el comercio."
+            },
+            {
+              "pregunta": "Si Uruguay produce 1 tonelada de carne renunciando a 2 toneladas de trigo, y Argentina produce 1 tonelada de carne renunciando a 4 toneladas de trigo, ¿quién tiene ventaja comparativa en carne?",
+              "opciones": [
+                "Argentina, porque es un país más grande",
+                "Uruguay, porque su costo de oportunidad de producir carne es menor",
+                "Argentina, porque renuncia a más trigo",
+                "Ambos tienen la misma ventaja"
+              ],
+              "correcta": 1,
+              "explicacion": "Uruguay tiene ventaja comparativa en carne porque su costo de oportunidad es menor: solo renuncia a 2 toneladas de trigo por cada tonelada de carne, mientras que Argentina renuncia a 4. Uruguay debería especializarse en carne."
+            },
+            {
+              "pregunta": "Los términos de intercambio representan:",
+              "opciones": [
+                "La cantidad de dinero que un país gasta en importaciones",
+                "La relación entre los precios de exportación y los precios de importación de un país",
+                "El volumen total de comercio de un país",
+                "La diferencia entre exportaciones e importaciones en unidades físicas"
+              ],
+              "correcta": 1,
+              "explicacion": "Los términos de intercambio miden la relación entre el precio de las exportaciones y el precio de las importaciones. Si los términos de intercambio mejoran, con la misma cantidad de exportaciones se pueden comprar más importaciones."
+            }
+          ]
+        },
+        {
+          "titulo": "Libre comercio, proteccionismo y política comercial",
+          "conceptosClave": [
+            "libre comercio",
+            "proteccionismo",
+            "arancel",
+            "cuota de importación",
+            "subsidio a la exportación",
+            "barreras no arancelarias",
+            "dumping",
+            "OMC",
+            "industria naciente"
+          ],
+          "objetivos": [
+            "Comparar los argumentos a favor del libre comercio y del proteccionismo con ejemplos concretos",
+            "Analizar los efectos de los aranceles y otras barreras comerciales sobre precios, producción y bienestar",
+            "Comprender el rol de la OMC y los acuerdos comerciales en la regulación del comercio internacional"
+          ],
+          "contenidos": [
+            "Argumentos a favor del libre comercio: mayor eficiencia y especialización, variedad de productos, menores precios para consumidores, estímulo a la innovación; evidencia empírica del crecimiento impulsado por la apertura comercial",
+            "Instrumentos proteccionistas: aranceles (impuestos a importaciones), cuotas (límites cuantitativos), subsidios a productores nacionales, barreras no arancelarias (normas técnicas, sanitarias); análisis gráfico del efecto de un arancel: sube el precio, beneficia al productor nacional, perjudica al consumidor, genera pérdida de bienestar neta",
+            "Argumentos proteccionistas: protección de la industria naciente, seguridad nacional, defensa del empleo local, dumping; OMC: principios (nación más favorecida, trato nacional), rondas de negociación, mecanismo de solución de controversias; aplicación al caso uruguayo"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es el efecto principal de imponer un arancel a las importaciones de un bien?",
+              "opciones": [
+                "Baja el precio interno del bien y beneficia al consumidor",
+                "Sube el precio interno del bien, beneficiando a los productores nacionales pero perjudicando a los consumidores",
+                "No tiene efecto sobre los precios internos",
+                "Aumenta las exportaciones del bien"
+              ],
+              "correcta": 1,
+              "explicacion": "Un arancel encarece el producto importado, lo que sube el precio interno. Esto beneficia a los productores nacionales (que pueden competir a un precio más alto) pero perjudica a los consumidores (que pagan más). En conjunto, genera una pérdida neta de bienestar para la sociedad."
+            },
+            {
+              "pregunta": "El argumento de la 'industria naciente' a favor del proteccionismo sostiene que:",
+              "opciones": [
+                "Las industrias viejas deben protegerse para siempre",
+                "Las industrias nuevas necesitan protección temporal hasta alcanzar escala y competitividad",
+                "Solo las industrias de alta tecnología merecen protección",
+                "El libre comercio favorece a las industrias nacientes"
+              ],
+              "correcta": 1,
+              "explicacion": "El argumento de la industria naciente sostiene que una industria nueva puede necesitar protección temporal (aranceles, subsidios) para desarrollarse, alcanzar economías de escala y poder competir internacionalmente. La crítica es que esa protección tiende a perpetuarse."
+            },
+            {
+              "pregunta": "La Organización Mundial del Comercio (OMC) promueve como principio fundamental:",
+              "opciones": [
+                "Que cada país fije libremente sus aranceles sin restricción alguna",
+                "Que los países desarrollados subsidien todas las exportaciones",
+                "El principio de nación más favorecida: las ventajas comerciales otorgadas a un socio deben extenderse a todos los miembros",
+                "Que los países en desarrollo estén exentos de todas las normas comerciales"
+              ],
+              "correcta": 2,
+              "explicacion": "El principio de nación más favorecida (NMF) es fundamental en la OMC: si un país otorga una ventaja arancelaria a un socio, debe extenderla a todos los demás miembros de la OMC, promoviendo la no discriminación en el comercio internacional."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

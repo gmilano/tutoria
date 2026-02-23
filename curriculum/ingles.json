@@ -1,0 +1,712 @@
+{
+  "id": "ingles-4",
+  "nombre": "Inglés",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "🇬🇧",
+  "color": "#14b8a6",
+  "descripcion": "Inglés nivel B1-B2: gramática, comprensión y producción",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Gramática Avanzada I — Tiempos Verbales y Voz Pasiva",
+      "temas": [
+        {
+          "titulo": "Perfect Tenses: Present Perfect, Past Perfect & Future Perfect",
+          "conceptosClave": [
+            "present perfect (have/has + past participle)",
+            "past perfect (had + past participle)",
+            "future perfect (will have + past participle)",
+            "present perfect continuous",
+            "past perfect continuous",
+            "time markers: since, for, already, yet, just, by the time"
+          ],
+          "objetivos": [
+            "Distinguir el uso y la formación de los tiempos perfectos en inglés",
+            "Aplicar correctamente los marcadores temporales asociados a cada tiempo perfecto",
+            "Producir oraciones que contrasten present perfect y past simple en contextos comunicativos reales"
+          ],
+          "contenidos": [
+            "Formación y uso del present perfect simple y continuous: experiencias, acciones no terminadas, resultados presentes",
+            "Past perfect para establecer secuencias temporales en narraciones y past perfect continuous para acciones en progreso antes de otra acción pasada",
+            "Future perfect y future perfect continuous para expresar acciones completadas o en progreso antes de un punto futuro"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Choose the correct sentence: 'By the time we arrived at the cinema, the film ___.'",
+              "opciones": [
+                "already started",
+                "has already started",
+                "had already started",
+                "will have already started"
+              ],
+              "correcta": 2,
+              "explicacion": "Se usa el past perfect (had already started) para expresar una acción que ocurrió antes de otra acción en el pasado ('arrived'). El past perfect establece la secuencia temporal: primero empezó la película, luego llegamos."
+            },
+            {
+              "pregunta": "Which sentence correctly uses the present perfect continuous?",
+              "opciones": [
+                "I have been waiting for you since two hours.",
+                "I have been waiting for you for two hours.",
+                "I am waiting for you since two hours.",
+                "I was waiting for you for two hours."
+              ],
+              "correcta": 1,
+              "explicacion": "El present perfect continuous (have been waiting) se usa con 'for' + duración de tiempo para indicar una acción que comenzó en el pasado y continúa hasta el presente. 'Since' se usa con un punto específico en el tiempo, no con duraciones."
+            },
+            {
+              "pregunta": "Complete: 'By next July, she ___ at this company for ten years.'",
+              "opciones": [
+                "will work",
+                "will be working",
+                "will have been working",
+                "has been working"
+              ],
+              "correcta": 2,
+              "explicacion": "El future perfect continuous (will have been working) se usa para expresar la duración de una acción que estará en progreso hasta un punto futuro específico ('by next July'). Combina la idea de duración continua con el punto de referencia futuro."
+            }
+          ]
+        },
+        {
+          "titulo": "Passive Voice: Formation, Uses & Advanced Structures",
+          "conceptosClave": [
+            "passive structure: subject + be + past participle",
+            "agent with 'by'",
+            "passive in different tenses",
+            "impersonal passive (It is said that...)",
+            "passive with reporting verbs (is believed, is known)",
+            "causative structure (have/get something done)"
+          ],
+          "objetivos": [
+            "Transformar oraciones activas en pasivas en todos los tiempos verbales relevantes",
+            "Utilizar la voz pasiva impersonal y con verbos de reporte en contextos académicos y periodísticos",
+            "Emplear la estructura causativa para expresar servicios realizados por otros"
+          ],
+          "contenidos": [
+            "Formación de la voz pasiva en present simple, past simple, present perfect, past perfect, future simple y con verbos modales",
+            "Voz pasiva impersonal con 'it' y con sujeto personal (It is said that... / He is said to...) para transmitir información sin nombrar la fuente",
+            "Estructura causativa con 'have' y 'get' (have something done / get something done) para servicios y experiencias"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Which is the correct passive form of 'They are building a new hospital in our city'?",
+              "opciones": [
+                "A new hospital is built in our city.",
+                "A new hospital is being built in our city.",
+                "A new hospital has been built in our city.",
+                "A new hospital was being built in our city."
+              ],
+              "correcta": 1,
+              "explicacion": "La oración activa está en present continuous ('are building'), por lo que la forma pasiva correspondiente es present continuous passive: 'is being built'. Se mantiene el mismo tiempo verbal al transformar a pasiva."
+            },
+            {
+              "pregunta": "Choose the correct impersonal passive: 'People believe that the president will resign.'",
+              "opciones": [
+                "The president is believed to resign.",
+                "It is believed that the president will resign.",
+                "The president is believed that will resign.",
+                "It believes that the president will resign."
+              ],
+              "correcta": 1,
+              "explicacion": "La estructura impersonal pasiva con 'it' sigue el patrón: It + passive reporting verb + that + clause. 'It is believed that the president will resign' es la forma correcta que permite transmitir información sin identificar la fuente."
+            },
+            {
+              "pregunta": "What does the sentence 'I had my car repaired yesterday' mean?",
+              "opciones": [
+                "I repaired my car myself yesterday.",
+                "Someone repaired my car for me yesterday.",
+                "My car was not repaired yesterday.",
+                "I will have my car repaired."
+              ],
+              "correcta": 1,
+              "explicacion": "La estructura causativa 'have something done' (had my car repaired) indica que otra persona realizó la acción por nosotros, generalmente un profesional o un servicio. No significa que la persona lo hizo ella misma."
+            }
+          ]
+        },
+        {
+          "titulo": "Conditionals: Zero, First, Second, Third & Mixed",
+          "conceptosClave": [
+            "zero conditional (if + present, present)",
+            "first conditional (if + present, will + infinitive)",
+            "second conditional (if + past simple, would + infinitive)",
+            "third conditional (if + past perfect, would have + past participle)",
+            "mixed conditionals",
+            "unless, provided that, as long as"
+          ],
+          "objetivos": [
+            "Identificar y producir los cuatro tipos de condicionales según el grado de probabilidad o realidad",
+            "Construir condicionales mixtos para expresar situaciones hipotéticas complejas",
+            "Emplear conectores condicionales alternativos como 'unless', 'provided that' y 'as long as'"
+          ],
+          "contenidos": [
+            "Condicionales cero (verdades generales) y primer condicional (situaciones reales y probables en el futuro) con sus variaciones",
+            "Segundo condicional para situaciones hipotéticas o improbables en el presente/futuro y tercer condicional para situaciones irreales en el pasado",
+            "Condicionales mixtos: combinación de tiempos para expresar consecuencias presentes de condiciones pasadas y viceversa; uso de 'unless', 'provided that', 'as long as', 'in case'"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Choose the correct mixed conditional: 'If I ___ harder at university, I ___ a better job now.'",
+              "opciones": [
+                "studied / would have",
+                "had studied / would have",
+                "have studied / will have",
+                "would study / had"
+              ],
+              "correcta": 1,
+              "explicacion": "Este es un condicional mixto que combina una condición irreal pasada (if + past perfect: 'had studied') con una consecuencia irreal presente (would + infinitive: 'would have'). Expresa cómo una acción pasada diferente habría cambiado la situación actual."
+            },
+            {
+              "pregunta": "Which sentence uses the third conditional correctly?",
+              "opciones": [
+                "If it rained, we would stay home.",
+                "If it had rained, we would have stayed home.",
+                "If it rains, we will stay home.",
+                "If it would rain, we stayed home."
+              ],
+              "correcta": 1,
+              "explicacion": "El tercer condicional sigue la estructura: if + past perfect (had rained), would have + past participle (would have stayed). Se usa para hablar de situaciones irreales en el pasado — cosas que no ocurrieron y sus consecuencias imaginarias."
+            },
+            {
+              "pregunta": "'You can borrow my car ___ you drive carefully.' Choose the best connector.",
+              "opciones": [
+                "unless",
+                "in case",
+                "as long as",
+                "even if"
+              ],
+              "correcta": 2,
+              "explicacion": "'As long as' significa 'siempre y cuando' o 'con tal de que' — establece una condición necesaria. 'Unless' significaría 'a menos que' (sentido negativo), 'in case' es 'por si acaso', y 'even if' es 'incluso si'. La oración expresa que el préstamo depende de la condición de conducir con cuidado."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Gramática Avanzada II — Reported Speech y Modales",
+      "temas": [
+        {
+          "titulo": "Reported Speech: Statements, Questions & Commands",
+          "conceptosClave": [
+            "direct vs. indirect speech",
+            "backshift of tenses",
+            "reporting verbs: say, tell, ask, advise, warn, suggest",
+            "reported questions (if/whether)",
+            "reported commands and requests (told/asked + to infinitive)",
+            "changes in time and place references"
+          ],
+          "objetivos": [
+            "Transformar enunciados, preguntas y órdenes del discurso directo al indirecto aplicando los cambios de tiempo verbal correspondientes",
+            "Utilizar una variedad de verbos de reporte según la intención comunicativa del hablante original",
+            "Reconocer y aplicar los cambios necesarios en referencias temporales, espaciales y pronominales"
+          ],
+          "contenidos": [
+            "Reglas de backshift: present → past, past → past perfect, will → would, can → could; excepciones cuando la información sigue vigente",
+            "Reported questions con 'if/whether' para yes/no questions y con la palabra interrogativa para wh-questions, manteniendo el orden afirmativo",
+            "Reported commands y requests con 'told/asked/ordered/advised + object + (not) to + infinitive'; verbos de reporte especiales: suggest, recommend, deny, admit, promise"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Convert to reported speech: 'I am studying for my exam,' she said.",
+              "opciones": [
+                "She said she is studying for her exam.",
+                "She said she was studying for her exam.",
+                "She said she had been studying for her exam.",
+                "She said she has been studying for her exam."
+              ],
+              "correcta": 1,
+              "explicacion": "Al pasar a reported speech, el present continuous ('am studying') cambia a past continuous ('was studying') por la regla de backshift. También cambian los pronombres: 'I' pasa a 'she' y 'my' a 'her'."
+            },
+            {
+              "pregunta": "Which is the correct reported form of: 'Do you like pizza?' he asked me.",
+              "opciones": [
+                "He asked me do I like pizza.",
+                "He asked me if I liked pizza.",
+                "He asked me whether do I like pizza.",
+                "He asked me that I liked pizza."
+              ],
+              "correcta": 1,
+              "explicacion": "Las reported yes/no questions usan 'if' o 'whether' y mantienen el orden de la oración afirmativa (sujeto + verbo), no el orden interrogativo. El verbo 'like' cambia a 'liked' por el backshift. No se usa 'do/does' auxiliar en reported questions."
+            },
+            {
+              "pregunta": "Report: 'Don't touch the hot stove!' the mother warned her children.",
+              "opciones": [
+                "The mother warned her children to not touch the hot stove.",
+                "The mother warned her children not to touch the hot stove.",
+                "The mother warned her children don't touch the hot stove.",
+                "The mother warned her children that don't touch the hot stove."
+              ],
+              "correcta": 1,
+              "explicacion": "Las reported commands negativas siguen la estructura: reporting verb + object + not + to + infinitive. La negación 'not' va antes de 'to', formando 'not to touch'. La opción A con 'to not touch' (split infinitive) no es la forma estándar aceptada en inglés formal."
+            }
+          ]
+        },
+        {
+          "titulo": "Modal Verbs: Obligation, Permission, Ability, Deduction & Advice",
+          "conceptosClave": [
+            "must / have to / need to (obligation)",
+            "should / ought to / had better (advice)",
+            "can / could / be able to (ability)",
+            "may / might / could (possibility)",
+            "must / can't / might (deduction)",
+            "modal perfects: must have, should have, could have, might have"
+          ],
+          "objetivos": [
+            "Diferenciar matices de significado entre modales que expresan obligación, consejo, permiso, habilidad y deducción",
+            "Emplear modales perfectos para expresar deducciones, arrepentimientos y críticas sobre situaciones pasadas",
+            "Producir textos orales y escritos utilizando modales con precisión según el registro y contexto comunicativo"
+          ],
+          "contenidos": [
+            "Modales de obligación y necesidad: must vs. have to (obligación interna vs. externa), mustn't vs. don't have to (prohibición vs. ausencia de obligación), need / needn't",
+            "Modales de deducción: must (certeza positiva), can't (certeza negativa), may/might/could (posibilidad); deducción en pasado con modal + have + past participle",
+            "Modales perfectos para situaciones pasadas: should have done (arrepentimiento/crítica), could have done (oportunidad perdida), must have done (deducción pasada), needn't have done (acción innecesaria realizada)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Choose the correct meaning: 'You don't have to wear a uniform at this school.'",
+              "opciones": [
+                "You must not wear a uniform.",
+                "It is not necessary to wear a uniform.",
+                "You are not able to wear a uniform.",
+                "You should not wear a uniform."
+              ],
+              "correcta": 1,
+              "explicacion": "'Don't have to' expresa ausencia de obligación — no es necesario, pero puedes hacerlo si quieres. Es muy diferente de 'mustn't', que expresa prohibición (no está permitido). Esta es una distinción clave entre los modales de obligación."
+            },
+            {
+              "pregunta": "'She ___ been at the party. I saw her at the library at that time.' Choose the best modal.",
+              "opciones": [
+                "must have",
+                "should have",
+                "can't have",
+                "might have"
+              ],
+              "correcta": 2,
+              "explicacion": "'Can't have + past participle' se usa para expresar una deducción negativa con certeza sobre el pasado — estamos seguros de que algo no ocurrió, basándonos en evidencia (en este caso, haberla visto en la biblioteca). 'Must have' sería certeza positiva, y 'might have' expresaría posibilidad."
+            },
+            {
+              "pregunta": "'You ___ told me earlier! Now it's too late to change the reservation.' Choose the best option.",
+              "opciones": [
+                "must have",
+                "could have",
+                "should have",
+                "would have"
+              ],
+              "correcta": 2,
+              "explicacion": "'Should have + past participle' se usa para expresar arrepentimiento o crítica sobre algo que no se hizo en el pasado pero debería haberse hecho. El hablante está criticando que la otra persona no le informó antes. 'Could have' expresa oportunidad perdida, no crítica."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Comprensión Lectora — Estrategias y Textos Académicos",
+      "temas": [
+        {
+          "titulo": "Reading Strategies: Skimming, Scanning & Intensive Reading",
+          "conceptosClave": [
+            "skimming (lectura rápida para idea general)",
+            "scanning (búsqueda de información específica)",
+            "intensive reading (lectura detallada)",
+            "extensive reading (lectura por placer)",
+            "previewing: titles, subtitles, images, captions",
+            "text structure: introduction, body, conclusion"
+          ],
+          "objetivos": [
+            "Aplicar estrategias de lectura diferenciadas según el propósito comunicativo y el tipo de texto",
+            "Identificar la estructura organizativa de diferentes tipos de textos en inglés",
+            "Desarrollar la capacidad de anticipar contenido a partir de elementos paratextuales"
+          ],
+          "contenidos": [
+            "Skimming: técnicas para obtener la idea general de un texto rápidamente — leer títulos, primeras oraciones de cada párrafo y conclusión; identificar topic sentences",
+            "Scanning: técnicas para localizar información específica — buscar nombres, números, fechas, palabras clave sin leer todo el texto",
+            "Intensive reading: lectura detallada para comprensión profunda — análisis de vocabulario en contexto, identificación de argumentos, evaluación de evidencia"
+          ],
+          "quiz": [
+            {
+              "pregunta": "You need to find the date of a specific historical event in a textbook chapter. Which reading strategy is most appropriate?",
+              "opciones": [
+                "Skimming — reading quickly for the general idea",
+                "Scanning — searching for specific information",
+                "Intensive reading — reading every word carefully",
+                "Extensive reading — reading for pleasure"
+              ],
+              "correcta": 1,
+              "explicacion": "Scanning es la estrategia correcta cuando buscamos información específica como una fecha, un nombre o un dato concreto. El lector mueve los ojos rápidamente por el texto buscando la información puntual sin necesidad de leer todo el contenido."
+            },
+            {
+              "pregunta": "What is a 'topic sentence' in a paragraph?",
+              "opciones": [
+                "The last sentence that summarizes the paragraph",
+                "A sentence that introduces the main idea of the paragraph",
+                "A sentence that contains a quotation",
+                "A transitional sentence between paragraphs"
+              ],
+              "correcta": 1,
+              "explicacion": "La 'topic sentence' es la oración que presenta la idea principal del párrafo. Generalmente se encuentra al inicio del párrafo en textos académicos en inglés y funciona como guía para el lector sobre el contenido que se desarrollará a continuación."
+            },
+            {
+              "pregunta": "When skimming an article, which elements should you focus on FIRST?",
+              "opciones": [
+                "Every word in the first paragraph",
+                "The footnotes and bibliography",
+                "The title, headings, and first sentence of each paragraph",
+                "The examples and statistics"
+              ],
+              "correcta": 2,
+              "explicacion": "Al hacer skimming, nos enfocamos primero en los elementos que dan una visión general del texto: título, subtítulos (headings), y la primera oración de cada párrafo (topic sentences). Estos elementos nos permiten captar la idea principal y la estructura del texto sin leerlo completo."
+            }
+          ]
+        },
+        {
+          "titulo": "Inference, Critical Reading & Academic Texts",
+          "conceptosClave": [
+            "making inferences from context",
+            "distinguishing fact from opinion",
+            "identifying author's purpose and tone",
+            "guessing meaning from context clues",
+            "recognizing bias and point of view",
+            "academic text features: abstract, citations, formal register"
+          ],
+          "objetivos": [
+            "Realizar inferencias a partir de información explícita e implícita en textos de complejidad intermedia-alta",
+            "Distinguir hechos de opiniones y reconocer la intención y el tono del autor en textos diversos",
+            "Comprender las características y convenciones de los textos académicos en inglés"
+          ],
+          "contenidos": [
+            "Técnicas de inferencia: deducir significados no explícitos a partir de pistas contextuales, conocimiento previo y lógica textual; guessing vocabulary from context",
+            "Lectura crítica: distinguir hechos (facts) de opiniones (opinions), identificar el propósito del autor (to inform, to persuade, to entertain), reconocer tono (formal, informal, irónico, objetivo)",
+            "Textos académicos: estructura IMRD (Introduction, Methods, Results, Discussion), uso de citas y referencias, lenguaje objetivo y hedging (It seems that..., This suggests...)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Read: 'Although the experiment yielded promising results, further research is needed before any definitive conclusions can be drawn.' What is the author's tone?",
+              "opciones": [
+                "Enthusiastic and certain",
+                "Cautious and measured",
+                "Negative and pessimistic",
+                "Informal and humorous"
+              ],
+              "correcta": 1,
+              "explicacion": "El tono es cauteloso y mesurado (cautious and measured). Palabras como 'although', 'further research is needed' y 'before any definitive conclusions' son ejemplos de hedging — lenguaje académico que evita hacer afirmaciones absolutas, mostrando prudencia científica."
+            },
+            {
+              "pregunta": "Which of the following is an OPINION rather than a FACT?",
+              "opciones": [
+                "The population of Uruguay is approximately 3.4 million.",
+                "Uruguay is located in South America.",
+                "Uruguay is the most beautiful country in South America.",
+                "Uruguay gained independence in 1828."
+              ],
+              "correcta": 2,
+              "explicacion": "La opción C es una opinión porque usa un juicio de valor subjetivo ('the most beautiful') que no puede verificarse objetivamente. Las demás opciones son hechos verificables: datos demográficos, ubicación geográfica y una fecha histórica."
+            },
+            {
+              "pregunta": "'The charity claims to help thousands of children, but their annual report shows only 12% of donations go to direct aid.' What can we infer?",
+              "opciones": [
+                "The charity is very effective.",
+                "There may be a discrepancy between the charity's claims and its actual performance.",
+                "The annual report is incorrect.",
+                "12% is a high percentage for direct aid."
+              ],
+              "correcta": 1,
+              "explicacion": "Podemos inferir que hay una discrepancia entre lo que la organización dice hacer y lo que los datos muestran. La palabra 'claims' sugiere que el autor tiene reservas, y el contraste con 'but' y el dato del 12% implica que la realidad puede no coincidir con las afirmaciones. Es una inferencia basada en pistas textuales."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Producción Escrita — Ensayo, Argumentación y Registro",
+      "temas": [
+        {
+          "titulo": "Essay Structure: Introduction, Body & Conclusion",
+          "conceptosClave": [
+            "thesis statement",
+            "topic sentences",
+            "supporting details and examples",
+            "linking words and transitions",
+            "concluding paragraph: summary and final thought",
+            "essay types: opinion, for-and-against, problem-solution"
+          ],
+          "objetivos": [
+            "Planificar y redactar ensayos con una estructura clara de introducción, desarrollo y conclusión",
+            "Formular thesis statements efectivos que guíen la argumentación del ensayo",
+            "Utilizar conectores y transiciones para lograr coherencia y cohesión textual"
+          ],
+          "contenidos": [
+            "Estructura del ensayo: hook (gancho inicial), background information, thesis statement en la introducción; topic sentence + supporting evidence en cada párrafo del cuerpo; resumen y reflexión final en la conclusión",
+            "Conectores de adición (furthermore, moreover, in addition), contraste (however, on the other hand, nevertheless), causa-efecto (therefore, consequently, as a result), secuencia (firstly, subsequently, finally)",
+            "Tipos de ensayo: opinion essay (expresar y defender una postura), for-and-against essay (presentar ambos lados), problem-solution essay (identificar un problema y proponer soluciones)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "What is the main purpose of a thesis statement in an essay?",
+              "opciones": [
+                "To provide background information about the topic",
+                "To present the main argument or position of the essay",
+                "To summarize the conclusion of the essay",
+                "To list the sources used in the essay"
+              ],
+              "correcta": 1,
+              "explicacion": "El thesis statement presenta el argumento principal o la posición central del ensayo. Generalmente aparece al final de la introducción y funciona como una 'hoja de ruta' que le indica al lector cuál será el enfoque y la dirección del texto."
+            },
+            {
+              "pregunta": "Choose the best linking word: 'Many students prefer online learning. ___, some studies show that face-to-face interaction improves academic results.'",
+              "opciones": [
+                "Furthermore",
+                "Therefore",
+                "However",
+                "In addition"
+              ],
+              "correcta": 2,
+              "explicacion": "'However' es el conector correcto porque introduce una idea contrastante. La primera oración habla de la preferencia por el aprendizaje en línea, mientras que la segunda presenta evidencia opuesta. 'Furthermore' e 'In addition' agregan información similar, y 'Therefore' indica consecuencia."
+            },
+            {
+              "pregunta": "In a for-and-against essay, what should the conclusion include?",
+              "opciones": [
+                "Only the arguments in favour",
+                "New arguments not mentioned in the body",
+                "A balanced summary and the writer's personal opinion",
+                "A detailed repetition of all arguments"
+              ],
+              "correcta": 2,
+              "explicacion": "La conclusión de un for-and-against essay debe incluir un resumen equilibrado de los argumentos presentados y, opcionalmente, la opinión personal del autor. No debe introducir argumentos nuevos ni repetir todo en detalle. El objetivo es cerrar el ensayo de forma reflexiva."
+            }
+          ]
+        },
+        {
+          "titulo": "Argumentation, Formal & Informal Register",
+          "conceptosClave": [
+            "formal register: academic and professional writing",
+            "informal register: personal letters, emails, messages",
+            "persuasive techniques: rhetorical questions, statistics, expert opinions",
+            "avoiding logical fallacies",
+            "hedging language (may, might, it appears that)",
+            "formal vs. informal vocabulary (assist vs. help, commence vs. start)"
+          ],
+          "objetivos": [
+            "Diferenciar y producir textos en registro formal e informal según la situación comunicativa",
+            "Emplear técnicas de argumentación persuasiva y reconocer falacias lógicas comunes",
+            "Utilizar lenguaje de hedging y expresiones formales apropiadas para la escritura académica"
+          ],
+          "contenidos": [
+            "Registro formal: características (voz pasiva, vocabulario académico, oraciones complejas, ausencia de contracciones y phrasal verbs); contextos de uso (ensayos, cartas formales, informes, artículos académicos)",
+            "Registro informal: características (contracciones, phrasal verbs, lenguaje coloquial, oraciones simples); contextos de uso (correos a amigos, mensajes, blogs personales, diálogos)",
+            "Argumentación persuasiva: uso de evidencia, ejemplos, citas de expertos, datos estadísticos, preguntas retóricas; reconocimiento de falacias como ad hominem, generalización apresurada y falsa dicotomía"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Which sentence is written in FORMAL register?",
+              "opciones": [
+                "Hey, wanna grab a coffee later?",
+                "I'm gonna check it out ASAP.",
+                "The committee has decided to postpone the meeting until further notice.",
+                "Btw, the test was super easy!"
+              ],
+              "correcta": 2,
+              "explicacion": "La opción C usa registro formal: vocabulario preciso ('committee', 'postpone', 'further notice'), voz activa formal, sin contracciones informales ni abreviaciones. Las otras opciones usan lenguaje informal: 'wanna', 'gonna', 'ASAP' (como informal), 'Btw', 'super easy'."
+            },
+            {
+              "pregunta": "Which is an example of a rhetorical question used for persuasion?",
+              "opciones": [
+                "What time does the meeting start?",
+                "Can you pass me the salt?",
+                "Don't we all deserve access to clean drinking water?",
+                "Where did you buy that jacket?"
+              ],
+              "correcta": 2,
+              "explicacion": "Una pregunta retórica no busca una respuesta literal, sino que se usa como técnica persuasiva para hacer que el lector/oyente reflexione y llegue a una conclusión obvia. '¿No merecemos todos acceso a agua potable?' espera implícitamente un 'sí' y refuerza el argumento."
+            },
+            {
+              "pregunta": "Replace the informal expression with a formal equivalent: 'We need to find out what went wrong.'",
+              "opciones": [
+                "We need to discover what went wrong.",
+                "We need to investigate the cause of the failure.",
+                "We gotta figure out the problem.",
+                "We should check out the issue."
+              ],
+              "correcta": 1,
+              "explicacion": "'Investigate the cause of the failure' es la versión formal más apropiada: reemplaza el phrasal verb informal 'find out' con 'investigate' y usa vocabulario más preciso ('cause of the failure' en lugar de 'what went wrong'). La opción C y D son aún más informales que la original."
+            }
+          ]
+        },
+        {
+          "titulo": "Writing Practice: Letters, Emails & Reports",
+          "conceptosClave": [
+            "formal letter layout: sender, date, salutation, body, closing",
+            "email conventions: subject line, greeting, sign-off",
+            "report structure: title, introduction, findings, recommendations",
+            "appropriate tone and register for each format",
+            "common phrases for formal correspondence"
+          ],
+          "objetivos": [
+            "Redactar cartas formales e informales respetando las convenciones del formato en inglés",
+            "Escribir correos electrónicos con el registro y tono apropiados según el destinatario",
+            "Producir informes breves con estructura clara: introducción, hallazgos y recomendaciones"
+          ],
+          "contenidos": [
+            "Cartas formales: fórmulas de saludo (Dear Sir/Madam, Dear Mr/Ms...), cuerpo con párrafos organizados, cierre (Yours faithfully/sincerely); cartas de solicitud, queja, y aplicación",
+            "Correos electrónicos: convenciones de subject line, niveles de formalidad según destinatario, estructura concisa, uso de bullet points, fórmulas de cierre (Best regards, Kind regards, Cheers)",
+            "Informes: estructura con secciones numeradas, uso de headings, lenguaje impersonal y objetivo, presentación de datos y recomendaciones con verbos modales (should, could, it is recommended that)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "If you begin a formal letter with 'Dear Sir or Madam,' how should you end it?",
+              "opciones": [
+                "Yours sincerely,",
+                "Yours faithfully,",
+                "Best regards,",
+                "Cheers,"
+              ],
+              "correcta": 1,
+              "explicacion": "En la convención británica, cuando no conocemos el nombre del destinatario y usamos 'Dear Sir or Madam', cerramos con 'Yours faithfully'. Cuando conocemos el nombre (Dear Mr Smith), cerramos con 'Yours sincerely'. Esta es una regla clásica de la correspondencia formal en inglés."
+            },
+            {
+              "pregunta": "Which is the most appropriate subject line for a formal email requesting information about a course?",
+              "opciones": [
+                "Hey! Question about your course",
+                "URGENT!!! NEED INFO NOW",
+                "Enquiry Regarding the Advanced English Course — September 2026",
+                "stuff about the course"
+              ],
+              "correcta": 2,
+              "explicacion": "Un subject line formal debe ser claro, específico y profesional. La opción C identifica el tipo de comunicación ('Enquiry'), el tema ('Advanced English Course') y un detalle relevante ('September 2026'). Las demás opciones son demasiado informales, vagas o inapropiadas para correspondencia formal."
+            },
+            {
+              "pregunta": "In a report's 'Recommendations' section, which sentence is most appropriate?",
+              "opciones": [
+                "You guys should totally change the system.",
+                "I think maybe we could try something different.",
+                "It is recommended that the current system be replaced with a more efficient alternative.",
+                "Just change it, it's broken."
+              ],
+              "correcta": 2,
+              "explicacion": "La opción C usa el registro formal apropiado para un informe: voz pasiva impersonal ('It is recommended that'), subjuntivo formal ('be replaced'), y vocabulario preciso ('efficient alternative'). Los informes requieren un tono objetivo e impersonal, evitando lenguaje coloquial y opiniones personales directas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "titulo": "Vocabulario y Expresión Oral",
+      "temas": [
+        {
+          "titulo": "Phrasal Verbs & Collocations",
+          "conceptosClave": [
+            "separable vs. inseparable phrasal verbs",
+            "common phrasal verbs: look up, give up, turn down, carry out, come across",
+            "collocations: make a decision, do homework, take notes",
+            "verb + preposition combinations",
+            "adjective + noun collocations: heavy rain, strong opinion",
+            "word formation: prefixes and suffixes"
+          ],
+          "objetivos": [
+            "Ampliar el repertorio de phrasal verbs de uso frecuente y aplicarlos en contextos comunicativos",
+            "Reconocer y emplear collocations comunes para lograr mayor naturalidad en la expresión en inglés",
+            "Utilizar estrategias de formación de palabras (prefijos, sufijos) para expandir el vocabulario"
+          ],
+          "contenidos": [
+            "Phrasal verbs: diferencia entre separables (turn off the light / turn the light off) e inseparables (look after someone); phrasal verbs temáticos: relaciones (get along, break up), trabajo (carry out, take on), comunicación (bring up, point out)",
+            "Collocations: combinaciones verbo+sustantivo (make progress, do research, take responsibility), adjetivo+sustantivo (strong argument, narrow escape, golden opportunity), adverbio+adjetivo (highly unlikely, deeply concerned)",
+            "Formación de palabras: prefijos negativos (un-, dis-, mis-, in-, im-, ir-), sufijos para cambiar categoría gramatical (-tion, -ment, -ness, -ful, -less, -ize, -ly); false friends entre español e inglés"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Choose the correct collocation: 'The scientist ___ an important discovery last year.'",
+              "opciones": [
+                "did",
+                "made",
+                "took",
+                "had"
+              ],
+              "correcta": 1,
+              "explicacion": "La collocation correcta es 'make a discovery' (hacer un descubrimiento). En inglés, 'make' se usa con discovery, progress, decision, effort, mistake. 'Do' se usa con research, homework, business, damage. Estas combinaciones son fijas y deben aprenderse como unidades."
+            },
+            {
+              "pregunta": "'I came ___ an old photograph while cleaning the attic.' Which particle completes the phrasal verb?",
+              "opciones": [
+                "up",
+                "out",
+                "across",
+                "over"
+              ],
+              "correcta": 2,
+              "explicacion": "'Come across' significa encontrar algo por casualidad (stumble upon). Es un phrasal verb inseparable muy común. 'Come up' significa surgir, 'come out' significa salir/publicarse, y 'come over' significa venir de visita. El contexto de encontrar una foto mientras limpiaba indica un hallazgo casual."
+            },
+            {
+              "pregunta": "Which word uses the correct prefix to mean 'not possible'?",
+              "opciones": [
+                "unpossible",
+                "dispossible",
+                "impossble",
+                "impossible"
+              ],
+              "correcta": 3,
+              "explicacion": "El prefijo correcto para 'possible' es 'im-' → 'impossible'. La regla general es: 'im-' se usa antes de palabras que comienzan con 'p', 'b' o 'm' (impossible, imbalance, immature). 'Un-' se usa con adjetivos comunes (unhappy, unable), 'dis-' con verbos y adjetivos (disagree, dishonest), 'in-' como forma general (incorrect, invisible)."
+            }
+          ]
+        },
+        {
+          "titulo": "Pronunciation, Intonation & Oral Presentations",
+          "conceptosClave": [
+            "vowel and consonant sounds: minimal pairs",
+            "word stress and sentence stress",
+            "intonation patterns: rising and falling",
+            "connected speech: linking, elision, assimilation",
+            "oral presentation structure: opening, body, closing",
+            "public speaking skills: eye contact, pace, visual aids"
+          ],
+          "objetivos": [
+            "Mejorar la pronunciación mediante el trabajo con pares mínimos, acentuación y patrones de entonación",
+            "Reconocer fenómenos del habla conectada como linking, elision y assimilation",
+            "Planificar y realizar presentaciones orales en inglés con estructura clara y recursos de apoyo"
+          ],
+          "contenidos": [
+            "Pronunciación: pares mínimos (ship/sheep, bit/beat, cat/cut), sonidos problemáticos para hispanohablantes (/ʃ/, /θ/, /ð/, /v/, /ŋ/), el schwa /ə/ como vocal más frecuente del inglés",
+            "Acentuación y entonación: word stress (record vs. record, present vs. present), sentence stress (content words vs. function words), entonación ascendente en preguntas yes/no y descendente en preguntas wh-",
+            "Presentaciones orales: estructura (greeting, outline, main points, summary, Q&A), recursos lingüísticos (signposting: firstly, moving on to, in conclusion), técnicas de comunicación efectiva (contacto visual, ritmo, pausas, apoyo visual)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "In the words 'record' (noun) and 'record' (verb), where does the stress fall?",
+              "opciones": [
+                "Both are stressed on the first syllable.",
+                "The noun is stressed on the first syllable; the verb on the second.",
+                "Both are stressed on the second syllable.",
+                "The verb is stressed on the first syllable; the noun on the second."
+              ],
+              "correcta": 1,
+              "explicacion": "En muchos pares sustantivo/verbo de dos sílabas en inglés, el sustantivo lleva el acento en la primera sílaba (REcord) y el verbo en la segunda (reCORD). Otros ejemplos: PREsent/preSENT, PROduce/proDUCE, OBject/obJECT. Esta es una regla de acentuación muy útil."
+            },
+            {
+              "pregunta": "Which pair of words demonstrates a minimal pair for the /ɪ/ and /iː/ sounds?",
+              "opciones": [
+                "cat — cut",
+                "ship — sheep",
+                "bed — bad",
+                "pull — pool"
+              ],
+              "correcta": 1,
+              "explicacion": "Ship (/ʃɪp/) y sheep (/ʃiːp/) forman un par mínimo que se diferencia solo por la vocal: /ɪ/ (corta) vs. /iː/ (larga). Los pares mínimos son pares de palabras que difieren en un solo sonido y son una herramienta fundamental para practicar la discriminación auditiva y la pronunciación."
+            },
+            {
+              "pregunta": "In a presentation, what is the purpose of 'signposting' language?",
+              "opciones": [
+                "To translate difficult words for the audience",
+                "To guide the audience through the structure of the presentation",
+                "To read directly from the slides",
+                "To ask the audience personal questions"
+              ],
+              "correcta": 1,
+              "explicacion": "El 'signposting' (señalización) son expresiones que guían al oyente a través de la estructura de la presentación, como 'Firstly...', 'Moving on to...', 'To sum up...', 'Let me now turn to...'. Funcionan como señales de tránsito que indican al público dónde estamos en la presentación y hacia dónde vamos."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

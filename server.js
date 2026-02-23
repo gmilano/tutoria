@@ -4,10 +4,59 @@ import cors from 'cors';
 import { createServer } from 'http';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { readFile } from 'fs/promises';
 import authRoutes     from './routes/auth.js';
 import progressRoutes from './routes/progress.js';
 import sessionRoutes  from './routes/sessions.js';
 import mediaRoutes    from './routes/media.js';
+
+// ── Curriculum cache ─────────────────────────────────────────
+const curriculumCache = {};
+
+async function loadCurriculum(subjectId) {
+  if (curriculumCache[subjectId]) return curriculumCache[subjectId];
+
+  // Try individual subject file first, then fall back to the full file
+  const nameMap = {
+    'historia-4': 'historia', 'matematica-4': 'matematica', 'lengua-4': 'lengua',
+    'biologia-4': 'biologia', 'fisica-4': 'fisica', 'quimica-4': 'quimica',
+    'geografia-4': 'geografia', 'ingles-4': 'ingles', 'informatica-4': 'informatica',
+    'economia-5-eco': 'economia',
+  };
+
+  const fileName = nameMap[subjectId];
+  if (fileName) {
+    try {
+      const raw = await readFile(join(__dirname, `curriculum/${fileName}.json`), 'utf-8');
+      const data = JSON.parse(raw);
+      curriculumCache[subjectId] = data;
+      return data;
+    } catch { /* fall through to full file */ }
+  }
+
+  // Fall back to the complete curriculum file
+  try {
+    const raw = await readFile(join(__dirname, 'curriculum/anep-bachillerato-completo.json'), 'utf-8');
+    const full = JSON.parse(raw);
+    const subj = full.materias.find(m => m.id === subjectId);
+    if (subj) curriculumCache[subjectId] = subj;
+    return subj || null;
+  } catch {
+    return null;
+  }
+}
+
+function findTopicInCurriculum(curriculum, topicTitle) {
+  if (!curriculum?.unidades) return null;
+  for (const u of curriculum.unidades) {
+    for (const t of u.temas || []) {
+      if (t.titulo === topicTitle || topicTitle.includes(t.titulo) || t.titulo.includes(topicTitle)) {
+        return { ...t, unidad: u.titulo };
+      }
+    }
+  }
+  return null;
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -59,18 +108,45 @@ app.get('/api/models', async (req, res) => {
 
 // ── /api/chat — main tutor endpoint ──────────────────────
 app.post('/api/chat', async (req, res) => {
-  const { messages = [], subject = 'Historia', topic = 'Revolución Francesa', year = '4°', model = 'auto' } = req.body;
+  const { messages = [], subject = 'Historia', topic = 'Revolución Francesa', year = '4°', model = 'auto', subjectId, studentName } = req.body;
+
+  // Load curriculum data for richer context
+  const curriculum = subjectId ? await loadCurriculum(subjectId) : null;
+  const topicData = curriculum ? findTopicInCurriculum(curriculum, topic) : null;
+
+  let contextBlock = '';
+  if (topicData) {
+    const conceptos = topicData.conceptosClave?.join(', ') || '';
+    const objetivos = topicData.objetivos?.map(o => `  - ${o}`).join('\n') || '';
+    const contenidos = topicData.contenidos?.map(c => `  - ${c}`).join('\n') || '';
+    contextBlock = `
+Unidad: ${topicData.unidad || ''}
+Conceptos clave del tema: ${conceptos}
+${objetivos ? `Objetivos de aprendizaje:\n${objetivos}` : ''}
+${contenidos ? `Contenidos a cubrir:\n${contenidos}` : ''}`;
+  } else if (curriculum) {
+    // At least include the subject description
+    contextBlock = `\nDescripción de la materia: ${curriculum.descripcion || ''}`;
+  }
+
+  const greeting = studentName ? `El alumno se llama ${studentName}. Usá su nombre de vez en cuando para personalizar la interacción.` : '';
 
   const systemPrompt = `Eres TutorIA, un tutor de ${subject} para ${year} año de bachillerato uruguayo (programa ANEP/CES).
 Tema actual: ${topic}
+${contextBlock}
 
-Instrucciones:
+${greeting}
+
+Instrucciones pedagógicas:
 - Respondé siempre en español rioplatense (vos, tuteo)
-- Estilo pedagógico, cercano y motivador
+- Estilo pedagógico socrático: guiá al alumno con preguntas, no des la respuesta directa
+- Sé cercano, motivador y positivo. Celebrá los aciertos del alumno
 - Máximo 3 párrafos cortos por respuesta
-- Al finalizar, hacé una pregunta para verificar comprensión
+- Al finalizar, hacé una pregunta reflexiva para verificar comprensión
 - Usá emojis con moderación para hacer el aprendizaje más amigable
-- Si el alumno pregunta algo fuera del tema, redirigilo gentilmente`;
+- Si el alumno pregunta algo fuera del tema, redirigilo gentilmente
+- Relacioná los conceptos con la realidad uruguaya cuando sea posible
+- Si el alumno se equivoca, no lo corrijas bruscamente: guialo hacia la respuesta correcta`;
 
   const allMessages = [
     { role: 'system', content: systemPrompt },

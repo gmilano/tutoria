@@ -1,0 +1,737 @@
+{
+  "id": "quimica-4",
+  "nombre": "Química",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "🧪",
+  "color": "#ec4899",
+  "descripcion": "Química general: átomo, tabla periódica, enlace y reacciones",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Estructura Atómica y Tabla Periódica",
+      "temas": [
+        {
+          "titulo": "Modelos atómicos: de Dalton al modelo cuántico",
+          "conceptosClave": [
+            "modelo de Dalton",
+            "modelo de Thomson",
+            "modelo de Rutherford",
+            "modelo de Bohr",
+            "modelo cuántico actual",
+            "número atómico",
+            "número másico",
+            "isótopos"
+          ],
+          "objetivos": [
+            "Describir la evolución histórica de los modelos atómicos y los experimentos que motivaron cada cambio",
+            "Diferenciar número atómico, número másico e isótopos de un mismo elemento",
+            "Comprender las limitaciones de cada modelo y por qué fue sustituido"
+          ],
+          "contenidos": [
+            "Evolución de los modelos atómicos: desde la teoría de Dalton (esfera maciza) hasta el modelo de Bohr (órbitas cuantizadas) y el modelo cuántico (orbitales y nube electrónica)",
+            "Partículas subatómicas: protones, neutrones y electrones; sus cargas, masas relativas y ubicación en el átomo",
+            "Notación isotópica, cálculo de masa atómica promedio y aplicaciones de los isótopos (datación radiactiva, medicina nuclear)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué experimento llevó a Rutherford a proponer que el átomo tiene un núcleo pequeño y denso?",
+              "opciones": [
+                "La electrólisis del agua",
+                "El bombardeo de una lámina de oro con partículas alfa",
+                "La descomposición de la luz en un prisma",
+                "La medición de la carga del electrón con gotas de aceite"
+              ],
+              "correcta": 1,
+              "explicacion": "Rutherford bombardeó una lámina delgada de oro con partículas alfa (experimento de Geiger-Marsden, 1911). Al observar que algunas partículas rebotaban, concluyó que la masa positiva del átomo se concentra en un núcleo muy pequeño y denso."
+            },
+            {
+              "pregunta": "Un átomo tiene 17 protones y 18 neutrones. ¿Cuál es su número másico?",
+              "opciones": [
+                "17",
+                "18",
+                "35",
+                "1"
+              ],
+              "correcta": 2,
+              "explicacion": "El número másico (A) es la suma de protones y neutrones: A = Z + N = 17 + 18 = 35. Este átomo corresponde al cloro-35."
+            },
+            {
+              "pregunta": "¿Cuál es la principal diferencia entre el modelo de Bohr y el modelo cuántico actual?",
+              "opciones": [
+                "El modelo de Bohr incluye neutrones y el cuántico no",
+                "El modelo de Bohr describe órbitas circulares definidas, mientras que el cuántico describe orbitales como regiones de probabilidad",
+                "El modelo cuántico no usa números cuánticos",
+                "El modelo de Bohr explica todos los átomos y el cuántico solo el hidrógeno"
+              ],
+              "correcta": 1,
+              "explicacion": "El modelo de Bohr propone que los electrones se mueven en órbitas circulares fijas alrededor del núcleo. El modelo cuántico actual, basado en la ecuación de Schrödinger, describe orbitales como regiones del espacio donde hay alta probabilidad de encontrar al electrón, sin trayectorias definidas."
+            }
+          ]
+        },
+        {
+          "titulo": "Configuración electrónica y números cuánticos",
+          "conceptosClave": [
+            "niveles de energía",
+            "subniveles s, p, d, f",
+            "principio de Aufbau",
+            "principio de exclusión de Pauli",
+            "regla de Hund",
+            "diagrama de Möller",
+            "electrones de valencia"
+          ],
+          "objetivos": [
+            "Escribir la configuración electrónica de los primeros 36 elementos utilizando el diagrama de Möller",
+            "Aplicar los principios de Aufbau, Pauli y Hund para distribuir electrones en orbitales",
+            "Relacionar la configuración electrónica con la posición del elemento en la tabla periódica"
+          ],
+          "contenidos": [
+            "Números cuánticos (n, l, ml, ms): significado físico de cada uno y valores permitidos; relación entre subniveles y formas de orbitales (s esférico, p bilobulado, d y f)",
+            "Orden de llenado de orbitales: uso del diagrama de Möller (regla de las diagonales); excepciones notables como Cr y Cu",
+            "Electrones de valencia y su importancia para predecir el comportamiento químico del elemento; configuración abreviada usando gas noble del período anterior"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la configuración electrónica correcta del átomo de azufre (Z = 16)?",
+              "opciones": [
+                "1s² 2s² 2p⁶ 3s² 3p²",
+                "1s² 2s² 2p⁶ 3s² 3p⁴",
+                "1s² 2s² 2p⁶ 3s² 3d⁴",
+                "1s² 2s² 2p⁶ 3s² 3p⁶"
+              ],
+              "correcta": 1,
+              "explicacion": "El azufre tiene 16 electrones. Siguiendo el diagrama de Möller: 1s²(2) 2s²(4) 2p⁶(10) 3s²(12) 3p⁴(16). Los 4 electrones del subnivel 3p le confieren sus propiedades químicas características."
+            },
+            {
+              "pregunta": "¿Qué establece el principio de exclusión de Pauli?",
+              "opciones": [
+                "Los electrones llenan primero los orbitales de menor energía",
+                "No puede haber dos electrones con los cuatro números cuánticos iguales en un mismo átomo",
+                "Los electrones se distribuyen de a uno en cada orbital antes de emparejarse",
+                "Cada nivel de energía puede contener un máximo de 8 electrones"
+              ],
+              "correcta": 1,
+              "explicacion": "El principio de exclusión de Pauli establece que en un átomo no pueden existir dos electrones con los cuatro números cuánticos idénticos. Esto implica que cada orbital puede alojar como máximo 2 electrones con espines opuestos (+½ y -½)."
+            },
+            {
+              "pregunta": "Un elemento tiene la configuración electrónica [Ar] 4s² 3d⁷. ¿Cuántos electrones de valencia posee y en qué período se ubica?",
+              "opciones": [
+                "2 electrones de valencia, período 3",
+                "9 electrones de valencia, período 4",
+                "7 electrones de valencia, período 4",
+                "2 electrones de valencia, período 4"
+              ],
+              "correcta": 1,
+              "explicacion": "El elemento es cobalto (Co, Z=27). En los metales de transición, los electrones de valencia incluyen los del subnivel ns y (n-1)d, dando 2 + 7 = 9 electrones de valencia. Al tener electrones en el nivel n=4, se ubica en el período 4."
+            }
+          ]
+        },
+        {
+          "titulo": "Tabla periódica y propiedades periódicas",
+          "conceptosClave": [
+            "períodos",
+            "grupos o familias",
+            "metales, no metales y metaloides",
+            "radio atómico",
+            "energía de ionización",
+            "electronegatividad",
+            "afinidad electrónica",
+            "carácter metálico"
+          ],
+          "objetivos": [
+            "Explicar la organización de la tabla periódica en función de la estructura electrónica de los elementos",
+            "Predecir tendencias de propiedades periódicas (radio atómico, energía de ionización, electronegatividad) dentro de un grupo y un período",
+            "Clasificar elementos como metales, no metales o metaloides y reconocer las familias principales"
+          ],
+          "contenidos": [
+            "Estructura de la tabla periódica moderna: relación entre número atómico, configuración electrónica y posición (grupo y período); bloques s, p, d, f",
+            "Propiedades periódicas: radio atómico (aumenta hacia abajo y hacia la izquierda), energía de ionización y electronegatividad (aumentan hacia arriba y hacia la derecha); justificación en términos de carga nuclear efectiva y apantallamiento",
+            "Familias representativas: metales alcalinos (grupo 1), alcalinotérreos (grupo 2), halógenos (grupo 17), gases nobles (grupo 18); propiedades características de cada una"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cómo varía la electronegatividad en la tabla periódica?",
+              "opciones": [
+                "Aumenta hacia abajo en un grupo y hacia la izquierda en un período",
+                "Aumenta hacia arriba en un grupo y hacia la derecha en un período",
+                "Es constante dentro de un mismo período",
+                "Solo depende del número de neutrones del átomo"
+              ],
+              "correcta": 1,
+              "explicacion": "La electronegatividad aumenta hacia arriba en un grupo (menor radio, mayor atracción nuclear sobre electrones de enlace) y hacia la derecha en un período (mayor carga nuclear efectiva). El flúor es el elemento más electronegativo de la tabla periódica."
+            },
+            {
+              "pregunta": "¿Cuál de los siguientes elementos tiene mayor radio atómico?",
+              "opciones": [
+                "Flúor (F)",
+                "Cloro (Cl)",
+                "Bromo (Br)",
+                "Yodo (I)"
+              ],
+              "correcta": 3,
+              "explicacion": "Dentro del grupo 17 (halógenos), el radio atómico aumenta al descender porque se agregan niveles de energía. El yodo (I), ubicado en el período 5, tiene el mayor radio atómico de las opciones presentadas."
+            },
+            {
+              "pregunta": "¿Por qué los gases nobles son tan poco reactivos?",
+              "opciones": [
+                "Porque son todos gases a temperatura ambiente",
+                "Porque tienen su último nivel de energía completo (configuración electrónica estable)",
+                "Porque tienen muy pocos protones",
+                "Porque su electronegatividad es la más alta de la tabla"
+              ],
+              "correcta": 1,
+              "explicacion": "Los gases nobles (grupo 18) tienen su nivel de valencia completo (ns² np⁶, excepto helio con 1s²). Esta configuración electrónica es muy estable, por lo que no tienden a ganar, perder ni compartir electrones, siendo extremadamente poco reactivos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Enlace Químico",
+      "temas": [
+        {
+          "titulo": "Enlace iónico y enlace metálico",
+          "conceptosClave": [
+            "transferencia de electrones",
+            "cationes y aniones",
+            "red cristalina iónica",
+            "energía reticular",
+            "enlace metálico",
+            "mar de electrones",
+            "conductividad eléctrica",
+            "regla del octeto"
+          ],
+          "objetivos": [
+            "Explicar la formación del enlace iónico como transferencia de electrones entre un metal y un no metal, aplicando la regla del octeto",
+            "Describir el modelo de mar de electrones para el enlace metálico y relacionarlo con las propiedades de los metales",
+            "Predecir las propiedades físicas (punto de fusión, solubilidad, conductividad) de sustancias iónicas y metálicas"
+          ],
+          "contenidos": [
+            "Enlace iónico: formación a partir de la diferencia de electronegatividad (> 1,7); estructura de Lewis de iones; propiedades de los compuestos iónicos (altos puntos de fusión, solubles en agua, conducen en solución o fundidos)",
+            "Enlace metálico: modelo del mar de electrones deslocalizados; propiedades derivadas como conductividad eléctrica y térmica, brillo, maleabilidad y ductilidad",
+            "Comparación entre enlace iónico y metálico: diferencias en estructura, propiedades físicas y tipo de sustancias que forman"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué tipo de enlace se forma entre el sodio (Na) y el cloro (Cl) al formar NaCl?",
+              "opciones": [
+                "Enlace covalente polar",
+                "Enlace covalente apolar",
+                "Enlace iónico",
+                "Enlace metálico"
+              ],
+              "correcta": 2,
+              "explicacion": "El sodio (metal alcalino, baja electronegatividad) transfiere un electrón al cloro (halógeno, alta electronegatividad), formando Na⁺ y Cl⁻. La gran diferencia de electronegatividad (> 1,7) genera un enlace iónico, y los iones se organizan en una red cristalina."
+            },
+            {
+              "pregunta": "¿Por qué los metales son buenos conductores de electricidad?",
+              "opciones": [
+                "Porque sus átomos están muy separados entre sí",
+                "Porque tienen electrones deslocalizados que se mueven libremente por la estructura",
+                "Porque forman enlaces covalentes muy fuertes",
+                "Porque sus iones negativos conducen la corriente"
+              ],
+              "correcta": 1,
+              "explicacion": "En el enlace metálico, los electrones de valencia no pertenecen a un átomo en particular, sino que forman un 'mar de electrones' deslocalizado. Estos electrones se mueven libremente a través de la red de cationes metálicos, permitiendo la conducción eléctrica y térmica."
+            },
+            {
+              "pregunta": "¿Cuál de las siguientes propiedades NO es típica de un compuesto iónico?",
+              "opciones": [
+                "Alto punto de fusión",
+                "Soluble en solventes polares como el agua",
+                "Baja dureza y fácil deformación",
+                "Conduce electricidad cuando está disuelto o fundido"
+              ],
+              "correcta": 2,
+              "explicacion": "Los compuestos iónicos son duros pero frágiles (no se deforman fácilmente). Al aplicar una fuerza, las capas de iones se desplazan enfrentando cargas iguales que se repelen, causando fractura. La baja dureza y fácil deformación son propiedades típicas de los metales, no de los compuestos iónicos."
+            }
+          ]
+        },
+        {
+          "titulo": "Enlace covalente y fuerzas intermoleculares",
+          "conceptosClave": [
+            "compartición de electrones",
+            "enlace covalente simple, doble y triple",
+            "enlace covalente polar y apolar",
+            "estructura de Lewis",
+            "geometría molecular",
+            "fuerzas de Van der Waals",
+            "puente de hidrógeno",
+            "fuerzas de London"
+          ],
+          "objetivos": [
+            "Representar moléculas mediante estructuras de Lewis y determinar si el enlace covalente es polar o apolar",
+            "Relacionar la geometría molecular (lineal, angular, trigonal, tetraédrica) con la polaridad de la molécula",
+            "Diferenciar entre fuerzas intramoleculares (enlaces) y fuerzas intermoleculares y explicar su influencia en las propiedades físicas"
+          ],
+          "contenidos": [
+            "Enlace covalente: formación por compartición de pares de electrones entre no metales; enlaces simples, dobles y triples; polaridad del enlace según diferencia de electronegatividad; representación con estructuras de Lewis",
+            "Geometría molecular: modelo RPECV (repulsión de pares electrónicos de la capa de valencia) para predecir formas moleculares; relación entre geometría y polaridad de la molécula (momento dipolar)",
+            "Fuerzas intermoleculares: fuerzas de London (dispersión), dipolo-dipolo y puente de hidrógeno; cómo afectan el punto de ebullición, la viscosidad y la solubilidad de las sustancias"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Por qué el agua (H₂O) tiene un punto de ebullición anormalmente alto comparado con el H₂S?",
+              "opciones": [
+                "Porque el agua tiene mayor masa molecular",
+                "Porque el agua forma puentes de hidrógeno entre sus moléculas",
+                "Porque el oxígeno tiene más neutrones que el azufre",
+                "Porque el H₂S es un gas noble"
+              ],
+              "correcta": 1,
+              "explicacion": "El agua forma puentes de hidrógeno (O-H···O) entre sus moléculas debido a la alta electronegatividad del oxígeno. Estas fuerzas intermoleculares son mucho más intensas que las fuerzas dipolo-dipolo del H₂S, lo que requiere mayor energía para pasar al estado gaseoso, elevando su punto de ebullición a 100 °C."
+            },
+            {
+              "pregunta": "¿Cuál es la geometría molecular del metano (CH₄) según el modelo RPECV?",
+              "opciones": [
+                "Lineal",
+                "Trigonal plana",
+                "Tetraédrica",
+                "Angular"
+              ],
+              "correcta": 2,
+              "explicacion": "El carbono en el CH₄ tiene 4 pares de electrones enlazantes y ningún par solitario. Según el modelo RPECV, los 4 pares se disponen lo más alejados posible, formando una geometría tetraédrica con ángulos de 109,5°. Esto hace que la molécula sea apolar a pesar de que cada enlace C-H sea levemente polar."
+            },
+            {
+              "pregunta": "¿Qué tipo de enlace existe en la molécula de nitrógeno (N₂)?",
+              "opciones": [
+                "Enlace iónico",
+                "Enlace covalente simple apolar",
+                "Enlace covalente triple apolar",
+                "Enlace metálico"
+              ],
+              "correcta": 2,
+              "explicacion": "Cada átomo de nitrógeno tiene 5 electrones de valencia y necesita 3 más para completar el octeto. Ambos átomos comparten 3 pares de electrones, formando un enlace covalente triple (N≡N). Al tratarse de dos átomos iguales, la diferencia de electronegatividad es cero, por lo que el enlace es apolar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Nomenclatura Química Inorgánica",
+      "temas": [
+        {
+          "titulo": "Óxidos e hidróxidos",
+          "conceptosClave": [
+            "óxido básico",
+            "óxido ácido (anhídrido)",
+            "número de oxidación",
+            "nomenclatura IUPAC",
+            "nomenclatura Stock",
+            "nomenclatura tradicional",
+            "hidróxido",
+            "formulación"
+          ],
+          "objetivos": [
+            "Clasificar óxidos en básicos y ácidos según la naturaleza del elemento que se combina con el oxígeno",
+            "Nombrar y formular óxidos e hidróxidos utilizando las nomenclaturas IUPAC, Stock y tradicional",
+            "Asignar correctamente números de oxidación a los elementos en un compuesto"
+          ],
+          "contenidos": [
+            "Número de oxidación: reglas para asignarlos; relación con la posición en la tabla periódica y con la configuración electrónica del elemento",
+            "Óxidos básicos (metal + oxígeno) y óxidos ácidos o anhídridos (no metal + oxígeno): formación, formulación y nomenclatura en los tres sistemas (IUPAC con prefijos, Stock con números romanos, tradicional con sufijos -oso/-ico)",
+            "Hidróxidos (óxido básico + agua): estructura general M(OH)n, formulación y nomenclatura; propiedades básicas y ejemplos de uso cotidiano (NaOH, Ca(OH)₂)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la fórmula del óxido de hierro(III) (nomenclatura Stock)?",
+              "opciones": [
+                "FeO",
+                "Fe₂O₃",
+                "Fe₃O₂",
+                "FeO₃"
+              ],
+              "correcta": 1,
+              "explicacion": "En la nomenclatura Stock, el número romano III indica que el hierro actúa con estado de oxidación +3. Para que la molécula sea neutra con el oxígeno (−2), se necesitan 2 átomos de Fe(+3) y 3 átomos de O(−2): 2×(+3) + 3×(−2) = 0. La fórmula es Fe₂O₃."
+            },
+            {
+              "pregunta": "¿Cómo se llama el compuesto Ca(OH)₂ en nomenclatura IUPAC?",
+              "opciones": [
+                "Óxido de calcio",
+                "Hidróxido de calcio",
+                "Ácido cálcico",
+                "Dihidróxido de calcio"
+              ],
+              "correcta": 3,
+              "explicacion": "En nomenclatura IUPAC se usan prefijos griegos para indicar la cantidad de cada grupo: Ca(OH)₂ tiene 2 grupos hidroxilo, por lo que se denomina dihidróxido de calcio. En nomenclatura Stock se nombra hidróxido de calcio (sin prefijo, ya que el Ca solo tiene estado +2)."
+            },
+            {
+              "pregunta": "El SO₃ es un óxido ácido. ¿Cuál es su nombre en nomenclatura tradicional?",
+              "opciones": [
+                "Anhídrido sulfuroso",
+                "Anhídrido sulfúrico",
+                "Óxido de azufre(IV)",
+                "Trióxido de azufre"
+              ],
+              "correcta": 1,
+              "explicacion": "En SO₃, el azufre actúa con su mayor estado de oxidación (+6). En nomenclatura tradicional, cuando el elemento usa su mayor número de oxidación se emplea el sufijo -ico: anhídrido sulfúrico. El anhídrido sulfuroso corresponde al SO₂, donde el azufre actúa con +4 (menor estado)."
+            }
+          ]
+        },
+        {
+          "titulo": "Ácidos y sales",
+          "conceptosClave": [
+            "ácido hidrácido",
+            "ácido oxoácido",
+            "sal neutra",
+            "sal ácida",
+            "nomenclatura de sales",
+            "sufijos -uro, -ato, -ito",
+            "catión y anión",
+            "reacción de neutralización"
+          ],
+          "objetivos": [
+            "Diferenciar entre hidrácidos (sin oxígeno) y oxoácidos (con oxígeno) y nombrarlos correctamente",
+            "Formular y nombrar sales neutras y ácidas a partir de la reacción entre un ácido y una base",
+            "Aplicar las reglas de nomenclatura IUPAC y Stock para nombrar sales inorgánicas"
+          ],
+          "contenidos": [
+            "Hidrácidos: ácidos binarios formados por hidrógeno y un no metal (HCl, HBr, H₂S); nomenclatura con prefijo ácido + raíz del no metal + sufijo -hídrico",
+            "Oxoácidos: ácidos ternarios formados por la reacción de un anhídrido con agua; nomenclatura tradicional (ácido + raíz + -oso/-ico) y IUPAC (ácido + prefijo + oxo + raíz + -ico); ejemplos: H₂SO₄, HNO₃, H₃PO₄",
+            "Sales: formación por neutralización ácido + base; sales neutras y sales ácidas; nomenclatura con sufijos -uro (de hidrácidos) y -ato/-ito (de oxoácidos); ejemplos: NaCl (cloruro de sodio), CaCO₃ (carbonato de calcio)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es el nombre correcto del compuesto HNO₃?",
+              "opciones": [
+                "Ácido nitroso",
+                "Ácido nítrico",
+                "Nitrato de hidrógeno",
+                "Las opciones B y C son correctas"
+              ],
+              "correcta": 3,
+              "explicacion": "El HNO₃ se denomina ácido nítrico en nomenclatura tradicional (el nitrógeno actúa con +5, su mayor estado de oxidación, por lo que lleva sufijo -ico). En nomenclatura IUPAC como sal, se llama nitrato de hidrógeno. Ambas opciones B y C son correctas según el sistema de nomenclatura utilizado."
+            },
+            {
+              "pregunta": "¿Cuál es la fórmula del sulfato de aluminio?",
+              "opciones": [
+                "AlSO₄",
+                "Al₂(SO₄)₃",
+                "Al₃(SO₄)₂",
+                "Al(SO₄)₂"
+              ],
+              "correcta": 1,
+              "explicacion": "El aluminio tiene estado de oxidación +3 y el ión sulfato es SO₄²⁻ (carga −2). Para neutralizar las cargas: 2 × Al³⁺ y 3 × SO₄²⁻ dan 2×(+3) + 3×(−2) = 0. La fórmula es Al₂(SO₄)₃, utilizado como floculante en el tratamiento del agua potable."
+            },
+            {
+              "pregunta": "¿Cómo se llama la sal NaBr?",
+              "opciones": [
+                "Bromato de sodio",
+                "Bromito de sodio",
+                "Bromuro de sodio",
+                "Ácido bromhídrico de sodio"
+              ],
+              "correcta": 2,
+              "explicacion": "NaBr es una sal que proviene del ácido bromhídrico (HBr, un hidrácido). Las sales de los hidrácidos se nombran cambiando la terminación -hídrico del ácido por -uro: bromuro de sodio. Los sufijos -ato e -ito se usan solo para sales derivadas de oxoácidos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Reacciones Químicas y Estequiometría",
+      "temas": [
+        {
+          "titulo": "Tipos de reacciones y balanceo de ecuaciones",
+          "conceptosClave": [
+            "reacción de síntesis",
+            "reacción de descomposición",
+            "reacción de sustitución simple",
+            "reacción de doble sustitución",
+            "reacción de combustión",
+            "ley de conservación de la masa",
+            "balanceo por tanteo",
+            "coeficientes estequiométricos"
+          ],
+          "objetivos": [
+            "Clasificar reacciones químicas según el tipo de transformación (síntesis, descomposición, sustitución simple, doble sustitución, combustión)",
+            "Balancear ecuaciones químicas por el método de tanteo, verificando la conservación de la masa",
+            "Interpretar una ecuación química balanceada en términos de relaciones entre moles de reactivos y productos"
+          ],
+          "contenidos": [
+            "Ley de conservación de la masa (Lavoisier): en toda reacción química, la masa total de reactivos es igual a la masa total de productos; esto exige balancear las ecuaciones químicas",
+            "Tipos de reacciones: síntesis (A + B → AB), descomposición (AB → A + B), sustitución simple (A + BC → AC + B), doble sustitución (AB + CD → AD + CB), combustión (sustancia + O₂ → CO₂ + H₂O)",
+            "Balanceo de ecuaciones por tanteo: ajuste de coeficientes estequiométricos paso a paso; verificación final contando átomos de cada elemento en ambos miembros"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la ecuación balanceada de la combustión completa del metano (CH₄)?",
+              "opciones": [
+                "CH₄ + O₂ → CO₂ + H₂O",
+                "CH₄ + 2O₂ → CO₂ + 2H₂O",
+                "2CH₄ + O₂ → 2CO₂ + 2H₂O",
+                "CH₄ + 3O₂ → CO₂ + 4H₂O"
+              ],
+              "correcta": 1,
+              "explicacion": "Balanceando: CH₄ + 2O₂ → CO₂ + 2H₂O. Verificación: C: 1=1, H: 4=4, O: 4=4. Se necesitan 2 moléculas de O₂ para la combustión completa de una molécula de metano, generando dióxido de carbono y agua."
+            },
+            {
+              "pregunta": "La reacción Zn + CuSO₄ → ZnSO₄ + Cu es un ejemplo de:",
+              "opciones": [
+                "Reacción de síntesis",
+                "Reacción de descomposición",
+                "Reacción de sustitución simple (desplazamiento)",
+                "Reacción de doble sustitución"
+              ],
+              "correcta": 2,
+              "explicacion": "En esta reacción, el zinc (más reactivo que el cobre) desplaza al cobre del sulfato de cobre. Un elemento libre (Zn) reemplaza a otro en un compuesto, lo cual define una reacción de sustitución simple o desplazamiento. Esto ocurre porque el Zn tiene mayor potencial de reducción que el Cu²⁺."
+            },
+            {
+              "pregunta": "Según la ley de Lavoisier, si 12 g de carbono reaccionan con 32 g de oxígeno para formar CO₂, ¿cuántos gramos de CO₂ se obtienen?",
+              "opciones": [
+                "20 g",
+                "32 g",
+                "44 g",
+                "64 g"
+              ],
+              "correcta": 2,
+              "explicacion": "La ley de conservación de la masa establece que la masa no se crea ni se destruye en una reacción química. Por lo tanto, la masa de CO₂ producida es igual a la suma de las masas de los reactivos: 12 g + 32 g = 44 g de CO₂."
+            }
+          ]
+        },
+        {
+          "titulo": "El mol, número de Avogadro y cálculos estequiométricos",
+          "conceptosClave": [
+            "mol",
+            "número de Avogadro",
+            "masa molar",
+            "volumen molar",
+            "relación mol-mol",
+            "reactivo limitante",
+            "rendimiento teórico",
+            "rendimiento porcentual"
+          ],
+          "objetivos": [
+            "Definir el concepto de mol como unidad de cantidad de sustancia y aplicar el número de Avogadro en cálculos",
+            "Realizar cálculos estequiométricos masa-masa, masa-volumen y mol-mol a partir de ecuaciones balanceadas",
+            "Identificar el reactivo limitante en una reacción y calcular el rendimiento teórico y porcentual"
+          ],
+          "contenidos": [
+            "El mol y el número de Avogadro (6,022 × 10²³ entidades): relación entre mol, masa molar (g/mol), número de partículas y volumen molar de un gas en condiciones normales (22,4 L/mol a 0 °C y 1 atm)",
+            "Cálculos estequiométricos: uso de coeficientes de la ecuación balanceada para relacionar moles, masas y volúmenes de reactivos y productos; factor de conversión molar",
+            "Reactivo limitante y en exceso: identificación del reactivo que se consume primero; cálculo de rendimiento teórico (cantidad máxima de producto) y rendimiento porcentual (real/teórico × 100)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuántas moléculas hay en 2 moles de agua (H₂O)?",
+              "opciones": [
+                "6,022 × 10²³",
+                "12,044 × 10²³",
+                "3,011 × 10²³",
+                "18,066 × 10²³"
+              ],
+              "correcta": 1,
+              "explicacion": "Un mol de cualquier sustancia contiene 6,022 × 10²³ entidades (número de Avogadro). Por lo tanto, 2 moles de agua contienen 2 × 6,022 × 10²³ = 12,044 × 10²³ moléculas de H₂O, es decir, aproximadamente 1,2 × 10²⁴ moléculas."
+            },
+            {
+              "pregunta": "En la reacción 2H₂ + O₂ → 2H₂O, si se tienen 3 mol de H₂ y 2 mol de O₂, ¿cuál es el reactivo limitante?",
+              "opciones": [
+                "El hidrógeno (H₂)",
+                "El oxígeno (O₂)",
+                "Ninguno, están en proporción exacta",
+                "El agua (H₂O)"
+              ],
+              "correcta": 0,
+              "explicacion": "Según la ecuación, se necesitan 2 mol de H₂ por cada 1 mol de O₂. Para reaccionar con 2 mol de O₂ se necesitarían 4 mol de H₂, pero solo hay 3 mol disponibles. El H₂ se agota primero, por lo que es el reactivo limitante. Sobrará 0,5 mol de O₂ sin reaccionar."
+            },
+            {
+              "pregunta": "¿Cuál es la masa molar del ácido sulfúrico (H₂SO₄)? (H=1, S=32, O=16)",
+              "opciones": [
+                "49 g/mol",
+                "98 g/mol",
+                "80 g/mol",
+                "64 g/mol"
+              ],
+              "correcta": 1,
+              "explicacion": "La masa molar se calcula sumando las masas atómicas de todos los átomos en la fórmula: 2×H + 1×S + 4×O = 2×1 + 1×32 + 4×16 = 2 + 32 + 64 = 98 g/mol. Esta masa corresponde a un mol de H₂SO₄, es decir, 6,022 × 10²³ moléculas."
+            }
+          ]
+        },
+        {
+          "titulo": "Velocidad de reacción y equilibrio químico",
+          "conceptosClave": [
+            "velocidad de reacción",
+            "teoría de colisiones",
+            "energía de activación",
+            "catalizador",
+            "equilibrio químico",
+            "constante de equilibrio (Keq)",
+            "principio de Le Chatelier",
+            "factores que afectan el equilibrio"
+          ],
+          "objetivos": [
+            "Explicar los factores que afectan la velocidad de una reacción química según la teoría de colisiones",
+            "Comprender el concepto de equilibrio químico como estado dinámico donde las velocidades directa e inversa son iguales",
+            "Aplicar el principio de Le Chatelier para predecir el efecto de cambios en concentración, temperatura y presión sobre un sistema en equilibrio"
+          ],
+          "contenidos": [
+            "Velocidad de reacción: concepto y medición; factores que la afectan (concentración, temperatura, superficie de contacto, naturaleza de los reactivos, catalizadores); teoría de colisiones y energía de activación",
+            "Equilibrio químico: concepto de estado dinámico; expresión de la constante de equilibrio Keq a partir de concentraciones; reacciones reversibles e irreversibles",
+            "Principio de Le Chatelier: desplazamiento del equilibrio frente a cambios de concentración (agregar o quitar reactivos/productos), temperatura (reacciones exo y endotérmicas) y presión (en sistemas gaseosos con cambio de moles)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál de los siguientes factores NO aumenta la velocidad de una reacción?",
+              "opciones": [
+                "Aumentar la concentración de los reactivos",
+                "Elevar la temperatura del sistema",
+                "Agregar un catalizador adecuado",
+                "Disminuir la temperatura del sistema"
+              ],
+              "correcta": 3,
+              "explicacion": "Disminuir la temperatura reduce la energía cinética de las moléculas, lo que provoca menos colisiones efectivas (con energía suficiente para superar la energía de activación), disminuyendo así la velocidad de reacción. Los otros tres factores aumentan la frecuencia o la eficacia de las colisiones."
+            },
+            {
+              "pregunta": "En la reacción en equilibrio N₂(g) + 3H₂(g) ⇌ 2NH₃(g) (exotérmica), ¿qué sucede si se aumenta la temperatura?",
+              "opciones": [
+                "El equilibrio se desplaza hacia los productos (derecha)",
+                "El equilibrio se desplaza hacia los reactivos (izquierda)",
+                "El equilibrio no se altera",
+                "Se produce más NH₃ y más N₂ simultáneamente"
+              ],
+              "correcta": 1,
+              "explicacion": "Según el principio de Le Chatelier, si se aumenta la temperatura, el sistema se opone absorbiendo calor. Como la reacción directa es exotérmica (libera calor), el equilibrio se desplaza hacia la reacción inversa (endotérmica), favoreciendo la descomposición de NH₃ en N₂ y H₂."
+            },
+            {
+              "pregunta": "¿Qué función cumple un catalizador en una reacción química?",
+              "opciones": [
+                "Aumenta la energía de activación para que reaccionen más moléculas",
+                "Disminuye la energía de activación proporcionando un camino de reacción alternativo",
+                "Desplaza el equilibrio hacia los productos",
+                "Aumenta la temperatura de la reacción"
+              ],
+              "correcta": 1,
+              "explicacion": "Un catalizador disminuye la energía de activación ofreciendo un mecanismo de reacción alternativo con una barrera energética menor. Esto permite que más colisiones sean efectivas, aumentando la velocidad de reacción. El catalizador no se consume, no altera la posición del equilibrio ni la termodinámica, solo acelera el logro del equilibrio."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "titulo": "Ácidos, Bases y Sales en Solución",
+      "temas": [
+        {
+          "titulo": "Teorías ácido-base y escala de pH",
+          "conceptosClave": [
+            "teoría de Arrhenius",
+            "teoría de Brønsted-Lowry",
+            "ácido (dador de H⁺)",
+            "base (aceptor de H⁺)",
+            "par conjugado ácido-base",
+            "pH",
+            "pOH",
+            "autoionización del agua",
+            "Kw"
+          ],
+          "objetivos": [
+            "Comparar las teorías ácido-base de Arrhenius y Brønsted-Lowry, identificando sus alcances y limitaciones",
+            "Calcular el pH y pOH de soluciones acuosas y clasificarlas como ácidas, neutras o básicas",
+            "Identificar pares conjugados ácido-base en una reacción química"
+          ],
+          "contenidos": [
+            "Teoría de Arrhenius: ácido como sustancia que libera H⁺ en agua, base como sustancia que libera OH⁻; limitaciones (solo aplica en solución acuosa)",
+            "Teoría de Brønsted-Lowry: ácido como dador de protones (H⁺), base como aceptor de protones; pares conjugados ácido-base; anfóteros (sustancias que actúan como ácido o base según el medio, ej. H₂O)",
+            "Escala de pH: autoionización del agua (Kw = [H⁺][OH⁻] = 1×10⁻¹⁴ a 25 °C); definición de pH = −log[H⁺] y pOH = −log[OH⁻]; relación pH + pOH = 14; clasificación de soluciones: pH < 7 ácida, pH = 7 neutra, pH > 7 básica"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Según la teoría de Brønsted-Lowry, ¿qué es una base?",
+              "opciones": [
+                "Una sustancia que libera iones OH⁻ en solución acuosa",
+                "Una sustancia que acepta protones (H⁺)",
+                "Una sustancia que dona electrones",
+                "Una sustancia con pH menor a 7"
+              ],
+              "correcta": 1,
+              "explicacion": "Según Brønsted-Lowry, una base es toda especie capaz de aceptar un protón (H⁺). Esta definición es más amplia que la de Arrhenius, ya que no se limita a sustancias que producen OH⁻ en agua. Por ejemplo, el NH₃ es una base de Brønsted-Lowry porque acepta un H⁺ para formar NH₄⁺."
+            },
+            {
+              "pregunta": "Si una solución tiene [H⁺] = 1 × 10⁻³ M, ¿cuál es su pH y cómo se clasifica?",
+              "opciones": [
+                "pH = 3, solución ácida",
+                "pH = 3, solución básica",
+                "pH = 11, solución básica",
+                "pH = 11, solución ácida"
+              ],
+              "correcta": 0,
+              "explicacion": "El pH = −log[H⁺] = −log(10⁻³) = 3. Como pH = 3 < 7, la solución es ácida. Esto corresponde a una solución con una concentración de iones hidrógeno 10.000 veces mayor que el agua pura (pH = 7)."
+            },
+            {
+              "pregunta": "En la reacción NH₃ + H₂O ⇌ NH₄⁺ + OH⁻, ¿cuál es el par conjugado ácido-base del NH₃?",
+              "opciones": [
+                "NH₃ / H₂O",
+                "NH₃ / NH₄⁺",
+                "NH₄⁺ / OH⁻",
+                "H₂O / H₃O⁺"
+              ],
+              "correcta": 1,
+              "explicacion": "El NH₃ actúa como base (acepta un H⁺ del agua) y se transforma en NH₄⁺ (su ácido conjugado). El par conjugado ácido-base es NH₄⁺/NH₃: difieren en un protón. Paralelamente, el H₂O actúa como ácido (dona un H⁺) y su base conjugada es OH⁻."
+            }
+          ]
+        },
+        {
+          "titulo": "Neutralización, indicadores y aplicaciones",
+          "conceptosClave": [
+            "reacción de neutralización",
+            "titulación ácido-base",
+            "punto de equivalencia",
+            "indicador ácido-base",
+            "fenolftaleína",
+            "tornasol",
+            "buffer",
+            "sales en solución"
+          ],
+          "objetivos": [
+            "Escribir y balancear ecuaciones de neutralización entre ácidos y bases fuertes, identificando los productos formados",
+            "Describir el procedimiento de una titulación ácido-base y el uso de indicadores para determinar el punto de equivalencia",
+            "Reconocer aplicaciones cotidianas e industriales de las reacciones ácido-base (antiácidos, tratamiento de aguas, agricultura)"
+          ],
+          "contenidos": [
+            "Reacción de neutralización: ácido + base → sal + agua; ejemplos con ácidos y bases fuertes (HCl + NaOH → NaCl + H₂O); calor de neutralización; reacciones con ácidos y bases débiles",
+            "Titulación ácido-base: procedimiento experimental (bureta, erlenmeyer, indicador); cálculo de la concentración desconocida mediante la relación Ca×Va = Cb×Vb en el punto de equivalencia; curvas de titulación",
+            "Indicadores ácido-base: sustancias que cambian de color según el pH (fenolftaleína: incolora en ácido, rosa en base; tornasol: rojo en ácido, azul en base); aplicaciones: antiácidos estomacales, regulación del pH en piscinas, encalado de suelos ácidos"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuáles son los productos de la reacción de neutralización entre HCl y NaOH?",
+              "opciones": [
+                "NaCl + H₂",
+                "NaCl + H₂O",
+                "NaH + ClOH",
+                "Na₂O + HCl"
+              ],
+              "correcta": 1,
+              "explicacion": "La neutralización entre un ácido (HCl) y una base (NaOH) produce una sal (NaCl, cloruro de sodio) y agua (H₂O): HCl + NaOH → NaCl + H₂O. El H⁺ del ácido se combina con el OH⁻ de la base para formar agua, mientras que el catión de la base y el anión del ácido forman la sal."
+            },
+            {
+              "pregunta": "En una titulación, se necesitan 25 mL de NaOH 0,1 M para neutralizar 50 mL de HCl. ¿Cuál es la concentración del HCl?",
+              "opciones": [
+                "0,025 M",
+                "0,05 M",
+                "0,1 M",
+                "0,2 M"
+              ],
+              "correcta": 1,
+              "explicacion": "En el punto de equivalencia: Ca × Va = Cb × Vb. Entonces: Ca × 50 mL = 0,1 M × 25 mL. Ca = 2,5 / 50 = 0,05 M. La concentración del HCl es 0,05 M (0,05 moles por litro)."
+            },
+            {
+              "pregunta": "¿Qué color toma la fenolftaleína en una solución con pH = 12?",
+              "opciones": [
+                "Incolora",
+                "Roja",
+                "Rosa (fucsia)",
+                "Amarilla"
+              ],
+              "correcta": 2,
+              "explicacion": "La fenolftaleína es un indicador ácido-base que es incolora en medio ácido y neutro (pH < 8,2) y adquiere color rosa o fucsia en medio básico (pH > 10). Un pH de 12 corresponde a una solución fuertemente básica, por lo que la fenolftaleína se torna rosa intenso."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

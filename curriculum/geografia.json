@@ -1,0 +1,739 @@
+{
+  "id": "geografia-4",
+  "nombre": "Geografía",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "🌍",
+  "color": "#10b981",
+  "descripcion": "Geografía física, humana y regional del mundo y Uruguay",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Geografía Física: La Tierra como sistema",
+      "temas": [
+        {
+          "titulo": "Litosfera y tectónica de placas",
+          "conceptosClave": [
+            "litosfera",
+            "placas tectónicas",
+            "dorsales oceánicas",
+            "subducción",
+            "orogénesis",
+            "vulcanismo",
+            "sismicidad",
+            "Cinturón de Fuego del Pacífico"
+          ],
+          "objetivos": [
+            "Comprender la estructura interna de la Tierra y la dinámica de las placas tectónicas",
+            "Explicar la distribución mundial de volcanes y sismos a partir de los límites de placas",
+            "Relacionar la tectónica de placas con la formación de relieves y la distribución de los continentes"
+          ],
+          "contenidos": [
+            "Capas de la Tierra: corteza, manto, núcleo. Diferencia entre litosfera y astenosfera. Teoría de la deriva continental de Wegener y su evolución hacia la tectónica de placas.",
+            "Tipos de límites de placas: divergentes (dorsales), convergentes (subducción y colisión continental) y transformantes. Ejemplos: dorsal mesoatlántica, subducción de Nazca bajo Sudamérica, falla de San Andrés.",
+            "Procesos asociados: vulcanismo, sismicidad, orogénesis. Cinturón de Fuego del Pacífico. Formación de los Andes, el Himalaya y los Alpes. Escala de Richter y medición de terremotos."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué tipo de límite de placas genera la formación de dorsales oceánicas?",
+              "opciones": [
+                "Límite convergente",
+                "Límite divergente",
+                "Límite transformante",
+                "Límite pasivo"
+              ],
+              "correcta": 1,
+              "explicacion": "Las dorsales oceánicas se forman en límites divergentes, donde dos placas se separan y el magma asciende creando nueva corteza oceánica. La dorsal mesoatlántica es el ejemplo más extenso, recorriendo el fondo del océano Atlántico de norte a sur."
+            },
+            {
+              "pregunta": "La cordillera de los Andes se formó principalmente por:",
+              "opciones": [
+                "La separación de placas en un límite divergente",
+                "El deslizamiento lateral de placas en una falla transformante",
+                "La subducción de la placa de Nazca bajo la placa Sudamericana",
+                "La acumulación de sedimentos fluviales durante millones de años"
+              ],
+              "correcta": 2,
+              "explicacion": "Los Andes se formaron por la subducción de la placa oceánica de Nazca debajo de la placa continental Sudamericana. Este proceso de convergencia comprime y eleva la corteza, generando además intensa actividad volcánica y sísmica a lo largo de la costa occidental de Sudamérica."
+            },
+            {
+              "pregunta": "¿Por qué se denomina 'Cinturón de Fuego del Pacífico' a la zona que bordea el océano Pacífico?",
+              "opciones": [
+                "Porque allí se registran las temperaturas más altas del planeta",
+                "Porque concentra aproximadamente el 75% de los volcanes activos y el 90% de los terremotos del mundo",
+                "Porque las corrientes marinas cálidas del Pacífico calientan las costas",
+                "Porque los incendios forestales son más frecuentes en esas regiones"
+              ],
+              "correcta": 1,
+              "explicacion": "El Cinturón de Fuego del Pacífico concentra la mayor actividad volcánica y sísmica del planeta porque coincide con múltiples zonas de subducción donde placas oceánicas se hunden bajo placas continentales. Abarca desde Nueva Zelanda, Japón, Kamchatka, Alaska, la costa oeste de América hasta Chile."
+            }
+          ]
+        },
+        {
+          "titulo": "Hidrosfera: océanos, mares y aguas continentales",
+          "conceptosClave": [
+            "hidrosfera",
+            "ciclo hidrológico",
+            "corrientes marinas",
+            "cuencas hidrográficas",
+            "aguas subterráneas",
+            "Acuífero Guaraní",
+            "salinidad",
+            "mareas"
+          ],
+          "objetivos": [
+            "Comprender el ciclo hidrológico y la distribución del agua en el planeta",
+            "Analizar la importancia de las corrientes marinas en la regulación del clima global",
+            "Valorar los recursos hídricos de Uruguay y la región, especialmente el Acuífero Guaraní"
+          ],
+          "contenidos": [
+            "Distribución del agua en la Tierra: océanos (97,5%), glaciares, aguas subterráneas, ríos y lagos. Ciclo hidrológico: evaporación, condensación, precipitación, escorrentía e infiltración.",
+            "Corrientes marinas cálidas y frías: corriente del Golfo, Humboldt, corriente de Brasil y de Malvinas. Su influencia en el clima costero. Fenómeno de El Niño y La Niña y sus efectos en Sudamérica.",
+            "Cuencas hidrográficas de Uruguay: río Uruguay, río Negro, Río de la Plata, laguna Merín. El Acuífero Guaraní como reserva estratégica de agua dulce compartida por Uruguay, Argentina, Brasil y Paraguay."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué porcentaje aproximado del agua del planeta se encuentra en los océanos?",
+              "opciones": [
+                "50%",
+                "70%",
+                "85%",
+                "97,5%"
+              ],
+              "correcta": 3,
+              "explicacion": "Aproximadamente el 97,5% del agua del planeta es salada y se encuentra en los océanos. Del 2,5% restante de agua dulce, la mayor parte está en glaciares y casquetes polares. Solo una fracción muy pequeña es agua dulce líquida accesible en ríos, lagos y acuíferos."
+            },
+            {
+              "pregunta": "¿Cuáles son los países que comparten el Acuífero Guaraní?",
+              "opciones": [
+                "Brasil, Argentina, Chile y Perú",
+                "Uruguay, Argentina, Brasil y Paraguay",
+                "Uruguay, Argentina, Brasil y Bolivia",
+                "Brasil, Paraguay, Bolivia y Argentina"
+              ],
+              "correcta": 1,
+              "explicacion": "El Acuífero Guaraní es una de las mayores reservas de agua dulce subterránea del mundo y se extiende bajo territorios de Uruguay, Argentina, Brasil y Paraguay. Tiene una superficie aproximada de 1.200.000 km² y es considerado un recurso estratégico para la región."
+            },
+            {
+              "pregunta": "¿Qué efecto tiene la corriente fría de Humboldt sobre el clima de la costa oeste de Sudamérica?",
+              "opciones": [
+                "Genera abundantes lluvias tropicales",
+                "Provoca aridez y escasas precipitaciones en la zona costera",
+                "Aumenta las temperaturas superficiales del mar",
+                "Produce huracanes frecuentes en la zona"
+              ],
+              "correcta": 1,
+              "explicacion": "La corriente fría de Humboldt enfría el aire costero, reduciendo la evaporación y generando condiciones de aridez. Por eso la costa de Perú y el norte de Chile presentan desiertos como el de Atacama. Sin embargo, esta corriente también favorece la riqueza pesquera por el fenómeno de surgencia (upwelling)."
+            }
+          ]
+        },
+        {
+          "titulo": "Atmósfera, clima y tiempo meteorológico",
+          "conceptosClave": [
+            "atmósfera",
+            "tiempo meteorológico",
+            "clima",
+            "presión atmosférica",
+            "frentes",
+            "zonas climáticas",
+            "efecto invernadero",
+            "circulación general atmosférica"
+          ],
+          "objetivos": [
+            "Diferenciar los conceptos de tiempo meteorológico y clima, identificando los factores y elementos climáticos",
+            "Comprender la circulación general de la atmósfera y su relación con las zonas climáticas",
+            "Caracterizar el clima de Uruguay como templado subtropical y explicar sus factores determinantes"
+          ],
+          "contenidos": [
+            "Capas de la atmósfera: troposfera, estratosfera, mesosfera, termosfera. Elementos del clima: temperatura, precipitación, presión, humedad, viento. Factores del clima: latitud, altitud, continentalidad, corrientes marinas.",
+            "Circulación general atmosférica: células de Hadley, Ferrel y Polar. Vientos planetarios: alisios, westerlies (del oeste), polares. Frentes fríos y cálidos, masas de aire. Clasificación climática de Köppen.",
+            "Clima de Uruguay: templado subtropical húmedo (Cfa según Köppen). Influencia del anticiclón del Atlántico Sur, la corriente cálida de Brasil y la corriente fría de Malvinas. Variabilidad estacional, heladas, sequías y sudestadas."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la diferencia fundamental entre tiempo meteorológico y clima?",
+              "opciones": [
+                "No hay diferencia, son sinónimos",
+                "El tiempo describe condiciones atmosféricas en un momento y lugar; el clima es el promedio de esas condiciones durante largos períodos",
+                "El clima se refiere al día actual y el tiempo a la estación del año",
+                "El tiempo se mide solo con termómetro y el clima con barómetro"
+              ],
+              "correcta": 1,
+              "explicacion": "El tiempo meteorológico describe las condiciones atmosféricas en un momento y lugar específico (hoy llueve, hace calor). El clima es el conjunto de condiciones atmosféricas promediadas durante períodos largos (generalmente 30 años o más) para una región determinada."
+            },
+            {
+              "pregunta": "¿Qué tipo de clima predomina en Uruguay según la clasificación de Köppen?",
+              "opciones": [
+                "Tropical lluvioso (Af)",
+                "Árido desértico (BWh)",
+                "Templado subtropical húmedo (Cfa)",
+                "Mediterráneo (Csb)"
+              ],
+              "correcta": 2,
+              "explicacion": "Uruguay tiene un clima templado subtropical húmedo, clasificado como Cfa en el sistema de Köppen. Se caracteriza por temperaturas moderadas, precipitaciones distribuidas a lo largo del año (sin estación seca marcada), veranos cálidos e inviernos suaves."
+            },
+            {
+              "pregunta": "Las células de Hadley son parte de la circulación general atmosférica y se ubican:",
+              "opciones": [
+                "En las zonas polares, entre 60° y 90° de latitud",
+                "En las latitudes medias, entre 30° y 60°",
+                "En la zona intertropical, entre el ecuador y los 30° de latitud",
+                "Solo sobre los océanos, no sobre los continentes"
+              ],
+              "correcta": 2,
+              "explicacion": "Las células de Hadley se extienden desde el ecuador hasta aproximadamente los 30° de latitud norte y sur. En el ecuador, el aire cálido asciende (zona de convergencia intertropical), se desplaza hacia los polos en altura y desciende alrededor de los 30°, generando zonas de alta presión subtropical donde se ubican los grandes desiertos del mundo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Geografía Humana: población, ciudades y economía global",
+      "temas": [
+        {
+          "titulo": "Dinámica de la población mundial",
+          "conceptosClave": [
+            "demografía",
+            "tasa de natalidad",
+            "tasa de mortalidad",
+            "crecimiento vegetativo",
+            "transición demográfica",
+            "pirámide de población",
+            "migración",
+            "densidad de población",
+            "envejecimiento poblacional"
+          ],
+          "objetivos": [
+            "Analizar la distribución y dinámica de la población mundial utilizando indicadores demográficos",
+            "Comprender el modelo de transición demográfica y sus etapas",
+            "Evaluar los desafíos demográficos contemporáneos: envejecimiento, migraciones y desigualdad"
+          ],
+          "contenidos": [
+            "Distribución de la población mundial: focos de concentración (Asia oriental, Asia meridional, Europa occidental) y vacíos demográficos. Factores que explican la distribución: clima, relieve, recursos, historia.",
+            "Transición demográfica: etapas del modelo (régimen demográfico antiguo, inicio de transición, final de transición, régimen demográfico moderno). Indicadores: tasa de natalidad, mortalidad, fecundidad, esperanza de vida. Pirámides de población expansiva, estacionaria y regresiva.",
+            "Movimientos migratorios: causas económicas, políticas, ambientales. Flujos migratorios actuales: Sur-Norte, Sur-Sur. Consecuencias demográficas, económicas y culturales de las migraciones. Refugiados y desplazados."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué representa una pirámide de población con base ancha y cúspide estrecha?",
+              "opciones": [
+                "Una población envejecida con baja natalidad",
+                "Una población joven con alta natalidad y alta mortalidad",
+                "Una población en equilibrio entre nacimientos y muertes",
+                "Una población con fuerte inmigración de adultos"
+              ],
+              "correcta": 1,
+              "explicacion": "Una pirámide de base ancha y cúspide estrecha (forma de pirámide expansiva o progresiva) indica una población joven con alta natalidad y alta mortalidad, típica de países en las primeras etapas de la transición demográfica, como muchos países de África subsahariana."
+            },
+            {
+              "pregunta": "En el modelo de transición demográfica, ¿qué ocurre en la segunda etapa (inicio de transición)?",
+              "opciones": [
+                "La natalidad y la mortalidad son ambas muy bajas",
+                "La mortalidad desciende rápidamente mientras la natalidad sigue alta, produciendo un fuerte crecimiento",
+                "La natalidad desciende por debajo de la mortalidad",
+                "La población se mantiene estable sin crecimiento"
+              ],
+              "correcta": 1,
+              "explicacion": "En la segunda etapa de la transición demográfica, la mortalidad baja rápidamente gracias a mejoras en alimentación, higiene y medicina, pero la natalidad permanece alta porque los cambios culturales y económicos tardan más. Esto genera una 'explosión demográfica' con fuerte crecimiento natural de la población."
+            },
+            {
+              "pregunta": "¿Cuál es la principal causa de los movimientos migratorios internacionales en la actualidad?",
+              "opciones": [
+                "Las catástrofes naturales exclusivamente",
+                "La búsqueda de mejores condiciones económicas y laborales",
+                "La curiosidad por conocer otros países",
+                "Los programas de intercambio estudiantil"
+              ],
+              "correcta": 1,
+              "explicacion": "Aunque las migraciones internacionales tienen causas múltiples (conflictos bélicos, persecución política, desastres ambientales), la principal motivación sigue siendo económica: la búsqueda de empleo, mejores salarios y condiciones de vida. Los flujos predominantes van desde países con menores ingresos hacia economías más desarrolladas."
+            }
+          ]
+        },
+        {
+          "titulo": "Urbanización y ciudades en el mundo contemporáneo",
+          "conceptosClave": [
+            "urbanización",
+            "megalópolis",
+            "metrópolis",
+            "conurbación",
+            "ciudad global",
+            "gentrificación",
+            "asentamientos irregulares",
+            "éxodo rural",
+            "área metropolitana"
+          ],
+          "objetivos": [
+            "Analizar el proceso de urbanización a escala mundial, diferenciando sus características en países desarrollados y en desarrollo",
+            "Identificar los problemas y desafíos de las grandes ciudades contemporáneas",
+            "Comprender la jerarquía urbana y el concepto de ciudad global en el contexto de la globalización"
+          ],
+          "contenidos": [
+            "Proceso de urbanización: evolución histórica desde la revolución industrial. Tasa de urbanización mundial (más del 55% de la población vive en ciudades). Diferencias entre urbanización en países desarrollados (suburbanización, ciudades medianas) y en desarrollo (macrocefalia urbana, crecimiento explosivo).",
+            "Problemas urbanos: segregación socioespacial, asentamientos irregulares (favelas, villas miseria, cantegriles), contaminación, congestión vehicular, presión sobre servicios básicos. Gentrificación y desplazamiento de pobladores originales.",
+            "Jerarquía urbana y ciudades globales: concepto de Sassen. Ciudades globales (Nueva York, Londres, Tokio) como centros de comando de la economía mundial. Megalópolis: BosWash, región del delta del Río de las Perlas. Montevideo como ciudad primada en el sistema urbano uruguayo."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué se entiende por 'macrocefalia urbana'?",
+              "opciones": [
+                "El crecimiento equilibrado de varias ciudades en un país",
+                "La concentración desproporcionada de población y funciones en una sola ciudad principal que domina el sistema urbano",
+                "El proceso de despoblamiento de las grandes ciudades",
+                "La fusión de varias ciudades pequeñas en una grande"
+              ],
+              "correcta": 1,
+              "explicacion": "La macrocefalia urbana ocurre cuando una ciudad concentra un porcentaje muy alto de la población, la actividad económica y las funciones administrativas del país, generando un sistema urbano desequilibrado. Montevideo es un ejemplo clásico, concentrando casi la mitad de la población de Uruguay."
+            },
+            {
+              "pregunta": "¿Qué característica define a una 'ciudad global' según Saskia Sassen?",
+              "opciones": [
+                "Tener más de 10 millones de habitantes",
+                "Ser la capital política de un país poderoso",
+                "Funcionar como centro de comando de la economía mundial, concentrando servicios financieros y corporaciones transnacionales",
+                "Tener el aeropuerto más grande del mundo"
+              ],
+              "correcta": 2,
+              "explicacion": "Según Saskia Sassen, las ciudades globales (como Nueva York, Londres y Tokio) funcionan como nodos de comando de la economía globalizada, concentrando sedes de corporaciones transnacionales, mercados financieros, servicios avanzados y flujos de información. No se definen solo por su tamaño poblacional."
+            },
+            {
+              "pregunta": "¿En qué continente se está produciendo el proceso de urbanización más acelerado en el siglo XXI?",
+              "opciones": [
+                "Europa",
+                "América del Norte",
+                "África",
+                "Oceanía"
+              ],
+              "correcta": 2,
+              "explicacion": "África es el continente con el proceso de urbanización más acelerado en la actualidad. Aunque su tasa de urbanización es aún relativamente baja (alrededor del 44%), el ritmo de crecimiento urbano es el más rápido del mundo, impulsado por el éxodo rural, el crecimiento demográfico y la búsqueda de oportunidades económicas. Ciudades como Lagos, Kinshasa y Dar es-Salam crecen a tasas muy elevadas."
+            }
+          ]
+        },
+        {
+          "titulo": "Economía mundial y globalización",
+          "conceptosClave": [
+            "globalización",
+            "división internacional del trabajo",
+            "corporaciones transnacionales",
+            "bloques económicos",
+            "MERCOSUR",
+            "comercio internacional",
+            "deslocalización",
+            "desigualdad Norte-Sur",
+            "cadenas globales de valor"
+          ],
+          "objetivos": [
+            "Comprender las características de la globalización económica y sus actores principales",
+            "Analizar la inserción de Uruguay y América Latina en la economía global",
+            "Evaluar críticamente las consecuencias de la globalización: oportunidades y desigualdades"
+          ],
+          "contenidos": [
+            "Globalización económica: libre circulación de capitales, bienes, servicios e información. Corporaciones transnacionales como actores clave. Deslocalización productiva: fábricas en países con mano de obra barata. Cadenas globales de valor y fragmentación de la producción.",
+            "Bloques económicos regionales: Unión Europea, MERCOSUR, TLCAN/USMCA, ASEAN. Objetivos: zonas de libre comercio, uniones aduaneras, mercados comunes. Uruguay en el MERCOSUR: oportunidades y limitaciones de un socio pequeño.",
+            "Desigualdad global: brecha Norte-Sur, centro-periferia. Índice de Desarrollo Humano (IDH). Países desarrollados, emergentes y menos adelantados. Rol de los organismos internacionales: OMC, FMI, Banco Mundial. Debate sobre los beneficios y costos de la globalización."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuáles son los Estados Parte fundadores del MERCOSUR (1991)?",
+              "opciones": [
+                "Uruguay, Argentina, Chile y Brasil",
+                "Uruguay, Argentina, Brasil y Paraguay",
+                "Uruguay, Argentina, Brasil y Bolivia",
+                "Uruguay, Argentina, Brasil, Paraguay y Venezuela"
+              ],
+              "correcta": 1,
+              "explicacion": "El MERCOSUR fue creado en 1991 por el Tratado de Asunción, firmado por Uruguay, Argentina, Brasil y Paraguay. Venezuela se incorporó como miembro pleno en 2012 pero fue suspendida en 2017. Bolivia firmó su protocolo de adhesión. Chile, Colombia, Ecuador y otros son Estados Asociados."
+            },
+            {
+              "pregunta": "¿Qué es la 'deslocalización productiva' en el contexto de la globalización?",
+              "opciones": [
+                "El cierre de fábricas por falta de demanda",
+                "El traslado de actividades productivas a países donde los costos de producción son menores",
+                "La automatización total de las fábricas sin trabajadores",
+                "La producción exclusiva para el mercado interno de cada país"
+              ],
+              "correcta": 1,
+              "explicacion": "La deslocalización productiva (offshoring) consiste en trasladar fábricas o procesos productivos a países donde la mano de obra es más barata, las regulaciones son menores o existen incentivos fiscales. Es una estrategia de las corporaciones transnacionales para reducir costos. Ejemplos: fábricas textiles en Bangladesh, electrónica en China y Vietnam."
+            },
+            {
+              "pregunta": "El Índice de Desarrollo Humano (IDH) del PNUD combina tres dimensiones. ¿Cuáles son?",
+              "opciones": [
+                "PIB per cápita, tasa de empleo y nivel de exportaciones",
+                "Salud (esperanza de vida), educación (escolaridad) e ingreso nacional bruto per cápita",
+                "Población, superficie y recursos naturales",
+                "Tasa de urbanización, densidad de población y crecimiento del PIB"
+              ],
+              "correcta": 1,
+              "explicacion": "El IDH combina tres dimensiones: salud (medida por la esperanza de vida al nacer), educación (años promedio y esperados de escolaridad) y nivel de vida (ingreso nacional bruto per cápita en dólares PPA). Uruguay tiene un IDH alto, ubicándose entre los mejores de América Latina."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Uruguay: territorio, población y economía",
+      "temas": [
+        {
+          "titulo": "Regiones geográficas y recursos naturales de Uruguay",
+          "conceptosClave": [
+            "penillanura",
+            "cuchillas",
+            "pradera natural",
+            "cuenca hidrográfica",
+            "suelos productivos",
+            "biodiversidad",
+            "humedales del Este",
+            "Cuesta Basáltica",
+            "sierras del Este"
+          ],
+          "objetivos": [
+            "Identificar las principales unidades de relieve y regiones geográficas de Uruguay",
+            "Comprender la relación entre el medio natural y las actividades productivas del territorio",
+            "Valorar la riqueza de los recursos naturales uruguayos y la necesidad de su manejo sustentable"
+          ],
+          "contenidos": [
+            "Relieve de Uruguay: penillanura cristalina del Sur, Cuesta Basáltica del noroeste, sierras del Este (cerro Catedral, 514 m), llanuras costeras y litorales. Uruguay como país de relieve suave, predominantemente de llanuras y colinas con altitudes moderadas.",
+            "Recursos hídricos: cuencas del río Uruguay, del río Negro (con las represas de Rincón del Bonete, Baygorria y Palmar), del Río de la Plata y de la laguna Merín. Importancia de las represas para la generación hidroeléctrica. Acuífero Guaraní y su extensión en territorio uruguayo.",
+            "Recursos naturales: suelos fértiles (especialmente los del litoral oeste sobre basalto y los del sur), pradera natural como base de la ganadería extensiva, bosque nativo (monte ribereño, monte serrano), humedales del Este (Bañados del Este, Reserva de Biósfera). Zona Económica Exclusiva y recursos pesqueros."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es el punto más alto de Uruguay?",
+              "opciones": [
+                "Cerro del Verdún (300 m)",
+                "Cerro de Montevideo (135 m)",
+                "Cerro Catedral (514 m)",
+                "Cerro Arequita (306 m)"
+              ],
+              "correcta": 2,
+              "explicacion": "El cerro Catedral, ubicado en las sierras del departamento de Maldonado, es el punto más alto de Uruguay con 514 metros sobre el nivel del mar. Uruguay se caracteriza por un relieve suave y poco elevado, con predominio de penillanuras y cuchillas."
+            },
+            {
+              "pregunta": "¿En qué río se encuentran las principales represas hidroeléctricas de Uruguay?",
+              "opciones": [
+                "Río Uruguay",
+                "Río de la Plata",
+                "Río Negro",
+                "Río Cuareim"
+              ],
+              "correcta": 2,
+              "explicacion": "Las tres principales represas hidroeléctricas de Uruguay (Rincón del Bonete, Baygorria y Constitución/Palmar) están sobre el río Negro, el principal curso de agua interior del país. Además, la represa de Salto Grande, compartida con Argentina, está sobre el río Uruguay."
+            },
+            {
+              "pregunta": "Los Bañados del Este fueron declarados Reserva de Biósfera por la UNESCO debido a:",
+              "opciones": [
+                "Su importancia como zona de producción agrícola intensiva",
+                "Su riqueza en biodiversidad como sistema de humedales de gran valor ecológico",
+                "Ser la zona más poblada del país fuera de Montevideo",
+                "Contener las mayores reservas de petróleo del Uruguay"
+              ],
+              "correcta": 1,
+              "explicacion": "Los Bañados del Este, en los departamentos de Rocha y Treinta y Tres, constituyen un extenso sistema de humedales con gran biodiversidad. Fueron declarados Reserva de Biósfera por la UNESCO en 1976 por su importancia ecológica como hábitat de numerosas especies de aves, mamíferos y plantas, y como reguladores del ciclo hidrológico."
+            }
+          ]
+        },
+        {
+          "titulo": "Población y sociedad uruguaya",
+          "conceptosClave": [
+            "distribución poblacional",
+            "macrocefalia montevideana",
+            "envejecimiento demográfico",
+            "emigración",
+            "inmigración histórica",
+            "segunda transición demográfica",
+            "tasa de fecundidad",
+            "área metropolitana de Montevideo"
+          ],
+          "objetivos": [
+            "Analizar la distribución espacial de la población uruguaya y el fenómeno de la macrocefalia montevideana",
+            "Comprender las características demográficas de Uruguay: envejecimiento, baja fecundidad y emigración",
+            "Evaluar los desafíos demográficos del Uruguay contemporáneo"
+          ],
+          "contenidos": [
+            "Distribución de la población: Uruguay tiene aproximadamente 3,5 millones de habitantes. Macrocefalia: el área metropolitana de Montevideo concentra cerca del 55% de la población. Contraste entre la capital y el interior: baja densidad en el norte y noreste, mayor concentración en el sur y litoral.",
+            "Evolución demográfica: Uruguay fue el primer país latinoamericano en completar la transición demográfica (ya a mediados del siglo XX). Tasa de fecundidad por debajo del nivel de reemplazo (menos de 2,1 hijos por mujer). Envejecimiento progresivo: aumento de la proporción de mayores de 65 años. Pirámide de población regresiva.",
+            "Migración: historia de inmigración europea (españoles, italianos) en siglos XIX y XX. Emigración uruguaya desde la crisis de 2002 hacia España, Estados Unidos y Argentina. Nuevas corrientes inmigratorias: dominicanos, venezolanos, cubanos. Impacto de los movimientos migratorios en la estructura demográfica."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué porcentaje aproximado de la población uruguaya se concentra en el área metropolitana de Montevideo?",
+              "opciones": [
+                "25%",
+                "35%",
+                "55%",
+                "75%"
+              ],
+              "correcta": 2,
+              "explicacion": "El área metropolitana de Montevideo (que incluye Montevideo y zonas urbanas de Canelones y San José) concentra aproximadamente el 55% de la población total del país. Este fenómeno de macrocefalia urbana es uno de los más marcados de América Latina y genera desequilibrios territoriales significativos."
+            },
+            {
+              "pregunta": "¿Por qué se dice que Uruguay tiene una población envejecida en el contexto latinoamericano?",
+              "opciones": [
+                "Porque la esperanza de vida es la más baja de la región",
+                "Porque completó tempranamente la transición demográfica y tiene baja fecundidad y alta esperanza de vida",
+                "Porque no recibe inmigrantes jóvenes",
+                "Porque la mayoría de la población vive en zonas rurales"
+              ],
+              "correcta": 1,
+              "explicacion": "Uruguay fue pionero en América Latina en completar la transición demográfica. Su tasa de fecundidad cayó tempranamente por debajo del nivel de reemplazo, mientras la esperanza de vida aumentó. Esto, sumado a la emigración de población joven, ha generado un perfil demográfico envejecido con pirámide regresiva, similar al de países europeos."
+            },
+            {
+              "pregunta": "La inmigración histórica que conformó la sociedad uruguaya en los siglos XIX y XX provino principalmente de:",
+              "opciones": [
+                "Asia oriental (China y Japón)",
+                "África subsahariana",
+                "Europa (especialmente España e Italia)",
+                "América Central y el Caribe"
+              ],
+              "correcta": 2,
+              "explicacion": "La inmigración europea, principalmente de España e Italia, fue el factor demográfico más importante en la conformación de la sociedad uruguaya entre mediados del siglo XIX y mediados del XX. También hubo aportes de franceses, alemanes, suizos, británicos y de otros orígenes, además de la población afrodescendiente y la presencia indígena originaria."
+            }
+          ]
+        },
+        {
+          "titulo": "Economía uruguaya: agro, industria y servicios",
+          "conceptosClave": [
+            "agroindustria",
+            "ganadería extensiva",
+            "agricultura de secano",
+            "soja transgénica",
+            "forestación",
+            "turismo",
+            "zonas francas",
+            "matriz energética",
+            "energías renovables",
+            "puerto de Montevideo"
+          ],
+          "objetivos": [
+            "Analizar la estructura productiva de Uruguay y el peso del sector agropecuario en las exportaciones",
+            "Comprender la diversificación económica: forestación, turismo, tecnología y servicios",
+            "Evaluar la transformación de la matriz energética uruguaya hacia fuentes renovables"
+          ],
+          "contenidos": [
+            "Sector agropecuario: ganadería bovina y ovina extensiva sobre la pradera natural (carne y lana como productos tradicionales de exportación). Agricultura: expansión de la soja y el arroz. Lechería en el litoral sur. Forestación con eucaliptos y pinos para celulosa (plantas de UPM). Cadenas agroindustriales.",
+            "Sector industrial y servicios: industria manufacturera (frigoríficos, lácteos, textiles, papel/celulosa). Zonas francas (Zonamérica, Nueva Palmira). Turismo: Punta del Este, Colonia del Sacramento, termas del litoral. Sector de tecnologías de la información como sector emergente. Puerto de Montevideo como hub logístico regional.",
+            "Matriz energética: transformación histórica hacia energías renovables. Uruguay genera más del 95% de su electricidad de fuentes renovables (hidráulica, eólica, solar y biomasa). Parques eólicos en el interior del país. Uruguay como caso de éxito mundial en transición energética."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuáles son los principales productos de exportación de Uruguay?",
+              "opciones": [
+                "Petróleo, minerales y manufacturas industriales",
+                "Carne bovina, soja, celulosa, lácteos y arroz",
+                "Automóviles, electrónica y maquinaria pesada",
+                "Café, cacao, azúcar y tabaco"
+              ],
+              "correcta": 1,
+              "explicacion": "Uruguay tiene un perfil exportador basado en recursos naturales y agroindustria. Los principales productos de exportación son carne bovina, soja y derivados, celulosa (pasta de madera), productos lácteos y arroz. Esta concentración en commodities agropecuarios hace al país vulnerable a las fluctuaciones de precios internacionales."
+            },
+            {
+              "pregunta": "¿Qué porcentaje aproximado de la electricidad de Uruguay proviene de fuentes renovables?",
+              "opciones": [
+                "Alrededor del 40%",
+                "Alrededor del 60%",
+                "Más del 95%",
+                "Exactamente el 100%"
+              ],
+              "correcta": 2,
+              "explicacion": "Uruguay logró una transformación notable de su matriz eléctrica: más del 95% de la generación proviene de fuentes renovables, principalmente hidroeléctrica y eólica, complementadas con biomasa y solar. Esta transición se aceleró desde 2008 con políticas de promoción de energía eólica que llevaron a la instalación de numerosos parques eólicos."
+            },
+            {
+              "pregunta": "La expansión de la forestación con eucaliptos y pinos en Uruguay se vincula principalmente con:",
+              "opciones": [
+                "La producción de madera para muebles artesanales",
+                "La reforestación de bosque nativo",
+                "La industria de celulosa y papel, con plantas como las de UPM",
+                "La protección de cuencas hidrográficas"
+              ],
+              "correcta": 2,
+              "explicacion": "La forestación artificial en Uruguay creció enormemente desde la Ley Forestal de 1987, orientada principalmente a la producción de celulosa (pasta de madera). Las plantas de UPM (ex Botnia) en Fray Bentos y Paso de los Toros procesan madera de eucaliptos para producir celulosa que se exporta. Este sector se convirtió en uno de los principales rubros de exportación del país."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Medio ambiente y desarrollo sostenible",
+      "temas": [
+        {
+          "titulo": "Cambio climático global",
+          "conceptosClave": [
+            "cambio climático",
+            "efecto invernadero",
+            "gases de efecto invernadero",
+            "calentamiento global",
+            "Acuerdo de París",
+            "IPCC",
+            "huella de carbono",
+            "mitigación",
+            "adaptación"
+          ],
+          "objetivos": [
+            "Comprender las causas y mecanismos del cambio climático antropogénico",
+            "Analizar las consecuencias del calentamiento global a escala mundial y regional",
+            "Conocer los acuerdos internacionales y las estrategias de mitigación y adaptación"
+          ],
+          "contenidos": [
+            "Efecto invernadero natural y efecto invernadero intensificado: diferencia entre el proceso natural (esencial para la vida) y el aumento de gases de efecto invernadero (CO₂, metano, óxido nitroso) por actividades humanas. Quema de combustibles fósiles, deforestación y ganadería como principales fuentes de emisiones.",
+            "Consecuencias del cambio climático: aumento de la temperatura media global, derretimiento de glaciares y casquetes polares, elevación del nivel del mar, eventos meteorológicos extremos más frecuentes e intensos (sequías, inundaciones, olas de calor), alteración de ecosistemas, impacto en la producción agrícola y la seguridad alimentaria.",
+            "Gobernanza climática internacional: Convención Marco de Naciones Unidas sobre Cambio Climático (CMNUCC), Protocolo de Kioto (1997), Acuerdo de París (2015) y el objetivo de limitar el calentamiento a 1,5°C. Rol del IPCC. Conceptos de mitigación (reducir emisiones) y adaptación (ajustarse a los cambios). Compromisos de Uruguay (Contribuciones Nacionalmente Determinadas)."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la diferencia entre el efecto invernadero natural y el cambio climático antropogénico?",
+              "opciones": [
+                "No hay diferencia, ambos son fenómenos artificiales",
+                "El efecto invernadero natural mantiene la Tierra habitable; el cambio climático antropogénico es el aumento excesivo de ese efecto por emisiones humanas de GEI",
+                "El efecto invernadero natural causa el calentamiento y el antropogénico lo enfría",
+                "El efecto invernadero solo ocurre en los polos y el cambio climático en el ecuador"
+              ],
+              "correcta": 1,
+              "explicacion": "El efecto invernadero natural es un fenómeno esencial: sin él, la temperatura media de la Tierra sería de -18°C en vez de los 15°C actuales. El problema es que las actividades humanas (quema de combustibles fósiles, deforestación, ganadería) aumentan la concentración de gases de efecto invernadero, intensificando este efecto y provocando un calentamiento excesivo."
+            },
+            {
+              "pregunta": "¿Qué objetivo principal estableció el Acuerdo de París (2015)?",
+              "opciones": [
+                "Eliminar completamente el uso de combustibles fósiles para 2030",
+                "Limitar el aumento de la temperatura global a menos de 2°C respecto a niveles preindustriales, intentando no superar 1,5°C",
+                "Prohibir la deforestación en todos los países firmantes",
+                "Obligar a los países desarrollados a pagar por todo el daño ambiental histórico"
+              ],
+              "correcta": 1,
+              "explicacion": "El Acuerdo de París, adoptado en la COP21, estableció como meta principal mantener el aumento de la temperatura global muy por debajo de 2°C respecto a niveles preindustriales, con esfuerzos para no superar 1,5°C. Cada país presenta sus Contribuciones Nacionalmente Determinadas (NDC) con compromisos de reducción de emisiones."
+            },
+            {
+              "pregunta": "¿Qué es el IPCC y cuál es su función?",
+              "opciones": [
+                "Un organismo que regula el comercio de petróleo",
+                "Una ONG ambientalista que realiza protestas",
+                "El Panel Intergubernamental de Expertos sobre Cambio Climático, que evalúa la ciencia climática y asesora a los gobiernos",
+                "Una agencia de la ONU que controla las emisiones de cada país"
+              ],
+              "correcta": 2,
+              "explicacion": "El IPCC (Intergovernmental Panel on Climate Change) es un organismo creado en 1988 por la ONU que reúne a miles de científicos del mundo para evaluar la evidencia científica sobre el cambio climático. Sus informes periódicos son la base para las negociaciones climáticas internacionales. No realiza investigaciones propias, sino que revisa y sintetiza la ciencia disponible."
+            }
+          ]
+        },
+        {
+          "titulo": "Desarrollo sostenible y los Objetivos de Desarrollo Sostenible",
+          "conceptosClave": [
+            "desarrollo sostenible",
+            "Informe Brundtland",
+            "ODS",
+            "Agenda 2030",
+            "huella ecológica",
+            "economía circular",
+            "justicia ambiental",
+            "biocapacidad"
+          ],
+          "objetivos": [
+            "Comprender el concepto de desarrollo sostenible y su evolución histórica",
+            "Conocer los Objetivos de Desarrollo Sostenible (ODS) de la Agenda 2030",
+            "Reflexionar sobre la relación entre crecimiento económico, equidad social y protección ambiental"
+          ],
+          "contenidos": [
+            "Concepto de desarrollo sostenible: origen en el Informe Brundtland (1987): 'satisfacer las necesidades del presente sin comprometer la capacidad de las generaciones futuras de satisfacer las propias'. Tres pilares: económico, social y ambiental. Evolución del concepto en las cumbres de Río (1992), Johannesburgo (2002) y Río+20 (2012).",
+            "Agenda 2030 y los 17 ODS: aprobados por la ONU en 2015. Objetivos clave: fin de la pobreza, hambre cero, salud, educación de calidad, igualdad de género, agua limpia, energía asequible, trabajo decente, reducción de desigualdades, ciudades sostenibles, producción responsable, acción por el clima, vida submarina, vida terrestre, paz y alianzas.",
+            "Indicadores de sostenibilidad: huella ecológica (superficie necesaria para producir lo que consumimos y absorber nuestros residuos). Biocapacidad. Día del Sobregiro de la Tierra. Economía circular vs. economía lineal (extraer-producir-desechar). Ejemplos de políticas de sostenibilidad en Uruguay."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿De dónde surge la definición clásica de desarrollo sostenible?",
+              "opciones": [
+                "Del Acuerdo de París de 2015",
+                "Del Informe Brundtland de 1987 (Comisión Mundial sobre Medio Ambiente y Desarrollo)",
+                "De la Cumbre de Río de 1992",
+                "De los Objetivos del Milenio del año 2000"
+              ],
+              "correcta": 1,
+              "explicacion": "La definición clásica de desarrollo sostenible proviene del Informe Brundtland ('Nuestro Futuro Común', 1987), que lo definió como el desarrollo que 'satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras para satisfacer sus propias necesidades'. Este informe sentó las bases para la Cumbre de la Tierra de Río 1992."
+            },
+            {
+              "pregunta": "¿Cuántos Objetivos de Desarrollo Sostenible (ODS) contiene la Agenda 2030?",
+              "opciones": [
+                "8",
+                "12",
+                "17",
+                "21"
+              ],
+              "correcta": 2,
+              "explicacion": "La Agenda 2030, aprobada por la Asamblea General de la ONU en septiembre de 2015, contiene 17 Objetivos de Desarrollo Sostenible (ODS) y 169 metas asociadas. Los ODS abarcan las tres dimensiones del desarrollo sostenible: económica, social y ambiental, y son de carácter universal (aplican a todos los países)."
+            },
+            {
+              "pregunta": "¿Qué mide la 'huella ecológica'?",
+              "opciones": [
+                "La cantidad de basura que produce una persona por día",
+                "La superficie de tierra y agua biológicamente productiva necesaria para producir los recursos que consume una población y absorber sus residuos",
+                "La distancia que recorren los alimentos desde su origen hasta el consumidor",
+                "El número de especies en peligro de extinción en un país"
+              ],
+              "correcta": 1,
+              "explicacion": "La huella ecológica, desarrollada por Mathis Wackernagel y William Rees, mide la superficie de tierra y agua biológicamente productiva que se necesita para producir los recursos que una población consume y absorber los residuos que genera. Cuando la huella ecológica supera la biocapacidad del planeta, se produce un déficit ecológico o sobregiro."
+            }
+          ]
+        },
+        {
+          "titulo": "Problemáticas ambientales en Uruguay",
+          "conceptosClave": [
+            "erosión de suelos",
+            "contaminación hídrica",
+            "cianobacterias",
+            "eutrofización",
+            "agroquímicos",
+            "residuos sólidos",
+            "pérdida de biodiversidad",
+            "ordenamiento territorial",
+            "Sistema Nacional de Áreas Protegidas"
+          ],
+          "objetivos": [
+            "Identificar los principales problemas ambientales del Uruguay: contaminación del agua, erosión de suelos, gestión de residuos",
+            "Analizar las causas y consecuencias de la eutrofización y las floraciones de cianobacterias",
+            "Conocer las políticas y herramientas de gestión ambiental en Uruguay: SNAP, ordenamiento territorial, normativa ambiental"
+          ],
+          "contenidos": [
+            "Contaminación y degradación del agua: eutrofización de cursos de agua y lagos por exceso de nutrientes (fósforo y nitrógeno) de origen agropecuario y urbano. Floraciones de cianobacterias en el Río de la Plata, río Santa Lucía y lagunas. Impacto en el suministro de agua potable (cuenca del Santa Lucía abastece a Montevideo y área metropolitana).",
+            "Degradación de suelos: erosión hídrica y eólica por uso intensivo agrícola (especialmente monocultivo de soja). Pérdida de materia orgánica. Compactación. Planes de uso y manejo de suelos (obligatorios desde 2013). Importancia de las rotaciones y la siembra directa como prácticas de conservación.",
+            "Gestión ambiental: Sistema Nacional de Áreas Protegidas (SNAP): áreas como Quebrada de los Cuervos, Cabo Polonio, Esteros de Farrapos, Valle del Lunarejo. Ley de Ordenamiento Territorial y Desarrollo Sostenible (2008). Gestión de residuos sólidos urbanos: desafíos de clasificación y reciclaje. DINAMA (Dirección Nacional de Medio Ambiente) como autoridad ambiental."
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la principal causa de las floraciones de cianobacterias en los cursos de agua de Uruguay?",
+              "opciones": [
+                "El aumento de la salinidad del agua por las mareas",
+                "La eutrofización por exceso de nutrientes (fósforo y nitrógeno) provenientes de fuentes agropecuarias y urbanas",
+                "La contaminación con metales pesados de la industria minera",
+                "El uso de agua para riego en la producción arrocera"
+              ],
+              "correcta": 1,
+              "explicacion": "Las floraciones de cianobacterias son causadas por la eutrofización, es decir, el enriquecimiento excesivo de nutrientes (fósforo y nitrógeno) en el agua. Estos provienen de fertilizantes agrícolas, efluentes ganaderos (tambos) y aguas servidas urbanas. El calentamiento del agua y la baja circulación favorecen estas floraciones, que producen toxinas peligrosas para la salud."
+            },
+            {
+              "pregunta": "¿Qué es el SNAP en el contexto de la gestión ambiental uruguaya?",
+              "opciones": [
+                "El Sistema Nacional de Áreas Protegidas, que gestiona y conserva áreas naturales de valor ecológico",
+                "El Sistema Nacional de Actividades Productivas",
+                "Un programa de subsidios para la agricultura sostenible",
+                "Una red de estaciones meteorológicas"
+              ],
+              "correcta": 0,
+              "explicacion": "El SNAP (Sistema Nacional de Áreas Protegidas) fue creado por ley en el año 2000 y gestiona áreas naturales de especial valor ecológico en todo el territorio uruguayo. Incluye áreas como Quebrada de los Cuervos (Treinta y Tres), Cabo Polonio (Rocha), Esteros de Farrapos (Río Negro), Valle del Lunarejo (Rivera) y otras, con diferentes categorías de manejo."
+            },
+            {
+              "pregunta": "¿Por qué la cuenca del río Santa Lucía tiene importancia estratégica para Uruguay?",
+              "opciones": [
+                "Porque es la cuenca más extensa del país",
+                "Porque abastece de agua potable a Montevideo y el área metropolitana, donde vive más de la mitad de la población",
+                "Porque es la principal zona de producción arrocera",
+                "Porque contiene las mayores reservas de minerales del país"
+              ],
+              "correcta": 1,
+              "explicacion": "La cuenca del río Santa Lucía abastece de agua potable a Montevideo y gran parte del área metropolitana, lo que significa que más de la mitad de la población uruguaya depende de ella. Por eso la contaminación de esta cuenca por actividades agropecuarias (tambos, feedlots, agricultura intensiva) y efluentes urbanos es un problema de primer orden, que motivó la creación de planes de acción específicos para su protección."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

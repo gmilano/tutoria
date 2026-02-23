@@ -1,0 +1,727 @@
+{
+  "id": "historia-4",
+  "nombre": "Historia",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "🏰",
+  "color": "#ef4444",
+  "descripcion": "Historia universal del mundo moderno y contemporáneo",
+  "unidades": [
+    {
+      "id": "hist4-u1",
+      "titulo": "El Mundo Moderno: siglos XV-XVI",
+      "descripcion": "Transformaciones culturales, religiosas y geopolíticas que marcaron el paso del mundo medieval al moderno.",
+      "temas": [
+        {
+          "id": "hist4-u1-t1",
+          "titulo": "El Renacimiento y el Humanismo",
+          "conceptosClave": [
+            "antropocentrismo",
+            "humanismo",
+            "mecenazgo",
+            "imprenta de Gutenberg",
+            "cultura grecolatina",
+            "teocentrismo medieval"
+          ],
+          "objetivos": [
+            "Comprender el tránsito del teocentrismo medieval al antropocentrismo renacentista",
+            "Identificar las principales figuras del humanismo y su impacto en el arte, la ciencia y la filosofía",
+            "Analizar el papel de la imprenta en la difusión del conocimiento y la transformación cultural"
+          ],
+          "contenidos": [
+            "El contexto del siglo XV: crisis del feudalismo, desarrollo urbano y surgimiento de la burguesía como actor social",
+            "El Renacimiento en Italia: Florencia como centro cultural, el mecenazgo de los Médicis, obras de Leonardo, Miguel Ángel y Rafael",
+            "El Humanismo como corriente intelectual: Erasmo de Rotterdam, Tomás Moro, la recuperación de textos clásicos y el ideal del hombre renacentista"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué característica central distingue al pensamiento humanista del pensamiento medieval?",
+              "opciones": [
+                "El rechazo total de la religión cristiana",
+                "La colocación del ser humano en el centro de la reflexión intelectual",
+                "La defensa del sistema feudal frente a la monarquía",
+                "La prohibición de estudiar textos de la Antigüedad"
+              ],
+              "correcta": 1,
+              "explicacion": "El Humanismo renacentista se define por el antropocentrismo: situar al ser humano, su razón y sus capacidades en el centro de la reflexión, a diferencia del teocentrismo medieval que colocaba a Dios como eje de todo el pensamiento."
+            },
+            {
+              "pregunta": "¿Por qué la invención de la imprenta de tipos móviles de Gutenberg (c. 1440) fue revolucionaria?",
+              "opciones": [
+                "Permitió la producción masiva y barata de libros, democratizando el acceso al conocimiento",
+                "Fue utilizada exclusivamente por la Iglesia para imprimir biblias",
+                "Reemplazó por completo el idioma latín en Europa",
+                "Provocó la desaparición inmediata de los monasterios medievales"
+              ],
+              "correcta": 0,
+              "explicacion": "La imprenta de tipos móviles permitió reproducir textos de manera rápida y económica, rompiendo el monopolio del conocimiento que tenían los monasterios y facilitando la difusión de las ideas humanistas y científicas por toda Europa."
+            },
+            {
+              "pregunta": "¿Cuál de las siguientes ciudades italianas fue el principal centro del Renacimiento artístico y cultural?",
+              "opciones": [
+                "Nápoles",
+                "Venecia",
+                "Florencia",
+                "Milán"
+              ],
+              "correcta": 2,
+              "explicacion": "Florencia, bajo el mecenazgo de la familia Médicis, fue la cuna del Renacimiento. Allí trabajaron artistas como Brunelleschi, Botticelli, Leonardo da Vinci y Miguel Ángel, y floreció una intensa vida intelectual y artística."
+            }
+          ]
+        },
+        {
+          "id": "hist4-u1-t2",
+          "titulo": "La Reforma Protestante y la Contrarreforma",
+          "conceptosClave": [
+            "Reforma Protestante",
+            "95 tesis de Lutero",
+            "calvinismo",
+            "anglicanismo",
+            "Contrarreforma",
+            "Concilio de Trento"
+          ],
+          "objetivos": [
+            "Explicar las causas religiosas, políticas y económicas de la Reforma Protestante",
+            "Diferenciar las principales corrientes protestantes: luteranismo, calvinismo y anglicanismo",
+            "Evaluar el impacto de la Contrarreforma y el Concilio de Trento en la reorganización de la Iglesia Católica"
+          ],
+          "contenidos": [
+            "Las causas de la Reforma: venta de indulgencias, crisis moral del papado, aspiraciones políticas de los príncipes alemanes y desarrollo de la burguesía",
+            "Martín Lutero y las 95 tesis (1517): la justificación por la fe, la sola scriptura y el sacerdocio universal; Juan Calvino y la predestinación; Enrique VIII y el anglicanismo",
+            "La Contrarreforma católica: el Concilio de Trento (1545-1563), la Compañía de Jesús, la Inquisición romana y las guerras de religión en Europa"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál fue una de las causas inmediatas que motivó a Martín Lutero a publicar sus 95 tesis en 1517?",
+              "opciones": [
+                "La invasión otomana de Constantinopla",
+                "La venta de indulgencias por parte de la Iglesia Católica",
+                "El descubrimiento de América por Cristóbal Colón",
+                "La publicación de la Utopía de Tomás Moro"
+              ],
+              "correcta": 1,
+              "explicacion": "La venta de indulgencias — documentos que supuestamente reducían el tiempo en el purgatorio a cambio de dinero — fue la causa inmediata del cuestionamiento de Lutero. Esto se enmarcaba en una crisis más amplia de la autoridad moral y espiritual del papado."
+            },
+            {
+              "pregunta": "¿Qué principio teológico central defendía el calvinismo?",
+              "opciones": [
+                "La autoridad suprema del Papa en asuntos de fe",
+                "La predestinación: Dios ha determinado de antemano quiénes se salvan",
+                "La veneración obligatoria de santos e imágenes religiosas",
+                "El celibato obligatorio para todos los cristianos"
+              ],
+              "correcta": 1,
+              "explicacion": "Juan Calvino desarrolló la doctrina de la predestinación, según la cual Dios ha elegido desde la eternidad quiénes serán salvos y quiénes condenados. Esta idea tuvo un fuerte impacto en la ética del trabajo y en el desarrollo del capitalismo, como analizaría más tarde Max Weber."
+            },
+            {
+              "pregunta": "¿Cuál fue el objetivo principal del Concilio de Trento (1545-1563)?",
+              "opciones": [
+                "Aceptar las tesis de Lutero e integrarlas al catolicismo",
+                "Reorganizar y reformar la Iglesia Católica como respuesta a la Reforma Protestante",
+                "Declarar la guerra a los países protestantes del norte de Europa",
+                "Abolir el papado y crear un sistema democrático dentro de la Iglesia"
+              ],
+              "correcta": 1,
+              "explicacion": "El Concilio de Trento fue la pieza central de la Contrarreforma. Reafirmó los dogmas católicos (transubstanciación, culto a los santos, valor de las obras), reformó la disciplina clerical, creó seminarios y fortaleció la autoridad papal frente al protestantismo."
+            }
+          ]
+        },
+        {
+          "id": "hist4-u1-t3",
+          "titulo": "La expansión europea y el colonialismo temprano",
+          "conceptosClave": [
+            "expansión ultramarina",
+            "colonialismo",
+            "mercantilismo",
+            "Tratado de Tordesillas",
+            "conquista de América",
+            "intercambio colombino"
+          ],
+          "objetivos": [
+            "Comprender las motivaciones económicas, políticas y religiosas de la expansión europea de los siglos XV y XVI",
+            "Analizar las consecuencias de la conquista y colonización de América para los pueblos originarios y para Europa",
+            "Relacionar la acumulación de metales preciosos con el surgimiento del mercantilismo como política económica"
+          ],
+          "contenidos": [
+            "Las causas de la expansión: búsqueda de nuevas rutas comerciales a Oriente, avances en navegación (carabela, brújula, astrolabio), rivalidad entre Portugal y España",
+            "La conquista de América: encuentro y choque de civilizaciones, destrucción de los imperios azteca e inca, la encomienda, la mita y el sistema colonial español",
+            "Consecuencias globales: el intercambio colombino (productos, enfermedades, culturas), la llegada de metales preciosos a Europa, el Tratado de Tordesillas (1494) y la configuración del primer sistema-mundo"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué estableció el Tratado de Tordesillas firmado en 1494 entre España y Portugal?",
+              "opciones": [
+                "Una alianza militar contra el Imperio Otomano",
+                "La división del mundo colonial mediante una línea imaginaria en el Atlántico",
+                "La prohibición de navegar más allá del cabo de Buena Esperanza",
+                "Un acuerdo comercial para el reparto del oro americano"
+              ],
+              "correcta": 1,
+              "explicacion": "El Tratado de Tordesillas dividió el mundo no cristiano entre España y Portugal trazando un meridiano a 370 leguas al oeste de las islas de Cabo Verde. Los territorios al este correspondían a Portugal (lo que incluía Brasil) y los del oeste a España."
+            },
+            {
+              "pregunta": "¿Qué fue el 'intercambio colombino'?",
+              "opciones": [
+                "El comercio de esclavos exclusivamente entre África y América",
+                "El intercambio bidireccional de plantas, animales, enfermedades y culturas entre el Viejo y el Nuevo Mundo",
+                "La venta de tierras americanas a colonos europeos",
+                "Un tratado comercial firmado por Cristóbal Colón con los Reyes Católicos"
+              ],
+              "correcta": 1,
+              "explicacion": "El intercambio colombino refiere al flujo bidireccional de especies biológicas, productos agrícolas (maíz, papa, tomate hacia Europa; trigo, caballos, ganado hacia América), enfermedades (viruela, sarampión) y prácticas culturales que transformó ambos hemisferios tras 1492."
+            },
+            {
+              "pregunta": "¿Cuál fue una de las principales consecuencias de la llegada masiva de plata americana a España en el siglo XVI?",
+              "opciones": [
+                "España se convirtió en una potencia industrial moderna",
+                "Se produjo una fuerte inflación conocida como la 'revolución de los precios'",
+                "Los pueblos originarios se beneficiaron económicamente del comercio de plata",
+                "Portugal abandonó sus colonias en Asia para centrarse en América"
+              ],
+              "correcta": 1,
+              "explicacion": "La llegada masiva de plata de Potosí y otros centros mineros provocó una fuerte inflación en España y Europa, conocida como la 'revolución de los precios'. Paradójicamente, España no se industrializó, sino que gastó la plata en guerras y en importar manufacturas de otros países europeos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hist4-u2",
+      "titulo": "La era de las Revoluciones: siglos XVII-XVIII",
+      "descripcion": "La Ilustración como movimiento intelectual, las revoluciones políticas burguesas y los procesos de independencia en América.",
+      "temas": [
+        {
+          "id": "hist4-u2-t1",
+          "titulo": "La Ilustración y el pensamiento político moderno",
+          "conceptosClave": [
+            "Ilustración",
+            "racionalismo",
+            "contrato social",
+            "separación de poderes",
+            "soberanía popular",
+            "enciclopedismo"
+          ],
+          "objetivos": [
+            "Identificar los principios fundamentales del pensamiento ilustrado y su ruptura con el Antiguo Régimen",
+            "Analizar las ideas de Montesquieu, Voltaire y Rousseau y su influencia en las revoluciones del siglo XVIII",
+            "Comprender el concepto de contrato social y soberanía popular como bases del Estado moderno"
+          ],
+          "contenidos": [
+            "El contexto del siglo XVIII: la crisis del absolutismo, el auge de la burguesía, la revolución científica y el predominio de la razón como herramienta de conocimiento",
+            "Los grandes pensadores ilustrados: Montesquieu y la separación de poderes, Voltaire y la tolerancia religiosa, Rousseau y el contrato social; la Enciclopedia de Diderot y D'Alembert",
+            "El despotismo ilustrado: reformas desde arriba sin alterar el orden social; la Ilustración como antecedente intelectual de las revoluciones americana y francesa"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué filósofo ilustrado propuso la teoría de la separación de poderes en ejecutivo, legislativo y judicial?",
+              "opciones": [
+                "Jean-Jacques Rousseau",
+                "Voltaire",
+                "Montesquieu",
+                "John Locke"
+              ],
+              "correcta": 2,
+              "explicacion": "En su obra 'El espíritu de las leyes' (1748), Montesquieu propuso dividir el poder del Estado en tres ramas — ejecutivo, legislativo y judicial — para evitar el abuso de poder. Esta idea influyó directamente en las constituciones de Estados Unidos y Francia."
+            },
+            {
+              "pregunta": "¿Cuál era la idea central del 'contrato social' de Rousseau?",
+              "opciones": [
+                "Los ciudadanos deben obedecer al rey sin cuestionar su autoridad divina",
+                "La sociedad se funda en un acuerdo libre entre los individuos que delegan soberanía en la voluntad general",
+                "La propiedad privada es un derecho natural que el Estado no puede regular",
+                "Solo los filósofos deben gobernar las naciones"
+              ],
+              "correcta": 1,
+              "explicacion": "En 'El contrato social' (1762), Rousseau planteó que la legitimidad política no proviene de Dios ni de la fuerza, sino de un pacto libre entre ciudadanos que conforman una voluntad general. Esta idea fue clave para fundamentar la soberanía popular y la democracia moderna."
+            },
+            {
+              "pregunta": "¿Qué fue la Enciclopedia y por qué fue importante para el movimiento ilustrado?",
+              "opciones": [
+                "Un decreto real que permitía la libertad de prensa en Francia",
+                "Una obra monumental que recopiló todo el saber de la época desde una perspectiva racional y crítica",
+                "Un manifiesto político que pedía la abolición de la monarquía",
+                "Una colección de textos religiosos reformados por Voltaire"
+              ],
+              "correcta": 1,
+              "explicacion": "La Enciclopedia (1751-1772), dirigida por Diderot y D'Alembert, fue una obra de 28 volúmenes que buscaba sistematizar todo el conocimiento humano desde la razón. Tuvo un enorme impacto al difundir las ideas ilustradas, cuestionar dogmas religiosos y promover el pensamiento crítico."
+            }
+          ]
+        },
+        {
+          "id": "hist4-u2-t2",
+          "titulo": "La Revolución Francesa y sus consecuencias",
+          "conceptosClave": [
+            "Revolución Francesa",
+            "Declaración de los Derechos del Hombre",
+            "Asamblea Nacional",
+            "jacobinismo",
+            "Napoleón Bonaparte",
+            "Antiguo Régimen"
+          ],
+          "objetivos": [
+            "Analizar las causas estructurales y coyunturales de la Revolución Francesa de 1789",
+            "Comprender las distintas etapas del proceso revolucionario: monarquía constitucional, república, Terror y ascenso de Napoleón",
+            "Evaluar el legado de la Revolución Francesa en la configuración del mundo contemporáneo"
+          ],
+          "contenidos": [
+            "Las causas: crisis fiscal de la monarquía, desigualdad del sistema estamental (clero, nobleza, Tercer Estado), influencia de las ideas ilustradas y ejemplo de la independencia norteamericana",
+            "Las etapas de la revolución: la toma de la Bastilla (1789), la Declaración de los Derechos del Hombre y del Ciudadano, la república, el Terror jacobino de Robespierre y el golpe de Estado de Napoleón (1799)",
+            "El legado: abolición del feudalismo, ciudadanía y derechos civiles, el Código Napoleónico, las guerras napoleónicas y la reconfiguración del mapa político europeo"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué evento simbólico marca el inicio de la Revolución Francesa el 14 de julio de 1789?",
+              "opciones": [
+                "La ejecución de Luis XVI en la guillotina",
+                "La toma de la Bastilla por el pueblo de París",
+                "La coronación de Napoleón como emperador",
+                "La proclamación de la Declaración de los Derechos del Hombre"
+              ],
+              "correcta": 1,
+              "explicacion": "La toma de la Bastilla — una fortaleza-prisión que simbolizaba el poder absoluto del rey — por parte del pueblo de París el 14 de julio de 1789 es el evento que marca simbólicamente el comienzo de la Revolución Francesa. Hoy es la fiesta nacional de Francia."
+            },
+            {
+              "pregunta": "¿Qué principio fundamental proclamó la Declaración de los Derechos del Hombre y del Ciudadano de 1789?",
+              "opciones": [
+                "Que solo los nobles tenían derechos políticos",
+                "Que los hombres nacen y permanecen libres e iguales en derechos",
+                "Que la Iglesia Católica debía gobernar Francia",
+                "Que la monarquía absoluta era la mejor forma de gobierno"
+              ],
+              "correcta": 1,
+              "explicacion": "El artículo primero de la Declaración establece que 'los hombres nacen y permanecen libres e iguales en derechos'. Este documento, inspirado en la Ilustración, sentó las bases del derecho constitucional moderno y de los derechos humanos."
+            },
+            {
+              "pregunta": "¿Qué fue el período del Terror (1793-1794) durante la Revolución Francesa?",
+              "opciones": [
+                "La invasión de Francia por los ejércitos de Napoleón",
+                "Una etapa de gobierno radical jacobino con ejecuciones masivas de opositores bajo Robespierre",
+                "El período de restauración monárquica tras la caída de la república",
+                "La guerra civil entre el norte y el sur de Francia"
+              ],
+              "correcta": 1,
+              "explicacion": "El Terror fue una etapa de radicalización revolucionaria liderada por Robespierre y los jacobinos, durante la cual se ejecutó a miles de personas acusadas de ser 'enemigos de la revolución', incluyendo al propio rey Luis XVI y a María Antonieta. Terminó con la caída y ejecución del propio Robespierre en julio de 1794."
+            }
+          ]
+        },
+        {
+          "id": "hist4-u2-t3",
+          "titulo": "Las independencias americanas",
+          "conceptosClave": [
+            "independencia de Estados Unidos",
+            "revoluciones hispanoamericanas",
+            "criollos",
+            "Simón Bolívar",
+            "San Martín",
+            "crisis del imperio español"
+          ],
+          "objetivos": [
+            "Comprender la relación entre las ideas ilustradas, la Revolución Francesa y los procesos independentistas americanos",
+            "Analizar las causas internas y externas de las revoluciones hispanoamericanas",
+            "Comparar los procesos de independencia en distintas regiones de América"
+          ],
+          "contenidos": [
+            "La independencia de Estados Unidos (1776): influencia de Locke y Montesquieu, la Declaración de Independencia, la Constitución de 1787 como modelo republicano",
+            "Las causas de las independencias hispanoamericanas: descontento criollo, reformas borbónicas, invasión napoleónica a España (1808), juntas de gobierno y vacío de poder",
+            "Los procesos revolucionarios: Bolívar y la liberación del norte de Sudamérica, San Martín y la liberación del sur, la independencia de México, la fragmentación política posterior"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué acontecimiento europeo de 1808 fue un detonante directo de los movimientos independentistas en Hispanoamérica?",
+              "opciones": [
+                "La Revolución Industrial en Inglaterra",
+                "La invasión napoleónica a España y la abdicación de Fernando VII",
+                "La firma del Tratado de Viena",
+                "La independencia de Haití"
+              ],
+              "correcta": 1,
+              "explicacion": "La invasión de Napoleón a España en 1808 y la imposición de su hermano José Bonaparte en el trono provocaron una crisis de legitimidad. En América, los criollos formaron juntas de gobierno alegando que, sin rey legítimo, la soberanía revertía al pueblo, iniciando así los procesos de independencia."
+            },
+            {
+              "pregunta": "¿Quiénes eran los criollos y por qué fueron protagonistas de los movimientos independentistas?",
+              "opciones": [
+                "Eran indígenas que buscaban recuperar sus tierras ancestrales",
+                "Eran descendientes de españoles nacidos en América, con poder económico pero excluidos de los altos cargos políticos",
+                "Eran comerciantes europeos que se establecieron en América tras las guerras napoleónicas",
+                "Eran esclavos liberados que formaron ejércitos revolucionarios"
+              ],
+              "correcta": 1,
+              "explicacion": "Los criollos eran hijos de españoles nacidos en América. Pese a su riqueza y educación, las leyes coloniales reservaban los principales cargos de gobierno para los peninsulares (nacidos en España). Este resentimiento, sumado a las ideas ilustradas, los convirtió en líderes de los procesos de independencia."
+            },
+            {
+              "pregunta": "¿Cuál fue una diferencia fundamental entre la independencia de Estados Unidos y las de Hispanoamérica?",
+              "opciones": [
+                "Estados Unidos no tuvo que enfrentar una guerra de independencia",
+                "Hispanoamérica logró la unidad continental mientras Estados Unidos se fragmentó",
+                "Estados Unidos mantuvo la unidad territorial mientras Hispanoamérica se fragmentó en múltiples repúblicas",
+                "Las independencias hispanoamericanas fueron pacíficas y las de Estados Unidos violentas"
+              ],
+              "correcta": 2,
+              "explicacion": "Mientras las 13 colonias norteamericanas lograron mantenerse unidas como una sola nación federal, Hispanoamérica se fragmentó en múltiples repúblicas. Pese a los intentos unionistas de Bolívar (como la Gran Colombia), las diferencias regionales, los caudillismos y los intereses locales impidieron la unidad continental."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hist4-u3",
+      "titulo": "Industrialización, capitalismo y conflictos sociales: siglo XIX",
+      "descripcion": "La Revolución Industrial, las transformaciones del capitalismo, el surgimiento del movimiento obrero y la expansión imperialista europea.",
+      "temas": [
+        {
+          "id": "hist4-u3-t1",
+          "titulo": "La Revolución Industrial",
+          "conceptosClave": [
+            "Revolución Industrial",
+            "máquina de vapor",
+            "fábrica",
+            "proletariado",
+            "urbanización",
+            "capitalismo industrial"
+          ],
+          "objetivos": [
+            "Explicar las condiciones que hicieron posible la Revolución Industrial en Inglaterra a fines del siglo XVIII",
+            "Analizar las transformaciones tecnológicas, económicas y sociales producidas por la industrialización",
+            "Comprender el surgimiento del proletariado industrial y las nuevas condiciones de trabajo"
+          ],
+          "contenidos": [
+            "Las precondiciones de la Revolución Industrial en Inglaterra: acumulación de capital, revolución agrícola (cercamientos), disponibilidad de mano de obra, recursos naturales (carbón, hierro) y estabilidad política",
+            "Las innovaciones tecnológicas: la máquina de vapor de Watt, la spinning jenny, el telar mecánico, el ferrocarril y el barco a vapor; el paso del taller artesanal a la fábrica",
+            "Las consecuencias sociales: éxodo rural y urbanización acelerada, surgimiento del proletariado, condiciones de trabajo extremas (jornadas de 14-16 horas, trabajo infantil), hacinamiento en las ciudades industriales"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Por qué la Revolución Industrial comenzó en Inglaterra y no en otro país europeo?",
+              "opciones": [
+                "Porque Inglaterra tenía la población más grande de Europa",
+                "Por la combinación de acumulación de capital, recursos naturales, mano de obra disponible y estabilidad política",
+                "Porque el rey inglés obligó a los campesinos a trabajar en fábricas",
+                "Porque Inglaterra fue el primer país en abolir la esclavitud"
+              ],
+              "correcta": 1,
+              "explicacion": "Inglaterra reunió un conjunto único de condiciones: acumulación de capital por el comercio colonial, abundancia de carbón y hierro, una revolución agrícola que liberó mano de obra rural, un sistema político estable tras la Revolución Gloriosa, y una burguesía emprendedora. Ningún otro país europeo combinó todos estos factores simultáneamente."
+            },
+            {
+              "pregunta": "¿Qué significó el paso del taller artesanal al sistema fabril?",
+              "opciones": [
+                "Los artesanos mejoraron sus condiciones de trabajo y sus salarios",
+                "Los trabajadores perdieron el control del proceso productivo y pasaron a depender de un salario",
+                "La producción se volvió más lenta pero de mejor calidad",
+                "El trabajo se descentralizó en pequeñas unidades rurales"
+              ],
+              "correcta": 1,
+              "explicacion": "En el taller artesanal, el trabajador controlaba todo el proceso productivo y era dueño de sus herramientas. En la fábrica, el obrero pasó a operar máquinas que no le pertenecían, realizando tareas repetitivas a cambio de un salario. Esto creó una nueva clase social: el proletariado industrial."
+            },
+            {
+              "pregunta": "¿Cuál fue una de las principales consecuencias sociales de la urbanización acelerada durante la Revolución Industrial?",
+              "opciones": [
+                "Las ciudades se volvieron más limpias y organizadas",
+                "Hacinamiento, insalubridad y epidemias en los barrios obreros",
+                "Los trabajadores rurales se negaron a emigrar a las ciudades",
+                "Los gobiernos construyeron viviendas dignas para todos los obreros"
+              ],
+              "correcta": 1,
+              "explicacion": "La migración masiva del campo a la ciudad generó un crecimiento urbano descontrolado. Los barrios obreros sufrían hacinamiento extremo, falta de agua potable, alcantarillado y servicios básicos. Las epidemias de cólera y tifus eran frecuentes. Estas condiciones motivarían las luchas sociales del siglo XIX."
+            }
+          ]
+        },
+        {
+          "id": "hist4-u3-t2",
+          "titulo": "El movimiento obrero y las ideologías sociales",
+          "conceptosClave": [
+            "movimiento obrero",
+            "socialismo utópico",
+            "marxismo",
+            "anarquismo",
+            "sindicatos",
+            "lucha de clases",
+            "Internacional obrera"
+          ],
+          "objetivos": [
+            "Comprender las causas del surgimiento del movimiento obrero como respuesta a las condiciones de la industrialización",
+            "Diferenciar las principales corrientes ideológicas del movimiento obrero: socialismo utópico, marxismo y anarquismo",
+            "Analizar las formas de organización y lucha de los trabajadores: sindicatos, huelgas y partidos obreros"
+          ],
+          "contenidos": [
+            "Los orígenes del movimiento obrero: ludismo (destrucción de máquinas), cartismo en Inglaterra, primeras asociaciones de trabajadores y lucha por derechos básicos (reducción de jornada, prohibición del trabajo infantil)",
+            "Las ideologías: el socialismo utópico (Owen, Saint-Simon, Fourier), el socialismo científico de Marx y Engels (materialismo histórico, lucha de clases, plusvalía, El Capital), el anarquismo de Bakunin y Proudhon",
+            "Las formas de organización: los sindicatos, el derecho de huelga, la Primera Internacional (1864) y la Segunda Internacional (1889), los partidos socialdemócratas europeos"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Según Karl Marx, ¿qué es la 'plusvalía'?",
+              "opciones": [
+                "El salario justo que debe recibir todo trabajador",
+                "La diferencia entre el valor que produce el obrero y el salario que recibe, apropiada por el capitalista",
+                "Un impuesto que el Estado cobra a las fábricas",
+                "Las ganancias que obtienen los trabajadores por sus horas extra"
+              ],
+              "correcta": 1,
+              "explicacion": "Para Marx, la plusvalía es la clave de la explotación capitalista: el obrero produce más valor del que recibe como salario, y esa diferencia (plusvalía) es apropiada por el dueño de los medios de producción. Este concepto es central en 'El Capital' (1867) para explicar la acumulación capitalista."
+            },
+            {
+              "pregunta": "¿Qué fue el movimiento ludita en la Inglaterra de principios del siglo XIX?",
+              "opciones": [
+                "Un movimiento político que buscaba el voto femenino",
+                "Un movimiento de trabajadores que destruían máquinas como forma de protesta contra la mecanización",
+                "Una corriente filosófica que defendía el retorno a la vida rural",
+                "Una organización de empresarios que promovía la automatización"
+              ],
+              "correcta": 1,
+              "explicacion": "El ludismo (c. 1811-1816) fue un movimiento de trabajadores textiles que destruían las máquinas que, según ellos, les quitaban el empleo y degradaban su oficio. Aunque fue reprimido duramente, representa una de las primeras formas de resistencia obrera contra los efectos de la industrialización."
+            },
+            {
+              "pregunta": "¿En qué se diferenciaban fundamentalmente el marxismo y el anarquismo como corrientes del movimiento obrero?",
+              "opciones": [
+                "El marxismo buscaba la revolución y el anarquismo era reformista",
+                "El marxismo proponía la toma del Estado como instrumento de transformación, mientras el anarquismo rechazaba toda forma de Estado",
+                "El anarquismo defendía la propiedad privada y el marxismo no",
+                "No había diferencias: ambos proponían exactamente lo mismo"
+              ],
+              "correcta": 1,
+              "explicacion": "La diferencia central radicaba en el papel del Estado. Marx proponía que los trabajadores tomaran el poder del Estado (dictadura del proletariado) para construir el socialismo. Los anarquistas (Bakunin, Proudhon) consideraban que todo Estado es opresor y debía ser abolido inmediatamente. Esta disputa dividió a la Primera Internacional en 1872."
+            }
+          ]
+        },
+        {
+          "id": "hist4-u3-t3",
+          "titulo": "El imperialismo y el reparto colonial (1870-1914)",
+          "conceptosClave": [
+            "imperialismo",
+            "reparto de África",
+            "Conferencia de Berlín",
+            "colonialismo",
+            "darwinismo social",
+            "potencias industriales"
+          ],
+          "objetivos": [
+            "Explicar las causas económicas, políticas e ideológicas del imperialismo europeo de fines del siglo XIX",
+            "Analizar el reparto de África y Asia entre las potencias europeas y sus consecuencias para los pueblos colonizados",
+            "Comprender la relación entre imperialismo, rivalidades entre potencias y el camino hacia la Primera Guerra Mundial"
+          ],
+          "contenidos": [
+            "Las causas del imperialismo: necesidad de materias primas y mercados para la industria, exportación de capitales, rivalidad entre potencias (Inglaterra, Francia, Alemania), justificación ideológica (misión civilizadora, darwinismo social, racismo)",
+            "El reparto de África: la Conferencia de Berlín (1884-1885), la ocupación del continente africano, el Congo belga como caso extremo de explotación colonial, la resistencia de los pueblos africanos",
+            "Consecuencias del imperialismo: desestructuración de las sociedades colonizadas, fronteras artificiales, explotación económica, tensiones entre potencias europeas que conducirían a la Primera Guerra Mundial"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál fue el objetivo de la Conferencia de Berlín de 1884-1885?",
+              "opciones": [
+                "Establecer una alianza militar europea contra el Imperio Otomano",
+                "Regular el reparto colonial de África entre las potencias europeas",
+                "Crear una organización internacional para mantener la paz",
+                "Negociar un tratado comercial entre Europa y los países africanos"
+              ],
+              "correcta": 1,
+              "explicacion": "La Conferencia de Berlín, convocada por el canciller alemán Bismarck, estableció las reglas para el reparto de África entre las potencias europeas. Se acordó el principio de 'ocupación efectiva': para reclamar un territorio, una potencia debía ocuparlo militarmente. Los pueblos africanos no fueron consultados en absoluto."
+            },
+            {
+              "pregunta": "¿Qué justificación ideológica utilizaban las potencias europeas para el imperialismo?",
+              "opciones": [
+                "La idea de que todas las culturas son iguales y merecen respeto",
+                "La supuesta superioridad racial y cultural europea y la 'misión civilizadora'",
+                "El reconocimiento de los derechos de los pueblos colonizados",
+                "La necesidad de aprender de las culturas africanas y asiáticas"
+              ],
+              "correcta": 1,
+              "explicacion": "El imperialismo se justificó con la idea de una supuesta 'misión civilizadora': los europeos se consideraban racialmente superiores (darwinismo social) y creían tener el deber de 'civilizar' a los pueblos de África y Asia. Esta ideología racista encubría las verdaderas motivaciones económicas y geopolíticas."
+            },
+            {
+              "pregunta": "¿Cómo se vincula el imperialismo con el estallido de la Primera Guerra Mundial?",
+              "opciones": [
+                "Las colonias se rebelaron simultáneamente y provocaron la guerra",
+                "La rivalidad entre potencias europeas por territorios coloniales aumentó las tensiones que condujeron al conflicto",
+                "Las potencias europeas entraron en guerra para liberar a los pueblos colonizados",
+                "No existe ninguna relación entre el imperialismo y la Primera Guerra Mundial"
+              ],
+              "correcta": 1,
+              "explicacion": "La competencia por colonias, mercados y zonas de influencia generó una creciente rivalidad entre las potencias europeas (especialmente entre Alemania, Francia e Inglaterra). Estas tensiones imperialistas, sumadas al sistema de alianzas militares y al nacionalismo exacerbado, fueron causas fundamentales del estallido de la Primera Guerra Mundial en 1914."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hist4-u4",
+      "titulo": "Uruguay en el largo siglo XIX",
+      "descripcion": "El proceso de formación del Estado uruguayo: desde la Revolución Oriental y el artiguismo hasta la modernización batllista.",
+      "temas": [
+        {
+          "id": "hist4-u4-t1",
+          "titulo": "Artigas y la Revolución Oriental",
+          "conceptosClave": [
+            "José Gervasio Artigas",
+            "Revolución Oriental",
+            "federalismo",
+            "Instrucciones del año XIII",
+            "Reglamento de Tierras",
+            "Liga Federal",
+            "Éxodo del Pueblo Oriental"
+          ],
+          "objetivos": [
+            "Comprender el proyecto político de Artigas en el contexto de la revolución rioplatense",
+            "Analizar las Instrucciones del año XIII y el Reglamento de Tierras como expresiones del programa artiguista",
+            "Evaluar la importancia de Artigas en la construcción de la identidad nacional uruguaya"
+          ],
+          "contenidos": [
+            "El contexto rioplatense: la Revolución de Mayo de 1810, la incorporación de la Banda Oriental al proceso revolucionario, la figura de Artigas como líder popular y su enfrentamiento con Buenos Aires",
+            "El programa artiguista: las Instrucciones del año XIII (independencia, república, federalismo, libertad civil y religiosa), el Reglamento Provisorio de Tierras de 1815 (reforma agraria: 'que los más infelices sean los más privilegiados'), la Liga Federal de los Pueblos Libres",
+            "El Éxodo del Pueblo Oriental (1811), la derrota frente a la invasión portuguesa (1816-1820) y el exilio de Artigas en Paraguay hasta su muerte en 1850"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál era la propuesta central de las Instrucciones del año XIII redactadas por Artigas?",
+              "opciones": [
+                "La incorporación de la Banda Oriental al Reino de Portugal",
+                "La independencia absoluta, la república y un sistema federal de gobierno",
+                "La creación de una monarquía constitucional en el Río de la Plata",
+                "La unión incondicional con Buenos Aires bajo un gobierno centralista"
+              ],
+              "correcta": 1,
+              "explicacion": "Las Instrucciones que Artigas dio a los diputados orientales para la Asamblea del año XIII en Buenos Aires proponían la independencia absoluta de España, la forma republicana de gobierno, un sistema federal (donde cada provincia conservara su autonomía), y la libertad civil y religiosa. Buenos Aires las rechazó por su contenido federalista."
+            },
+            {
+              "pregunta": "¿Qué establecía el Reglamento Provisorio de Tierras de 1815?",
+              "opciones": [
+                "La venta de tierras públicas al mejor postor para financiar la guerra",
+                "El reparto de tierras confiscadas a enemigos de la revolución, priorizando a indios, negros libres y criollos pobres",
+                "La entrega de todas las tierras a los estancieros leales a Artigas",
+                "La prohibición de la agricultura para dedicar todo el territorio a la ganadería"
+              ],
+              "correcta": 1,
+              "explicacion": "El Reglamento de Tierras de 1815 fue una audaz reforma agraria: confiscaba las propiedades de los 'malos europeos y peores americanos' (enemigos de la revolución) y las repartía entre los sectores más marginados: 'los negros libres, los zambos de igual clase, los indios y los criollos pobres', con la consigna de que 'los más infelices sean los más privilegiados'."
+            },
+            {
+              "pregunta": "¿Qué fue el Éxodo del Pueblo Oriental de 1811?",
+              "opciones": [
+                "La emigración masiva de españoles tras la independencia",
+                "La marcha de la población oriental que siguió a Artigas hasta el Ayuí, abandonando sus tierras para no quedar bajo dominio español",
+                "La deportación forzada de los pueblos originarios a Paraguay",
+                "La salida de Artigas hacia Brasil tras ser derrotado por los portugueses"
+              ],
+              "correcta": 1,
+              "explicacion": "En octubre de 1811, tras el armisticio entre Buenos Aires y los españoles que devolvía la Banda Oriental a la corona, Artigas se retiró hacia el norte seguido por unas 16.000 personas — familias enteras con sus carretas, ganado y pertenencias. Este éxodo masivo hasta el campamento del Ayuí (actual Entre Ríos) demostró la adhesión popular al proyecto artiguista."
+            }
+          ]
+        },
+        {
+          "id": "hist4-u4-t2",
+          "titulo": "La independencia y la formación del Estado uruguayo",
+          "conceptosClave": [
+            "Cruzada Libertadora",
+            "Treinta y Tres Orientales",
+            "Convención Preliminar de Paz",
+            "Constitución de 1830",
+            "Guerra Grande",
+            "blancos y colorados"
+          ],
+          "objetivos": [
+            "Comprender el proceso que llevó a la independencia de Uruguay como Estado soberano en 1828",
+            "Analizar la Constitución de 1830 y sus características como primera carta fundamental del país",
+            "Explicar la Guerra Grande y la formación de los partidos tradicionales: Blanco y Colorado"
+          ],
+          "contenidos": [
+            "De la Provincia Cisplatina a la independencia: la dominación luso-brasileña (1820-1825), la Cruzada Libertadora de los Treinta y Tres Orientales (1825), la guerra entre Argentina y Brasil, la mediación británica y la Convención Preliminar de Paz (1828)",
+            "La Constitución de 1830: república unitaria, sufragio restringido (excluía a mujeres, analfabetos, peones y sirvientes), separación de poderes; la Jura de la Constitución el 18 de julio de 1830",
+            "La Guerra Grande (1839-1851): enfrentamiento entre el gobierno de la Defensa (Montevideo, colorados, apoyo de Francia e Inglaterra) y el Cerrito (Oribe, blancos, apoyo de Rosas); origen de los partidos tradicionales y sus bases sociales"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué papel cumplió Gran Bretaña en la independencia de Uruguay en 1828?",
+              "opciones": [
+                "Invadió la Banda Oriental y expulsó a brasileños y argentinos",
+                "Medió diplomáticamente para crear un Estado independiente que funcionara como 'Estado tapón' entre Argentina y Brasil",
+                "Colonizó Uruguay durante diez años antes de concederle la independencia",
+                "No tuvo ninguna participación en el proceso independentista uruguayo"
+              ],
+              "correcta": 1,
+              "explicacion": "Gran Bretaña, interesada en la libre navegación de los ríos y en evitar que una sola potencia controlara el Río de la Plata, medió entre Argentina y Brasil para crear un Estado independiente. La Convención Preliminar de Paz (1828) estableció la independencia de la Provincia Oriental como un 'Estado tapón' que servía a los intereses geopolíticos británicos."
+            },
+            {
+              "pregunta": "¿Qué sectores de la población quedaban excluidos del derecho al voto según la Constitución de 1830?",
+              "opciones": [
+                "Nadie quedaba excluido, era una constitución plenamente democrática",
+                "Solo los extranjeros no podían votar",
+                "Las mujeres, los analfabetos, los esclavos, los peones jornaleros y los sirvientes a sueldo",
+                "Solo los menores de 21 años estaban excluidos"
+              ],
+              "correcta": 2,
+              "explicacion": "La Constitución de 1830, aunque proclamaba principios liberales, establecía un sufragio muy restringido. Excluía a las mujeres, los analfabetos, los peones jornaleros, los sirvientes a sueldo y los esclavos. Esto dejaba fuera a la gran mayoría de la población, reservando la ciudadanía plena a una minoría de propietarios y letrados."
+            },
+            {
+              "pregunta": "¿Qué fue la Guerra Grande (1839-1851) y por qué es fundamental en la historia política uruguaya?",
+              "opciones": [
+                "Fue la guerra de independencia contra España y dio origen a la nación",
+                "Fue un conflicto interno e internacional que enfrentó a colorados y blancos, definiendo los dos partidos políticos tradicionales del Uruguay",
+                "Fue una guerra exclusivamente entre Uruguay y Brasil por territorio",
+                "Fue un breve enfrentamiento diplomático sin consecuencias duraderas"
+              ],
+              "correcta": 1,
+              "explicacion": "La Guerra Grande enfrentó al gobierno de Montevideo (la Defensa, identificado con el partido Colorado, apoyado por Francia e Inglaterra) contra el sitio de Manuel Oribe (el Cerrito, identificado con el partido Blanco, apoyado por Rosas de Argentina). Este largo conflicto de 12 años consolidó la identidad de los dos partidos tradicionales que dominarían la política uruguaya durante más de un siglo."
+            }
+          ]
+        },
+        {
+          "id": "hist4-u4-t3",
+          "titulo": "La modernización y el batllismo (1870-1930)",
+          "conceptosClave": [
+            "militarismo",
+            "Latorre",
+            "modernización",
+            "José Batlle y Ordóñez",
+            "batllismo",
+            "Estado de bienestar",
+            "laicismo",
+            "reformismo social"
+          ],
+          "objetivos": [
+            "Comprender el proceso de modernización del Uruguay entre la dictadura de Latorre y la era batllista",
+            "Analizar las reformas políticas, sociales y económicas impulsadas por Batlle y Ordóñez",
+            "Evaluar el legado del batllismo en la configuración del Uruguay contemporáneo como Estado de bienestar"
+          ],
+          "contenidos": [
+            "La modernización autoritaria: el militarismo de Latorre (1876-1880), el alambramiento de los campos, la consolidación del Estado nacional, la educación vareliana (reforma de José Pedro Varela: escuela pública, gratuita, laica y obligatoria)",
+            "El batllismo: José Batlle y Ordóñez y sus dos presidencias (1903-1907 y 1911-1915); reformas sociales (jornada de 8 horas, descanso semanal, indemnización por despido, divorcio por sola voluntad de la mujer), nacionalización de servicios públicos, separación de la Iglesia y el Estado",
+            "El 'Uruguay modelo': ley de 8 horas (1915), abolición de la pena de muerte, sufragio universal masculino, educación pública, desarrollo del Estado empresario (ANCAP, UTE, OSE); la Constitución de 1917 y la secularización del Estado"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál fue el aporte fundamental de la reforma educativa de José Pedro Varela en la década de 1870?",
+              "opciones": [
+                "Creó las primeras universidades privadas del Uruguay",
+                "Estableció la educación pública gratuita, laica y obligatoria como base de la ciudadanía",
+                "Prohibió la educación religiosa en todo el territorio nacional",
+                "Implementó la enseñanza exclusivamente en idioma inglés"
+              ],
+              "correcta": 1,
+              "explicacion": "La reforma vareliana (Ley de Educación Común de 1877) estableció tres principios fundamentales para la escuela pública: gratuidad (para garantizar el acceso universal), obligatoriedad (para combatir el analfabetismo) y laicidad (para respetar la libertad de conciencia). Esta reforma fue clave para la construcción de la ciudadanía y la identidad nacional uruguaya."
+            },
+            {
+              "pregunta": "¿Qué reforma social impulsada por Batlle y Ordóñez fue pionera en América Latina?",
+              "opciones": [
+                "La creación de un ejército profesional permanente",
+                "La jornada laboral de 8 horas, aprobada por ley en 1915",
+                "La privatización de todos los servicios públicos",
+                "La abolición del sistema parlamentario"
+              ],
+              "correcta": 1,
+              "explicacion": "Uruguay fue uno de los primeros países del mundo en aprobar la ley de 8 horas laborales (1915), impulsada por el batllismo. Esta ley, junto con otras reformas como el descanso semanal obligatorio, la indemnización por despido y las pensiones, convirtieron al Uruguay en un pionero de la legislación social en América Latina."
+            },
+            {
+              "pregunta": "¿Qué significó la separación de la Iglesia y el Estado en la Constitución uruguaya de 1917?",
+              "opciones": [
+                "La prohibición de practicar cualquier religión en el territorio nacional",
+                "El Estado dejó de tener una religión oficial, garantizando la libertad de culto y la laicidad de las instituciones públicas",
+                "La Iglesia Católica pasó a controlar el sistema educativo",
+                "El presidente debía ser obligatoriamente ateo para ejercer el cargo"
+              ],
+              "correcta": 1,
+              "explicacion": "La Constitución de 1917, fuertemente influida por el batllismo, consagró la separación de la Iglesia y el Estado. Uruguay dejó de tener religión oficial, se garantizó la libertad de cultos y se consolidó la laicidad en la educación y las instituciones públicas. Este fue un paso fundamental en la construcción del Uruguay moderno y secular."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

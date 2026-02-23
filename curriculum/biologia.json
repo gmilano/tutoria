@@ -1,0 +1,759 @@
+{
+  "id": "biologia-4",
+  "nombre": "Biología",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "🧬",
+  "color": "#10b981",
+  "descripcion": "Célula, genética, evolución y ecología",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "La Célula: unidad de vida",
+      "temas": [
+        {
+          "titulo": "Célula procariota y eucariota",
+          "conceptosClave": [
+            "célula procariota",
+            "célula eucariota",
+            "membrana plasmática",
+            "pared celular",
+            "nucleoide",
+            "núcleo verdadero",
+            "teoría celular",
+            "microscopía"
+          ],
+          "objetivos": [
+            "Comprender los postulados de la teoría celular y su importancia histórica",
+            "Diferenciar las características estructurales de células procariotas y eucariotas",
+            "Reconocer las diferencias entre células animales y vegetales"
+          ],
+          "contenidos": [
+            "Postulados de la teoría celular (Schleiden, Schwann, Virchow): la célula como unidad estructural, funcional y de origen de todos los seres vivos",
+            "Estructura de la célula procariota: pared celular, membrana plasmática, ribosomas 70S, nucleoide con ADN circular, ausencia de organelos membranosos",
+            "Estructura de la célula eucariota: compartimentación interna, núcleo delimitado por doble membrana, sistema de endomembranas, organelos especializados"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál de las siguientes estructuras está presente en células procariotas pero NO en todas las células eucariotas?",
+              "opciones": [
+                "Membrana plasmática",
+                "Ribosomas",
+                "Pared celular",
+                "ADN"
+              ],
+              "correcta": 2,
+              "explicacion": "La pared celular está presente en todas las procariotas (de peptidoglicano en bacterias) pero en eucariotas solo se encuentra en células vegetales (de celulosa), hongos (de quitina) y algunos protistas, no en células animales."
+            },
+            {
+              "pregunta": "¿Qué postulado de la teoría celular fue aportado por Rudolf Virchow en 1855?",
+              "opciones": [
+                "Todos los seres vivos están formados por células",
+                "La célula es la unidad funcional de los seres vivos",
+                "Toda célula proviene de otra célula preexistente (omnis cellula e cellula)",
+                "Las células contienen material hereditario"
+              ],
+              "correcta": 2,
+              "explicacion": "Virchow propuso el principio 'omnis cellula e cellula' (toda célula proviene de otra célula), completando la teoría celular al establecer que las células no surgen por generación espontánea sino por división de células preexistentes."
+            },
+            {
+              "pregunta": "¿Cuál es la principal diferencia entre una célula procariota y una eucariota?",
+              "opciones": [
+                "Las procariotas no tienen ADN",
+                "Las eucariotas no tienen ribosomas",
+                "Las procariotas carecen de núcleo delimitado por membrana",
+                "Las eucariotas no tienen membrana plasmática"
+              ],
+              "correcta": 2,
+              "explicacion": "La diferencia fundamental es que las procariotas carecen de un núcleo verdadero delimitado por doble membrana; su material genético se encuentra en una región llamada nucleoide, disperso en el citoplasma."
+            }
+          ]
+        },
+        {
+          "titulo": "Organelos celulares y sus funciones",
+          "conceptosClave": [
+            "mitocondria",
+            "cloroplasto",
+            "retículo endoplasmático",
+            "aparato de Golgi",
+            "lisosoma",
+            "vacuola",
+            "citoesqueleto",
+            "ribosomas",
+            "teoría endosimbiótica"
+          ],
+          "objetivos": [
+            "Identificar los principales organelos de la célula eucariota y sus funciones específicas",
+            "Comprender la teoría endosimbiótica de Lynn Margulis como explicación del origen de mitocondrias y cloroplastos",
+            "Relacionar la estructura de cada organelo con su función celular"
+          ],
+          "contenidos": [
+            "Mitocondrias (respiración celular aeróbica y producción de ATP), cloroplastos (fotosíntesis), retículo endoplasmático liso (síntesis de lípidos) y rugoso (síntesis de proteínas), aparato de Golgi (modificación, empaquetamiento y secreción)",
+            "Lisosomas (digestión intracelular), vacuolas (almacenamiento y turgencia en vegetales), peroxisomas (detoxificación), citoesqueleto (soporte y movimiento celular)",
+            "Teoría endosimbiótica de Margulis: evidencias de que mitocondrias y cloroplastos derivan de bacterias ancestrales englobadas por células eucariotas primitivas (ADN propio circular, doble membrana, ribosomas 70S, fisión binaria)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué organelo es responsable de la respiración celular aeróbica y la producción de la mayor parte del ATP?",
+              "opciones": [
+                "Cloroplasto",
+                "Retículo endoplasmático",
+                "Mitocondria",
+                "Aparato de Golgi"
+              ],
+              "correcta": 2,
+              "explicacion": "La mitocondria es el organelo encargado de la respiración celular aeróbica, donde se oxidan moléculas orgánicas para producir ATP (adenosín trifosfato), la principal moneda energética de la célula."
+            },
+            {
+              "pregunta": "¿Cuál de las siguientes es una evidencia de la teoría endosimbiótica de Margulis?",
+              "opciones": [
+                "Las mitocondrias tienen pared celular de peptidoglicano",
+                "Los cloroplastos carecen de ADN propio",
+                "Las mitocondrias poseen ADN circular propio y ribosomas 70S, similares a los de las bacterias",
+                "El aparato de Golgi tiene doble membrana"
+              ],
+              "correcta": 2,
+              "explicacion": "Las mitocondrias y cloroplastos poseen ADN circular propio, ribosomas 70S (como las bacterias), doble membrana y se dividen por fisión binaria. Estas evidencias apoyan que derivan de bacterias ancestrales que fueron incorporadas simbióticamente por células eucariotas primitivas."
+            },
+            {
+              "pregunta": "¿Qué función cumple el aparato de Golgi en la célula?",
+              "opciones": [
+                "Producir energía mediante la fotosíntesis",
+                "Modificar, empaquetar y distribuir proteínas y lípidos hacia su destino final",
+                "Sintetizar ADN durante la replicación",
+                "Degradar moléculas orgánicas complejas"
+              ],
+              "correcta": 1,
+              "explicacion": "El aparato de Golgi recibe proteínas y lípidos del retículo endoplasmático, los modifica (glucosilación, fosforilación), los empaqueta en vesículas y los dirige hacia su destino: secreción al exterior, membrana plasmática o lisosomas."
+            }
+          ]
+        },
+        {
+          "titulo": "División celular: mitosis y meiosis",
+          "conceptosClave": [
+            "ciclo celular",
+            "mitosis",
+            "meiosis",
+            "cromosoma",
+            "interfase",
+            "profase",
+            "metafase",
+            "anafase",
+            "telofase",
+            "crossing-over",
+            "haploide",
+            "diploide"
+          ],
+          "objetivos": [
+            "Describir las fases del ciclo celular y los mecanismos de control que regulan la división",
+            "Comparar los procesos de mitosis y meiosis en cuanto a resultado, función biológica y variabilidad genética",
+            "Comprender la importancia de la meiosis en la reproducción sexual y la generación de diversidad genética"
+          ],
+          "contenidos": [
+            "Ciclo celular: interfase (G1, S, G2) con replicación del ADN en fase S, y fase M (mitosis + citocinesis). Puntos de control del ciclo celular y su relación con el cáncer",
+            "Mitosis: profase (condensación de cromosomas), metafase (alineación en placa ecuatorial), anafase (separación de cromátidas hermanas), telofase (descondensación y formación de núcleos). Resultado: 2 células hijas diploides genéticamente idénticas",
+            "Meiosis: dos divisiones sucesivas (meiosis I: reduccional, con sinapsis y crossing-over; meiosis II: ecuacional). Resultado: 4 células haploides genéticamente diferentes. Importancia para la variabilidad genética y la reproducción sexual"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿En qué fase del ciclo celular se produce la replicación (duplicación) del ADN?",
+              "opciones": [
+                "G1",
+                "Fase S (síntesis)",
+                "G2",
+                "Mitosis"
+              ],
+              "correcta": 1,
+              "explicacion": "La replicación del ADN ocurre durante la fase S (síntesis) de la interfase. Al finalizar esta fase, cada cromosoma está formado por dos cromátidas hermanas unidas por el centrómero."
+            },
+            {
+              "pregunta": "¿Cuál es la principal diferencia entre los productos de la mitosis y la meiosis?",
+              "opciones": [
+                "La mitosis produce 4 células y la meiosis produce 2",
+                "La mitosis produce células haploides y la meiosis produce células diploides",
+                "La mitosis produce 2 células diploides idénticas y la meiosis produce 4 células haploides diferentes",
+                "La mitosis solo ocurre en células reproductoras"
+              ],
+              "correcta": 2,
+              "explicacion": "La mitosis produce 2 células diploides (2n) genéticamente idénticas entre sí y a la célula madre; la meiosis produce 4 células haploides (n) genéticamente diferentes, gracias al crossing-over y la segregación independiente de cromosomas homólogos."
+            },
+            {
+              "pregunta": "¿Qué evento de la meiosis I contribuye significativamente a la variabilidad genética?",
+              "opciones": [
+                "La condensación de los cromosomas",
+                "La separación de cromátidas hermanas",
+                "El crossing-over (entrecruzamiento) entre cromosomas homólogos durante la profase I",
+                "La citocinesis al final de la división"
+              ],
+              "correcta": 2,
+              "explicacion": "El crossing-over (entrecruzamiento) ocurre durante la profase I de la meiosis, cuando los cromosomas homólogos intercambian segmentos de ADN. Esto genera nuevas combinaciones de alelos en los cromosomas recombinantes, aumentando la variabilidad genética de los gametos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Genética: herencia y material genético",
+      "temas": [
+        {
+          "titulo": "Leyes de Mendel y herencia mendeliana",
+          "conceptosClave": [
+            "gen",
+            "alelo",
+            "genotipo",
+            "fenotipo",
+            "dominante",
+            "recesivo",
+            "homocigoto",
+            "heterocigoto",
+            "ley de segregación",
+            "ley de distribución independiente",
+            "cuadro de Punnett"
+          ],
+          "objetivos": [
+            "Comprender y aplicar las leyes de Mendel para predecir los resultados de cruzamientos genéticos",
+            "Utilizar el cuadro de Punnett para resolver problemas de herencia monohíbrida y dihíbrida",
+            "Distinguir entre herencia dominante completa, dominancia incompleta y codominancia"
+          ],
+          "contenidos": [
+            "Experimentos de Mendel con Pisum sativum: cruzamientos monohíbridos y dihíbridos. Primera ley (principio de segregación): los dos alelos de un gen se separan durante la formación de gametos. Segunda ley (distribución independiente): los genes de distintos caracteres se segregan independientemente",
+            "Conceptos fundamentales: gen, alelo, locus, genotipo, fenotipo, homocigoto (AA, aa), heterocigoto (Aa), dominancia completa, dominancia incompleta (herencia intermedia) y codominancia (ej. grupos sanguíneos AB)",
+            "Resolución de problemas genéticos mediante cuadro de Punnett: proporciones fenotípicas y genotípicas en F1 y F2 (3:1 en monohíbrido, 9:3:3:1 en dihíbrido). Retrocruzamiento o cruzamiento prueba (testcross)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "En un cruzamiento entre dos plantas heterocigotas (Aa × Aa), ¿qué proporción fenotípica se espera en la descendencia si A es dominante sobre a?",
+              "opciones": [
+                "1:1 (50% dominante, 50% recesivo)",
+                "3:1 (75% dominante, 25% recesivo)",
+                "1:2:1 (25% AA, 50% Aa, 25% aa)",
+                "100% dominante"
+              ],
+              "correcta": 1,
+              "explicacion": "Al cruzar Aa × Aa, se obtiene 1 AA : 2 Aa : 1 aa en genotipo, pero como A es dominante sobre a, tanto AA como Aa expresan el fenotipo dominante. La proporción fenotípica es 3 dominante : 1 recesivo (75% : 25%)."
+            },
+            {
+              "pregunta": "¿Qué establece la primera ley de Mendel (principio de segregación)?",
+              "opciones": [
+                "Los caracteres adquiridos se heredan a la descendencia",
+                "Los dos alelos de un gen se separan durante la formación de gametos, y cada gameto recibe solo uno",
+                "Los genes de distintos cromosomas se heredan siempre juntos",
+                "El fenotipo determina directamente el genotipo"
+              ],
+              "correcta": 1,
+              "explicacion": "La primera ley de Mendel o principio de segregación establece que los dos alelos que posee un individuo para un determinado carácter se separan (segregan) durante la formación de gametos (meiosis), de modo que cada gameto lleva solo un alelo de cada par."
+            },
+            {
+              "pregunta": "Una persona con grupo sanguíneo AB posee los alelos I^A e I^B. ¿Qué tipo de herencia representa este caso?",
+              "opciones": [
+                "Dominancia completa",
+                "Dominancia incompleta",
+                "Codominancia",
+                "Herencia ligada al sexo"
+              ],
+              "correcta": 2,
+              "explicacion": "El grupo sanguíneo AB es un ejemplo clásico de codominancia: ambos alelos (I^A e I^B) se expresan simultáneamente en el fenotipo, produciendo antígenos A y B en la superficie de los glóbulos rojos. Ninguno domina sobre el otro."
+            }
+          ]
+        },
+        {
+          "titulo": "ADN, ARN y replicación",
+          "conceptosClave": [
+            "ácido desoxirribonucleico (ADN)",
+            "ácido ribonucleico (ARN)",
+            "doble hélice",
+            "Watson y Crick",
+            "nucleótido",
+            "bases nitrogenadas",
+            "complementariedad de bases",
+            "replicación semiconservativa",
+            "ADN polimerasa"
+          ],
+          "objetivos": [
+            "Describir la estructura del ADN y el ARN, identificando sus componentes químicos y diferencias",
+            "Comprender el mecanismo de replicación semiconservativa del ADN y su importancia para la herencia",
+            "Reconocer los aportes de Watson, Crick, Franklin y Wilkins en la elucidación de la estructura del ADN"
+          ],
+          "contenidos": [
+            "Estructura del ADN: doble hélice antiparalela descubierta por Watson y Crick (1953) con datos de difracción de rayos X de Rosalind Franklin. Nucleótidos con desoxirribosa, grupo fosfato y bases nitrogenadas (A-T con 2 puentes de hidrógeno; G-C con 3 puentes de hidrógeno). Reglas de Chargaff",
+            "Estructura del ARN: cadena simple, ribosa en lugar de desoxirribosa, uracilo (U) en lugar de timina (T). Tipos principales: ARNm (mensajero), ARNt (transferencia), ARNr (ribosomal)",
+            "Replicación del ADN: mecanismo semiconservativo (demostrado por Meselson y Stahl). Enzimas involucradas: helicasa (abre la doble hélice), ADN polimerasa (sintetiza la nueva cadena en dirección 5'→3'), ligasa (une fragmentos de Okazaki). Cadena líder y cadena rezagada"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Según las reglas de complementariedad de bases del ADN, si una cadena tiene la secuencia 5'-ATGCCA-3', ¿cuál será la secuencia de la cadena complementaria?",
+              "opciones": [
+                "3'-ATGCCA-5'",
+                "3'-UACGGU-5'",
+                "3'-TACGGT-5'",
+                "3'-GCCATG-5'"
+              ],
+              "correcta": 2,
+              "explicacion": "En el ADN, la adenina (A) se aparea con timina (T) y la guanina (G) con citosina (C). La cadena complementaria de 5'-ATGCCA-3' es 3'-TACGGT-5', manteniendo la orientación antiparalela."
+            },
+            {
+              "pregunta": "¿Qué significa que la replicación del ADN es 'semiconservativa'?",
+              "opciones": [
+                "Solo se replica la mitad del ADN en cada división",
+                "Cada molécula hija conserva una cadena original y una cadena nueva",
+                "Las dos cadenas nuevas van a una célula hija y las dos originales a la otra",
+                "El ADN se replica sin ningún error"
+              ],
+              "correcta": 1,
+              "explicacion": "La replicación semiconservativa (demostrada por Meselson y Stahl en 1958) significa que cada molécula de ADN hija está formada por una cadena original (conservada) de la molécula madre y una cadena nueva sintetizada como complementaria."
+            },
+            {
+              "pregunta": "¿Cuál es la diferencia entre el ARN y el ADN en cuanto a sus bases nitrogenadas?",
+              "opciones": [
+                "El ARN tiene adenina en lugar de guanina",
+                "El ARN tiene uracilo (U) en lugar de timina (T)",
+                "El ADN tiene uracilo (U) en lugar de citosina (C)",
+                "No hay diferencias en las bases nitrogenadas"
+              ],
+              "correcta": 1,
+              "explicacion": "El ARN contiene uracilo (U) en lugar de timina (T). Ambos ácidos nucleicos comparten adenina (A), guanina (G) y citosina (C). Además, el ARN tiene ribosa como azúcar y generalmente es de cadena simple, mientras que el ADN tiene desoxirribosa y es de doble cadena."
+            }
+          ]
+        },
+        {
+          "titulo": "Síntesis de proteínas: transcripción y traducción",
+          "conceptosClave": [
+            "dogma central de la biología molecular",
+            "transcripción",
+            "traducción",
+            "ARN mensajero",
+            "ARN de transferencia",
+            "codón",
+            "anticodón",
+            "código genético",
+            "ribosoma",
+            "mutación"
+          ],
+          "objetivos": [
+            "Describir el flujo de la información genética según el dogma central: ADN → ARN → Proteína",
+            "Explicar los procesos de transcripción y traducción, identificando las moléculas y estructuras involucradas",
+            "Comprender las propiedades del código genético y los efectos de las mutaciones"
+          ],
+          "contenidos": [
+            "Dogma central de la biología molecular (Crick, 1958): ADN → (transcripción) → ARNm → (traducción) → Proteína. Transcripción: la ARN polimerasa lee la cadena molde de ADN (3'→5') y sintetiza ARNm (5'→3') en el núcleo. Procesamiento del ARNm en eucariotas (splicing: eliminación de intrones, unión de exones)",
+            "Código genético: tripletes de bases (codones) en el ARNm que codifican aminoácidos. Propiedades: universal, degenerado (redundante), no ambiguo, con codón de inicio (AUG = metionina) y codones de terminación (UAA, UAG, UGA)",
+            "Traducción en los ribosomas: el ARNt con su anticodón reconoce el codón del ARNm y aporta el aminoácido correspondiente. Fases: iniciación, elongación y terminación. Mutaciones: puntuales (sustitución, inserción, deleción) y sus efectos sobre la proteína (silenciosa, de sentido erróneo, sin sentido, de cambio de marco de lectura)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es el codón de inicio universal que codifica el aminoácido metionina?",
+              "opciones": [
+                "UAA",
+                "AUG",
+                "UGA",
+                "GCA"
+              ],
+              "correcta": 1,
+              "explicacion": "AUG es el codón de inicio universal y codifica el aminoácido metionina. Toda síntesis de proteínas comienza con este codón. UAA, UAG y UGA son codones de terminación (codones stop) que no codifican ningún aminoácido."
+            },
+            {
+              "pregunta": "¿Dónde ocurre la traducción del ARNm a proteína en la célula eucariota?",
+              "opciones": [
+                "En el núcleo",
+                "En la mitocondria",
+                "En los ribosomas del citoplasma (o del retículo endoplasmático rugoso)",
+                "En el aparato de Golgi"
+              ],
+              "correcta": 2,
+              "explicacion": "La traducción ocurre en los ribosomas, que pueden estar libres en el citoplasma (sintetizando proteínas citoplasmáticas) o asociados al retículo endoplasmático rugoso (sintetizando proteínas de secreción o de membrana). La transcripción ocurre en el núcleo."
+            },
+            {
+              "pregunta": "¿Qué significa que el código genético es 'degenerado' o 'redundante'?",
+              "opciones": [
+                "Que tiene errores frecuentes",
+                "Que un mismo codón puede codificar varios aminoácidos diferentes",
+                "Que varios codones diferentes pueden codificar un mismo aminoácido",
+                "Que varía según la especie"
+              ],
+              "correcta": 2,
+              "explicacion": "El código genético es degenerado (redundante) porque existen 64 codones posibles (4³) para solo 20 aminoácidos. Así, varios codones distintos pueden codificar el mismo aminoácido (por ejemplo, UUU y UUC ambos codifican fenilalanina). Sin embargo, cada codón codifica un solo aminoácido (no es ambiguo)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Evolución biológica",
+      "temas": [
+        {
+          "titulo": "Darwin y la teoría de la evolución por selección natural",
+          "conceptosClave": [
+            "Charles Darwin",
+            "selección natural",
+            "variabilidad",
+            "adaptación",
+            "aptitud biológica (fitness)",
+            "El origen de las especies",
+            "descendencia con modificación",
+            "Galápagos",
+            "Lamarck",
+            "herencia de caracteres adquiridos"
+          ],
+          "objetivos": [
+            "Comprender los principios de la teoría de la evolución por selección natural propuesta por Darwin y Wallace",
+            "Diferenciar la teoría de Darwin de la propuesta de Lamarck sobre la evolución",
+            "Analizar ejemplos de selección natural y adaptación en poblaciones"
+          ],
+          "contenidos": [
+            "Contexto histórico: el viaje de Darwin en el HMS Beagle (1831-1836), observaciones en las islas Galápagos (pinzones, tortugas). Influencia de Malthus (lucha por la existencia) y Lyell (uniformitarismo geológico). Publicación de 'El origen de las especies' (1859) junto con Alfred Russel Wallace",
+            "Selección natural: en toda población existe variabilidad heredable; los individuos con caracteres más favorables para su ambiente tienen mayor probabilidad de sobrevivir y reproducirse (aptitud biológica o fitness), transmitiendo esos caracteres a la descendencia. A lo largo de generaciones, la frecuencia de los caracteres ventajosos aumenta en la población",
+            "Comparación con Lamarck: herencia de caracteres adquiridos (uso y desuso) vs. selección natural sobre variación preexistente. Ejemplo: el cuello de la jirafa según Lamarck (se estira por uso) vs. Darwin (las jirafas con cuello más largo sobrevivieron y se reprodujeron más)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la principal diferencia entre la explicación de Darwin y la de Lamarck sobre la evolución?",
+              "opciones": [
+                "Darwin creía que las especies no cambian y Lamarck sí",
+                "Lamarck proponía que los caracteres adquiridos por uso se heredan; Darwin proponía que la selección natural actúa sobre la variación preexistente en la población",
+                "Darwin afirmaba que la evolución ocurre en un solo individuo y Lamarck en poblaciones",
+                "Lamarck descubrió la selección natural antes que Darwin"
+              ],
+              "correcta": 1,
+              "explicacion": "Lamarck proponía que los organismos modifican sus características por uso o desuso durante su vida y estas modificaciones se heredan (herencia de caracteres adquiridos). Darwin, en cambio, propuso que existe variación preexistente en las poblaciones y la selección natural favorece a los individuos más aptos, cuyas características heredables se difunden en las generaciones sucesivas."
+            },
+            {
+              "pregunta": "¿Qué observaciones realizó Darwin en las islas Galápagos que influyeron en su teoría?",
+              "opciones": [
+                "Encontró fósiles de dinosaurios idénticos a los actuales",
+                "Observó que las especies eran idénticas en todas las islas",
+                "Notó que los pinzones de distintas islas tenían picos diferentes adaptados a distintos tipos de alimento",
+                "Descubrió que todos los animales de las islas provenían directamente de Europa"
+              ],
+              "correcta": 2,
+              "explicacion": "Darwin observó que los pinzones de las distintas islas Galápagos presentaban picos de formas variadas, adaptados a diferentes fuentes de alimento (semillas, insectos, cactus). Esto sugirió que derivaban de un ancestro común y se habían diversificado por adaptación a diferentes ambientes, un proceso que luego se conoció como radiación adaptativa."
+            },
+            {
+              "pregunta": "Según la selección natural, ¿qué ocurre con los individuos que poseen caracteres más favorables para su ambiente?",
+              "opciones": [
+                "Son eliminados por la competencia",
+                "Se transforman en una nueva especie de inmediato",
+                "Tienen mayor probabilidad de sobrevivir y reproducirse, transmitiendo esos caracteres a su descendencia",
+                "Adquieren nuevos caracteres por necesidad"
+              ],
+              "correcta": 2,
+              "explicacion": "La selección natural establece que los individuos con variaciones heredables más favorables para el ambiente tienen mayor probabilidad de sobrevivir y reproducirse con éxito (mayor aptitud biológica). Al dejar más descendencia, sus caracteres ventajosos se vuelven más frecuentes en la población a lo largo de generaciones."
+            }
+          ]
+        },
+        {
+          "titulo": "Evidencias de la evolución y teoría sintética",
+          "conceptosClave": [
+            "registro fósil",
+            "anatomía comparada",
+            "órganos homólogos",
+            "órganos análogos",
+            "órganos vestigiales",
+            "embriología comparada",
+            "biogeografía",
+            "biología molecular",
+            "teoría sintética",
+            "deriva genética",
+            "flujo génico"
+          ],
+          "objetivos": [
+            "Identificar y analizar las principales líneas de evidencia que sustentan la teoría de la evolución biológica",
+            "Diferenciar entre órganos homólogos (divergencia evolutiva) y órganos análogos (convergencia evolutiva)",
+            "Comprender los aportes de la genética de poblaciones a la teoría sintética de la evolución"
+          ],
+          "contenidos": [
+            "Evidencias paleontológicas: registro fósil, formas de transición (Archaeopteryx entre reptiles y aves, Tiktaalik entre peces y tetrápodos). Evidencias de anatomía comparada: órganos homólogos (mismo origen embrionario, distinta función: brazo humano, ala de ave, aleta de ballena) y órganos análogos (distinto origen, misma función: ala de insecto y ala de ave). Órganos vestigiales (apéndice, coxis en humanos)",
+            "Evidencias embriológicas (similitud de embriones de vertebrados en etapas tempranas), biogeográficas (distribución de especies en islas y continentes vinculada a deriva continental) y moleculares (similitud de ADN y proteínas entre especies: cuanto más emparentadas, más similares son sus secuencias genéticas)",
+            "Teoría sintética o neodarwinismo (Dobzhansky, Mayr, Simpson, años 1930-1940): integración de la selección natural de Darwin con la genética mendeliana y la genética de poblaciones. Fuerzas evolutivas: mutación (fuente de variabilidad), selección natural, deriva genética (cambio aleatorio en poblaciones pequeñas), flujo génico (migración)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "El brazo humano, el ala de un ave y la aleta de una ballena son ejemplos de:",
+              "opciones": [
+                "Órganos análogos, porque cumplen la misma función",
+                "Órganos vestigiales, porque ya no tienen función",
+                "Órganos homólogos, porque tienen el mismo origen embrionario aunque diferente función",
+                "Órganos idénticos, porque tienen la misma estructura y función"
+              ],
+              "correcta": 2,
+              "explicacion": "Son órganos homólogos porque comparten el mismo plan estructural básico (huesos: húmero, radio, cúbito, carpos, falanges) y el mismo origen embrionario, aunque se han adaptado a funciones diferentes (manipulación, vuelo, natación). Esto evidencia un ancestro común (evolución divergente)."
+            },
+            {
+              "pregunta": "¿Qué es la deriva genética?",
+              "opciones": [
+                "El movimiento de individuos entre poblaciones",
+                "El cambio aleatorio en la frecuencia de alelos, especialmente importante en poblaciones pequeñas",
+                "La selección de los individuos más aptos del ambiente",
+                "La aparición de nuevas mutaciones beneficiosas"
+              ],
+              "correcta": 1,
+              "explicacion": "La deriva genética es un cambio aleatorio (no direccional) en las frecuencias alélicas de una población, causado por el azar en la supervivencia y reproducción. Su efecto es mucho mayor en poblaciones pequeñas, donde puede llevar a la pérdida o fijación de alelos independientemente de su valor adaptativo (efecto fundador, cuello de botella)."
+            },
+            {
+              "pregunta": "¿Cuál de los siguientes es un ejemplo de forma de transición en el registro fósil?",
+              "opciones": [
+                "El delfín, que tiene aletas como un pez",
+                "Archaeopteryx, que presenta caracteres de reptil (dientes, garras, cola ósea) y de ave (plumas)",
+                "El murciélago, que es un mamífero que vuela",
+                "La serpiente, que perdió sus patas"
+              ],
+              "correcta": 1,
+              "explicacion": "Archaeopteryx (del Jurásico tardío, ~150 millones de años) es un clásico fósil de transición: poseía características de reptil (dientes, garras en las alas, cola ósea larga) junto con características de ave (plumas, fúrcula). Evidencia la transición evolutiva entre los dinosaurios terópodos y las aves modernas."
+            }
+          ]
+        },
+        {
+          "titulo": "Especiación y macroevolución",
+          "conceptosClave": [
+            "especie biológica",
+            "especiación alopátrica",
+            "especiación simpátrica",
+            "aislamiento reproductivo",
+            "barreras prezigóticas",
+            "barreras poszigóticas",
+            "radiación adaptativa",
+            "extinción",
+            "biodiversidad"
+          ],
+          "objetivos": [
+            "Definir el concepto biológico de especie y comprender los mecanismos de aislamiento reproductivo",
+            "Diferenciar los modelos de especiación alopátrica y simpátrica",
+            "Analizar procesos macroevolutivos como la radiación adaptativa y la extinción masiva"
+          ],
+          "contenidos": [
+            "Concepto biológico de especie (Mayr): grupo de poblaciones naturales que se reproducen entre sí y están aisladas reproductivamente de otros grupos. Mecanismos de aislamiento reproductivo: prezigóticos (ecológico, temporal, conductual, mecánico, gamético) y poszigóticos (inviabilidad, esterilidad o debilidad del híbrido)",
+            "Especiación alopátrica (geográfica): una barrera física divide la población, las subpoblaciones divergen genéticamente hasta no poder reproducirse. Ejemplo: formación de una cordillera o un río. Especiación simpátrica: divergencia sin barrera geográfica, por poliploidía (frecuente en plantas) o por selección disruptiva",
+            "Radiación adaptativa: diversificación rápida a partir de un ancestro común que coloniza nuevos ambientes (ej.: pinzones de Darwin, mamíferos tras la extinción de los dinosaurios). Extinciones masivas: cinco grandes extinciones en la historia de la Tierra, la más conocida es la del Cretácico-Paleógeno (hace 66 Ma, desaparición de dinosaurios no avianos). Importancia de la conservación de la biodiversidad"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué tipo de especiación ocurre cuando una barrera geográfica divide una población en dos grupos que evolucionan independientemente?",
+              "opciones": [
+                "Especiación simpátrica",
+                "Especiación parapátrica",
+                "Especiación alopátrica",
+                "Especiación por hibridación"
+              ],
+              "correcta": 2,
+              "explicacion": "La especiación alopátrica (del griego allo = otro, patris = patria) ocurre cuando una barrera geográfica (montaña, río, océano) separa físicamente a una población. Las subpoblaciones aisladas acumulan diferencias genéticas por selección natural, deriva genética y mutación hasta que, si eventualmente vuelven a contactarse, ya no pueden reproducirse entre sí."
+            },
+            {
+              "pregunta": "Según el concepto biológico de especie de Ernst Mayr, ¿qué define a una especie?",
+              "opciones": [
+                "Un grupo de organismos que se parecen físicamente",
+                "Un grupo de poblaciones naturales que se cruzan entre sí y están aisladas reproductivamente de otros grupos",
+                "Un grupo de organismos que viven en el mismo hábitat",
+                "Un grupo de organismos con el mismo número de cromosomas"
+              ],
+              "correcta": 1,
+              "explicacion": "El concepto biológico de especie, propuesto por Ernst Mayr (1942), define a la especie como un grupo de poblaciones naturales cuyos miembros pueden reproducirse entre sí produciendo descendencia fértil, y que están reproductivamente aislados de otros grupos. El aislamiento reproductivo es el criterio clave."
+            },
+            {
+              "pregunta": "¿Qué es una radiación adaptativa?",
+              "opciones": [
+                "La extinción simultánea de muchas especies por radiación solar",
+                "La adaptación de un organismo a la radiación ultravioleta",
+                "La diversificación rápida de un linaje ancestral en múltiples especies adaptadas a diferentes nichos ecológicos",
+                "El proceso de mutación causado por radiación ionizante"
+              ],
+              "correcta": 2,
+              "explicacion": "Una radiación adaptativa es un proceso evolutivo en el que un linaje ancestral se diversifica rápidamente dando origen a muchas especies nuevas, cada una adaptada a un nicho ecológico diferente. Ejemplos clásicos: los pinzones de Darwin en Galápagos y la diversificación de los mamíferos tras la extinción de los dinosaurios."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Ecología y medio ambiente",
+      "temas": [
+        {
+          "titulo": "Ecosistemas: estructura y funcionamiento",
+          "conceptosClave": [
+            "ecosistema",
+            "biotopo",
+            "biocenosis",
+            "factores bióticos",
+            "factores abióticos",
+            "hábitat",
+            "nicho ecológico",
+            "bioma",
+            "relaciones interespecíficas",
+            "competencia",
+            "mutualismo",
+            "parasitismo",
+            "depredación"
+          ],
+          "objetivos": [
+            "Definir ecosistema e identificar sus componentes bióticos y abióticos",
+            "Diferenciar entre hábitat y nicho ecológico y comprender su importancia en la organización ecológica",
+            "Reconocer los principales tipos de relaciones interespecíficas y su efecto sobre las poblaciones"
+          ],
+          "contenidos": [
+            "Concepto de ecosistema: sistema formado por la biocenosis (comunidad de seres vivos) y el biotopo (medio físico). Factores abióticos (temperatura, luz, agua, suelo, pH, salinidad) y bióticos (relaciones entre organismos). Niveles de organización ecológica: individuo, población, comunidad, ecosistema, bioma, biosfera",
+            "Hábitat (lugar donde vive un organismo) vs. nicho ecológico (función o rol del organismo en el ecosistema: qué come, cuándo está activo, cómo se reproduce, con quién interactúa). Principio de exclusión competitiva de Gause: dos especies no pueden ocupar el mismo nicho ecológico en un mismo lugar y tiempo",
+            "Relaciones interespecíficas: depredación (+/-), parasitismo (+/-), competencia interespecífica (-/-), mutualismo (+/+), comensalismo (+/0). Ejemplos en ecosistemas uruguayos: ñandú y pastizal pampeano, líquenes (mutualismo alga-hongo), garrapata y ganado (parasitismo)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la diferencia entre hábitat y nicho ecológico?",
+              "opciones": [
+                "Son sinónimos, significan lo mismo",
+                "El hábitat es el lugar físico donde vive un organismo; el nicho ecológico es su rol funcional en el ecosistema (qué come, cuándo se reproduce, con quién interactúa)",
+                "El nicho ecológico es el lugar donde vive y el hábitat es su función",
+                "El hábitat se refiere a los animales y el nicho ecológico a las plantas"
+              ],
+              "correcta": 1,
+              "explicacion": "El hábitat es la 'dirección' del organismo (el lugar físico donde vive, con sus condiciones ambientales). El nicho ecológico es su 'profesión': incluye todas sus interacciones con el ambiente, su dieta, sus horarios de actividad, sus depredadores, sus competidores y su forma de reproducirse."
+            },
+            {
+              "pregunta": "¿Qué tipo de relación interespecífica se da entre un liquen, formado por un hongo y un alga?",
+              "opciones": [
+                "Parasitismo",
+                "Comensalismo",
+                "Mutualismo",
+                "Competencia"
+              ],
+              "correcta": 2,
+              "explicacion": "El liquen es un ejemplo clásico de mutualismo (+/+): el alga (o cianobacteria) realiza fotosíntesis y aporta sustancias orgánicas al hongo, mientras que el hongo proporciona protección, humedad y sales minerales al alga. Ambos organismos se benefician de la asociación."
+            },
+            {
+              "pregunta": "¿Qué establece el principio de exclusión competitiva de Gause?",
+              "opciones": [
+                "Todas las especies pueden convivir pacíficamente en un mismo ecosistema",
+                "Dos especies que compiten por el mismo recurso siempre se extinguen",
+                "Dos especies no pueden ocupar el mismo nicho ecológico en el mismo lugar y tiempo indefinidamente; una desplazará a la otra",
+                "La competencia solo ocurre entre individuos de la misma especie"
+              ],
+              "correcta": 2,
+              "explicacion": "El principio de exclusión competitiva de Gause (1934) establece que si dos especies compiten por exactamente los mismos recursos (mismo nicho ecológico) en el mismo lugar, una terminará desplazando a la otra. Por eso las especies coexistentes suelen diferenciarse en algún aspecto de su nicho (diferenciación de nicho)."
+            }
+          ]
+        },
+        {
+          "titulo": "Cadenas y redes tróficas, flujo de energía",
+          "conceptosClave": [
+            "cadena trófica",
+            "red trófica",
+            "nivel trófico",
+            "productor",
+            "consumidor primario",
+            "consumidor secundario",
+            "descomponedor",
+            "fotosíntesis",
+            "pirámide ecológica",
+            "productividad primaria",
+            "regla del 10%"
+          ],
+          "objetivos": [
+            "Comprender el flujo de energía a través de los niveles tróficos de un ecosistema",
+            "Diferenciar entre cadena trófica y red trófica, e identificar el rol de productores, consumidores y descomponedores",
+            "Interpretar pirámides ecológicas de energía, biomasa y número"
+          ],
+          "contenidos": [
+            "Niveles tróficos: productores (autótrofos, principalmente plantas y algas que realizan fotosíntesis), consumidores primarios (herbívoros), consumidores secundarios (carnívoros), consumidores terciarios (superdepredadores), descomponedores (bacterias y hongos que reciclan la materia orgánica). Cadena trófica: secuencia lineal de transferencia de energía. Red trófica: conjunto interconectado de cadenas tróficas",
+            "Flujo de energía: unidireccional y decreciente. En cada transferencia entre niveles tróficos se pierde aproximadamente un 90% de la energía como calor (por la respiración celular). Regla del 10%: solo alrededor del 10% de la energía de un nivel se transfiere al siguiente. Consecuencia: las cadenas tróficas raramente superan 4-5 eslabones",
+            "Pirámides ecológicas: de energía (siempre con base amplia, refleja la pérdida de energía), de biomasa (masa total de organismos en cada nivel), de números (cantidad de individuos). Productividad primaria bruta (PPB) y neta (PPN = PPB - respiración). Bioacumulación y biomagnificación de tóxicos en la cadena trófica"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Por qué las cadenas tróficas raramente superan 4 o 5 eslabones?",
+              "opciones": [
+                "Porque no existen suficientes especies en los ecosistemas",
+                "Porque en cada nivel trófico se pierde aproximadamente un 90% de la energía como calor, dejando muy poca energía para los niveles superiores",
+                "Porque los depredadores del cuarto nivel son muy eficientes",
+                "Porque los descomponedores interrumpen la cadena"
+              ],
+              "correcta": 1,
+              "explicacion": "En cada transferencia entre niveles tróficos, aproximadamente el 90% de la energía se pierde como calor por la respiración celular de los organismos (regla del 10%). Así, un productor que fija 10.000 kJ solo transfiere ~1.000 kJ al herbívoro, ~100 kJ al carnívoro primario, ~10 kJ al carnívoro secundario. Rápidamente, la energía disponible es insuficiente para sustentar otro nivel."
+            },
+            {
+              "pregunta": "¿Cuál es el rol de los descomponedores en un ecosistema?",
+              "opciones": [
+                "Producir materia orgánica mediante fotosíntesis",
+                "Cazar y controlar las poblaciones de herbívoros",
+                "Degradar la materia orgánica muerta y devolver nutrientes inorgánicos al suelo y la atmósfera para ser reutilizados",
+                "Transportar energía del sol a los productores"
+              ],
+              "correcta": 2,
+              "explicacion": "Los descomponedores (bacterias y hongos principalmente) degradan la materia orgánica de organismos muertos y desechos, liberando nutrientes inorgánicos (nitrógeno, fósforo, carbono) al suelo, agua y atmósfera. Son fundamentales para el reciclaje de la materia y el funcionamiento de los ciclos biogeoquímicos."
+            },
+            {
+              "pregunta": "¿Qué es la biomagnificación?",
+              "opciones": [
+                "El aumento de la biomasa en cada nivel trófico",
+                "El aumento de la concentración de sustancias tóxicas en los organismos a medida que se asciende en la cadena trófica",
+                "El crecimiento del tamaño de los organismos a lo largo de la evolución",
+                "La mayor productividad de los ecosistemas tropicales"
+              ],
+              "correcta": 1,
+              "explicacion": "La biomagnificación es el proceso por el cual sustancias tóxicas persistentes (como pesticidas, mercurio o DDT) se acumulan en concentraciones crecientes a medida que se asciende en la cadena trófica. Los depredadores tope ingieren las toxinas de todas sus presas, alcanzando concentraciones peligrosamente altas. Ejemplo clásico: DDT y águilas calvas."
+            }
+          ]
+        },
+        {
+          "titulo": "Ciclos biogeoquímicos y crisis ambiental",
+          "conceptosClave": [
+            "ciclo del carbono",
+            "ciclo del nitrógeno",
+            "ciclo del agua",
+            "efecto invernadero",
+            "calentamiento global",
+            "cambio climático",
+            "capa de ozono",
+            "deforestación",
+            "pérdida de biodiversidad",
+            "desarrollo sustentable",
+            "huella ecológica"
+          ],
+          "objetivos": [
+            "Describir los principales ciclos biogeoquímicos y comprender cómo la actividad humana los altera",
+            "Analizar las causas y consecuencias del cambio climático, la destrucción de la capa de ozono y la pérdida de biodiversidad",
+            "Reflexionar sobre el concepto de desarrollo sustentable y la responsabilidad individual y colectiva"
+          ],
+          "contenidos": [
+            "Ciclo del carbono: fotosíntesis (fijación de CO₂), respiración celular (liberación de CO₂), descomposición, combustión de combustibles fósiles. Efecto invernadero natural (CO₂, CH₄, N₂O, vapor de agua) vs. efecto invernadero intensificado por actividades humanas (quema de petróleo, gas y carbón, deforestación). Calentamiento global y cambio climático: aumento de temperatura media, derretimiento de glaciares, aumento del nivel del mar, eventos climáticos extremos",
+            "Ciclo del nitrógeno: fijación (bacterias nitrificantes, Rhizobium en leguminosas), nitrificación, asimilación por plantas, desnitrificación. Alteración humana: fertilizantes nitrogenados que causan eutrofización de cuerpos de agua. Ciclo del agua: evaporación, condensación, precipitación, escorrentía, infiltración. Contaminación del agua y acceso al agua potable como problema global",
+            "Crisis ambiental contemporánea: destrucción de la capa de ozono por CFC (Protocolo de Montreal, 1987), pérdida de biodiversidad (destrucción de hábitats, sobreexplotación, especies invasoras, contaminación), deforestación y degradación de suelos. Desarrollo sustentable: satisfacer las necesidades del presente sin comprometer las de las generaciones futuras (Informe Brundtland, 1987). Situación ambiental en Uruguay: conservación de humedales, pradera natural, bosque nativo y costa"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la principal causa del incremento del efecto invernadero y el calentamiento global en las últimas décadas?",
+              "opciones": [
+                "El aumento de la actividad volcánica",
+                "La variación natural de la órbita terrestre",
+                "La quema de combustibles fósiles (petróleo, gas y carbón) y la deforestación, que incrementan la concentración de CO₂ y otros gases de efecto invernadero en la atmósfera",
+                "El agujero en la capa de ozono"
+              ],
+              "correcta": 2,
+              "explicacion": "La principal causa del calentamiento global actual es la quema de combustibles fósiles (petróleo, carbón y gas natural) que libera grandes cantidades de CO₂ acumulado durante millones de años. Junto con la deforestación (que reduce la captura de CO₂), esto ha aumentado la concentración atmosférica de CO₂ de ~280 ppm (preindustrial) a más de 420 ppm, intensificando el efecto invernadero."
+            },
+            {
+              "pregunta": "¿Qué proceso del ciclo del nitrógeno realizan las bacterias del género Rhizobium en las raíces de las leguminosas?",
+              "opciones": [
+                "Desnitrificación: convierten nitratos en nitrógeno gaseoso",
+                "Fijación biológica de nitrógeno: convierten N₂ atmosférico en amonio (NH₄⁺) asimilable por la planta",
+                "Nitrificación: convierten amonio en nitratos",
+                "Amonificación: descomponen proteínas en amonio"
+              ],
+              "correcta": 1,
+              "explicacion": "Las bacterias Rhizobium forman nódulos en las raíces de leguminosas (soja, trébol, alfalfa) donde realizan la fijación biológica de nitrógeno: convierten el N₂ atmosférico (que las plantas no pueden usar directamente) en amonio (NH₄⁺), una forma asimilable. Es una relación mutualista: la bacteria recibe carbohidratos de la planta y la planta recibe nitrógeno fijado."
+            },
+            {
+              "pregunta": "¿Qué es el desarrollo sustentable?",
+              "opciones": [
+                "Un modelo de desarrollo basado exclusivamente en el crecimiento económico",
+                "La prohibición total de toda actividad industrial para proteger el medio ambiente",
+                "Un modelo de desarrollo que busca satisfacer las necesidades del presente sin comprometer la capacidad de las generaciones futuras de satisfacer las suyas",
+                "Un tipo de agricultura que no utiliza ninguna tecnología moderna"
+              ],
+              "correcta": 2,
+              "explicacion": "El concepto de desarrollo sustentable (o sostenible) fue definido en el Informe Brundtland ('Nuestro futuro común', 1987): es aquel desarrollo que satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras de satisfacer sus propias necesidades. Integra tres dimensiones: ambiental, social y económica."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

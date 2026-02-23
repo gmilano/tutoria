@@ -654,22 +654,59 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 </head>
 <body>
 
-<!-- ACCESS GATE -->
-<div id="accessGate" style="display:none;position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 50%,#4f46e5 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0">
-  <div style="background:white;border-radius:20px;padding:40px 36px;max-width:380px;width:90%;text-align:center;box-shadow:0 25px 60px rgba(0,0,0,0.4)">
-    <div style="font-size:52px;margin-bottom:8px">🎓</div>
-    <div style="font-size:22px;font-weight:800;color:#1e1b4b;margin-bottom:4px">TutorIA</div>
-    <div style="font-size:13px;color:#6b7280;margin-bottom:28px">Plataforma de tutores personalizados<br>con IA para bachillerato uruguayo</div>
-    <input id="accessInput" type="password" placeholder="Código de acceso"
-      style="width:100%;padding:12px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:15px;font-family:inherit;outline:none;margin-bottom:10px;box-sizing:border-box;text-align:center;letter-spacing:2px"
-      onkeydown="if(event.key==='Enter')verifyAccess()"
-      oninput="document.getElementById('accessError').textContent=''">
-    <div id="accessError" style="color:#ef4444;font-size:12px;min-height:18px;margin-bottom:8px"></div>
-    <button onclick="verifyAccess()"
-      style="width:100%;padding:13px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">
-      Ingresar →
-    </button>
-    <div style="margin-top:20px;font-size:11px;color:#9ca3af">¿Sos director/a de liceo y querés una demo?<br><a href="mailto:contacto@tutoria.uy" style="color:#4f46e5">Contactanos</a></div>
+<!-- AUTH GATE -->
+<div id="authGate" style="display:none;position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 50%,#4f46e5 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0">
+  <div style="background:white;border-radius:20px;padding:40px 36px;max-width:400px;width:90%;box-shadow:0 25px 60px rgba(0,0,0,0.4)">
+    <div style="text-align:center">
+      <div style="font-size:52px;margin-bottom:8px">🎓</div>
+      <div style="font-size:22px;font-weight:800;color:#1e1b4b;margin-bottom:4px">TutorIA</div>
+      <div style="font-size:13px;color:#6b7280;margin-bottom:24px">Plataforma de tutores personalizados<br>con IA para bachillerato uruguayo</div>
+    </div>
+
+    <!-- Login form -->
+    <div id="loginForm">
+      <input id="loginEmail" type="email" placeholder="Email"
+        style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;outline:none;margin-bottom:8px;box-sizing:border-box"
+        onkeydown="if(event.key==='Enter')doLogin()">
+      <input id="loginPassword" type="password" placeholder="Contraseña"
+        style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;outline:none;margin-bottom:8px;box-sizing:border-box"
+        onkeydown="if(event.key==='Enter')doLogin()">
+      <div id="loginError" style="color:#ef4444;font-size:12px;min-height:18px;margin-bottom:6px"></div>
+      <button onclick="doLogin()"
+        style="width:100%;padding:12px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">
+        Iniciar sesión →
+      </button>
+      <div style="text-align:center;margin-top:14px;font-size:13px;color:#6b7280">
+        ¿No tenés cuenta? <a href="#" onclick="showRegister();return false" style="color:#4f46e5;font-weight:600">Registrate</a>
+      </div>
+    </div>
+
+    <!-- Register form -->
+    <div id="registerForm" style="display:none">
+      <input id="regName" type="text" placeholder="Nombre completo"
+        style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;outline:none;margin-bottom:8px;box-sizing:border-box">
+      <input id="regEmail" type="email" placeholder="Email"
+        style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;outline:none;margin-bottom:8px;box-sizing:border-box">
+      <input id="regPassword" type="password" placeholder="Contraseña (mín. 6 caracteres)"
+        style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;outline:none;margin-bottom:8px;box-sizing:border-box">
+      <select id="regYear"
+        style="width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;outline:none;margin-bottom:8px;box-sizing:border-box;color:#374151;background:#fff">
+        <option value="" disabled selected>Año que cursás</option>
+        <option value="4°">4° año</option>
+        <option value="5°">5° año</option>
+        <option value="6°">6° año</option>
+      </select>
+      <div id="regError" style="color:#ef4444;font-size:12px;min-height:18px;margin-bottom:6px"></div>
+      <button onclick="doRegister()"
+        style="width:100%;padding:12px;background:linear-gradient(135deg,#10b981,#059669);color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">
+        Crear cuenta →
+      </button>
+      <div style="text-align:center;margin-top:14px;font-size:13px;color:#6b7280">
+        ¿Ya tenés cuenta? <a href="#" onclick="showLogin();return false" style="color:#4f46e5;font-weight:600">Iniciar sesión</a>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;font-size:11px;color:#9ca3af">¿Sos director/a de liceo y querés una demo?<br><a href="mailto:contacto@tutoria.uy" style="color:#4f46e5">Contactanos</a></div>
   </div>
 </div>
 
@@ -687,6 +724,8 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
   </div>
   <div class="header-right">
     <span class="badge-anep">ANEP · Bachillerato</span>
+    <span id="userNameBadge" style="display:none;font-size:12px;font-weight:600;color:var(--indigo);padding:4px 10px;background:var(--indigo-bg);border-radius:20px"></span>
+    <button id="logoutBtn" onclick="doLogout()" style="display:none;padding:5px 12px;border:1px solid var(--border);border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;background:var(--bg);color:var(--muted);font-family:inherit;transition:.15s" onmouseover="this.style.borderColor='var(--red)';this.style.color='var(--red)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Cerrar sesión</button>
   </div>
 </header>
 
@@ -738,6 +777,19 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
     <div id="curriculumTree"></div>
   </aside>
 
+  <!-- Session history panel (collapsible) -->
+  <div id="historyPanel" style="width:0;overflow:hidden;transition:width .2s;background:var(--surface);border-right:1px solid var(--border);flex-shrink:0">
+    <div style="width:210px;padding:12px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">Historial</span>
+        <button onclick="toggleHistory()" style="background:none;border:none;cursor:pointer;font-size:14px;color:var(--muted)">✕</button>
+      </div>
+      <div id="sessionList" style="display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:12px;color:var(--muted);font-style:italic">Sin sesiones previas</div>
+      </div>
+    </div>
+  </div>
+
   <!-- Chat -->
   <main class="sv-chat">
     <div class="chat-topbar">
@@ -750,6 +802,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
         <div class="topic-progress-bar"><div class="topic-progress-fill" style="width:60%"></div></div>
         <span class="topic-pct">60%</span>
       </div>
+      <button class="settings-btn" onclick="toggleHistory()" title="Historial de sesiones" style="font-size:14px">📋</button>
       <button class="settings-btn" id="settingsBtn" onclick="toggleSettings()" title="Configuración">⚙️</button>
     </div>
     <div class="settings-panel" id="settingsPanel">
@@ -1184,6 +1237,8 @@ function answer(el, correct) {
     ? '✅ ¡Correcto! La Bastilla era símbolo del poder absoluto del rey. Su toma el 14 de julio de 1789 es feriado nacional en Francia hasta hoy.'
     : '❌ La respuesta es <strong>B · La Bastilla</strong>. Era la prisión-fortaleza símbolo del poder real.';
   el.parentElement.appendChild(fb);
+  // Save quiz progress
+  saveProgress(null, currentTopic, correct, correct ? 100 : 0);
   if (correct) setTimeout(addFollowUp, 900);
 }
 function addFollowUp() {
@@ -1255,6 +1310,30 @@ let currentSubject = null;
 let currentTopic = 'Revolución Francesa (1789)';
 
 async function loadSubject(subjectId) {
+  // Try loading individual curriculum file first (richer content)
+  const nameMap = {
+    'historia-4': 'historia', 'matematica-4': 'matematica', 'lengua-4': 'lengua',
+    'biologia-4': 'biologia', 'fisica-4': 'fisica', 'quimica-4': 'quimica',
+    'geografia-4': 'geografia', 'ingles-4': 'ingles', 'informatica-4': 'informatica',
+    'economia-5-eco': 'economia',
+  };
+  const fileName = nameMap[subjectId];
+  if (fileName) {
+    try {
+      const resp = await fetch(`curriculum/${fileName}.json`);
+      if (resp.ok) {
+        const subj = await resp.json();
+        if (subj && subj.unidades) {
+          currentSubject = subj;
+          renderCurriculumTree(subj);
+          updateSystemPrompt(subj);
+          document.getElementById('subjectMeta').textContent = `${subj.año} · ${subj.descripcion}`;
+          return;
+        }
+      }
+    } catch { /* fall through */ }
+  }
+  // Fall back to complete curriculum
   try {
     const resp = await fetch('curriculum/anep-bachillerato-completo.json');
     const data = await resp.json();
@@ -1302,6 +1381,10 @@ function renderCurriculumTree(subj) {
 }
 
 function selectTopic(tema, subj, unit) {
+  // Save progress for previous topic
+  if (currentTopic && currentTopic !== tema.titulo) {
+    saveProgress(null, currentTopic, false, null);
+  }
   currentTopic = tema.titulo;
   document.getElementById('topbarTitle').textContent = `${subj.emoji} ${tema.titulo}`;
   document.getElementById('topbarSub').textContent = `${unit.titulo} · ${subj.año} · ${subj.nombre} — Bachillerato ANEP`;
@@ -1309,6 +1392,10 @@ function selectTopic(tema, subj, unit) {
   // Reset chat with new topic greeting
   chatHistory.length = 0;
   chatHistory.push({ role: 'system', content: buildSystemPrompt(subj, tema) });
+  // Reset session for new topic
+  currentSessionId = null;
+  localStorage.removeItem('tutoria_sessionId');
+  answered = false;
 }
 
 function buildSystemPrompt(subj, tema) {
@@ -1646,62 +1733,220 @@ function escapeHtml(text) {
 const USE_PROXY = !window.location.hostname.includes('github.io');
 const PROXY_URL = '/api/chat';
 
-// ── Access Gate ───────────────────────────────────────────
-const ACCESS_KEY = 'tutoria_access_v1';
+// ── Auth System ───────────────────────────────────────────
+let currentUser = null;
+let currentSessionId = null;
 
-async function verifyAccess() {
-  const input = document.getElementById('accessInput');
-  const errEl = document.getElementById('accessError');
-  const code = input?.value?.trim();
-  if (!code) { if (errEl) errEl.textContent = 'Ingresá el código'; return; }
-
-  try {
-    const r = await fetch('/api/verify-code', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ code })
-    });
-    const d = await r.json();
-    if (d.ok) {
-      localStorage.setItem(ACCESS_KEY, code);
-      const gate = document.getElementById('accessGate');
-      if (gate) gate.style.display = 'none';
-    } else {
-      if (errEl) errEl.textContent = d.error || 'Código incorrecto';
-      if (input) { input.value = ''; input.focus(); }
-    }
-  } catch {
-    if (errEl) errEl.textContent = 'Error de conexión';
-  }
+function getAuthHeaders() {
+  const token = localStorage.getItem('tutoria_jwt');
+  const headers = { 'Content-Type': 'application/json' };
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  return headers;
 }
 
-function initAccessGate() {
-  if (!USE_PROXY) return; // GitHub Pages: sin gate
-  const gate = document.getElementById('accessGate');
-  if (!gate) return;
-  const stored = localStorage.getItem(ACCESS_KEY);
-  if (stored) {
-    // Verify stored code silently
-    fetch('/api/verify-code', {
+function showLogin() {
+  document.getElementById('loginForm').style.display = '';
+  document.getElementById('registerForm').style.display = 'none';
+}
+function showRegister() {
+  document.getElementById('loginForm').style.display = 'none';
+  document.getElementById('registerForm').style.display = '';
+}
+
+async function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  const errEl = document.getElementById('loginError');
+  if (!email || !password) { errEl.textContent = 'Completá todos los campos'; return; }
+  try {
+    const r = await fetch('/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ code: stored })
-    }).then(r => r.json()).then(d => {
-      if (!d.ok) { localStorage.removeItem(ACCESS_KEY); gate.style.display = 'flex'; }
-    }).catch(() => { /* network error, let them in if cached */ });
-    gate.style.display = 'none';
+      body: JSON.stringify({ email, password })
+    });
+    const d = await r.json();
+    if (!r.ok) { errEl.textContent = d.error || 'Credenciales incorrectas'; return; }
+    localStorage.setItem('tutoria_jwt', d.token);
+    localStorage.setItem('tutoria_user', JSON.stringify(d.user));
+    onAuthSuccess(d.user);
+  } catch { errEl.textContent = 'Error de conexión'; }
+}
+
+async function doRegister() {
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const password = document.getElementById('regPassword').value;
+  const year = document.getElementById('regYear').value;
+  const errEl = document.getElementById('regError');
+  if (!name || !email || !password) { errEl.textContent = 'Completá todos los campos'; return; }
+  if (password.length < 6) { errEl.textContent = 'La contraseña debe tener al menos 6 caracteres'; return; }
+  try {
+    const r = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, password, year: year || '4°' })
+    });
+    const d = await r.json();
+    if (!r.ok) { errEl.textContent = d.error || 'Error al registrar'; return; }
+    localStorage.setItem('tutoria_jwt', d.token);
+    localStorage.setItem('tutoria_user', JSON.stringify(d.user));
+    onAuthSuccess(d.user);
+  } catch { errEl.textContent = 'Error de conexión'; }
+}
+
+function onAuthSuccess(user) {
+  currentUser = user;
+  document.getElementById('authGate').style.display = 'none';
+  const nameBadge = document.getElementById('userNameBadge');
+  if (nameBadge) { nameBadge.textContent = user.name || user.email; nameBadge.style.display = ''; }
+  document.getElementById('logoutBtn').style.display = '';
+  loadSessions();
+}
+
+function doLogout() {
+  localStorage.removeItem('tutoria_jwt');
+  localStorage.removeItem('tutoria_user');
+  localStorage.removeItem('tutoria_sessionId');
+  currentUser = null;
+  currentSessionId = null;
+  document.getElementById('authGate').style.display = 'flex';
+  document.getElementById('userNameBadge').style.display = 'none';
+  document.getElementById('logoutBtn').style.display = 'none';
+  showLogin();
+}
+
+function initAuth() {
+  if (!USE_PROXY) return; // GitHub Pages: no auth
+  const gate = document.getElementById('authGate');
+  if (!gate) return;
+  const token = localStorage.getItem('tutoria_jwt');
+  const userStr = localStorage.getItem('tutoria_user');
+  if (token && userStr) {
+    try {
+      const user = JSON.parse(userStr);
+      // Verify token is still valid
+      fetch('/api/auth/me', { headers: { 'Authorization': `Bearer ${token}` } })
+        .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+        .then(d => onAuthSuccess(d.user))
+        .catch(() => { gate.style.display = 'flex'; });
+      gate.style.display = 'none';
+      onAuthSuccess(user);
+    } catch { gate.style.display = 'flex'; }
   } else {
     gate.style.display = 'flex';
   }
 }
 
-// Focus input when gate is visible
+// ── Session History ───────────────────────────────────────
+function toggleHistory() {
+  const panel = document.getElementById('historyPanel');
+  panel.style.width = panel.style.width === '210px' ? '0' : '210px';
+}
+
+async function loadSessions() {
+  if (!USE_PROXY) return;
+  try {
+    const r = await fetch('/api/sessions', { headers: getAuthHeaders() });
+    if (!r.ok) return;
+    const d = await r.json();
+    const list = document.getElementById('sessionList');
+    if (!d.sessions?.length) {
+      list.innerHTML = '<div style="font-size:12px;color:var(--muted);font-style:italic">Sin sesiones previas</div>';
+      return;
+    }
+    list.innerHTML = d.sessions.map(s => `
+      <div onclick="loadSession('${s.id}')" style="padding:8px;border-radius:8px;cursor:pointer;border:1px solid var(--border);transition:.15s;background:var(--surface)" onmouseover="this.style.borderColor='var(--indigo)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-size:12px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${s.subject} — ${s.topic}</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:2px">${s.summary || ''}</div>
+        <div style="font-size:9px;color:var(--muted2);margin-top:3px">${new Date(s.updatedAt).toLocaleDateString('es')}</div>
+      </div>
+    `).join('');
+  } catch { /* ignore */ }
+}
+
+async function loadSession(sessionId) {
+  try {
+    const r = await fetch(`/api/sessions/${sessionId}`, { headers: getAuthHeaders() });
+    if (!r.ok) return;
+    const d = await r.json();
+    const session = d.session;
+    currentSessionId = session.id;
+    localStorage.setItem('tutoria_sessionId', session.id);
+
+    // Restore messages
+    const msgs = document.getElementById('messages');
+    msgs.innerHTML = '';
+    const messages = session.messages || [];
+    messages.forEach(m => {
+      if (m.role === 'system') return;
+      const div = document.createElement('div');
+      if (m.role === 'user') {
+        div.className = 'msg student';
+        const initials = currentUser?.name ? currentUser.name.charAt(0).toUpperCase() : 'A';
+        div.innerHTML = `<div class="avatar">${initials}</div><div><div class="bubble">${escapeHtml(m.content)}</div></div>`;
+      } else {
+        div.className = 'msg tutor';
+        div.innerHTML = `<div class="avatar">🤖</div><div><div class="bubble">${escapeHtml(m.content).replace(/\n/g,'<br>')}</div></div>`;
+      }
+      msgs.appendChild(div);
+    });
+    msgs.scrollTop = msgs.scrollHeight;
+    toggleHistory(); // close panel
+  } catch { /* ignore */ }
+}
+
+async function saveSession() {
+  if (!USE_PROXY || !currentUser) return;
+  const subj = currentSubject;
+  const messages = chatHistory.filter(m => m.role !== 'system').map(m => ({
+    role: m.role, content: m.content, timestamp: new Date().toISOString()
+  }));
+  if (messages.length < 2) return; // at least one exchange
+
+  try {
+    const body = {
+      subject: subj?.nombre || 'Historia',
+      topic: currentTopic,
+      year: subj?.año || '4°',
+      messages
+    };
+    if (currentSessionId) body.sessionId = currentSessionId;
+    const r = await fetch('/api/sessions', {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify(body)
+    });
+    if (r.ok) {
+      const d = await r.json();
+      currentSessionId = d.session.id;
+      localStorage.setItem('tutoria_sessionId', d.session.id);
+    }
+  } catch { /* ignore */ }
+}
+
+// ── Progress Tracking ─────────────────────────────────────
+async function saveProgress(topicId, topicName, completed, quizScore) {
+  if (!USE_PROXY || !currentUser) return;
+  try {
+    await fetch('/api/progress', {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify({
+        subject: currentSubject?.nombre || 'Historia',
+        topicId: topicId || currentTopic.replace(/\s+/g, '-').toLowerCase(),
+        topicName: topicName || currentTopic,
+        completed: completed || false,
+        quizScore: quizScore || null,
+        timeSpentMs: 0
+      })
+    });
+  } catch { /* ignore */ }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  initAccessGate();
-  const input = document.getElementById('accessInput');
-  if (input && document.getElementById('accessGate')?.style.display !== 'none') {
-    setTimeout(() => input.focus(), 100);
-  }
+  initAuth();
+  const storedSessionId = localStorage.getItem('tutoria_sessionId');
+  if (storedSessionId) currentSessionId = storedSessionId;
 });
 
 async function fetchAIResponse(userMsg) {
@@ -1732,13 +1977,15 @@ async function fetchAIResponse(userMsg) {
     const subj = currentSubject;
     const resp = await fetch(PROXY_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: getAuthHeaders(),
       body: JSON.stringify({
         messages: history,
         subject: subj?.nombre || 'Historia',
         topic: currentTopic,
         year: subj?.año || '4°',
-        model: selectedModel
+        model: selectedModel,
+        subjectId: subj?.id || null,
+        studentName: currentUser?.name || null
       })
     });
     if (!resp.ok) { const e = await resp.json(); throw new Error(e.error || 'Error del servidor'); }
@@ -1767,10 +2014,11 @@ function sendMsg() {
   if (!txt) return;
   inp.value = '';
   const msgs = document.getElementById('messages');
+  const initials = currentUser?.name ? currentUser.name.charAt(0).toUpperCase() : 'A';
 
   const um = document.createElement('div');
   um.className = 'msg student';
-  um.innerHTML = `<div class="avatar">V</div><div><div class="bubble">${escapeHtml(txt)}</div><div class="timestamp">${now()}</div></div>`;
+  um.innerHTML = `<div class="avatar">${initials}</div><div><div class="bubble">${escapeHtml(txt)}</div><div class="timestamp">${now()}</div></div>`;
   msgs.appendChild(um);
 
   const typ = document.createElement('div');
@@ -1779,12 +2027,13 @@ function sendMsg() {
   msgs.appendChild(typ);
   msgs.scrollTop = msgs.scrollHeight;
 
-  if (aiActive && apiKey) {
+  if (aiActive && (apiKey || USE_PROXY)) {
     fetchAIResponse(txt).then(reply => {
       typ.remove();
       const rm = renderTutorMsg(reply);
       msgs.appendChild(rm);
       msgs.scrollTop = msgs.scrollHeight;
+      saveSession(); // Save to DB
     }).catch(() => {
       typ.remove();
       const rm = renderTutorMsg(getDemoReply());
@@ -1801,6 +2050,7 @@ function sendMsg() {
       const rm = renderTutorMsg(getDemoReply());
       msgs.appendChild(rm);
       msgs.scrollTop = msgs.scrollHeight;
+      saveSession(); // Save to DB
     }, 1000 + Math.random() * 800);
   }
 }
@@ -1919,6 +2169,85 @@ function closeDrawer() {
   document.getElementById('drawer').classList.remove('open');
   document.querySelectorAll('.sc').forEach(c => c.classList.remove('sel'));
 }
+
+// ── Load Teacher Data from DB ──────────────────────────────
+async function loadTeacherData() {
+  if (!USE_PROXY || !currentUser) return;
+  try {
+    const r = await fetch('/api/progress/students', { headers: getAuthHeaders() });
+    if (!r.ok) return;
+    const d = await r.json();
+    if (!d.students?.length) return;
+
+    // Calculate KPIs from real data
+    const students = d.students;
+    let totalProgress = 0, totalQuiz = 0, quizCount = 0, atRisk = 0, activeToday = 0;
+    const today = new Date().toDateString();
+
+    students.forEach(s => {
+      const progRecords = s.progress || [];
+      const completed = progRecords.filter(p => p.completed).length;
+      const total = progRecords.length || 1;
+      const pct = Math.round((completed / total) * 100);
+      totalProgress += pct;
+
+      progRecords.forEach(p => {
+        if (p.quizScore != null) { totalQuiz += p.quizScore; quizCount++; }
+      });
+
+      if (pct < 30) atRisk++;
+      const lastSeen = s.lastSeenAt || s.createdAt;
+      if (lastSeen && new Date(lastSeen).toDateString() === today) activeToday++;
+    });
+
+    const avgProgress = Math.round(totalProgress / students.length);
+    const avgQuiz = quizCount > 0 ? Math.round(totalQuiz / quizCount) : 0;
+
+    // Update KPIs
+    const kpis = document.querySelectorAll('.kpi-val');
+    if (kpis[0]) kpis[0].textContent = avgProgress + '%';
+    if (kpis[1]) kpis[1].textContent = avgQuiz + '%';
+    if (kpis[2]) kpis[2].textContent = atRisk;
+    if (kpis[3]) kpis[3].textContent = activeToday;
+
+    // Update student grid with real data
+    const grid = document.getElementById('studentGrid');
+    if (students.length > 0 && grid) {
+      grid.innerHTML = '';
+      students.forEach((s, i) => {
+        const progRecords = s.progress || [];
+        const completed = progRecords.filter(p => p.completed).length;
+        const total = progRecords.length || 1;
+        const pct = Math.round((completed / total) * 100);
+        const lastQuiz = progRecords.find(p => p.quizScore != null);
+        const quizPct = lastQuiz?.quizScore || 0;
+        const ini = s.name.split(' ').map(n => n[0]).join('').slice(0,2);
+        const lastTopic = progRecords[0]?.topicName || '-';
+        const fill = pct > 70 ? 'var(--green)' : pct > 40 ? 'var(--indigo)' : 'var(--red)';
+        const att = pct > 60 ? 'g' : pct > 30 ? 'a' : 'r';
+
+        const c = document.createElement('div');
+        c.className = 'sc';
+        c.innerHTML = `
+          <div class="sc-top">
+            <div class="sc-av" style="background:${AVCOLORS[i%AVCOLORS.length]}22;color:${AVCOLORS[i%AVCOLORS.length]}">${ini}</div>
+            <div><div class="sc-name">${s.name}</div><div class="sc-topic">${lastTopic}</div></div>
+            <div class="sc-dot ${att}"></div>
+          </div>
+          <div class="sc-pbar"><div class="sc-pfill" style="width:${pct}%;background:${fill}"></div></div>
+          <div class="sc-foot"><span>${pct}%</span><span>Quiz ${quizPct}%</span></div>`;
+        grid.appendChild(c);
+      });
+    }
+  } catch (e) { console.warn('Teacher data load failed:', e); }
+}
+
+// Load teacher data when switching to teacher view
+const origSetView = setView;
+setView = function(id, btn) {
+  origSetView(id, btn);
+  if (id === 'tv') loadTeacherData();
+};
 
 // ── Init ──────────────────────────────────────────────────
 initGrid();

@@ -1,0 +1,755 @@
+{
+  "id": "matematica-4",
+  "nombre": "Matemática",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "📐",
+  "color": "#0ea5e9",
+  "descripcion": "Álgebra, geometría analítica, funciones y cálculo introductorio",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Lógica y Conjuntos",
+      "temas": [
+        {
+          "titulo": "Proposiciones y conectivos lógicos",
+          "conceptosClave": [
+            "proposición",
+            "valor de verdad",
+            "conjunción",
+            "disyunción",
+            "negación",
+            "implicación",
+            "bicondicional",
+            "tablas de verdad"
+          ],
+          "objetivos": [
+            "Identificar proposiciones lógicas y determinar su valor de verdad",
+            "Construir tablas de verdad para expresiones compuestas usando conectivos lógicos",
+            "Aplicar las leyes lógicas (De Morgan, contraposición) para simplificar expresiones"
+          ],
+          "contenidos": [
+            "Proposiciones simples y compuestas: definición, notación simbólica y valores de verdad",
+            "Conectivos lógicos: negación (¬), conjunción (∧), disyunción (∨), implicación (→) y bicondicional (↔)",
+            "Tablas de verdad, tautologías, contradicciones y equivalencias lógicas"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál de las siguientes oraciones es una proposición lógica?",
+              "opciones": [
+                "¡Cerrá la puerta!",
+                "¿Qué hora es?",
+                "El número 7 es primo",
+                "x + 3 = 10"
+              ],
+              "correcta": 2,
+              "explicacion": "Una proposición lógica es un enunciado declarativo que puede ser verdadero o falso. 'El número 7 es primo' es verdadera. Las órdenes, preguntas y ecuaciones con variable libre no son proposiciones."
+            },
+            {
+              "pregunta": "Según las leyes de De Morgan, la negación de (p ∧ q) es equivalente a:",
+              "opciones": [
+                "¬p ∧ ¬q",
+                "¬p ∨ ¬q",
+                "p ∨ q",
+                "¬p → ¬q"
+              ],
+              "correcta": 1,
+              "explicacion": "La primera ley de De Morgan establece que ¬(p ∧ q) ≡ ¬p ∨ ¬q. Al negar una conjunción se obtiene la disyunción de las negaciones."
+            },
+            {
+              "pregunta": "Si p es verdadera y q es falsa, ¿cuál es el valor de verdad de p → q?",
+              "opciones": [
+                "Verdadero",
+                "Falso",
+                "Indeterminado",
+                "Depende del contexto"
+              ],
+              "correcta": 1,
+              "explicacion": "La implicación p → q es falsa únicamente cuando el antecedente (p) es verdadero y el consecuente (q) es falso. Es el único caso en que la implicación resulta falsa."
+            }
+          ]
+        },
+        {
+          "titulo": "Teoría de conjuntos",
+          "conceptosClave": [
+            "conjunto",
+            "pertenencia",
+            "inclusión",
+            "unión",
+            "intersección",
+            "complemento",
+            "diferencia",
+            "diferencia simétrica",
+            "producto cartesiano",
+            "conjuntos numéricos"
+          ],
+          "objetivos": [
+            "Representar conjuntos por extensión, comprensión y mediante diagramas de Venn",
+            "Operar con conjuntos aplicando unión, intersección, complemento y diferencia",
+            "Resolver problemas contextualizados utilizando operaciones entre conjuntos"
+          ],
+          "contenidos": [
+            "Definición de conjunto, subconjunto, conjunto vacío y conjunto universal; notación y representación",
+            "Operaciones: unión (∪), intersección (∩), complemento (Aᶜ), diferencia (A − B) y producto cartesiano (A × B)",
+            "Propiedades de las operaciones (conmutativa, asociativa, distributiva, leyes de De Morgan para conjuntos) y diagramas de Venn"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Si A = {1, 2, 3, 4} y B = {3, 4, 5, 6}, ¿cuál es A ∩ B?",
+              "opciones": [
+                "{1, 2, 3, 4, 5, 6}",
+                "{3, 4}",
+                "{1, 2, 5, 6}",
+                "{1, 2}"
+              ],
+              "correcta": 1,
+              "explicacion": "La intersección A ∩ B contiene los elementos que pertenecen simultáneamente a A y a B. Los elementos comunes son 3 y 4."
+            },
+            {
+              "pregunta": "Si el conjunto universal U = {1, 2, 3, 4, 5} y A = {2, 4}, ¿cuál es el complemento de A?",
+              "opciones": [
+                "{2, 4}",
+                "{1, 3, 5}",
+                "{1, 2, 3, 4, 5}",
+                "∅"
+              ],
+              "correcta": 1,
+              "explicacion": "El complemento de A (Aᶜ) contiene todos los elementos del universal que no están en A. Como U = {1,2,3,4,5} y A = {2,4}, entonces Aᶜ = {1,3,5}."
+            },
+            {
+              "pregunta": "¿Cuántos elementos tiene el producto cartesiano A × B si A tiene 3 elementos y B tiene 4 elementos?",
+              "opciones": [
+                "7",
+                "12",
+                "1",
+                "64"
+              ],
+              "correcta": 1,
+              "explicacion": "El producto cartesiano A × B es el conjunto de todos los pares ordenados (a, b). Su cardinal es |A| × |B| = 3 × 4 = 12 elementos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Números Reales y Complejos",
+      "temas": [
+        {
+          "titulo": "Números reales: propiedades y operaciones",
+          "conceptosClave": [
+            "números racionales",
+            "números irracionales",
+            "recta numérica",
+            "valor absoluto",
+            "intervalos",
+            "densidad",
+            "cota superior e inferior",
+            "radicales"
+          ],
+          "objetivos": [
+            "Clasificar números dentro de los conjuntos numéricos (N, Z, Q, I, R) y justificar su pertenencia",
+            "Operar con intervalos y resolver desigualdades en la recta real",
+            "Simplificar expresiones con radicales y racionalizar denominadores"
+          ],
+          "contenidos": [
+            "Conjuntos numéricos: naturales, enteros, racionales, irracionales y reales; propiedades de orden y completitud",
+            "Valor absoluto: definición, propiedades y resolución de ecuaciones e inecuaciones con valor absoluto",
+            "Intervalos (abiertos, cerrados, semiabiertos), operaciones con intervalos, y radicales (simplificación, racionalización)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál de los siguientes números es irracional?",
+              "opciones": [
+                "3/7",
+                "0,333...",
+                "√2",
+                "-5"
+              ],
+              "correcta": 2,
+              "explicacion": "√2 es irracional porque no puede expresarse como cociente de dos enteros. Su expansión decimal es infinita y no periódica. Los demás son racionales."
+            },
+            {
+              "pregunta": "¿Cuál es el conjunto solución de |x − 3| < 5?",
+              "opciones": [
+                "x < 8",
+                "−2 < x < 8",
+                "x > −2",
+                "x < −2 o x > 8"
+              ],
+              "correcta": 1,
+              "explicacion": "|x − 3| < 5 equivale a −5 < x − 3 < 5. Sumando 3 a cada miembro se obtiene −2 < x < 8, es decir el intervalo abierto (−2, 8)."
+            },
+            {
+              "pregunta": "La expresión simplificada de √50 es:",
+              "opciones": [
+                "25√2",
+                "5√2",
+                "2√5",
+                "10√5"
+              ],
+              "correcta": 1,
+              "explicacion": "√50 = √(25 · 2) = √25 · √2 = 5√2. Se descompone el radicando extrayendo el mayor cuadrado perfecto posible."
+            }
+          ]
+        },
+        {
+          "titulo": "Números complejos",
+          "conceptosClave": [
+            "unidad imaginaria",
+            "parte real",
+            "parte imaginaria",
+            "forma binómica",
+            "conjugado",
+            "módulo",
+            "argumento",
+            "forma polar",
+            "forma trigonométrica"
+          ],
+          "objetivos": [
+            "Operar con números complejos en forma binómica (suma, resta, multiplicación, división)",
+            "Representar números complejos en el plano de Argand-Gauss y convertir entre formas binómica y polar",
+            "Calcular módulo, argumento y conjugado de un número complejo"
+          ],
+          "contenidos": [
+            "Definición de número complejo, unidad imaginaria (i² = −1) y forma binómica z = a + bi",
+            "Operaciones en forma binómica: suma, resta, producto, cociente y conjugado",
+            "Representación en el plano complejo, módulo |z|, argumento arg(z) y forma trigonométrica z = |z|(cos θ + i sen θ)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuánto vale i²?",
+              "opciones": [
+                "1",
+                "−1",
+                "i",
+                "−i"
+              ],
+              "correcta": 1,
+              "explicacion": "Por definición, la unidad imaginaria i es tal que i² = −1. Esta es la propiedad fundamental que permite extender los reales a los complejos."
+            },
+            {
+              "pregunta": "Si z = 3 + 4i, ¿cuál es el módulo de z?",
+              "opciones": [
+                "7",
+                "5",
+                "25",
+                "1"
+              ],
+              "correcta": 1,
+              "explicacion": "|z| = √(a² + b²) = √(3² + 4²) = √(9 + 16) = √25 = 5. El módulo es la distancia del punto al origen en el plano complejo."
+            },
+            {
+              "pregunta": "¿Cuál es el conjugado del número complejo z = 2 − 5i?",
+              "opciones": [
+                "−2 + 5i",
+                "2 + 5i",
+                "−2 − 5i",
+                "5 − 2i"
+              ],
+              "correcta": 1,
+              "explicacion": "El conjugado de z = a + bi se obtiene cambiando el signo de la parte imaginaria: z̄ = a − bi. Si z = 2 − 5i, entonces z̄ = 2 + 5i."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Álgebra y Polinomios",
+      "temas": [
+        {
+          "titulo": "Polinomios: operaciones y factorización",
+          "conceptosClave": [
+            "grado de un polinomio",
+            "coeficiente principal",
+            "raíces",
+            "teorema del resto",
+            "teorema del factor",
+            "regla de Ruffini",
+            "factorización",
+            "factor común",
+            "diferencia de cuadrados",
+            "trinomio cuadrado perfecto"
+          ],
+          "objetivos": [
+            "Realizar operaciones con polinomios (suma, resta, multiplicación y división) y aplicar la regla de Ruffini",
+            "Factorizar polinomios utilizando factor común, identidades notables y el teorema del factor",
+            "Determinar raíces de polinomios y verificarlas mediante el teorema del resto"
+          ],
+          "contenidos": [
+            "Polinomios: definición, grado, coeficientes, operaciones (suma, resta, producto) y división (algoritmo y Ruffini)",
+            "Teorema del resto y teorema del factor; búsqueda de raíces racionales",
+            "Factorización: factor común, agrupamiento, diferencia de cuadrados (a² − b²), trinomio cuadrado perfecto y suma/diferencia de cubos"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Si P(x) = x³ − 2x² + x − 2 y P(2) = 0, ¿qué se puede afirmar?",
+              "opciones": [
+                "(x + 2) es factor de P(x)",
+                "(x − 2) es factor de P(x)",
+                "P(x) no tiene raíces reales",
+                "El grado de P(x) es 2"
+              ],
+              "correcta": 1,
+              "explicacion": "Por el teorema del factor, si P(a) = 0 entonces (x − a) es factor de P(x). Como P(2) = 0, entonces (x − 2) divide a P(x)."
+            },
+            {
+              "pregunta": "La factorización de x² − 9 es:",
+              "opciones": [
+                "(x − 3)²",
+                "(x + 3)²",
+                "(x − 3)(x + 3)",
+                "(x − 9)(x + 1)"
+              ],
+              "correcta": 2,
+              "explicacion": "Se aplica la identidad notable diferencia de cuadrados: a² − b² = (a − b)(a + b). Con a = x y b = 3, resulta x² − 9 = (x − 3)(x + 3)."
+            },
+            {
+              "pregunta": "Al dividir P(x) = 2x³ + 3x² − 5x + 7 entre (x − 1) usando Ruffini, el resto es:",
+              "opciones": [
+                "0",
+                "7",
+                "−3",
+                "12"
+              ],
+              "correcta": 1,
+              "explicacion": "Por el teorema del resto, el resto de dividir P(x) entre (x − 1) es P(1) = 2(1)³ + 3(1)² − 5(1) + 7 = 2 + 3 − 5 + 7 = 7."
+            }
+          ]
+        },
+        {
+          "titulo": "Ecuaciones e inecuaciones",
+          "conceptosClave": [
+            "ecuación de segundo grado",
+            "fórmula cuadrática",
+            "discriminante",
+            "ecuaciones bicuadradas",
+            "sistemas de ecuaciones",
+            "inecuaciones lineales",
+            "inecuaciones cuadráticas",
+            "conjunto solución"
+          ],
+          "objetivos": [
+            "Resolver ecuaciones de segundo grado y analizar la naturaleza de sus raíces mediante el discriminante",
+            "Plantear y resolver sistemas de ecuaciones lineales y no lineales",
+            "Resolver inecuaciones lineales y cuadráticas, expresando la solución en intervalos"
+          ],
+          "contenidos": [
+            "Ecuación de segundo grado ax² + bx + c = 0: fórmula cuadrática, discriminante (Δ = b² − 4ac) y relaciones de Vieta",
+            "Ecuaciones bicuadradas, ecuaciones con radicales y sistemas de ecuaciones 2×2 (sustitución, igualación, reducción)",
+            "Inecuaciones lineales y cuadráticas: resolución algebraica, análisis de signo y representación en la recta numérica"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué indica un discriminante Δ < 0 en la ecuación ax² + bx + c = 0 (con a, b, c reales)?",
+              "opciones": [
+                "La ecuación tiene dos raíces reales distintas",
+                "La ecuación tiene una raíz real doble",
+                "La ecuación no tiene raíces reales (tiene dos raíces complejas conjugadas)",
+                "La ecuación tiene infinitas soluciones"
+              ],
+              "correcta": 2,
+              "explicacion": "Cuando Δ = b² − 4ac < 0, la raíz cuadrada del discriminante no es real, por lo que las soluciones son complejas conjugadas: x = (−b ± i√|Δ|) / 2a."
+            },
+            {
+              "pregunta": "Las raíces de la ecuación x² − 5x + 6 = 0 son:",
+              "opciones": [
+                "x = 1 y x = 6",
+                "x = 2 y x = 3",
+                "x = −2 y x = −3",
+                "x = −1 y x = −6"
+              ],
+              "correcta": 1,
+              "explicacion": "Factorizando: x² − 5x + 6 = (x − 2)(x − 3) = 0. Por lo tanto x = 2 o x = 3. Se verifica: 2 + 3 = 5 (opuesto de −5) y 2 · 3 = 6 (término independiente)."
+            },
+            {
+              "pregunta": "El conjunto solución de la inecuación x² − 4x + 3 > 0 es:",
+              "opciones": [
+                "1 < x < 3",
+                "x < 1 o x > 3",
+                "x > 3",
+                "x < 1"
+              ],
+              "correcta": 1,
+              "explicacion": "Factorizando: (x − 1)(x − 3) > 0. El producto es positivo cuando ambos factores son del mismo signo: x < 1 (ambos negativos) o x > 3 (ambos positivos)."
+            }
+          ]
+        },
+        {
+          "titulo": "Progresiones aritméticas y geométricas",
+          "conceptosClave": [
+            "sucesión",
+            "progresión aritmética",
+            "razón aritmética",
+            "término general",
+            "progresión geométrica",
+            "razón geométrica",
+            "suma de términos"
+          ],
+          "objetivos": [
+            "Identificar y diferenciar progresiones aritméticas y geométricas a partir de sus propiedades",
+            "Calcular el término general y la suma de los primeros n términos de cada tipo de progresión",
+            "Resolver problemas de aplicación que involucren sucesiones"
+          ],
+          "contenidos": [
+            "Progresiones aritméticas: definición, razón (d), término general aₙ = a₁ + (n−1)d, y suma Sₙ = n(a₁ + aₙ)/2",
+            "Progresiones geométricas: definición, razón (r), término general aₙ = a₁ · rⁿ⁻¹, y suma Sₙ = a₁(rⁿ − 1)/(r − 1)",
+            "Aplicaciones: interés simple y compuesto, crecimiento poblacional, problemas contextualizados"
+          ],
+          "quiz": [
+            {
+              "pregunta": "En la progresión aritmética 3, 7, 11, 15, ..., ¿cuál es el término a₁₀?",
+              "opciones": [
+                "39",
+                "43",
+                "35",
+                "40"
+              ],
+              "correcta": 0,
+              "explicacion": "La razón es d = 7 − 3 = 4. El término general es aₙ = 3 + (n−1)·4. Para n = 10: a₁₀ = 3 + 9·4 = 3 + 36 = 39."
+            },
+            {
+              "pregunta": "¿Cuál es la suma de los primeros 5 términos de la progresión geométrica 2, 6, 18, 54, ...?",
+              "opciones": [
+                "162",
+                "242",
+                "200",
+                "120"
+              ],
+              "correcta": 1,
+              "explicacion": "La razón es r = 3 y a₁ = 2. S₅ = 2·(3⁵ − 1)/(3 − 1) = 2·(243 − 1)/2 = 242."
+            },
+            {
+              "pregunta": "Una progresión geométrica tiene a₁ = 5 y r = 1/2. ¿Cuál es el tercer término?",
+              "opciones": [
+                "5/2",
+                "5/4",
+                "5/8",
+                "10"
+              ],
+              "correcta": 1,
+              "explicacion": "a₃ = a₁ · r² = 5 · (1/2)² = 5 · 1/4 = 5/4. Cada término se obtiene multiplicando el anterior por la razón r = 1/2."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Funciones",
+      "temas": [
+        {
+          "titulo": "Concepto de función y propiedades",
+          "conceptosClave": [
+            "función",
+            "dominio",
+            "codominio",
+            "imagen",
+            "preimagen",
+            "función inyectiva",
+            "función sobreyectiva",
+            "función biyectiva",
+            "función inversa",
+            "composición de funciones"
+          ],
+          "objetivos": [
+            "Definir función como correspondencia entre conjuntos y determinar su dominio, codominio e imagen",
+            "Clasificar funciones según su inyectividad, sobreyectividad y biyectividad",
+            "Calcular la composición y la inversa de funciones dadas"
+          ],
+          "contenidos": [
+            "Definición de función, relación con el producto cartesiano, notación f: A → B, prueba de la recta vertical",
+            "Dominio, codominio, imagen y preimagen; funciones inyectivas (prueba de la recta horizontal), sobreyectivas y biyectivas",
+            "Composición de funciones (f ∘ g) y función inversa f⁻¹: existencia, cálculo y representación gráfica (reflexión respecto a y = x)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es el dominio de la función f(x) = √(x − 2)?",
+              "opciones": [
+                "x ≥ 0",
+                "x ≥ 2",
+                "x > 2",
+                "Todos los reales"
+              ],
+              "correcta": 1,
+              "explicacion": "Para que la raíz cuadrada esté definida en los reales, el radicando debe ser no negativo: x − 2 ≥ 0, por lo tanto x ≥ 2. El dominio es [2, +∞)."
+            },
+            {
+              "pregunta": "Si f(x) = 2x + 1 y g(x) = x², ¿cuánto vale (f ∘ g)(3)?",
+              "opciones": [
+                "49",
+                "19",
+                "37",
+                "7"
+              ],
+              "correcta": 1,
+              "explicacion": "(f ∘ g)(3) = f(g(3)) = f(3²) = f(9) = 2·9 + 1 = 19. Primero se aplica g y luego f al resultado."
+            },
+            {
+              "pregunta": "Una función f: A → B es biyectiva cuando es:",
+              "opciones": [
+                "Solo inyectiva",
+                "Solo sobreyectiva",
+                "Inyectiva y sobreyectiva a la vez",
+                "Ni inyectiva ni sobreyectiva"
+              ],
+              "correcta": 2,
+              "explicacion": "Una función biyectiva es simultáneamente inyectiva (cada elemento de B tiene a lo sumo una preimagen) y sobreyectiva (cada elemento de B tiene al menos una preimagen). Esto garantiza una correspondencia uno a uno."
+            }
+          ]
+        },
+        {
+          "titulo": "Funciones lineales, cuadráticas y polinómicas",
+          "conceptosClave": [
+            "función lineal",
+            "pendiente",
+            "ordenada al origen",
+            "función cuadrática",
+            "parábola",
+            "vértice",
+            "eje de simetría",
+            "concavidad",
+            "ceros de la función"
+          ],
+          "objetivos": [
+            "Graficar funciones lineales y cuadráticas identificando sus elementos característicos",
+            "Determinar el vértice, eje de simetría, concavidad y ceros de una función cuadrática",
+            "Modelizar situaciones de la vida real mediante funciones lineales y cuadráticas"
+          ],
+          "contenidos": [
+            "Función lineal f(x) = mx + b: pendiente, ordenada al origen, crecimiento/decrecimiento, gráfica e intersecciones",
+            "Función cuadrática f(x) = ax² + bx + c: forma canónica, vértice V = (−b/2a, f(−b/2a)), eje de simetría, concavidad y raíces",
+            "Análisis completo de gráficas: dominio, imagen, intervalos de crecimiento/decrecimiento, máximo/mínimo y problemas de optimización"
+          ],
+          "quiz": [
+            {
+              "pregunta": "La función f(x) = −3x² + 6x − 1 tiene su vértice en:",
+              "opciones": [
+                "(1, 2)",
+                "(−1, −10)",
+                "(3, −10)",
+                "(2, −1)"
+              ],
+              "correcta": 0,
+              "explicacion": "El vértice tiene xᵥ = −b/(2a) = −6/(2·(−3)) = 1. Luego yᵥ = −3(1)² + 6(1) − 1 = −3 + 6 − 1 = 2. El vértice es (1, 2)."
+            },
+            {
+              "pregunta": "Si una función lineal pasa por los puntos (1, 3) y (4, 9), ¿cuál es su pendiente?",
+              "opciones": [
+                "3",
+                "2",
+                "6",
+                "1/2"
+              ],
+              "correcta": 1,
+              "explicacion": "La pendiente se calcula como m = (y₂ − y₁)/(x₂ − x₁) = (9 − 3)/(4 − 1) = 6/3 = 2."
+            },
+            {
+              "pregunta": "La parábola f(x) = 2x² − 8x + 6 abre hacia:",
+              "opciones": [
+                "Arriba, porque a > 0",
+                "Abajo, porque a < 0",
+                "La derecha",
+                "La izquierda"
+              ],
+              "correcta": 0,
+              "explicacion": "El coeficiente principal es a = 2 > 0, por lo que la parábola abre hacia arriba (es cóncava hacia arriba) y tiene un valor mínimo en su vértice."
+            }
+          ]
+        },
+        {
+          "titulo": "Funciones exponenciales, logarítmicas y trigonométricas",
+          "conceptosClave": [
+            "función exponencial",
+            "base",
+            "crecimiento exponencial",
+            "decrecimiento exponencial",
+            "asíntota horizontal",
+            "logaritmo",
+            "función logarítmica",
+            "función seno",
+            "función coseno",
+            "función tangente",
+            "período",
+            "amplitud"
+          ],
+          "objetivos": [
+            "Graficar funciones exponenciales y logarítmicas, identificando asíntotas, dominio e imagen",
+            "Aplicar propiedades de logaritmos para resolver ecuaciones exponenciales y logarítmicas",
+            "Representar las funciones trigonométricas seno, coseno y tangente, e identificar período, amplitud y desfase"
+          ],
+          "contenidos": [
+            "Función exponencial f(x) = aˣ (a > 0, a ≠ 1): propiedades, gráfica, asíntota y = 0, crecimiento/decrecimiento según la base",
+            "Función logarítmica f(x) = logₐ(x): definición como inversa de la exponencial, propiedades de los logaritmos (producto, cociente, potencia) y cambio de base",
+            "Funciones trigonométricas: definición en el círculo unitario, gráficas de sen(x), cos(x) y tan(x), período, amplitud y aplicaciones"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es el dominio de la función f(x) = log₂(x)?",
+              "opciones": [
+                "Todos los reales",
+                "x > 0",
+                "x ≥ 0",
+                "x ≥ 1"
+              ],
+              "correcta": 1,
+              "explicacion": "El logaritmo solo está definido para argumentos positivos. Por lo tanto, el dominio de f(x) = log₂(x) es x > 0, es decir, el intervalo (0, +∞)."
+            },
+            {
+              "pregunta": "Si log₁₀(x) + log₁₀(y) = log₁₀(z), entonces z es igual a:",
+              "opciones": [
+                "x + y",
+                "x · y",
+                "x / y",
+                "xʸ"
+              ],
+              "correcta": 1,
+              "explicacion": "Por la propiedad del logaritmo del producto: log(x) + log(y) = log(x · y). Por lo tanto z = x · y."
+            },
+            {
+              "pregunta": "¿Cuál es el período de la función f(x) = sen(x)?",
+              "opciones": [
+                "π",
+                "2π",
+                "π/2",
+                "4π"
+              ],
+              "correcta": 1,
+              "explicacion": "La función seno es periódica con período 2π, es decir, sen(x + 2π) = sen(x) para todo x. El ciclo completo de la curva se repite cada 2π unidades."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "titulo": "Geometría Analítica",
+      "temas": [
+        {
+          "titulo": "La recta en el plano",
+          "conceptosClave": [
+            "ecuación de la recta",
+            "pendiente",
+            "ordenada al origen",
+            "ecuación explícita",
+            "ecuación implícita",
+            "ecuación punto-pendiente",
+            "rectas paralelas",
+            "rectas perpendiculares",
+            "distancia entre punto y recta",
+            "punto medio"
+          ],
+          "objetivos": [
+            "Obtener la ecuación de una recta dados diferentes elementos (dos puntos, punto y pendiente, pendiente y ordenada)",
+            "Determinar paralelismo y perpendicularidad entre rectas mediante sus pendientes",
+            "Calcular distancias (entre puntos, de un punto a una recta) y punto medio de un segmento"
+          ],
+          "contenidos": [
+            "Ecuaciones de la recta: explícita (y = mx + b), implícita (Ax + By + C = 0) y segmentaria; recta que pasa por dos puntos",
+            "Condiciones de paralelismo (m₁ = m₂) y perpendicularidad (m₁ · m₂ = −1); intersección de rectas y sistemas lineales",
+            "Distancia entre dos puntos, punto medio de un segmento y distancia de un punto a una recta d = |Ax₀ + By₀ + C| / √(A² + B²)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la pendiente de una recta perpendicular a la recta y = 3x + 2?",
+              "opciones": [
+                "3",
+                "−3",
+                "−1/3",
+                "1/3"
+              ],
+              "correcta": 2,
+              "explicacion": "Si la pendiente de una recta es m₁ = 3, una recta perpendicular tendrá pendiente m₂ tal que m₁ · m₂ = −1, es decir, m₂ = −1/3."
+            },
+            {
+              "pregunta": "¿Cuál es la distancia entre los puntos A(1, 2) y B(4, 6)?",
+              "opciones": [
+                "7",
+                "5",
+                "√7",
+                "25"
+              ],
+              "correcta": 1,
+              "explicacion": "d = √((4−1)² + (6−2)²) = √(9 + 16) = √25 = 5. Se aplica la fórmula de distancia entre dos puntos en el plano."
+            },
+            {
+              "pregunta": "La ecuación de la recta que pasa por (2, 3) con pendiente m = −1 es:",
+              "opciones": [
+                "y = −x + 5",
+                "y = −x + 1",
+                "y = x + 1",
+                "y = −x − 5"
+              ],
+              "correcta": 0,
+              "explicacion": "Usando la ecuación punto-pendiente: y − 3 = −1(x − 2), entonces y − 3 = −x + 2, por lo tanto y = −x + 5."
+            }
+          ]
+        },
+        {
+          "titulo": "Cónicas: circunferencia, elipse, parábola e hipérbola",
+          "conceptosClave": [
+            "cónica",
+            "circunferencia",
+            "centro",
+            "radio",
+            "elipse",
+            "semieje mayor",
+            "semieje menor",
+            "foco",
+            "parábola",
+            "directriz",
+            "hipérbola",
+            "asíntotas",
+            "excentricidad"
+          ],
+          "objetivos": [
+            "Identificar y escribir la ecuación canónica de cada cónica a partir de sus elementos",
+            "Determinar centro, focos, vértices, ejes y excentricidad de elipses e hipérbolas",
+            "Graficar cónicas y resolver problemas geométricos que las involucren"
+          ],
+          "contenidos": [
+            "Circunferencia: ecuación canónica (x − h)² + (y − k)² = r², centro, radio, ecuación general y completar cuadrados",
+            "Elipse: ecuación canónica, semiejes a y b, focos, excentricidad e = c/a (0 < e < 1) y propiedades reflectivas",
+            "Parábola (y = ax² + bx + c como cónica, ecuación con foco y directriz) e hipérbola (ecuación canónica, asíntotas y excentricidad e > 1)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "La ecuación (x − 1)² + (y + 3)² = 16 representa una circunferencia con centro y radio:",
+              "opciones": [
+                "Centro (1, −3) y radio 4",
+                "Centro (−1, 3) y radio 16",
+                "Centro (1, 3) y radio 4",
+                "Centro (−1, −3) y radio 16"
+              ],
+              "correcta": 0,
+              "explicacion": "De la forma canónica (x − h)² + (y − k)² = r², se identifica h = 1, k = −3 (notar el signo) y r² = 16, por lo que r = 4. El centro es (1, −3)."
+            },
+            {
+              "pregunta": "En la elipse x²/25 + y²/9 = 1, ¿cuál es la longitud del semieje mayor?",
+              "opciones": [
+                "3",
+                "5",
+                "9",
+                "25"
+              ],
+              "correcta": 1,
+              "explicacion": "En la ecuación x²/a² + y²/b² = 1 con a > b, a² = 25 y b² = 9, por lo que a = 5 es el semieje mayor (sobre el eje x) y b = 3 es el semieje menor."
+            },
+            {
+              "pregunta": "¿Cuál es la excentricidad de una circunferencia?",
+              "opciones": [
+                "0",
+                "1",
+                "Mayor que 1",
+                "Entre 0 y 1"
+              ],
+              "correcta": 0,
+              "explicacion": "La circunferencia es un caso particular de elipse donde los dos focos coinciden con el centro (c = 0). Su excentricidad es e = c/a = 0. En la elipse 0 < e < 1, en la parábola e = 1 y en la hipérbola e > 1."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

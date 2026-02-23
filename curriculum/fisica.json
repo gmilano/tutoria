@@ -1,0 +1,603 @@
+{
+  "id": "fisica-4",
+  "nombre": "Física",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "⚡",
+  "color": "#f59e0b",
+  "descripcion": "Mecánica, termodinámica, electricidad y ondas",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Cinemática",
+      "temas": [
+        {
+          "titulo": "Movimiento Rectilíneo Uniforme (MRU)",
+          "conceptosClave": [
+            "posición",
+            "desplazamiento",
+            "velocidad constante",
+            "trayectoria rectilínea",
+            "sistema de referencia",
+            "ecuación horaria del MRU"
+          ],
+          "objetivos": [
+            "Comprender el concepto de movimiento relativo y la importancia del sistema de referencia",
+            "Resolver problemas de encuentro y alcance utilizando la ecuación horaria x = x₀ + v·t",
+            "Interpretar y construir gráficas posición-tiempo y velocidad-tiempo del MRU"
+          ],
+          "contenidos": [
+            "Magnitudes cinemáticas fundamentales: posición, desplazamiento, distancia recorrida y velocidad",
+            "Ecuación horaria del MRU y su representación gráfica en diagramas x-t y v-t",
+            "Problemas de encuentro y alcance entre dos móviles con MRU"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Un auto viaja a 72 km/h. ¿Cuántos metros recorre en 5 segundos?",
+              "opciones": ["360 m", "100 m", "200 m", "50 m"],
+              "correcta": 1,
+              "explicacion": "Primero se convierte 72 km/h a m/s: 72 ÷ 3,6 = 20 m/s. Luego, d = v · t = 20 m/s × 5 s = 100 m."
+            },
+            {
+              "pregunta": "En un gráfico posición-tiempo de un MRU, ¿qué representa la pendiente de la recta?",
+              "opciones": ["La aceleración del móvil", "La velocidad del móvil", "La posición inicial", "La distancia total recorrida"],
+              "correcta": 1,
+              "explicacion": "En un diagrama x-t del MRU, la pendiente de la recta (Δx/Δt) representa la velocidad constante del móvil."
+            },
+            {
+              "pregunta": "Dos autos parten del mismo punto en sentidos opuestos, uno a 60 km/h y otro a 40 km/h. ¿A qué distancia estarán después de 2 horas?",
+              "opciones": ["40 km", "120 km", "200 km", "100 km"],
+              "correcta": 2,
+              "explicacion": "Al ir en sentidos opuestos, las distancias se suman: d₁ = 60 × 2 = 120 km; d₂ = 40 × 2 = 80 km. Distancia total = 120 + 80 = 200 km."
+            }
+          ]
+        },
+        {
+          "titulo": "Movimiento Rectilíneo Uniformemente Acelerado (MRUA)",
+          "conceptosClave": [
+            "aceleración constante",
+            "ecuaciones del MRUA",
+            "velocidad instantánea",
+            "velocidad media",
+            "gráfica v-t",
+            "área bajo la curva v-t"
+          ],
+          "objetivos": [
+            "Aplicar las ecuaciones del MRUA para resolver problemas de aceleración y frenado",
+            "Interpretar gráficas v-t y x-t del MRUA, relacionando pendiente y área con magnitudes cinemáticas",
+            "Diferenciar entre velocidad media e instantánea en movimientos acelerados"
+          ],
+          "contenidos": [
+            "Concepto de aceleración como tasa de cambio de la velocidad y las ecuaciones del MRUA: v = v₀ + a·t; x = x₀ + v₀·t + ½·a·t²; v² = v₀² + 2·a·Δx",
+            "Interpretación gráfica: pendiente en diagrama v-t como aceleración, área bajo v-t como desplazamiento",
+            "Resolución de problemas de frenado, aceleración desde el reposo y movimientos combinados MRU-MRUA"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Un móvil parte del reposo y acelera a 4 m/s² durante 6 segundos. ¿Qué velocidad alcanza?",
+              "opciones": ["10 m/s", "24 m/s", "12 m/s", "48 m/s"],
+              "correcta": 1,
+              "explicacion": "Usando v = v₀ + a·t con v₀ = 0: v = 0 + 4 × 6 = 24 m/s."
+            },
+            {
+              "pregunta": "En un gráfico velocidad-tiempo del MRUA, ¿qué representa el área bajo la recta?",
+              "opciones": ["La aceleración del móvil", "La fuerza aplicada", "El desplazamiento del móvil", "La energía cinética"],
+              "correcta": 2,
+              "explicacion": "El área bajo la curva v-t representa el desplazamiento (Δx) del móvil en el intervalo de tiempo considerado."
+            },
+            {
+              "pregunta": "Un auto frena uniformemente desde 20 m/s hasta detenerse en 4 segundos. ¿Cuál es su aceleración?",
+              "opciones": ["-5 m/s²", "5 m/s²", "-80 m/s²", "80 m/s²"],
+              "correcta": 0,
+              "explicacion": "Usando a = (v - v₀) / t = (0 - 20) / 4 = -5 m/s². El signo negativo indica desaceleración (frenado)."
+            }
+          ]
+        },
+        {
+          "titulo": "Caída libre y tiro vertical",
+          "conceptosClave": [
+            "aceleración de la gravedad",
+            "caída libre",
+            "tiro vertical hacia arriba",
+            "altura máxima",
+            "tiempo de vuelo",
+            "independencia de la masa"
+          ],
+          "objetivos": [
+            "Comprender que la caída libre es un caso particular de MRUA con a = g ≈ 9,8 m/s²",
+            "Calcular alturas máximas, tiempos de subida y de vuelo en problemas de tiro vertical",
+            "Reconocer que en ausencia de rozamiento todos los cuerpos caen con la misma aceleración independientemente de su masa"
+          ],
+          "contenidos": [
+            "Caída libre como MRUA vertical: ecuaciones adaptadas con g ≈ 9,8 m/s² y convención de signos",
+            "Tiro vertical hacia arriba: velocidad cero en el punto más alto, simetría temporal entre subida y bajada",
+            "Experiencia de Galileo y el principio de independencia de la masa en la caída libre"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Se deja caer una piedra desde un edificio de 45 m de altura (g = 10 m/s²). ¿Cuánto tarda en llegar al suelo?",
+              "opciones": ["2 s", "3 s", "4,5 s", "9 s"],
+              "correcta": 1,
+              "explicacion": "Usando h = ½·g·t², despejamos t = √(2h/g) = √(2×45/10) = √9 = 3 s."
+            },
+            {
+              "pregunta": "Se lanza una pelota verticalmente hacia arriba con v₀ = 30 m/s (g = 10 m/s²). ¿Qué altura máxima alcanza?",
+              "opciones": ["30 m", "90 m", "45 m", "60 m"],
+              "correcta": 2,
+              "explicacion": "En la altura máxima v = 0. Usando v² = v₀² - 2g·h: 0 = 900 - 20h, entonces h = 45 m."
+            },
+            {
+              "pregunta": "Si se dejan caer simultáneamente una bola de acero y una pluma en el vacío, ¿qué sucede?",
+              "opciones": [
+                "La bola de acero llega primero por ser más pesada",
+                "La pluma llega primero por ser más liviana",
+                "Ambas llegan al mismo tiempo porque en el vacío no hay resistencia del aire",
+                "Ninguna cae porque están en el vacío"
+              ],
+              "correcta": 2,
+              "explicacion": "En el vacío no hay resistencia del aire, por lo que todos los cuerpos caen con la misma aceleración g, independientemente de su masa. Llegan al mismo tiempo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Dinámica",
+      "temas": [
+        {
+          "titulo": "Leyes de Newton",
+          "conceptosClave": [
+            "inercia",
+            "primera ley de Newton",
+            "segunda ley de Newton",
+            "tercera ley de Newton",
+            "fuerza neta",
+            "masa como medida de la inercia",
+            "par acción-reacción"
+          ],
+          "objetivos": [
+            "Enunciar e interpretar las tres leyes de Newton y aplicarlas a situaciones cotidianas",
+            "Resolver problemas de dinámica utilizando F_neta = m·a con diagramas de cuerpo libre",
+            "Identificar correctamente los pares de acción y reacción en diversas interacciones"
+          ],
+          "contenidos": [
+            "Primera ley (inercia): un cuerpo permanece en reposo o MRU si la fuerza neta es cero; concepto de sistemas de referencia inerciales",
+            "Segunda ley: F_neta = m·a como relación entre fuerza resultante, masa y aceleración; diagramas de cuerpo libre",
+            "Tercera ley: toda fuerza tiene una reacción igual y opuesta sobre cuerpos distintos; ejemplos en la vida cotidiana"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Se aplica una fuerza neta de 12 N a un cuerpo de 4 kg. ¿Cuál es su aceleración?",
+              "opciones": ["48 m/s²", "3 m/s²", "0,33 m/s²", "16 m/s²"],
+              "correcta": 1,
+              "explicacion": "Por la segunda ley de Newton: a = F/m = 12 N / 4 kg = 3 m/s²."
+            },
+            {
+              "pregunta": "Un pasajero en un ómnibus se inclina hacia adelante cuando el ómnibus frena bruscamente. ¿Qué ley explica esto?",
+              "opciones": [
+                "Tercera ley de Newton (acción y reacción)",
+                "Segunda ley de Newton (F = m·a)",
+                "Primera ley de Newton (inercia)",
+                "Ley de gravitación universal"
+              ],
+              "correcta": 2,
+              "explicacion": "La primera ley de Newton (ley de inercia) explica que el cuerpo del pasajero tiende a mantener su estado de movimiento cuando el ómnibus desacelera."
+            },
+            {
+              "pregunta": "Cuando una persona camina, empuja el suelo hacia atrás. ¿Cuál es la reacción según la tercera ley de Newton?",
+              "opciones": [
+                "La gravedad que tira a la persona hacia abajo",
+                "El suelo empuja a la persona hacia adelante",
+                "El aire empuja a la persona hacia atrás",
+                "La persona frena el movimiento de la Tierra"
+              ],
+              "correcta": 1,
+              "explicacion": "Por la tercera ley de Newton, si la persona empuja el suelo hacia atrás, el suelo ejerce una fuerza de reacción sobre la persona hacia adelante, permitiéndole avanzar."
+            }
+          ]
+        },
+        {
+          "titulo": "Fuerzas de rozamiento y aplicaciones de la dinámica",
+          "conceptosClave": [
+            "fuerza de rozamiento estático",
+            "fuerza de rozamiento cinético",
+            "coeficiente de rozamiento",
+            "fuerza normal",
+            "peso",
+            "plano inclinado"
+          ],
+          "objetivos": [
+            "Diferenciar entre rozamiento estático y cinético y calcular sus magnitudes usando μ·N",
+            "Resolver problemas de dinámica en planos horizontales e inclinados con rozamiento",
+            "Construir e interpretar diagramas de cuerpo libre completos incluyendo peso, normal, rozamiento y fuerzas aplicadas"
+          ],
+          "contenidos": [
+            "Fuerza peso (P = m·g), fuerza normal y su relación en superficies horizontales e inclinadas",
+            "Rozamiento estático (f_s ≤ μ_s·N) y cinético (f_k = μ_k·N): leyes empíricas y coeficientes",
+            "Aplicaciones: movimiento en planos inclinados, sistemas de poleas simples y problemas de equilibrio"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Un bloque de 10 kg está sobre una superficie horizontal con μk = 0,3 (g = 10 m/s²). ¿Cuánto vale la fuerza de rozamiento cinético?",
+              "opciones": ["3 N", "30 N", "100 N", "0,3 N"],
+              "correcta": 1,
+              "explicacion": "La normal en superficie horizontal es N = m·g = 10 × 10 = 100 N. La fuerza de rozamiento cinético es f_k = μ_k · N = 0,3 × 100 = 30 N."
+            },
+            {
+              "pregunta": "¿Por qué el coeficiente de rozamiento estático es generalmente mayor que el cinético?",
+              "opciones": [
+                "Porque los objetos en movimiento pesan más",
+                "Porque las superficies en reposo tienen mayor área de contacto microscópico e interacciones adhesivas",
+                "Porque el rozamiento cinético depende de la velocidad",
+                "Porque la normal es mayor cuando el objeto está en reposo"
+              ],
+              "correcta": 1,
+              "explicacion": "Cuando dos superficies están en contacto estático, las irregularidades microscópicas se entrelazan más firmemente, generando mayor resistencia a iniciar el movimiento que a mantenerlo."
+            },
+            {
+              "pregunta": "En un plano inclinado sin rozamiento, ¿qué componente del peso produce la aceleración del cuerpo?",
+              "opciones": [
+                "La componente perpendicular al plano (P·cos θ)",
+                "La componente paralela al plano (P·sen θ)",
+                "El peso total del cuerpo",
+                "La fuerza normal"
+              ],
+              "correcta": 1,
+              "explicacion": "En un plano inclinado, el peso se descompone: P·sen θ es la componente paralela al plano (causa la aceleración) y P·cos θ es la componente perpendicular (equilibrada por la normal)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Trabajo, Energía y Potencia",
+      "temas": [
+        {
+          "titulo": "Trabajo mecánico y potencia",
+          "conceptosClave": [
+            "trabajo de una fuerza",
+            "trabajo positivo y negativo",
+            "trabajo nulo",
+            "potencia mecánica",
+            "rendimiento",
+            "joule",
+            "watt"
+          ],
+          "objetivos": [
+            "Calcular el trabajo realizado por una fuerza constante usando W = F·d·cos θ y analizar su signo",
+            "Comprender el concepto de potencia como rapidez con que se realiza trabajo y resolver problemas con P = W/t",
+            "Aplicar el concepto de rendimiento para evaluar la eficiencia de máquinas y dispositivos"
+          ],
+          "contenidos": [
+            "Definición de trabajo mecánico: W = F·d·cos θ; trabajo positivo (motor), negativo (resistente) y nulo (fuerza perpendicular al desplazamiento)",
+            "Potencia mecánica: P = W/t = F·v; unidades (watt, caballo de fuerza) y aplicaciones prácticas",
+            "Rendimiento de máquinas: η = W_útil / W_total; pérdidas por rozamiento y disipación"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Una persona empuja una caja 5 m aplicando una fuerza horizontal de 40 N. ¿Cuánto trabajo realiza?",
+              "opciones": ["8 J", "200 J", "45 J", "0 J"],
+              "correcta": 1,
+              "explicacion": "Como la fuerza es paralela al desplazamiento (θ = 0°), W = F · d · cos 0° = 40 × 5 × 1 = 200 J."
+            },
+            {
+              "pregunta": "¿Cuánto trabajo realiza la fuerza normal sobre un libro que se desliza horizontalmente sobre una mesa?",
+              "opciones": ["Depende de la masa del libro", "Igual al peso por la distancia", "Cero", "Igual al rozamiento por la distancia"],
+              "correcta": 2,
+              "explicacion": "La fuerza normal es perpendicular al desplazamiento horizontal (θ = 90°). Como cos 90° = 0, el trabajo de la normal es W = F·d·cos 90° = 0."
+            },
+            {
+              "pregunta": "Un motor eléctrico realiza 6000 J de trabajo en 30 s. ¿Cuál es su potencia?",
+              "opciones": ["180 000 W", "200 W", "0,005 W", "20 W"],
+              "correcta": 1,
+              "explicacion": "La potencia es P = W/t = 6000 J / 30 s = 200 W."
+            }
+          ]
+        },
+        {
+          "titulo": "Energía cinética, potencial y conservación de la energía",
+          "conceptosClave": [
+            "energía cinética",
+            "energía potencial gravitatoria",
+            "energía mecánica",
+            "conservación de la energía mecánica",
+            "teorema del trabajo y la energía",
+            "fuerzas conservativas"
+          ],
+          "objetivos": [
+            "Calcular la energía cinética y la energía potencial gravitatoria de un cuerpo en distintas situaciones",
+            "Aplicar el principio de conservación de la energía mecánica en sistemas sin rozamiento",
+            "Utilizar el teorema del trabajo y la energía cinética para resolver problemas donde actúan fuerzas no conservativas"
+          ],
+          "contenidos": [
+            "Energía cinética (Ek = ½mv²) y teorema del trabajo-energía cinética: W_neto = ΔEk",
+            "Energía potencial gravitatoria (Ep = mgh) y fuerzas conservativas; elección del nivel de referencia",
+            "Principio de conservación de la energía mecánica: Ek₁ + Ep₁ = Ek₂ + Ep₂ en ausencia de fuerzas disipativas"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Un cuerpo de 2 kg se mueve a 6 m/s. ¿Cuál es su energía cinética?",
+              "opciones": ["12 J", "36 J", "72 J", "6 J"],
+              "correcta": 1,
+              "explicacion": "Ek = ½ · m · v² = ½ × 2 × 6² = ½ × 2 × 36 = 36 J."
+            },
+            {
+              "pregunta": "Una pelota se suelta desde 20 m de altura (g = 10 m/s²). ¿Con qué velocidad llega al suelo si no hay rozamiento?",
+              "opciones": ["10 m/s", "20 m/s", "200 m/s", "14,1 m/s"],
+              "correcta": 1,
+              "explicacion": "Por conservación de energía: mgh = ½mv², entonces v = √(2gh) = √(2 × 10 × 20) = √400 = 20 m/s."
+            },
+            {
+              "pregunta": "¿Por qué una montaña rusa no puede alcanzar una altura mayor que la de partida sin motor?",
+              "opciones": [
+                "Porque la velocidad siempre aumenta en las bajadas",
+                "Porque la energía mecánica se conserva: no puede ganar más energía potencial de la que tenía inicialmente",
+                "Porque la masa del carro aumenta con la velocidad",
+                "Porque la gravedad solo actúa hacia abajo"
+              ],
+              "correcta": 1,
+              "explicacion": "Por conservación de la energía mecánica, la energía potencial máxima (y por tanto la altura máxima) no puede superar la energía total inicial. En la práctica, el rozamiento hace que pierda energía, alcanzando incluso menos altura."
+            }
+          ]
+        },
+        {
+          "titulo": "Calor y termodinámica básica",
+          "conceptosClave": [
+            "temperatura",
+            "calor",
+            "equilibrio térmico",
+            "calor específico",
+            "cambios de estado",
+            "calor latente",
+            "primera ley de la termodinámica"
+          ],
+          "objetivos": [
+            "Diferenciar entre calor y temperatura, comprendiendo que el calor es una transferencia de energía",
+            "Resolver problemas de calorimetría utilizando Q = m·c·ΔT y Q = m·L",
+            "Enunciar la primera ley de la termodinámica y relacionarla con la conservación de la energía"
+          ],
+          "contenidos": [
+            "Temperatura como magnitud que mide la agitación molecular; escalas Celsius y Kelvin; equilibrio térmico (ley cero de la termodinámica)",
+            "Calor como energía en tránsito: calor específico (Q = m·c·ΔT), calor latente (Q = m·L) y curvas de calentamiento",
+            "Primera ley de la termodinámica: ΔU = Q - W; relación entre calor, trabajo y energía interna de un sistema"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuánto calor se necesita para elevar la temperatura de 2 kg de agua de 20 °C a 70 °C? (c_agua = 4180 J/(kg·°C))",
+              "opciones": ["418 000 J", "83 600 J", "8360 J", "209 000 J"],
+              "correcta": 0,
+              "explicacion": "Q = m · c · ΔT = 2 × 4180 × (70 - 20) = 2 × 4180 × 50 = 418 000 J."
+            },
+            {
+              "pregunta": "¿Qué sucede con la temperatura del agua mientras hierve a presión atmosférica normal?",
+              "opciones": [
+                "Sigue aumentando porque se le sigue dando calor",
+                "Se mantiene constante a 100 °C mientras dura el cambio de estado",
+                "Disminuye porque el vapor se lleva energía",
+                "Varía según la cantidad de agua"
+              ],
+              "correcta": 1,
+              "explicacion": "Durante un cambio de estado (ebullición), la temperatura se mantiene constante. El calor suministrado se usa como calor latente para romper los enlaces intermoleculares, no para aumentar la temperatura."
+            },
+            {
+              "pregunta": "Según la primera ley de la termodinámica, si un gas absorbe 500 J de calor y realiza 200 J de trabajo, ¿cuánto varía su energía interna?",
+              "opciones": ["700 J", "300 J", "-300 J", "200 J"],
+              "correcta": 1,
+              "explicacion": "Por la primera ley: ΔU = Q - W = 500 - 200 = 300 J. La energía interna del gas aumenta 300 J."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Electricidad y Magnetismo",
+      "temas": [
+        {
+          "titulo": "Carga eléctrica y ley de Coulomb",
+          "conceptosClave": [
+            "carga eléctrica",
+            "protón",
+            "electrón",
+            "conservación de la carga",
+            "ley de Coulomb",
+            "constante de Coulomb",
+            "campo eléctrico"
+          ],
+          "objetivos": [
+            "Comprender la naturaleza de la carga eléctrica, sus tipos y el principio de conservación de la carga",
+            "Aplicar la ley de Coulomb para calcular la fuerza entre cargas puntuales",
+            "Interpretar el concepto de campo eléctrico como la fuerza por unidad de carga"
+          ],
+          "contenidos": [
+            "Carga eléctrica: propiedades, carga elemental, métodos de electrización (frotamiento, contacto, inducción) y conservación de la carga",
+            "Ley de Coulomb: F = k·|q₁·q₂|/r²; analogía y diferencias con la ley de gravitación universal",
+            "Campo eléctrico: E = F/q; líneas de campo eléctrico de cargas puntuales positivas y negativas"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Dos cargas de +2 μC y -3 μC están separadas 0,1 m (k = 9×10⁹ N·m²/C²). ¿Cuál es la fuerza entre ellas?",
+              "opciones": ["5,4 N de atracción", "5,4 N de repulsión", "0,54 N de atracción", "54 N de repulsión"],
+              "correcta": 0,
+              "explicacion": "F = k·|q₁·q₂|/r² = 9×10⁹ × 2×10⁻⁶ × 3×10⁻⁶ / (0,1)² = 9×10⁹ × 6×10⁻¹² / 0,01 = 0,054 / 0,01 = 5,4 N. Es de atracción porque las cargas tienen signos opuestos."
+            },
+            {
+              "pregunta": "Si se duplica la distancia entre dos cargas puntuales, ¿cómo cambia la fuerza eléctrica?",
+              "opciones": [
+                "Se reduce a la mitad",
+                "Se reduce a la cuarta parte",
+                "Se duplica",
+                "Se cuadruplica"
+              ],
+              "correcta": 1,
+              "explicacion": "La ley de Coulomb establece que F es inversamente proporcional a r². Si r se duplica (2r), F' = F/(2²) = F/4. La fuerza se reduce a la cuarta parte."
+            },
+            {
+              "pregunta": "Un globo frotado contra el pelo atrae trocitos de papel. ¿Qué método de electrización actúa sobre el papel?",
+              "opciones": [
+                "Electrización por frotamiento",
+                "Electrización por contacto",
+                "Electrización por inducción",
+                "Electrización por radiación"
+              ],
+              "correcta": 2,
+              "explicacion": "El globo cargado induce una separación de cargas en el papel (inducción), acercando las cargas opuestas y generando atracción, sin necesidad de contacto directo."
+            }
+          ]
+        },
+        {
+          "titulo": "Circuitos eléctricos y ley de Ohm",
+          "conceptosClave": [
+            "corriente eléctrica",
+            "diferencia de potencial",
+            "resistencia eléctrica",
+            "ley de Ohm",
+            "circuito serie",
+            "circuito paralelo",
+            "potencia eléctrica"
+          ],
+          "objetivos": [
+            "Comprender los conceptos de corriente, voltaje y resistencia y su relación a través de la ley de Ohm",
+            "Analizar circuitos serie y paralelo calculando resistencias equivalentes, corrientes y voltajes",
+            "Calcular la potencia eléctrica disipada y la energía consumida por dispositivos eléctricos"
+          ],
+          "contenidos": [
+            "Corriente eléctrica (I = ΔQ/Δt), diferencia de potencial (voltaje) y resistencia eléctrica; ley de Ohm: V = I·R",
+            "Circuitos en serie (misma corriente, voltajes se suman, R_eq = R₁+R₂+...) y en paralelo (mismo voltaje, corrientes se suman, 1/R_eq = 1/R₁+1/R₂+...)",
+            "Potencia eléctrica (P = V·I = I²·R = V²/R) y energía eléctrica consumida (E = P·t); lectura del medidor de energía en kWh"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Se conecta una resistencia de 20 Ω a una batería de 12 V. ¿Qué corriente circula?",
+              "opciones": ["240 A", "0,6 A", "1,67 A", "32 A"],
+              "correcta": 1,
+              "explicacion": "Por la ley de Ohm: I = V/R = 12 V / 20 Ω = 0,6 A."
+            },
+            {
+              "pregunta": "Se conectan dos resistencias de 6 Ω en paralelo. ¿Cuál es la resistencia equivalente?",
+              "opciones": ["12 Ω", "6 Ω", "3 Ω", "0,33 Ω"],
+              "correcta": 2,
+              "explicacion": "En paralelo: 1/R_eq = 1/6 + 1/6 = 2/6 = 1/3, por tanto R_eq = 3 Ω. Dos resistencias iguales en paralelo dan la mitad del valor individual."
+            },
+            {
+              "pregunta": "Una lámpara de 60 W funciona 5 horas al día durante 30 días. ¿Cuánta energía consume en kWh?",
+              "opciones": ["9 kWh", "9000 kWh", "0,9 kWh", "90 kWh"],
+              "correcta": 0,
+              "explicacion": "E = P × t = 60 W × 5 h/día × 30 días = 60 × 150 = 9000 Wh = 9 kWh."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "titulo": "Ondas y Luz",
+      "temas": [
+        {
+          "titulo": "Ondas mecánicas y sonido",
+          "conceptosClave": [
+            "onda mecánica",
+            "onda transversal",
+            "onda longitudinal",
+            "frecuencia",
+            "longitud de onda",
+            "amplitud",
+            "velocidad de propagación",
+            "sonido"
+          ],
+          "objetivos": [
+            "Clasificar ondas según su naturaleza, dirección de vibración y número de dimensiones de propagación",
+            "Aplicar la ecuación fundamental de ondas v = λ·f para resolver problemas",
+            "Comprender las propiedades del sonido (velocidad, intensidad, tono, timbre) y fenómenos como eco y resonancia"
+          ],
+          "contenidos": [
+            "Clasificación de ondas: mecánicas y electromagnéticas; transversales y longitudinales; parámetros: amplitud, longitud de onda, frecuencia y período",
+            "Ecuación fundamental v = λ·f; velocidad de propagación según el medio; fenómenos ondulatorios: reflexión, refracción, difracción e interferencia",
+            "El sonido como onda longitudinal mecánica: velocidad en distintos medios, intensidad y nivel sonoro, tono (frecuencia) y timbre; eco y resonancia"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Una onda tiene frecuencia de 200 Hz y longitud de onda de 1,7 m. ¿Cuál es su velocidad de propagación?",
+              "opciones": ["117,6 m/s", "340 m/s", "201,7 m/s", "0,0085 m/s"],
+              "correcta": 1,
+              "explicacion": "Usando v = λ · f = 1,7 m × 200 Hz = 340 m/s. Este valor coincide con la velocidad del sonido en el aire a temperatura ambiente."
+            },
+            {
+              "pregunta": "¿Por qué el sonido no se propaga en el vacío?",
+              "opciones": [
+                "Porque necesita electrones libres para transmitirse",
+                "Porque el vacío absorbe las ondas sonoras",
+                "Porque es una onda mecánica y necesita un medio material para propagarse",
+                "Porque la frecuencia del sonido es demasiado baja para el vacío"
+              ],
+              "correcta": 2,
+              "explicacion": "El sonido es una onda mecánica longitudinal que se propaga por compresiones y rarefacciones del medio. Sin medio material (en el vacío), no hay partículas que vibren y transmitan la perturbación."
+            },
+            {
+              "pregunta": "Una persona grita frente a una pared y escucha el eco 0,6 s después. Si la velocidad del sonido es 340 m/s, ¿a qué distancia está la pared?",
+              "opciones": ["204 m", "102 m", "51 m", "340 m"],
+              "correcta": 1,
+              "explicacion": "El sonido recorre ida y vuelta en 0,6 s. Distancia total = 340 × 0,6 = 204 m. Como es ida y vuelta, la distancia a la pared es 204/2 = 102 m."
+            }
+          ]
+        },
+        {
+          "titulo": "Óptica geométrica",
+          "conceptosClave": [
+            "luz",
+            "rayo de luz",
+            "reflexión",
+            "ley de reflexión",
+            "refracción",
+            "ley de Snell",
+            "espejo plano",
+            "lente convergente",
+            "lente divergente"
+          ],
+          "objetivos": [
+            "Aplicar las leyes de reflexión y refracción para describir el comportamiento de la luz en espejos y lentes",
+            "Construir imágenes geométricamente utilizando rayos principales en espejos y lentes delgadas",
+            "Comprender fenómenos ópticos cotidianos como la formación de imágenes, arcoíris y espejismos"
+          ],
+          "contenidos": [
+            "Propagación rectilínea de la luz; reflexión: leyes de la reflexión, espejos planos (imagen virtual, simétrica) y espejos esféricos (cóncavos y convexos)",
+            "Refracción: índice de refracción, ley de Snell (n₁·sen θ₁ = n₂·sen θ₂), reflexión total interna y ángulo crítico",
+            "Lentes delgadas: convergentes y divergentes; formación de imágenes con rayos principales; ecuación de lentes (1/f = 1/d_o + 1/d_i); aplicaciones: ojo humano, lupa, microscopio"
+          ],
+          "quiz": [
+            {
+              "pregunta": "Un rayo de luz incide sobre un espejo plano con un ángulo de incidencia de 35°. ¿Cuál es el ángulo de reflexión?",
+              "opciones": ["70°", "35°", "55°", "90°"],
+              "correcta": 1,
+              "explicacion": "Por la ley de reflexión, el ángulo de reflexión es igual al ángulo de incidencia. Si el ángulo de incidencia es 35°, el de reflexión también es 35°."
+            },
+            {
+              "pregunta": "Un rayo de luz pasa del aire (n=1) al agua (n=1,33). ¿Qué le sucede al rayo?",
+              "opciones": [
+                "Se refracta alejándose de la normal porque pasa a un medio más denso",
+                "Se refracta acercándose a la normal porque pasa a un medio más denso",
+                "No cambia de dirección",
+                "Se refleja totalmente"
+              ],
+              "correcta": 1,
+              "explicacion": "Al pasar de un medio menos denso (aire, n=1) a uno más denso (agua, n=1,33), por la ley de Snell el rayo se refracta acercándose a la normal, ya que el ángulo de refracción es menor que el de incidencia."
+            },
+            {
+              "pregunta": "¿Qué tipo de lente se usa para corregir la miopía?",
+              "opciones": [
+                "Lente convergente (convexa)",
+                "Lente divergente (cóncava)",
+                "Espejo cóncavo",
+                "Espejo convexo"
+              ],
+              "correcta": 1,
+              "explicacion": "La miopía ocurre cuando la imagen se forma delante de la retina. Una lente divergente (cóncava) separa los rayos antes de entrar al ojo, haciendo que la imagen se forme justo en la retina."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

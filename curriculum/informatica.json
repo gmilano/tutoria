@@ -1,0 +1,750 @@
+{
+  "id": "informatica-4",
+  "nombre": "Informática",
+  "año": "4°",
+  "orientacion": "comun",
+  "emoji": "💻",
+  "color": "#6366f1",
+  "descripcion": "Fundamentos de computación, redes, programación y seguridad digital",
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Hardware y Software",
+      "temas": [
+        {
+          "titulo": "Arquitectura de computadoras y modelo von Neumann",
+          "conceptosClave": [
+            "arquitectura von Neumann",
+            "CPU (Unidad Central de Proceso)",
+            "ALU (Unidad Aritmético-Lógica)",
+            "unidad de control",
+            "memoria RAM",
+            "memoria ROM",
+            "bus de datos",
+            "ciclo de instrucción (fetch-decode-execute)"
+          ],
+          "objetivos": [
+            "Comprender la estructura básica de una computadora según el modelo von Neumann y sus componentes principales",
+            "Identificar el rol de la CPU, la memoria y los buses en el procesamiento de datos",
+            "Explicar el ciclo de instrucción y cómo la computadora ejecuta programas almacenados en memoria"
+          ],
+          "contenidos": [
+            "Modelo von Neumann: memoria unificada para datos e instrucciones, CPU con ALU y unidad de control, dispositivos de entrada/salida y buses de comunicación",
+            "Componentes internos del hardware: procesador (frecuencia de reloj, núcleos), memoria RAM (volátil) y ROM (no volátil), almacenamiento secundario (HDD, SSD)",
+            "Funcionamiento del ciclo fetch-decode-execute y representación binaria de la información (bits y bytes)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "En el modelo von Neumann, ¿qué componente se encarga de realizar las operaciones aritméticas y lógicas?",
+              "opciones": [
+                "La unidad de control",
+                "La ALU (Unidad Aritmético-Lógica)",
+                "La memoria RAM",
+                "El bus de datos"
+              ],
+              "correcta": 1,
+              "explicacion": "La ALU (Unidad Aritmético-Lógica) es el componente de la CPU encargado de realizar todas las operaciones aritméticas (suma, resta, multiplicación) y lógicas (AND, OR, NOT) sobre los datos."
+            },
+            {
+              "pregunta": "¿Cuál es la característica principal de la memoria RAM?",
+              "opciones": [
+                "Es permanente y conserva los datos al apagar el equipo",
+                "Es volátil y pierde su contenido al cortar la alimentación eléctrica",
+                "Solo almacena el sistema operativo",
+                "Tiene mayor capacidad que un disco duro"
+              ],
+              "correcta": 1,
+              "explicacion": "La memoria RAM (Random Access Memory) es volátil: almacena temporalmente los datos y programas en uso, pero pierde toda su información cuando se apaga la computadora, a diferencia del almacenamiento permanente como un disco duro o SSD."
+            },
+            {
+              "pregunta": "¿Qué principio fundamental distingue a la arquitectura von Neumann de las calculadoras anteriores?",
+              "opciones": [
+                "Utiliza electricidad en lugar de mecanismos mecánicos",
+                "Almacena el programa en la misma memoria que los datos (programa almacenado)",
+                "Puede conectarse a Internet",
+                "Posee una pantalla para mostrar resultados"
+              ],
+              "correcta": 1,
+              "explicacion": "El concepto clave de la arquitectura von Neumann es el 'programa almacenado': tanto las instrucciones del programa como los datos se guardan en la misma memoria, lo que permite cambiar el programa sin modificar el hardware."
+            }
+          ]
+        },
+        {
+          "titulo": "Sistemas operativos y software",
+          "conceptosClave": [
+            "sistema operativo",
+            "kernel",
+            "gestión de procesos",
+            "gestión de memoria",
+            "sistema de archivos",
+            "software libre y propietario",
+            "licencias (GPL, MIT, Creative Commons)",
+            "interfaz gráfica (GUI) vs. línea de comandos (CLI)"
+          ],
+          "objetivos": [
+            "Comprender las funciones principales de un sistema operativo como intermediario entre el usuario y el hardware",
+            "Diferenciar entre software libre y software propietario, reconociendo las implicancias de cada modelo de licenciamiento",
+            "Conocer los sistemas operativos más utilizados (Windows, GNU/Linux, macOS, Android, iOS) y sus características"
+          ],
+          "contenidos": [
+            "Funciones del sistema operativo: gestión de procesos (multitarea), gestión de memoria, administración de archivos y directorios, control de dispositivos de entrada/salida",
+            "Clasificación del software: software de sistema, software de aplicación y software de desarrollo; diferencias entre software libre (GNU/Linux, LibreOffice) y software propietario (Windows, Microsoft Office)",
+            "Tipos de licencias de software: GPL, MIT, Apache, Creative Commons; el movimiento del software libre y el código abierto (Open Source)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál de las siguientes NO es una función principal de un sistema operativo?",
+              "opciones": [
+                "Gestionar la memoria RAM disponible",
+                "Administrar los procesos que se ejecutan simultáneamente",
+                "Editar documentos de texto y hojas de cálculo",
+                "Controlar los dispositivos de entrada y salida"
+              ],
+              "correcta": 2,
+              "explicacion": "Editar documentos es una tarea del software de aplicación (como un procesador de texto), no del sistema operativo. El sistema operativo se encarga de gestionar la memoria, los procesos, los archivos y los dispositivos de hardware."
+            },
+            {
+              "pregunta": "¿Qué característica define al software libre según la Free Software Foundation?",
+              "opciones": [
+                "Que siempre es gratuito y no puede venderse",
+                "Que el usuario tiene la libertad de ejecutar, estudiar, modificar y redistribuir el programa",
+                "Que solo funciona en el sistema operativo Linux",
+                "Que no tiene derechos de autor"
+              ],
+              "correcta": 1,
+              "explicacion": "El software libre se define por cuatro libertades fundamentales: ejecutar el programa para cualquier propósito, estudiar su código fuente, modificarlo y redistribuir copias. 'Libre' se refiere a libertad, no necesariamente a precio gratuito."
+            },
+            {
+              "pregunta": "¿Qué componente del sistema operativo se comunica directamente con el hardware?",
+              "opciones": [
+                "La interfaz gráfica (GUI)",
+                "El explorador de archivos",
+                "El kernel (núcleo)",
+                "El navegador web"
+              ],
+              "correcta": 2,
+              "explicacion": "El kernel o núcleo es la parte central del sistema operativo que se comunica directamente con el hardware. Gestiona los recursos del sistema (CPU, memoria, dispositivos) y sirve de puente entre las aplicaciones del usuario y los componentes físicos."
+            }
+          ]
+        },
+        {
+          "titulo": "Representación de la información y periféricos",
+          "conceptosClave": [
+            "sistema binario",
+            "bit y byte",
+            "unidades de medida (KB, MB, GB, TB)",
+            "codificación ASCII y Unicode",
+            "periféricos de entrada",
+            "periféricos de salida",
+            "periféricos de almacenamiento"
+          ],
+          "objetivos": [
+            "Entender cómo las computadoras representan toda la información (texto, imágenes, sonido) mediante el sistema binario",
+            "Realizar conversiones básicas entre sistema decimal y binario, y comprender las unidades de medida de información",
+            "Clasificar los periféricos según su función y reconocer los principales dispositivos de entrada, salida y almacenamiento"
+          ],
+          "contenidos": [
+            "Sistema binario: representación de números en base 2, conversión decimal-binario, operaciones básicas; concepto de bit como unidad mínima de información y byte como agrupación de 8 bits",
+            "Codificación de caracteres: tabla ASCII (128 caracteres) y estándar Unicode (más de 140 000 caracteres, incluye todos los idiomas); representación digital de imágenes (píxeles, RGB) y sonido (muestreo, frecuencia)",
+            "Periféricos: dispositivos de entrada (teclado, ratón, escáner, micrófono, cámara), de salida (monitor, impresora, parlantes) y de almacenamiento (disco duro, SSD, pendrive, tarjeta SD)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuántos valores diferentes puede representar un byte (8 bits)?",
+              "opciones": [
+                "8 valores",
+                "16 valores",
+                "128 valores",
+                "256 valores"
+              ],
+              "correcta": 3,
+              "explicacion": "Un byte tiene 8 bits, y cada bit puede ser 0 o 1. Por lo tanto, un byte puede representar 2⁸ = 256 valores diferentes (del 0 al 255). Esta es la razón por la que la tabla ASCII original usa 7 bits (128 caracteres) y la extendida 8 bits (256 caracteres)."
+            },
+            {
+              "pregunta": "¿Cuál es el número decimal equivalente al número binario 1010?",
+              "opciones": [
+                "5",
+                "8",
+                "10",
+                "12"
+              ],
+              "correcta": 2,
+              "explicacion": "Para convertir 1010 de binario a decimal se calcula: 1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 8 + 0 + 2 + 0 = 10. Cada posición representa una potencia de 2 de derecha a izquierda."
+            },
+            {
+              "pregunta": "¿Qué ventaja tiene Unicode sobre ASCII?",
+              "opciones": [
+                "Unicode ocupa menos espacio en memoria",
+                "Unicode es más rápido de procesar",
+                "Unicode puede representar caracteres de prácticamente todos los idiomas del mundo",
+                "Unicode solo usa números binarios mientras que ASCII usa decimales"
+              ],
+              "correcta": 2,
+              "explicacion": "Unicode fue creado para superar la limitación de ASCII (que solo cubre 128 caracteres del alfabeto inglés). Unicode puede representar más de 140 000 caracteres de casi todos los sistemas de escritura del mundo, incluyendo español (ñ, acentos), chino, árabe, emojis, etc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Redes e Internet",
+      "temas": [
+        {
+          "titulo": "Fundamentos de redes y topologías",
+          "conceptosClave": [
+            "red de computadoras",
+            "LAN (red de área local)",
+            "WAN (red de área amplia)",
+            "topología de red (estrella, bus, anillo, malla)",
+            "switch",
+            "router",
+            "dirección IP",
+            "dirección MAC",
+            "WiFi (IEEE 802.11)",
+            "Ethernet"
+          ],
+          "objetivos": [
+            "Comprender qué es una red de computadoras, sus tipos según alcance geográfico y los dispositivos de interconexión fundamentales",
+            "Identificar las principales topologías de red y sus ventajas y desventajas",
+            "Distinguir entre redes cableadas (Ethernet) e inalámbricas (WiFi) y sus estándares"
+          ],
+          "contenidos": [
+            "Concepto de red informática: comunicación entre dispositivos para compartir recursos e información; clasificación por alcance: PAN, LAN, MAN, WAN; elementos de una red: nodos, medios de transmisión (cable UTP, fibra óptica, ondas de radio) y dispositivos de red (hub, switch, router, access point)",
+            "Topologías de red: estrella (nodos conectados a un punto central), bus (todos comparten un mismo medio), anillo (cada nodo conectado al siguiente en círculo), malla (múltiples conexiones redundantes); ventajas y desventajas de cada una",
+            "Redes inalámbricas WiFi: estándares 802.11 (a/b/g/n/ac/ax), frecuencias 2.4 GHz y 5 GHz, seguridad en redes WiFi (WPA2, WPA3); concepto de SSID y autenticación"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué tipo de red conecta computadoras dentro de un mismo edificio o campus?",
+              "opciones": [
+                "WAN (Wide Area Network)",
+                "LAN (Local Area Network)",
+                "PAN (Personal Area Network)",
+                "Internet"
+              ],
+              "correcta": 1,
+              "explicacion": "Una LAN (Local Area Network o Red de Área Local) conecta dispositivos dentro de un área geográfica limitada, como un edificio, una oficina o un aula. Una WAN, en cambio, abarca grandes distancias geográficas, como Internet."
+            },
+            {
+              "pregunta": "En una topología de estrella, ¿qué ocurre si falla el nodo central (switch)?",
+              "opciones": [
+                "Solo se desconecta el nodo que falló",
+                "La red sigue funcionando normalmente por rutas alternativas",
+                "Toda la red deja de funcionar porque todos dependen del nodo central",
+                "Solo se desconectan los nodos más alejados"
+              ],
+              "correcta": 2,
+              "explicacion": "En la topología de estrella, todos los nodos están conectados a un dispositivo central (switch o hub). Si ese dispositivo central falla, toda la red se cae. Es la principal desventaja de esta topología, aunque es la más utilizada en redes LAN por su facilidad de administración."
+            },
+            {
+              "pregunta": "¿Cuál es la función principal de un router en una red?",
+              "opciones": [
+                "Amplificar la señal WiFi",
+                "Almacenar los datos de la red",
+                "Interconectar diferentes redes y encaminar paquetes entre ellas",
+                "Proteger la red contra virus"
+              ],
+              "correcta": 2,
+              "explicacion": "El router (enrutador) tiene como función principal interconectar redes diferentes (por ejemplo, tu red LAN doméstica con Internet) y decidir la mejor ruta para enviar los paquetes de datos desde el origen hasta el destino."
+            }
+          ]
+        },
+        {
+          "titulo": "Protocolos de Internet: TCP/IP, DNS y HTTP",
+          "conceptosClave": [
+            "modelo TCP/IP",
+            "protocolo TCP",
+            "protocolo IP",
+            "dirección IPv4 e IPv6",
+            "DNS (Sistema de Nombres de Dominio)",
+            "HTTP y HTTPS",
+            "URL",
+            "paquetes de datos",
+            "puerto de red",
+            "modelo cliente-servidor"
+          ],
+          "objetivos": [
+            "Comprender el modelo TCP/IP como base del funcionamiento de Internet y el rol de cada capa",
+            "Explicar cómo el sistema DNS traduce nombres de dominio a direcciones IP y cómo funciona una consulta web",
+            "Diferenciar entre HTTP y HTTPS, y entender el modelo cliente-servidor en la navegación web"
+          ],
+          "contenidos": [
+            "Modelo TCP/IP de 4 capas: capa de acceso a la red (Ethernet, WiFi), capa de Internet (protocolo IP, direccionamiento IPv4 e IPv6), capa de transporte (TCP para conexiones confiables, UDP para transmisiones rápidas), capa de aplicación (HTTP, HTTPS, FTP, SMTP, DNS)",
+            "Sistema de Nombres de Dominio (DNS): jerarquía de dominios (raíz, TLD como .com, .uy, .edu, dominios de segundo nivel), funcionamiento de una consulta DNS, servidores DNS recursivos y autoritativos; concepto de URL y sus partes (protocolo, dominio, ruta)",
+            "Protocolo HTTP/HTTPS: modelo de petición-respuesta (request-response), métodos principales (GET, POST), códigos de estado (200 OK, 404 Not Found, 500 Server Error); diferencia entre HTTP y HTTPS (cifrado TLS/SSL); concepto de cliente-servidor"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la función principal del protocolo DNS?",
+              "opciones": [
+                "Cifrar la comunicación entre cliente y servidor",
+                "Traducir nombres de dominio legibles (como google.com) a direcciones IP numéricas",
+                "Transferir archivos entre computadoras",
+                "Gestionar el correo electrónico"
+              ],
+              "correcta": 1,
+              "explicacion": "El DNS (Domain Name System) funciona como una 'guía telefónica' de Internet: traduce los nombres de dominio que usamos (como google.com) a las direcciones IP numéricas (como 142.250.80.46) que necesitan las computadoras para comunicarse entre sí."
+            },
+            {
+              "pregunta": "¿Qué protocolo de la capa de transporte garantiza la entrega ordenada y completa de los datos?",
+              "opciones": [
+                "IP",
+                "UDP",
+                "TCP",
+                "DNS"
+              ],
+              "correcta": 2,
+              "explicacion": "TCP (Transmission Control Protocol) es un protocolo orientado a la conexión que garantiza que los datos lleguen completos, en orden y sin errores. Utiliza mecanismos como el handshake de 3 vías, acuse de recibo (ACK) y retransmisión. UDP, en cambio, es más rápido pero no garantiza la entrega."
+            },
+            {
+              "pregunta": "Cuando un navegador muestra un candado junto a la URL, ¿qué significa?",
+              "opciones": [
+                "Que el sitio web no tiene virus",
+                "Que la conexión usa HTTPS y los datos viajan cifrados con TLS/SSL",
+                "Que el sitio web es del gobierno",
+                "Que se necesita contraseña para acceder"
+              ],
+              "correcta": 1,
+              "explicacion": "El candado indica que el sitio usa HTTPS (HTTP Secure), lo que significa que la comunicación entre tu navegador y el servidor está cifrada mediante el protocolo TLS/SSL. Esto protege los datos transmitidos (como contraseñas o datos de tarjetas) de ser interceptados por terceros."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Seguridad Informática",
+      "temas": [
+        {
+          "titulo": "Amenazas y malware",
+          "conceptosClave": [
+            "malware",
+            "virus informático",
+            "troyano",
+            "ransomware",
+            "spyware",
+            "gusano (worm)",
+            "phishing",
+            "ingeniería social",
+            "antivirus",
+            "actualización de software"
+          ],
+          "objetivos": [
+            "Identificar los principales tipos de software malicioso (malware) y comprender sus mecanismos de propagación y daño",
+            "Reconocer técnicas de ingeniería social como el phishing y desarrollar criterios para detectar intentos de estafa digital",
+            "Aplicar buenas prácticas de seguridad personal: uso de antivirus, actualizaciones, contraseñas seguras y sentido crítico"
+          ],
+          "contenidos": [
+            "Tipos de malware: virus (se adjunta a archivos y requiere ejecución), gusanos (se propaga automáticamente por la red), troyanos (se disfraza de software legítimo), ransomware (cifra archivos y exige rescate), spyware (espía la actividad del usuario), adware (muestra publicidad no deseada); vectores de infección: correo electrónico, descargas, USB, sitios web comprometidos",
+            "Ingeniería social: manipulación psicológica para obtener información confidencial; phishing (correos o sitios falsos que imitan entidades legítimas), smishing (phishing por SMS), vishing (por llamada telefónica); cómo identificar un intento de phishing: revisar el remitente, la URL, errores ortográficos, urgencia artificial",
+            "Medidas de protección: software antivirus y antimalware, cortafuegos (firewall), actualizaciones regulares del sistema y aplicaciones, contraseñas seguras (largas, combinando mayúsculas, números y símbolos), autenticación de dos factores (2FA), copias de seguridad (backup)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué tipo de malware cifra los archivos de la víctima y exige un pago para desbloquearlos?",
+              "opciones": [
+                "Spyware",
+                "Adware",
+                "Ransomware",
+                "Gusano (worm)"
+              ],
+              "correcta": 2,
+              "explicacion": "El ransomware (del inglés 'ransom' = rescate) cifra los archivos del usuario y exige un pago (generalmente en criptomonedas) para entregar la clave de descifrado. Es una de las amenazas más peligrosas y ha afectado a hospitales, empresas y gobiernos en todo el mundo."
+            },
+            {
+              "pregunta": "¿Cuál de estas señales es característica de un correo de phishing?",
+              "opciones": [
+                "Viene de una dirección oficial conocida y verificada",
+                "Solicita con urgencia que hagas clic en un enlace para verificar tu cuenta o evitar un bloqueo",
+                "Contiene información personalizada y detallada sobre tu cuenta",
+                "Incluye un archivo PDF con tu factura mensual habitual"
+              ],
+              "correcta": 1,
+              "explicacion": "Los correos de phishing suelen crear un sentido de urgencia artificial ('Tu cuenta será bloqueada en 24 horas') para que la víctima actúe sin pensar. Otras señales incluyen: remitente sospechoso, errores ortográficos, enlaces que no coinciden con la URL real de la empresa y solicitudes de datos personales o contraseñas."
+            },
+            {
+              "pregunta": "¿Qué es la autenticación de dos factores (2FA)?",
+              "opciones": [
+                "Usar dos contraseñas diferentes para la misma cuenta",
+                "Un método que requiere dos elementos de verificación distintos (como contraseña + código del celular)",
+                "Tener dos cuentas de usuario en el mismo servicio",
+                "Cifrar los datos dos veces para mayor seguridad"
+              ],
+              "correcta": 1,
+              "explicacion": "La autenticación de dos factores (2FA) añade una capa extra de seguridad al requerir dos tipos diferentes de verificación: algo que sabes (contraseña) y algo que tienes (código enviado al celular, llave de seguridad) o algo que eres (huella digital, reconocimiento facial). Así, aunque alguien robe tu contraseña, no puede acceder sin el segundo factor."
+            }
+          ]
+        },
+        {
+          "titulo": "Cifrado, VPN y protección de datos",
+          "conceptosClave": [
+            "cifrado (encriptación)",
+            "cifrado simétrico",
+            "cifrado asimétrico (clave pública/privada)",
+            "certificado digital",
+            "VPN (Red Privada Virtual)",
+            "HTTPS y TLS/SSL",
+            "firma digital",
+            "protección de datos personales"
+          ],
+          "objetivos": [
+            "Comprender los principios básicos del cifrado y su importancia para proteger la información en tránsito y en reposo",
+            "Explicar el funcionamiento básico de una VPN y cuándo es útil utilizarla",
+            "Valorar la importancia de la protección de datos personales y conocer los derechos del usuario respecto a su información digital"
+          ],
+          "contenidos": [
+            "Fundamentos de criptografía: cifrado simétrico (misma clave para cifrar y descifrar, ejemplo: AES) vs. cifrado asimétrico (par de claves pública y privada, ejemplo: RSA); concepto de hash y su uso para verificar integridad de archivos; firma digital como mecanismo de autenticación y no repudio",
+            "VPN (Red Privada Virtual): funcionamiento (túnel cifrado entre el dispositivo y el servidor VPN), casos de uso (proteger la conexión en redes WiFi públicas, acceder a redes corporativas de forma remota, preservar la privacidad); limitaciones y mitos sobre las VPN",
+            "HTTPS y certificados digitales: cómo TLS/SSL cifra la comunicación web, certificados digitales emitidos por Autoridades de Certificación (CA), cómo verificar que un sitio es seguro; protección de datos personales: qué datos recopilan las empresas, cookies y rastreo, derechos del usuario (acceso, rectificación, eliminación)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la diferencia principal entre cifrado simétrico y cifrado asimétrico?",
+              "opciones": [
+                "El cifrado simétrico es más seguro que el asimétrico",
+                "El cifrado simétrico usa la misma clave para cifrar y descifrar, mientras que el asimétrico usa un par de claves (pública y privada)",
+                "El cifrado asimétrico solo funciona con archivos pequeños",
+                "El cifrado simétrico solo se usa en correo electrónico"
+              ],
+              "correcta": 1,
+              "explicacion": "En el cifrado simétrico, emisor y receptor comparten la misma clave secreta (por ejemplo, AES). En el cifrado asimétrico, se usa un par de claves matemáticamente relacionadas: una pública (que cualquiera puede conocer) para cifrar, y una privada (que solo el destinatario posee) para descifrar. HTTPS combina ambos métodos."
+            },
+            {
+              "pregunta": "¿Qué hace una VPN cuando te conectas a una red WiFi pública?",
+              "opciones": [
+                "Aumenta la velocidad de la conexión WiFi",
+                "Bloquea todos los virus automáticamente",
+                "Crea un túnel cifrado que protege los datos que envías y recibes de ser interceptados",
+                "Elimina la necesidad de usar contraseña en el WiFi"
+              ],
+              "correcta": 2,
+              "explicacion": "Una VPN (Red Privada Virtual) crea un túnel cifrado entre tu dispositivo y el servidor VPN. Todo tu tráfico de Internet viaja por ese túnel, por lo que aunque alguien intercepte los datos en la red WiFi pública, no podrá leerlos porque están cifrados. Esto protege contraseñas, mensajes y cualquier información que transmitas."
+            },
+            {
+              "pregunta": "¿Para qué se utiliza una función hash en seguridad informática?",
+              "opciones": [
+                "Para cifrar archivos de forma reversible",
+                "Para comprimir archivos y reducir su tamaño",
+                "Para generar un resumen único de datos que permite verificar que no fueron alterados",
+                "Para crear contraseñas automáticamente"
+              ],
+              "correcta": 2,
+              "explicacion": "Una función hash toma datos de cualquier tamaño y produce un resumen de longitud fija (por ejemplo, SHA-256 genera siempre 256 bits). Cualquier cambio mínimo en los datos originales produce un hash completamente diferente. Se usa para verificar la integridad de archivos descargados, almacenar contraseñas de forma segura (sin guardar la contraseña real) y en la firma digital."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "titulo": "Programación y Algoritmos",
+      "temas": [
+        {
+          "titulo": "Algoritmos, pseudocódigo y diagramas de flujo",
+          "conceptosClave": [
+            "algoritmo",
+            "pseudocódigo",
+            "diagrama de flujo",
+            "variable",
+            "constante",
+            "tipo de dato (entero, real, cadena, booleano)",
+            "entrada y salida de datos",
+            "secuencia",
+            "pensamiento computacional"
+          ],
+          "objetivos": [
+            "Comprender el concepto de algoritmo como secuencia finita y ordenada de pasos para resolver un problema",
+            "Expresar algoritmos mediante pseudocódigo y diagramas de flujo, utilizando los símbolos estándar",
+            "Identificar los elementos básicos de un programa: variables, tipos de datos, operadores, entrada y salida"
+          ],
+          "contenidos": [
+            "Concepto de algoritmo: definición, características (finito, preciso, definido, con entrada y salida); pensamiento computacional: descomposición, reconocimiento de patrones, abstracción y diseño de algoritmos; ejemplos cotidianos de algoritmos (recetas, instrucciones)",
+            "Pseudocódigo: sintaxis básica (INICIO, FIN, LEER, ESCRIBIR, asignación con ←), convenciones de escritura; diagramas de flujo: símbolos estándar (óvalo para inicio/fin, rectángulo para proceso, rombo para decisión, paralelogramo para E/S, flechas de flujo)",
+            "Variables y tipos de datos: concepto de variable como espacio en memoria con nombre y tipo; tipos básicos: entero, real (decimal), cadena de texto (string), booleano (verdadero/falso); operadores aritméticos (+, -, *, /, MOD), relacionales (=, <, >, ≤, ≥, ≠) y lógicos (Y, O, NO)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál de las siguientes es una característica esencial de todo algoritmo?",
+              "opciones": [
+                "Debe estar escrito en un lenguaje de programación específico",
+                "Debe ser finito, es decir, terminar después de un número determinado de pasos",
+                "Debe ejecutarse en una computadora",
+                "Debe tener al menos 10 instrucciones"
+              ],
+              "correcta": 1,
+              "explicacion": "Un algoritmo debe ser finito (terminar en un número determinado de pasos), preciso (cada paso debe estar claramente definido) y definido (ante las mismas entradas, siempre debe producir las mismas salidas). No necesita estar en un lenguaje de programación ni ejecutarse en una computadora: una receta de cocina es un algoritmo."
+            },
+            {
+              "pregunta": "En un diagrama de flujo, ¿qué forma geométrica se utiliza para representar una decisión (condición)?",
+              "opciones": [
+                "Rectángulo",
+                "Óvalo",
+                "Rombo (diamante)",
+                "Paralelogramo"
+              ],
+              "correcta": 2,
+              "explicacion": "En los diagramas de flujo, el rombo (diamante) representa una decisión o condición que puede ser verdadera o falsa, con dos caminos posibles. El rectángulo representa un proceso, el óvalo el inicio/fin, y el paralelogramo una operación de entrada/salida."
+            },
+            {
+              "pregunta": "¿Qué tipo de dato almacena valores que solo pueden ser VERDADERO o FALSO?",
+              "opciones": [
+                "Entero",
+                "Cadena (string)",
+                "Real",
+                "Booleano"
+              ],
+              "correcta": 3,
+              "explicacion": "El tipo de dato booleano (en honor a George Boole) solo puede tomar dos valores: VERDADERO (true) o FALSO (false). Se utiliza frecuentemente en condiciones y estructuras de control. Por ejemplo, la expresión 'edad >= 18' produce un valor booleano."
+            }
+          ]
+        },
+        {
+          "titulo": "Estructuras de control y funciones",
+          "conceptosClave": [
+            "estructura secuencial",
+            "estructura condicional (SI/SINO)",
+            "estructura repetitiva (MIENTRAS, PARA)",
+            "bucle",
+            "contador",
+            "acumulador",
+            "función",
+            "parámetro",
+            "valor de retorno",
+            "modularización"
+          ],
+          "objetivos": [
+            "Utilizar correctamente las estructuras de control condicionales (SI/SINO, SI/SINO SI) y repetitivas (MIENTRAS, PARA) en la resolución de problemas",
+            "Comprender el concepto de función como bloque de código reutilizable, con parámetros de entrada y valor de retorno",
+            "Diseñar soluciones a problemas descomponiéndolos en subproblemas más pequeños mediante funciones (modularización)"
+          ],
+          "contenidos": [
+            "Estructuras condicionales: SI (condición) ENTONCES ... FIN SI; SI ... SINO ... FIN SI; condicionales anidados y múltiples (SI ... SINO SI ... SINO); selección múltiple (SEGÚN/CASO); ejemplos: determinar si un número es par o impar, clasificar calificaciones",
+            "Estructuras repetitivas: MIENTRAS (condición) HACER ... FIN MIENTRAS (repite mientras la condición sea verdadera); PARA variable DESDE inicio HASTA fin HACER ... FIN PARA (repite un número conocido de veces); conceptos de contador (cuenta iteraciones) y acumulador (suma valores); riesgo de bucles infinitos",
+            "Funciones y modularización: definición de función con nombre, parámetros y valor de retorno; ventajas de modularizar: reutilización de código, facilidad de lectura y mantenimiento; ámbito de variables (local vs. global); ejemplos: función para calcular factorial, función para verificar si un número es primo"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la diferencia entre un bucle MIENTRAS y un bucle PARA?",
+              "opciones": [
+                "No hay diferencia, son exactamente iguales",
+                "MIENTRAS se usa cuando no se sabe cuántas veces repetir y PARA cuando se conoce el número de repeticiones",
+                "PARA solo sirve para contar números",
+                "MIENTRAS siempre se ejecuta al menos una vez"
+              ],
+              "correcta": 1,
+              "explicacion": "El bucle PARA (for) se utiliza cuando se conoce de antemano cuántas veces se repetirá el ciclo (por ejemplo, recorrer una lista de 10 elementos). El bucle MIENTRAS (while) se utiliza cuando la repetición depende de una condición que puede cambiar durante la ejecución (por ejemplo, pedir datos hasta que el usuario escriba 'salir')."
+            },
+            {
+              "pregunta": "¿Qué valor tendrá la variable 'suma' después de ejecutar este pseudocódigo?\n\nsuma ← 0\nPARA i DESDE 1 HASTA 4 HACER\n    suma ← suma + i\nFIN PARA",
+              "opciones": [
+                "4",
+                "6",
+                "10",
+                "15"
+              ],
+              "correcta": 2,
+              "explicacion": "El bucle recorre i desde 1 hasta 4, sumando cada valor a 'suma': iteración 1: suma = 0+1 = 1; iteración 2: suma = 1+2 = 3; iteración 3: suma = 3+3 = 6; iteración 4: suma = 6+4 = 10. El resultado final es 10, que es la suma de los primeros 4 números naturales."
+            },
+            {
+              "pregunta": "¿Cuál es la principal ventaja de usar funciones en un programa?",
+              "opciones": [
+                "Hacen que el programa se ejecute más rápido",
+                "Eliminan la necesidad de usar variables",
+                "Permiten reutilizar código, mejorar la legibilidad y facilitar el mantenimiento",
+                "Son obligatorias en todos los lenguajes de programación"
+              ],
+              "correcta": 2,
+              "explicacion": "Las funciones permiten dividir un programa en bloques más pequeños y manejables (modularización). Sus ventajas principales son: reutilización de código (escribir una vez, usar muchas veces), mejor legibilidad (el programa es más fácil de entender), facilidad de mantenimiento (los errores se corrigen en un solo lugar) y trabajo en equipo (diferentes programadores pueden trabajar en funciones distintas)."
+            }
+          ]
+        },
+        {
+          "titulo": "Introducción a Python y JavaScript",
+          "conceptosClave": [
+            "Python",
+            "JavaScript",
+            "lenguaje interpretado",
+            "sintaxis",
+            "print() / console.log()",
+            "input()",
+            "if/elif/else",
+            "for / while",
+            "def (funciones en Python)",
+            "lista (array)"
+          ],
+          "objetivos": [
+            "Escribir programas sencillos en Python o JavaScript aplicando las estructuras de control aprendidas en pseudocódigo",
+            "Utilizar variables, operadores, entrada/salida, condicionales, bucles y funciones en un lenguaje de programación real",
+            "Conocer el concepto de listas (arrays) y su uso para almacenar colecciones de datos"
+          ],
+          "contenidos": [
+            "Python como primer lenguaje: sintaxis limpia basada en indentación; funciones básicas: print() para mostrar datos, input() para leer del teclado, int()/float() para convertir tipos; variables sin declaración explícita de tipo; estructuras de control: if/elif/else, for i in range(), while; definición de funciones con def",
+            "JavaScript como lenguaje de la web: uso en navegadores y con Node.js; sintaxis con llaves y punto y coma; let/const para variables; console.log() para mostrar datos; prompt() para entrada; if/else if/else, for, while; funciones con function y arrow functions (=>)",
+            "Estructuras de datos básicas: listas en Python (mi_lista = [1, 2, 3]) y arrays en JavaScript (let arr = [1, 2, 3]); operaciones: agregar elementos, acceder por índice, recorrer con bucle for; ejemplos prácticos: lista de calificaciones (calcular promedio), lista de nombres (buscar y ordenar)"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Cuál es la salida del siguiente código Python?\n\nx = 5\nif x > 3:\n    print(\"Mayor\")\nelse:\n    print(\"Menor\")",
+              "opciones": [
+                "5",
+                "Mayor",
+                "Menor",
+                "Error de sintaxis"
+              ],
+              "correcta": 1,
+              "explicacion": "La variable x vale 5. La condición 'x > 3' se evalúa como verdadera (5 es mayor que 3), por lo que se ejecuta el bloque del if y se imprime 'Mayor'. El bloque else no se ejecuta porque la condición fue verdadera."
+            },
+            {
+              "pregunta": "En Python, ¿qué hace la instrucción 'for i in range(3)'?",
+              "opciones": [
+                "Crea una variable i con valor 3",
+                "Repite un bloque de código 3 veces, con i tomando valores 0, 1, 2",
+                "Repite un bloque de código 3 veces, con i tomando valores 1, 2, 3",
+                "Crea una lista con los números del 1 al 3"
+              ],
+              "correcta": 1,
+              "explicacion": "range(3) genera la secuencia 0, 1, 2 (tres valores, empezando en 0). El bucle for asigna cada valor a la variable i y ejecuta el bloque indentado. Si se quiere empezar en 1, se usa range(1, 4). Esta convención de empezar en 0 es común en la mayoría de los lenguajes de programación."
+            },
+            {
+              "pregunta": "¿Cuál es el resultado de ejecutar este código JavaScript?\n\nlet frutas = [\"manzana\", \"banana\", \"naranja\"];\nconsole.log(frutas[1]);",
+              "opciones": [
+                "manzana",
+                "banana",
+                "naranja",
+                "Error: índice fuera de rango"
+              ],
+              "correcta": 1,
+              "explicacion": "En JavaScript (y en la mayoría de los lenguajes), los índices de los arrays comienzan en 0. Así, frutas[0] es 'manzana', frutas[1] es 'banana' y frutas[2] es 'naranja'. Por eso console.log(frutas[1]) imprime 'banana'."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "titulo": "Ciudadanía Digital y Tendencias Tecnológicas",
+      "temas": [
+        {
+          "titulo": "Derechos digitales, privacidad y ética en línea",
+          "conceptosClave": [
+            "ciudadanía digital",
+            "huella digital",
+            "privacidad en línea",
+            "protección de datos personales",
+            "derecho al olvido",
+            "ciberbullying (ciberacoso)",
+            "sexting y sus riesgos",
+            "netiqueta",
+            "derechos de autor y propiedad intelectual",
+            "Creative Commons"
+          ],
+          "objetivos": [
+            "Reflexionar sobre los derechos y responsabilidades del ciudadano en el entorno digital, incluyendo la privacidad y la protección de datos personales",
+            "Identificar los riesgos del uso inadecuado de Internet (ciberacoso, exposición de datos, contenido inapropiado) y las estrategias para prevenirlos",
+            "Comprender los conceptos de propiedad intelectual y derechos de autor en el contexto digital, incluyendo las licencias Creative Commons"
+          ],
+          "contenidos": [
+            "Ciudadanía digital: derechos del usuario en Internet (acceso a la información, libertad de expresión, privacidad, protección de datos); responsabilidades (respetar la privacidad ajena, verificar información antes de compartir, no difundir contenido dañino); huella digital: rastro que dejamos en Internet con cada actividad, permanencia de la información publicada",
+            "Riesgos en el entorno digital: ciberacoso (hostigamiento repetido a través de medios digitales), grooming (acoso de adultos a menores), sexting y sus consecuencias legales y personales, adicción a las pantallas y redes sociales; estrategias de prevención: configuración de privacidad, no compartir datos personales con desconocidos, comunicar situaciones de acoso a adultos de confianza",
+            "Propiedad intelectual en la era digital: derechos de autor (copyright), plagio, piratería de software y contenido; licencias Creative Commons (CC BY, CC BY-SA, CC BY-NC, CC0) como alternativa flexible; uso legítimo de material con fines educativos; importancia de citar fuentes correctamente"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué es la 'huella digital' de una persona en Internet?",
+              "opciones": [
+                "La imagen de su huella dactilar almacenada en el teléfono",
+                "El conjunto de rastros y datos que deja con cada actividad en línea (publicaciones, búsquedas, compras, etc.)",
+                "Un tipo de virus informático que roba identidades",
+                "Un certificado digital que verifica la identidad del usuario"
+              ],
+              "correcta": 1,
+              "explicacion": "La huella digital es el rastro de información que dejamos con cada actividad en Internet: publicaciones en redes sociales, comentarios, búsquedas, compras en línea, sitios visitados, etc. Esta información puede ser permanente y difícil de eliminar, y puede ser utilizada por empresas, empleadores u otras personas. Por eso es importante ser consciente de lo que compartimos en línea."
+            },
+            {
+              "pregunta": "¿Qué permite una licencia Creative Commons CC BY?",
+              "opciones": [
+                "Usar la obra solo con fines comerciales",
+                "Copiar, distribuir y modificar la obra libremente, siempre que se atribuya al autor original",
+                "Usar la obra sin ninguna restricción ni mención del autor",
+                "Usar la obra solo en el país donde fue creada"
+              ],
+              "correcta": 1,
+              "explicacion": "La licencia Creative Commons CC BY (Atribución) es la más permisiva: permite copiar, distribuir, exhibir, modificar y crear obras derivadas, incluso con fines comerciales, con la única condición de dar crédito al autor original. Es una alternativa al copyright tradicional que facilita compartir el conocimiento."
+            },
+            {
+              "pregunta": "¿Cuál de las siguientes acciones constituye ciberacoso (ciberbullying)?",
+              "opciones": [
+                "Enviar un único mensaje de desacuerdo respetuoso",
+                "Hostigar repetidamente a alguien a través de redes sociales, mensajes o plataformas digitales con intención de dañar",
+                "Bloquear a alguien en una red social",
+                "No aceptar una solicitud de amistad en línea"
+              ],
+              "correcta": 1,
+              "explicacion": "El ciberacoso o ciberbullying se caracteriza por ser una conducta de hostigamiento repetida e intencionada a través de medios digitales (redes sociales, mensajes, foros, juegos en línea). Incluye insultos, amenazas, difusión de rumores, exclusión deliberada y publicación de contenido humillante. Es diferente de un desacuerdo puntual y tiene consecuencias legales y psicológicas serias."
+            }
+          ]
+        },
+        {
+          "titulo": "Inteligencia artificial y tendencias tecnológicas",
+          "conceptosClave": [
+            "inteligencia artificial (IA)",
+            "aprendizaje automático (machine learning)",
+            "red neuronal artificial",
+            "chatbot e IA generativa",
+            "big data",
+            "Internet de las Cosas (IoT)",
+            "computación en la nube",
+            "ética de la IA",
+            "sesgo algorítmico"
+          ],
+          "objetivos": [
+            "Comprender los conceptos fundamentales de la inteligencia artificial, el aprendizaje automático y sus aplicaciones cotidianas",
+            "Conocer las tendencias tecnológicas actuales (IoT, computación en la nube, big data) y su impacto en la sociedad",
+            "Reflexionar críticamente sobre los desafíos éticos de la IA: sesgos algorítmicos, privacidad, impacto laboral y responsabilidad"
+          ],
+          "contenidos": [
+            "Inteligencia artificial: definición y breve historia (prueba de Turing, inviernos de la IA); tipos: IA débil (especializada en una tarea, como reconocimiento de voz o recomendaciones) vs. IA fuerte (hipotética, con capacidad general); aprendizaje automático (machine learning): el sistema aprende de datos en lugar de ser programado explícitamente; redes neuronales artificiales inspiradas en el cerebro humano; IA generativa: modelos de lenguaje (como ChatGPT) y generación de imágenes",
+            "Tendencias tecnológicas: Internet de las Cosas (IoT): dispositivos conectados que recopilan y comparten datos (sensores, smart home, wearables); computación en la nube (cloud computing): acceso a recursos de cómputo y almacenamiento a través de Internet (Google Drive, AWS, Azure); big data: grandes volúmenes de datos que se analizan para encontrar patrones y tomar decisiones",
+            "Ética de la inteligencia artificial: sesgo algorítmico (los sistemas pueden reproducir y amplificar prejuicios presentes en los datos de entrenamiento); privacidad y vigilancia (reconocimiento facial, análisis de datos masivos); impacto en el empleo (automatización de tareas); deepfakes y desinformación; necesidad de regulación y transparencia; importancia del pensamiento crítico ante los resultados de la IA"
+          ],
+          "quiz": [
+            {
+              "pregunta": "¿Qué es el aprendizaje automático (machine learning)?",
+              "opciones": [
+                "Un robot que aprende a caminar imitando a los humanos",
+                "Un método de programación donde los robots se programan a sí mismos",
+                "Una rama de la IA donde los sistemas aprenden patrones a partir de datos, sin ser programados explícitamente para cada tarea",
+                "Un sistema de enseñanza en línea automatizado"
+              ],
+              "correcta": 2,
+              "explicacion": "El aprendizaje automático (machine learning) es una rama de la IA en la que los sistemas informáticos aprenden a realizar tareas analizando grandes cantidades de datos y encontrando patrones, sin necesidad de ser programados con reglas explícitas para cada caso. Por ejemplo, un filtro de spam aprende a identificar correos no deseados analizando miles de ejemplos de correos clasificados."
+            },
+            {
+              "pregunta": "¿Qué es el sesgo algorítmico en la inteligencia artificial?",
+              "opciones": [
+                "Un error de programación que hace que el programa se detenga",
+                "La tendencia de un algoritmo a producir resultados injustos o discriminatorios porque refleja prejuicios presentes en los datos con los que fue entrenado",
+                "La preferencia de un algoritmo por un lenguaje de programación sobre otro",
+                "Un tipo de virus que afecta solo a programas de IA"
+              ],
+              "correcta": 1,
+              "explicacion": "El sesgo algorítmico ocurre cuando un sistema de IA produce resultados sistemáticamente injustos o discriminatorios. Esto suele suceder porque los datos de entrenamiento reflejan prejuicios históricos o sociales. Por ejemplo, un sistema de selección de personal entrenado con datos históricos podría discriminar por género o etnia si esos sesgos estaban presentes en las contrataciones pasadas."
+            },
+            {
+              "pregunta": "¿Qué caracteriza a la computación en la nube (cloud computing)?",
+              "opciones": [
+                "Solo funciona cuando hay nubes en el cielo que reflejan las señales",
+                "Requiere instalar todo el software en la computadora local",
+                "Permite acceder a recursos de cómputo, almacenamiento y aplicaciones a través de Internet, sin necesidad de infraestructura propia",
+                "Es un tipo de red social para programadores"
+              ],
+              "correcta": 2,
+              "explicacion": "La computación en la nube (cloud computing) permite acceder a servicios de cómputo (procesamiento, almacenamiento, software) a través de Internet, sin necesidad de tener equipos propios potentes. Ejemplos cotidianos: Google Drive, Gmail, Netflix, Spotify. Empresas como Amazon (AWS), Google (Cloud) y Microsoft (Azure) ofrecen infraestructura en la nube para desarrolladores y organizaciones."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
