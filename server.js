@@ -7,6 +7,7 @@ import { dirname, join } from 'path';
 import authRoutes     from './routes/auth.js';
 import progressRoutes from './routes/progress.js';
 import sessionRoutes  from './routes/sessions.js';
+import mediaRoutes    from './routes/media.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -25,6 +26,7 @@ app.use(express.static(__dirname)); // index.html, etc.
 app.use('/api/auth',     authRoutes);
 app.use('/api/progress', progressRoutes);
 app.use('/api/sessions', sessionRoutes);
+app.use('/api/media',    mediaRoutes);
 
 // ── /api/verify-code — access gate ───────────────────────
 app.post('/api/verify-code', (req, res) => {

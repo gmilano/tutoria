@@ -135,6 +135,34 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 }
 .tutor  .avatar { background:linear-gradient(135deg,var(--indigo),var(--purple)); color:#fff; font-size:15px; }
 .student .avatar { background:linear-gradient(135deg,var(--green),var(--sky)); color:#fff; }
+/* ── Media controls ──────────────────────────────────── */
+.msg-actions {
+  display:flex;gap:6px;margin-top:5px;flex-wrap:wrap;
+}
+.msg-action-btn {
+  display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border:1px solid var(--border);
+  border-radius:20px;font-size:11px;cursor:pointer;background:var(--bg);color:var(--text2);
+  transition:all 0.15s;font-family:inherit;
+}
+.msg-action-btn:hover { background:var(--surface);color:var(--text); }
+.msg-action-btn.active { background:var(--indigo);color:#fff;border-color:var(--indigo); }
+.msg-action-btn.loading { opacity:0.6;pointer-events:none; }
+.media-modal {
+  position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.7);display:flex;
+  align-items:center;justify-content:center;
+}
+.media-modal-inner {
+  background:#fff;border-radius:16px;padding:24px;max-width:640px;width:90%;position:relative;
+}
+.media-modal-inner img,.media-modal-inner video { width:100%;border-radius:8px;margin-top:12px; }
+.media-progress {
+  width:100%;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;margin:12px 0;
+}
+.media-progress-bar {
+  height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:3px;
+  transition:width 0.5s ease;
+}
+
 .bubble {
   padding:10px 14px; border-radius:14px; font-size:13.5px; line-height:1.6;
   box-shadow:var(--shadow);
@@ -1404,6 +1432,209 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// ── Multimedia helpers ────────────────────────────────────
+let currentAudio = null;
+
+function renderTutorMsg(reply) {
+  const div = document.createElement('div');
+  div.className = 'msg tutor';
+  const msgId = 'msg-' + Date.now();
+  div.innerHTML = `
+    <div class="avatar">🤖</div>
+    <div>
+      <div class="bubble">${typeof reply === 'string' ? escapeHtml(reply).replace(/\n/g,'<br>') : reply}</div>
+      <div class="msg-actions" id="${msgId}-actions">
+        <button class="msg-action-btn" id="${msgId}-tts" onclick="speakMsg(this,'${msgId}')">🔊 Escuchar</button>
+        <button class="msg-action-btn" onclick="generateImage()">🖼️ Imagen del tema</button>
+        <button class="msg-action-btn" onclick="generateVideo()">🎬 Video</button>
+      </div>
+      <div class="timestamp">${now()}</div>
+    </div>`;
+  // Store text for TTS
+  div.dataset.text = typeof reply === 'string' ? reply : div.querySelector('.bubble')?.textContent || '';
+  return div;
+}
+
+async function speakMsg(btn, msgId) {
+  // Stop any playing audio
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  const allBtns = document.querySelectorAll('[id$="-tts"]');
+  allBtns.forEach(b => { b.classList.remove('active'); b.textContent = '🔊 Escuchar'; });
+
+  const msgDiv = btn.closest('.msg');
+  const text = msgDiv?.dataset?.text || msgDiv?.querySelector('.bubble')?.textContent || '';
+  if (!text) return;
+
+  btn.classList.add('loading');
+  btn.textContent = '⏳ Cargando...';
+
+  try {
+    const token = localStorage.getItem('tutoria_jwt');
+    const headers = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const r = await fetch('/api/media/tts', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ text: text.slice(0, 600), voice: 'nova' })
+    });
+
+    if (!r.ok) throw new Error('TTS error ' + r.status);
+
+    const blob = await r.blob();
+    const url = URL.createObjectURL(blob);
+    currentAudio = new Audio(url);
+    currentAudio.play();
+
+    btn.classList.remove('loading');
+    btn.classList.add('active');
+    btn.textContent = '⏹ Detener';
+
+    currentAudio.onended = () => {
+      btn.classList.remove('active');
+      btn.textContent = '🔊 Escuchar';
+      URL.revokeObjectURL(url);
+    };
+
+    btn.onclick = () => {
+      currentAudio.pause();
+      currentAudio = null;
+      btn.classList.remove('active');
+      btn.textContent = '🔊 Escuchar';
+      btn.onclick = () => speakMsg(btn, msgId);
+    };
+  } catch (e) {
+    btn.classList.remove('loading');
+    btn.textContent = '🔊 Escuchar';
+    console.warn('TTS failed:', e.message);
+  }
+}
+
+async function generateImage() {
+  const subject = currentSubject?.nombre || 'Historia';
+  const topic = currentTopic || 'Revolución Francesa';
+  const token = localStorage.getItem('tutoria_jwt');
+
+  // Show modal with loading
+  const modal = document.createElement('div');
+  modal.className = 'media-modal';
+  modal.innerHTML = `
+    <div class="media-modal-inner">
+      <button onclick="this.closest('.media-modal').remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer">✕</button>
+      <div style="font-weight:700;font-size:16px;margin-bottom:4px">🖼️ Generando imagen</div>
+      <div style="font-size:13px;color:#6b7280;margin-bottom:12px">${subject} — ${topic}</div>
+      <div class="media-progress"><div class="media-progress-bar" id="imgProgress" style="width:5%"></div></div>
+      <div id="imgStatus" style="font-size:12px;color:#6b7280">Enviando a DALL-E 3 HD...</div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  // Animate progress
+  let pct = 5;
+  const tick = setInterval(() => {
+    pct = Math.min(pct + 3, 90);
+    const bar = document.getElementById('imgProgress');
+    if (bar) bar.style.width = pct + '%';
+  }, 800);
+
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const r = await fetch('/api/media/image', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ subject, topic, style: 'historical' })
+    });
+
+    clearInterval(tick);
+    const d = await r.json();
+
+    if (!r.ok) throw new Error(d.error || 'Error generando imagen');
+
+    const inner = modal.querySelector('.media-modal-inner');
+    inner.innerHTML = `
+      <button onclick="this.closest('.media-modal').remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer">✕</button>
+      <div style="font-weight:700;font-size:16px;margin-bottom:12px">🖼️ ${subject} — ${topic}</div>
+      <img src="${d.url}" alt="${topic}" style="width:100%;border-radius:8px">
+      <div style="font-size:11px;color:#9ca3af;margin-top:8px">${d.revised_prompt?.slice(0,120) || ''}...</div>`;
+  } catch (e) {
+    clearInterval(tick);
+    modal.querySelector('#imgStatus').textContent = '❌ ' + e.message;
+    modal.querySelector('#imgStatus').style.color = '#ef4444';
+  }
+}
+
+let videoJobId = null;
+let videoPoller = null;
+
+async function generateVideo() {
+  const subject = currentSubject?.nombre || 'Historia';
+  const topic = currentTopic || 'Revolución Francesa';
+  const token = localStorage.getItem('tutoria_jwt');
+
+  const modal = document.createElement('div');
+  modal.className = 'media-modal';
+  modal.innerHTML = `
+    <div class="media-modal-inner">
+      <button onclick="clearInterval(window._videoPoller);this.closest('.media-modal').remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer">✕</button>
+      <div style="font-weight:700;font-size:16px;margin-bottom:4px">🎬 Generando video con Sora 2</div>
+      <div style="font-size:13px;color:#6b7280;margin-bottom:12px">${subject} — ${topic}</div>
+      <div class="media-progress"><div class="media-progress-bar" id="vidProgress" style="width:2%"></div></div>
+      <div id="vidStatus" style="font-size:12px;color:#6b7280;margin-top:8px">Enviando a Sora 2... (puede tardar 2-5 min)</div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const r = await fetch('/api/media/video', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ subject, topic, duration: 5 })
+    });
+
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'Error iniciando video');
+
+    videoJobId = d.jobId;
+    let progress = 5;
+
+    // Poll for completion
+    window._videoPoller = setInterval(async () => {
+      try {
+        const poll = await fetch(`/api/media/video/${videoJobId}`, {
+          headers: token ? { 'Authorization': `Bearer ${token}` } : {}
+        });
+        const status = await poll.json();
+
+        progress = Math.min(progress + 8, status.status === 'completed' ? 100 : 90);
+        const bar = document.getElementById('vidProgress');
+        const statusEl = document.getElementById('vidStatus');
+        if (bar) bar.style.width = progress + '%';
+
+        const labels = { queued: 'En cola...', processing: 'Procesando video...', completed: '✅ Listo!', failed: '❌ Error' };
+        if (statusEl) statusEl.textContent = labels[status.status] || status.status;
+
+        if (status.status === 'completed' && status.url) {
+          clearInterval(window._videoPoller);
+          const inner = modal.querySelector('.media-modal-inner');
+          inner.innerHTML = `
+            <button onclick="this.closest('.media-modal').remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer">✕</button>
+            <div style="font-weight:700;font-size:16px;margin-bottom:12px">🎬 ${subject} — ${topic}</div>
+            <video controls autoplay src="${status.url}" style="width:100%;border-radius:8px"></video>`;
+        } else if (status.status === 'failed') {
+          clearInterval(window._videoPoller);
+        }
+      } catch { /* poll error, keep trying */ }
+    }, 5000);
+
+  } catch (e) {
+    const statusEl = document.getElementById('vidStatus');
+    if (statusEl) { statusEl.textContent = '❌ ' + e.message; statusEl.style.color = '#ef4444'; }
+  }
+}
+
 function escapeHtml(text) {
   const d = document.createElement('div');
   d.textContent = text;
@@ -1551,30 +1782,23 @@ function sendMsg() {
   if (aiActive && apiKey) {
     fetchAIResponse(txt).then(reply => {
       typ.remove();
-      const rm = document.createElement('div');
-      rm.className = 'msg tutor';
-      rm.innerHTML = `<div class="avatar">🤖</div><div><div class="bubble">${escapeHtml(reply).replace(/\n/g,'<br>')}</div><div class="timestamp">${now()}</div></div>`;
+      const rm = renderTutorMsg(reply);
       msgs.appendChild(rm);
       msgs.scrollTop = msgs.scrollHeight;
     }).catch(() => {
       typ.remove();
-      const rm = document.createElement('div');
-      rm.className = 'msg tutor';
-      rm.innerHTML = `<div class="avatar">🤖</div><div><div class="bubble">${getDemoReply()}</div><div class="timestamp">${now()}</div></div>`;
+      const rm = renderTutorMsg(getDemoReply());
       msgs.appendChild(rm);
       msgs.scrollTop = msgs.scrollHeight;
       const status = document.getElementById('settingsStatus');
-      status.className = 'settings-status err';
-      status.textContent = '⚠️ Error con la API. Usando respuestas estáticas.';
+      if (status) { status.className = 'settings-status err'; status.textContent = '⚠️ Error con la API. Usando respuestas estáticas.'; }
       aiActive = false;
-      document.getElementById('aiToggle').classList.remove('on');
+      document.getElementById('aiToggle')?.classList.remove('on');
     });
   } else {
     setTimeout(() => {
       typ.remove();
-      const rm = document.createElement('div');
-      rm.className = 'msg tutor';
-      rm.innerHTML = `<div class="avatar">🤖</div><div><div class="bubble">${getDemoReply()}</div><div class="timestamp">${now()}</div></div>`;
+      const rm = renderTutorMsg(getDemoReply());
       msgs.appendChild(rm);
       msgs.scrollTop = msgs.scrollHeight;
     }, 1000 + Math.random() * 800);
