@@ -710,9 +710,11 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
       <div class="settings-field">
         <label>Modelo</label>
         <select id="modelSelect" onchange="onModelChange()" style="width:100%;padding:6px 8px;border:1.5px solid var(--border);border-radius:7px;font-size:12px;font-family:inherit;background:var(--bg);color:var(--text);outline:none;">
+          <option value="auto">🤖 Auto (servidor decide)</option>
           <option value="openai">☁️ OpenAI gpt-4o-mini</option>
-          <option value="ollama">🏠 Local — Qwen2.5:14b (Ollama)</option>
-          <option value="ollama-deepseek">🏠 Local — DeepSeek-R1:8b (Ollama)</option>
+          <option value="ollama:qwen2.5:14b">🏠 Local — Qwen2.5:14b (Ollama)</option>
+          <option value="ollama:deepseek-r1:8b">🏠 Local — DeepSeek-R1:8b</option>
+          <option value="ollama:qwen2.5:7b">🏠 Local — Qwen2.5:7b (rápido)</option>
         </select>
       </div>
       <div class="settings-field" id="keyField">
@@ -1240,11 +1242,13 @@ function onModelChange() {
   selectedModel = document.getElementById('modelSelect').value;
   const keyField = document.getElementById('keyField');
   const status = document.getElementById('settingsStatus');
-  const isLocal = selectedModel.startsWith('ollama');
-  if (keyField) keyField.style.display = isLocal ? 'none' : '';
-  if (isLocal && status) {
-    status.className = 'settings-status';
-    status.textContent = '🏠 Modelo local via Ollama — costo $0';
+  const isLocal = selectedModel.startsWith('ollama:');
+  const isAuto = selectedModel === 'auto';
+  // Key field only needed for direct OpenAI (GitHub Pages without server)
+  if (keyField) keyField.style.display = (!USE_PROXY && selectedModel === 'openai') ? '' : 'none';
+  if (status) {
+    if (isLocal) { status.className = 'settings-status ok'; status.textContent = '🏠 Modelo local — costo $0'; }
+    else if (isAuto) { status.className = 'settings-status ok'; status.textContent = '🤖 El servidor elige el mejor modelo disponible'; }
   }
 }
 
@@ -1312,9 +1316,8 @@ function escapeHtml(text) {
 }
 
 // Auto-detect proxy vs direct API
-const USE_PROXY = !window.location.hostname.includes('github.io') &&
-                  !window.location.hostname.includes('localhost') &&
-                  window.location.hostname !== '';
+// Use proxy when NOT on GitHub Pages (works for localhost + Vercel + any Node server)
+const USE_PROXY = !window.location.hostname.includes('github.io');
 const PROXY_URL = '/api/chat';
 
 async function fetchAIResponse(userMsg) {
@@ -1322,14 +1325,14 @@ async function fetchAIResponse(userMsg) {
 
   let reply;
 
-  if (selectedModel.startsWith('ollama')) {
-    // ── Local Ollama ─────────────────────────────────────
-    const cfg = OLLAMA_MODELS[selectedModel];
-    const resp = await fetch(`${cfg.base}/v1/chat/completions`, {
+  if (selectedModel.startsWith('ollama:') && !USE_PROXY) {
+    // ── Direct Ollama call (solo cuando NO hay servidor) ──
+    const ollamaModel = selectedModel.replace('ollama:', '');
+    const resp = await fetch(`http://localhost:11434/v1/chat/completions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: cfg.model,
+        model: ollamaModel,
         messages: chatHistory,
         stream: false,
         options: { temperature: 0.75, num_predict: 600 }
@@ -1340,12 +1343,19 @@ async function fetchAIResponse(userMsg) {
     reply = data.choices?.[0]?.message?.content || data.message?.content;
 
   } else if (USE_PROXY) {
-    // ── Vercel backend proxy ─────────────────────────────
+    // ── Backend proxy (Vercel o Node local) ──────────────
     const history = chatHistory.filter(m => m.role !== 'system');
+    const subj = currentSubject;
     const resp = await fetch(PROXY_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: history, subject: 'Historia', topic: 'Revolución Francesa 1789', year: '4°' })
+      body: JSON.stringify({
+        messages: history,
+        subject: subj?.nombre || 'Historia',
+        topic: currentTopic,
+        year: subj?.año || '4°',
+        model: selectedModel
+      })
     });
     if (!resp.ok) { const e = await resp.json(); throw new Error(e.error || 'Error del servidor'); }
     const data = await resp.json();
