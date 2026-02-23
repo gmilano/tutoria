@@ -10,7 +10,8 @@ import progressRoutes from './routes/progress.js';
 import sessionRoutes  from './routes/sessions.js';
 import mediaRoutes    from './routes/media.js';
 import chatRoutes     from './routes/chat.js';
-import gamesRoutes    from './routes/games.js';
+import gamesRoutes     from './routes/games.js';
+import resourcesRoutes from './routes/resources.js';
 
 // ── Curriculum cache ─────────────────────────────────────────
 const curriculumCache = {};
@@ -79,7 +80,8 @@ app.use('/api/progress', progressRoutes);
 app.use('/api/sessions', sessionRoutes);
 app.use('/api/media',    mediaRoutes);
 app.use('/api/chat',     chatRoutes);
-app.use('/api/games',    gamesRoutes);
+app.use('/api/games',     gamesRoutes);
+app.use('/api/resources', resourcesRoutes);
 
 // ── /api/verify-code — access gate ───────────────────────
 app.post('/api/verify-code', (req, res) => {
