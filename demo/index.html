@@ -882,17 +882,17 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 
     <!-- Mobile toolbar: materia + acciones rápidas (solo mobile) -->
     <div class="mobile-toolbar" id="mobileToolbar">
-      <select onchange="loadSubject(this.value)" style="flex:1;min-width:0;padding:6px 8px;border:1.5px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;background:var(--bg);color:var(--text);outline:none;">
-        <option value="historia">📜 Historia</option>
-        <option value="matematica">📐 Matemática</option>
-        <option value="lengua">📖 Lengua</option>
-        <option value="biologia">🧬 Biología</option>
-        <option value="fisica">⚡ Física</option>
-        <option value="quimica">🧪 Química</option>
-        <option value="geografia">🗺️ Geografía</option>
-        <option value="ingles">🌐 Inglés</option>
-        <option value="informatica">💻 Informática</option>
-        <option value="economia">📊 Economía</option>
+      <select id="mobileSubjectSelect" onchange="loadSubject(this.value)" style="flex:1;min-width:0;padding:6px 8px;border:1.5px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;background:var(--bg);color:var(--text);outline:none;">
+        <option value="historia-4">📜 Historia</option>
+        <option value="matematica-4">📐 Matemática</option>
+        <option value="lengua-4">📖 Lengua</option>
+        <option value="biologia-4">🧬 Biología</option>
+        <option value="fisica-4">⚡ Física</option>
+        <option value="quimica-4">🧪 Química</option>
+        <option value="geografia-4">🗺️ Geografía</option>
+        <option value="ingles-4">🌐 Inglés</option>
+        <option value="informatica-4">💻 Informática</option>
+        <option value="economia-5-eco">📊 Economía</option>
       </select>
       <button class="mobile-toolbar-btn" onclick="generateImage()">🖼️</button>
       <button class="mobile-toolbar-btn" onclick="generateVideo()">🎬</button>
@@ -1367,6 +1367,24 @@ const now = () => new Date().toLocaleTimeString('es',{hour:'2-digit',minute:'2-d
 // ── Curriculum loader ─────────────────────────────────────
 let currentSubject = null;
 let currentTopic = 'Revolución Francesa (1789)';
+// Sesión por materia: { 'Historia': 'session_id_xxx', ... }
+let subjectSessionMap = JSON.parse(localStorage.getItem('tutoria_subjectSessions') || '{}');
+
+async function switchSubjectSession(subjectName) {
+  // Save current session before switching
+  await saveSession();
+  // Clear chat UI
+  const msgs = document.getElementById('messages');
+  msgs.innerHTML = '';
+  chatHistory.length = 0;
+  // Look up saved session for this subject
+  const savedSessionId = subjectSessionMap[subjectName];
+  if (savedSessionId && USE_PROXY) {
+    await loadSession(savedSessionId);
+  } else {
+    currentSessionId = null;
+  }
+}
 
 async function loadSubject(subjectId) {
   // Try loading individual curriculum file first (richer content)
@@ -1383,6 +1401,7 @@ async function loadSubject(subjectId) {
       if (resp.ok) {
         const subj = await resp.json();
         if (subj && subj.unidades) {
+          await switchSubjectSession(subj.nombre);
           currentSubject = subj;
           renderCurriculumTree(subj);
           updateSystemPrompt(subj);
@@ -1398,6 +1417,7 @@ async function loadSubject(subjectId) {
     const data = await resp.json();
     const subj = data.materias.find(m => m.id === subjectId);
     if (!subj) return;
+    await switchSubjectSession(subj.nombre);
     currentSubject = subj;
     renderCurriculumTree(subj);
     updateSystemPrompt(subj);
@@ -1440,20 +1460,22 @@ function renderCurriculumTree(subj) {
 }
 
 function selectTopic(tema, subj, unit) {
-  // Save progress for previous topic
   if (currentTopic && currentTopic !== tema.titulo) {
     saveProgress(null, currentTopic, false, null);
   }
   currentTopic = tema.titulo;
   document.getElementById('topbarTitle').textContent = `${subj.emoji} ${tema.titulo}`;
   document.getElementById('topbarSub').textContent = `${unit.titulo} · ${subj.año} · ${subj.nombre} — Bachillerato ANEP`;
+  // Update system prompt (context para IA) pero NO limpiar historial ni sesión
+  chatHistory[0] = { role: 'system', content: buildSystemPrompt(subj, tema) };
   updateSystemPrompt(subj, tema);
-  // Reset chat with new topic greeting
-  chatHistory.length = 0;
-  chatHistory.push({ role: 'system', content: buildSystemPrompt(subj, tema) });
-  // Reset session for new topic
-  currentSessionId = null;
-  localStorage.removeItem('tutoria_sessionId');
+  // Agregar divisor visual de tema en el chat (no limpia la conversación)
+  const msgs = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.style.cssText = 'text-align:center;padding:10px 0;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px';
+  div.innerHTML = `<hr style="flex:1;border:none;border-top:1px solid var(--border)">📌 ${subj.emoji} ${tema.titulo}<hr style="flex:1;border:none;border-top:1px solid var(--border)">`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
   answered = false;
 }
 
@@ -1989,6 +2011,10 @@ async function saveSession() {
       const d = await r.json();
       currentSessionId = d.session.id;
       localStorage.setItem('tutoria_sessionId', d.session.id);
+      // Guardar en el mapa por materia
+      const subjectName = subj?.nombre || 'Historia';
+      subjectSessionMap[subjectName] = d.session.id;
+      localStorage.setItem('tutoria_subjectSessions', JSON.stringify(subjectSessionMap));
     }
   } catch { /* ignore */ }
 }
