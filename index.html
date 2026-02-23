@@ -655,7 +655,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 <body>
 
 <!-- AUTH GATE -->
-<div id="authGate" style="display:none;position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 50%,#4f46e5 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0">
+<div id="authGate" style="display:none;position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 50%,#4f46e5 100%);align-items:center;justify-content:center;flex-direction:column;gap:0">
   <div style="background:white;border-radius:20px;padding:40px 36px;max-width:400px;width:90%;box-shadow:0 25px 60px rgba(0,0,0,0.4)">
     <div style="text-align:center">
       <div style="font-size:52px;margin-bottom:8px">🎓</div>
@@ -839,7 +839,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
       <div class="settings-status" id="settingsStatus"></div>
     </div>
 
-    <div id="demoBanner" style="display:none;padding:7px 18px;background:#fffbeb;border-bottom:1px solid #fde68a;font-size:12px;color:#92400e;display:flex;align-items:center;gap:8px;flex-shrink:0;">
+    <div id="demoBanner" style="display:none;padding:7px 18px;background:#fffbeb;border-bottom:1px solid #fde68a;font-size:12px;color:#92400e;align-items:center;gap:8px;flex-shrink:0;">
       <span>🎓 Modo demo</span>
       <span style="color:#b45309">— Respuestas ilustrativas del tutor.</span>
       <a href="https://github.com/gmilano/tutoria" target="_blank" style="margin-left:auto;color:#4f46e5;font-weight:600;text-decoration:none">Deploy IA real en Railway →</a>
@@ -1796,7 +1796,17 @@ async function doRegister() {
 
 function onAuthSuccess(user) {
   currentUser = user;
+  // Ocultar gate y banner demo
   document.getElementById('authGate').style.display = 'none';
+  const banner = document.getElementById('demoBanner');
+  if (banner) banner.style.display = 'none';
+  // Activar IA real
+  aiActive = true;
+  const toggle = document.getElementById('aiToggle');
+  const status = document.getElementById('settingsStatus');
+  if (toggle) toggle.classList.add('on');
+  if (status) { status.className = 'settings-status ok'; status.textContent = `✅ Tutor IA real — ${user.name}`; }
+  // Mostrar nombre
   const nameBadge = document.getElementById('userNameBadge');
   if (nameBadge) { nameBadge.textContent = user.name || user.email; nameBadge.style.display = ''; }
   document.getElementById('logoutBtn').style.display = '';
