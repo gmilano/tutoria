@@ -43,6 +43,7 @@ model User {
 
   chatSessions   ChatSession[]
   progress       Progress[]
+  checkpoints    Checkpoint[]
   assignedTo     Assignment[] @relation("AssignmentStudents")
   games          Game[]
   mediaAssets    MediaAsset[]
@@ -142,6 +143,28 @@ model MediaAsset {
   org       Organization @relation(fields: [orgId], references: [id])
 
   @@map("media_assets")
+}
+
+// ── Checkpoint (programa curricular con progresión) ─────────
+model Checkpoint {
+  id          String   @id @default(cuid())
+  subject     String   // "Historia"
+  topicId     String   // slug del tema: "revolucion-francesa"
+  topicName   String   // nombre display
+  mode        String   // 'quiz' | 'game' | 'questions'
+  passed      Boolean  @default(false)
+  score       Int?     // 0-100 para quiz
+  attempts    Int      @default(0)
+  data        Json?    // respuestas del quiz, preguntas del alumno, etc.
+  unlockedAt  DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, subject, topicId])
+  @@map("checkpoints")
 }
 
 // ── Enums ─────────────────────────────────────────────────

@@ -105,7 +105,9 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 .topic-row:hover { color:var(--text); }
 .topic-row.current { color:var(--indigo); font-weight:600; }
 .topic-row.done    { color:var(--green); }
+.topic-row.locked  { color:var(--muted2); opacity:.55; cursor:default; }
 .topic-icon { font-size:11px; flex-shrink:0; }
+.cp-badge { margin-left:auto; font-size:11px; flex-shrink:0; }
 
 /* Center: tutor chat */
 .sv-chat {
@@ -1042,6 +1044,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
         <div class="topic-progress-bar"><div class="topic-progress-fill" style="width:60%"></div></div>
         <span class="topic-pct">60%</span>
       </div>
+      <button onclick="startCheckpoint()" style="padding:6px 10px;background:#f59e0b;color:white;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap">🏁 Checkpoint</button>
       <button id="voiceModeBtn" onclick="toggleVoiceMode()" style="padding:6px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:4px;font-weight:600;color:var(--text)">🎙️ Voz</button>
       <button class="mobile-resources-btn" onclick="toggleMobileResources()" title="Recursos del tema">📚</button>
       <button class="settings-btn" onclick="toggleHistory()" title="Historial de sesiones" style="font-size:14px">📋</button>
@@ -1576,6 +1579,13 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
   </div>
 </div>
 
+<!-- CHECKPOINT MODAL -->
+<div id="checkpointModal" style="display:none;position:fixed;inset:0;z-index:700;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:16px">
+  <div style="background:white;border-radius:20px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;padding:24px">
+    <div id="cpContent"></div>
+  </div>
+</div>
+
 <script>
 // ── View switching ─────────────────────────────────────────
 function setView(id, btn) {
@@ -1732,6 +1742,7 @@ async function loadSubject(subjectId) {
           await switchSubjectSession(subj.nombre);
           currentSubject = subj;
           renderCurriculumTree(subj);
+          loadCheckpointStatus(subj.nombre);
           updateSystemPrompt(subj);
           document.getElementById('subjectMeta').textContent = `${subj.año} · ${subj.descripcion}`;
           return;
@@ -1748,6 +1759,7 @@ async function loadSubject(subjectId) {
     await switchSubjectSession(subj.nombre);
     currentSubject = subj;
     renderCurriculumTree(subj);
+    loadCheckpointStatus(subj.nombre);
     updateSystemPrompt(subj);
     document.getElementById('subjectMeta').textContent = `${subj.año} · ${subj.descripcion}`;
   } catch(e) {
@@ -1773,9 +1785,11 @@ function renderCurriculumTree(subj) {
     if (!isFirst) topicDiv.style.display = 'none';
     u.temas.forEach((t, ti) => {
       const row = document.createElement('div');
+      const tid = t.titulo.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
       row.className = 'topic-row' + (isFirst && ti === 0 ? ' current' : '');
+      row.dataset.topicId = tid;
       row.onclick = () => selectTopic(t, subj, u);
-      row.innerHTML = `<span class="topic-icon">${isFirst && ti===0?'▶':'○'}</span> ${t.titulo}`;
+      row.innerHTML = `<span class="topic-icon">${isFirst && ti===0?'▶':'○'}</span><span class="topic-name">${t.titulo}</span><span class="cp-badge"></span>`;
       topicDiv.appendChild(row);
     });
     unitDiv.appendChild(topicDiv);
@@ -2407,6 +2421,8 @@ function onAuthSuccess(user) {
   document.getElementById('logoutBtn').style.display = '';
   loadSessions();
   if (typeof updateDrawerUser === 'function') updateDrawerUser();
+  // Cargar estado de checkpoints si hay materia activa
+  if (currentSubject) loadCheckpointStatus(currentSubject.nombre);
 }
 
 function doLogout() {
@@ -2533,6 +2549,244 @@ async function saveSession() {
       localStorage.setItem('tutoria_subjectSessions', JSON.stringify(subjectSessionMap));
     }
   } catch { /* ignore */ }
+}
+
+// ── Checkpoint System ──────────────────────────────────────
+let currentCheckpoint = null;
+let quizQuestions = [];
+let quizAnswers = [];
+let studentQuestions = [];
+let checkpointStatus = {}; // { topicId: { passed, score } }
+
+async function loadCheckpointStatus(subject) {
+  if (!USE_PROXY || !currentUser) return;
+  try {
+    const r = await fetch(`/api/checkpoints?subject=${encodeURIComponent(subject)}`, { headers: getAuthHeaders() });
+    if (!r.ok) return;
+    const d = await r.json();
+    checkpointStatus = {};
+    d.checkpoints.forEach(cp => { checkpointStatus[cp.topicId] = cp; });
+    // Actualizar badges en el DOM
+    document.querySelectorAll('.topic-row').forEach(row => {
+      const topicId = row.dataset.topicId;
+      if (!topicId) return;
+      const cp = checkpointStatus[topicId];
+      let badge = row.querySelector('.cp-badge');
+      if (!badge) { badge = document.createElement('span'); badge.className = 'cp-badge'; row.appendChild(badge); }
+      badge.textContent = cp?.passed ? '✅' : cp ? '⏳' : '';
+    });
+  } catch { /* ignore */ }
+}
+
+async function startCheckpoint() {
+  const modal = document.getElementById('checkpointModal');
+  const content = document.getElementById('cpContent');
+  modal.style.display = 'flex';
+
+  const subject = currentSubject?.nombre || 'Historia';
+  const topicId = currentTopic.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+  const topicName = currentTopic;
+
+  content.innerHTML = `
+    <div style="text-align:center;margin-bottom:20px">
+      <div style="font-size:36px">🏁</div>
+      <h2 style="margin:8px 0;font-size:20px">Checkpoint: ${escapeHtml(topicName)}</h2>
+      <p style="color:#6b7280;font-size:14px">Elegí cómo demostrar que entendiste el tema</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <button onclick="selectCheckpointMode('quiz')" style="padding:16px;border:2px solid #e5e7eb;border-radius:12px;background:white;cursor:pointer;text-align:left;font-family:inherit">
+        <div style="font-size:18px;margin-bottom:4px">📝 Quiz de 5 preguntas</div>
+        <div style="font-size:13px;color:#6b7280">Respondé correctamente el 70% para pasar</div>
+      </button>
+      <button onclick="selectCheckpointMode('game')" style="padding:16px;border:2px solid #e5e7eb;border-radius:12px;background:white;cursor:pointer;text-align:left;font-family:inherit">
+        <div style="font-size:18px;margin-bottom:4px">🎮 Jugar un juego del tema</div>
+        <div style="font-size:13px;color:#6b7280">Jugá el juego de la clase sobre este tema</div>
+      </button>
+      <button onclick="selectCheckpointMode('questions')" style="padding:16px;border:2px solid #e5e7eb;border-radius:12px;background:white;cursor:pointer;text-align:left;font-family:inherit">
+        <div style="font-size:18px;margin-bottom:4px">🤔 Preguntas profundas</div>
+        <div style="font-size:13px;color:#6b7280">Demostrá que entendiste haciéndole 3 preguntas críticas al tutor</div>
+      </button>
+    </div>
+    <button onclick="document.getElementById('checkpointModal').style.display='none'" style="width:100%;margin-top:16px;padding:10px;border:1px solid #e5e7eb;border-radius:10px;background:white;cursor:pointer;font-family:inherit;color:#6b7280">
+      Cancelar
+    </button>`;
+}
+
+async function selectCheckpointMode(mode) {
+  const subject = currentSubject?.nombre || 'Historia';
+  const topicId = currentTopic.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+  const content = document.getElementById('cpContent');
+
+  content.innerHTML = '<div style="text-align:center;padding:40px"><div style="font-size:32px;margin-bottom:8px">⏳</div>Preparando checkpoint...</div>';
+
+  const r = await fetch('/api/checkpoints/start', {
+    method: 'POST', headers: getAuthHeaders(),
+    body: JSON.stringify({ subject, topicId, topicName: currentTopic, mode })
+  });
+  const d = await r.json();
+  currentCheckpoint = d.checkpoint;
+
+  if (d.alreadyPassed) {
+    content.innerHTML = `<div style="text-align:center;padding:24px">
+      <div style="font-size:48px">✅</div>
+      <h3 style="margin:12px 0 4px">¡Ya pasaste este checkpoint!</h3>
+      <p style="color:#6b7280">Puntuación: ${d.checkpoint.score}%</p>
+      <button onclick="document.getElementById('checkpointModal').style.display='none'" style="margin-top:16px;padding:10px 24px;background:#4f46e5;color:white;border:none;border-radius:10px;cursor:pointer;font-family:inherit">Cerrar</button>
+    </div>`;
+    return;
+  }
+
+  if (mode === 'quiz') renderQuiz(d.content);
+  if (mode === 'questions') renderQuestionsMode(d.content);
+  if (mode === 'game') renderGameMode(subject, currentTopic);
+}
+
+function renderQuiz(content) {
+  quizQuestions = content.questions;
+  quizAnswers = new Array(quizQuestions.length).fill(null);
+
+  function showQuestion(i) {
+    const q = quizQuestions[i];
+    const cpContent = document.getElementById('cpContent');
+    cpContent.innerHTML = `
+      <div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:8px">Pregunta ${i+1} de ${quizQuestions.length}</div>
+        <div style="background:#e0e7ff;border-radius:8px;height:6px;margin-bottom:16px">
+          <div style="background:#4f46e5;height:6px;border-radius:8px;width:${((i)/quizQuestions.length)*100}%"></div>
+        </div>
+        <h3 style="font-size:16px;margin:0 0 16px">${escapeHtml(q.question)}</h3>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          ${q.options.map((opt, oi) => `
+            <button onclick="selectAnswer(${i},${oi})" id="opt-${i}-${oi}"
+              style="padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;background:white;cursor:pointer;text-align:left;font-family:inherit;font-size:14px;transition:.15s">
+              ${escapeHtml(opt)}
+            </button>`).join('')}
+        </div>
+      </div>`;
+  }
+  showQuestion(0);
+
+  window.selectAnswer = function(qIdx, optIdx) {
+    quizAnswers[qIdx] = optIdx;
+    const isCorrect = optIdx === quizQuestions[qIdx].correct;
+    document.querySelectorAll('[id^="opt-' + qIdx + '-"]').forEach(btn => {
+      const bIdx = parseInt(btn.id.split('-')[2]);
+      btn.style.borderColor = bIdx === quizQuestions[qIdx].correct ? '#10b981' : (bIdx === optIdx ? '#ef4444' : '#e5e7eb');
+      btn.style.background = bIdx === quizQuestions[qIdx].correct ? '#d1fae5' : (bIdx === optIdx && !isCorrect ? '#fee2e2' : 'white');
+      btn.style.pointerEvents = 'none';
+    });
+    const cpEl = document.getElementById('cpContent');
+    const expDiv = document.createElement('div');
+    expDiv.style.cssText = 'margin-top:12px;padding:12px;border-radius:8px;font-size:13px;' + (isCorrect ? 'background:#d1fae5;color:#065f46' : 'background:#fee2e2;color:#991b1b');
+    expDiv.textContent = (isCorrect ? '✅ ' : '❌ ') + quizQuestions[qIdx].explanation;
+    cpEl.querySelector('div').appendChild(expDiv);
+
+    const nextBtn = document.createElement('button');
+    nextBtn.style.cssText = 'width:100%;margin-top:12px;padding:12px;background:#4f46e5;color:white;border:none;border-radius:10px;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600';
+    nextBtn.textContent = qIdx < quizQuestions.length - 1 ? 'Siguiente →' : 'Ver resultado';
+    nextBtn.onclick = () => {
+      if (qIdx < quizQuestions.length - 1) showQuestion(qIdx + 1);
+      else submitQuiz();
+    };
+    cpEl.querySelector('div').appendChild(nextBtn);
+  };
+}
+
+async function submitQuiz() {
+  document.getElementById('cpContent').innerHTML = '<div style="text-align:center;padding:40px"><div style="font-size:32px;margin-bottom:8px">⏳</div>Evaluando...</div>';
+  const answers = quizAnswers.map((selected, i) => ({
+    questionIndex: i,
+    selectedOption: selected,
+    isCorrect: selected === quizQuestions[i].correct
+  }));
+
+  const r = await fetch('/api/checkpoints/evaluate', {
+    method: 'POST', headers: getAuthHeaders(),
+    body: JSON.stringify({ checkpointId: currentCheckpoint.id, mode: 'quiz', answers })
+  });
+  const d = await r.json();
+  showCheckpointResult(d);
+}
+
+function renderQuestionsMode(content) {
+  studentQuestions = [];
+  document.getElementById('cpContent').innerHTML = `
+    <div>
+      <div style="font-size:32px;text-align:center;margin-bottom:12px">🤔</div>
+      <h3 style="text-align:center;margin:0 0 8px">Preguntas de pensamiento crítico</h3>
+      <p style="color:#6b7280;font-size:13px;text-align:center;margin-bottom:16px">${escapeHtml(content.instructions)}</p>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        ${[1,2,3].map(n => `
+          <div>
+            <div style="font-size:12px;font-weight:600;color:#6b7280;margin-bottom:4px">Pregunta ${n}</div>
+            <textarea id="question-${n}" placeholder="¿Por qué...? ¿Cómo...? ¿Qué relación hay entre...?"
+              style="width:100%;padding:10px;border:2px solid #e5e7eb;border-radius:8px;font-family:inherit;font-size:14px;resize:none;height:60px;box-sizing:border-box;outline:none"></textarea>
+          </div>`).join('')}
+      </div>
+      <button onclick="submitQuestions()" style="width:100%;margin-top:16px;padding:12px;background:#4f46e5;color:white;border:none;border-radius:10px;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600">
+        Evaluar mis preguntas
+      </button>
+    </div>`;
+}
+
+async function submitQuestions() {
+  const questions = [1,2,3].map(n => document.getElementById('question-' + n)?.value?.trim()).filter(Boolean);
+  if (questions.length < 3) { alert('Escribí las 3 preguntas'); return; }
+
+  document.getElementById('cpContent').innerHTML = '<div style="text-align:center;padding:40px"><div style="font-size:32px;margin-bottom:8px">🤔</div>La IA está evaluando tus preguntas...</div>';
+
+  const r = await fetch('/api/checkpoints/evaluate', {
+    method: 'POST', headers: getAuthHeaders(),
+    body: JSON.stringify({ checkpointId: currentCheckpoint.id, mode: 'questions', questions })
+  });
+  const d = await r.json();
+
+  if (d.data?.evaluation) {
+    const evalHtml = d.data.evaluation.map(e => `
+      <div style="padding:10px;border-radius:8px;margin-bottom:8px;background:${e.level==='profunda'?'#d1fae5':'#fef3c7'}">
+        <div style="font-size:13px;font-weight:600;color:${e.level==='profunda'?'#065f46':'#92400e'}">${e.level==='profunda'?'✅ Pensamiento crítico':'⚡ Puede ser más profunda'}</div>
+        <div style="font-size:12px;color:#374151;margin-top:4px">"${escapeHtml(e.question)}"</div>
+        <div style="font-size:12px;color:#6b7280;margin-top:4px">${escapeHtml(e.feedback)}</div>
+      </div>`).join('');
+    document.getElementById('cpContent').innerHTML = `<div>${evalHtml}</div>`;
+    await new Promise(ok => setTimeout(ok, 1500));
+  }
+  showCheckpointResult(d);
+}
+
+function renderGameMode(subject, topic) {
+  document.getElementById('cpContent').innerHTML = `
+    <div style="text-align:center">
+      <div style="font-size:36px;margin-bottom:12px">🎮</div>
+      <h3>Jugá el juego del tema</h3>
+      <p style="color:#6b7280;font-size:13px">Completá el juego sobre "${escapeHtml(topic)}" y tu checkpoint quedará registrado</p>
+      <button onclick="document.getElementById('checkpointModal').style.display='none';switchMobileView('store');switchStoreTab('gallery')"
+        style="margin-top:16px;padding:12px 24px;background:#4f46e5;color:white;border:none;border-radius:10px;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600">
+        🎮 Ir a la galería de juegos
+      </button>
+      <button onclick="document.getElementById('checkpointModal').style.display='none'"
+        style="display:block;margin:8px auto 0;padding:8px 16px;border:none;background:none;cursor:pointer;color:#6b7280;font-family:inherit">
+        Cancelar
+      </button>
+    </div>`;
+}
+
+function showCheckpointResult(d) {
+  document.getElementById('cpContent').innerHTML = `
+    <div style="text-align:center;padding:16px 0">
+      <div style="font-size:64px;margin-bottom:12px">${d.passed ? '🎉' : '💪'}</div>
+      <h2 style="margin:0 0 8px;color:${d.passed?'#059669':'#dc2626'}">${d.passed ? '¡Checkpoint superado!' : 'Seguí practicando'}</h2>
+      <div style="font-size:32px;font-weight:800;color:${d.passed?'#059669':'#dc2626'};margin-bottom:12px">${d.score}%</div>
+      <p style="color:#6b7280;font-size:14px;margin-bottom:20px">${escapeHtml(d.feedback)}</p>
+      ${d.passed ? '<div style="background:#d1fae5;border-radius:10px;padding:12px;font-size:13px;color:#065f46;margin-bottom:16px">🔓 Siguiente tema desbloqueado</div>' : ''}
+      <button onclick="document.getElementById('checkpointModal').style.display='none'" style="width:100%;padding:12px;background:#4f46e5;color:white;border:none;border-radius:10px;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600">
+        ${d.passed ? 'Continuar →' : 'Intentar de nuevo'}
+      </button>
+    </div>`;
+
+  if (d.passed && currentSubject) {
+    loadCheckpointStatus(currentSubject.nombre);
+  }
 }
 
 // ── Progress Tracking ─────────────────────────────────────
