@@ -223,6 +223,146 @@ router.post('/save/video', requireAuth, async (req, res) => {
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
+// ── LONG VIDEO — job store en memoria ─────────────────────
+import { exec as execCb } from 'child_process';
+import { promisify } from 'util';
+import { writeFile, readFile, rm, mkdir } from 'fs/promises';
+import { join } from 'path';
+import { tmpdir } from 'os';
+const execAsync = promisify(execCb);
+
+const longVideoJobs = new Map();
+
+function soraPrompts(subject, topic) {
+  return [
+    `Educational intro for "${topic}" in ${subject}. Cinematic opening shot establishing context. Vivid, colorful, no text. Uruguay high school level.`,
+    `Key concepts of "${topic}" in ${subject}. Dynamic visual explanation, engaging motion graphics style. Educational, vivid, no text overlays.`,
+    `Conclusion and real-world impact of "${topic}" in ${subject}. Inspiring closing visuals, hopeful mood, no text. Educational documentary style.`
+  ];
+}
+
+async function soraGenerate(prompt, apiKey) {
+  const r = await fetch('https://api.openai.com/v1/videos', {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: 'sora-2', prompt })
+  });
+  const d = await r.json();
+  if (!r.ok) throw new Error(d.error?.message || 'Sora error');
+  return d.id;
+}
+
+async function soraWait(jobId, apiKey, onProgress) {
+  for (let i = 0; i < 120; i++) {
+    await new Promise(r => setTimeout(r, 5000));
+    const r = await fetch(`https://api.openai.com/v1/videos/${jobId}`, {
+      headers: { 'Authorization': `Bearer ${apiKey}` }
+    });
+    const d = await r.json();
+    if (onProgress) onProgress(d.status, d.progress);
+    if (d.status === 'completed') return jobId;
+    if (d.status === 'failed') throw new Error('Sora video falló');
+  }
+  throw new Error('Timeout generando video');
+}
+
+async function downloadSoraVideo(jobId, apiKey) {
+  const r = await fetch(`https://api.openai.com/v1/videos/${jobId}/content`, {
+    headers: { 'Authorization': `Bearer ${apiKey}` }
+  });
+  if (!r.ok) throw new Error('No se pudo descargar video Sora');
+  return Buffer.from(await r.arrayBuffer());
+}
+
+async function runLongVideoJob(longJobId, subject, topic, userId, orgId, apiKey) {
+  const job = longVideoJobs.get(longJobId);
+  const prompts = soraPrompts(subject, topic);
+  const buffers = [];
+
+  try {
+    for (let i = 0; i < prompts.length; i++) {
+      job.step = `clip_${i+1}`;
+      job.label = `Generando clip ${i+1}/3...`;
+
+      const soraId = await soraGenerate(prompts[i], apiKey);
+      await soraWait(soraId, apiKey, (status) => {
+        job.label = `Clip ${i+1}/3 — ${status === 'processing' ? 'procesando...' : status}`;
+      });
+      const buf = await downloadSoraVideo(soraId, apiKey);
+      buffers.push(buf);
+      job.progress = Math.round(((i+1) / 3) * 80);
+    }
+
+    // Concatenar con ffmpeg
+    job.step = 'concat';
+    job.label = 'Uniendo clips con ffmpeg...';
+    job.progress = 85;
+
+    const tmpDir = join(tmpdir(), `tutoria-${longJobId}`);
+    await mkdir(tmpDir, { recursive: true });
+
+    const filePaths = [];
+    for (let i = 0; i < buffers.length; i++) {
+      const p = join(tmpDir, `clip${i}.mp4`);
+      await writeFile(p, buffers[i]);
+      filePaths.push(p);
+    }
+
+    const listFile = join(tmpDir, 'list.txt');
+    await writeFile(listFile, filePaths.map(p => `file '${p}'`).join('\n'));
+
+    const outFile = join(tmpDir, 'output.mp4');
+    await execAsync(`ffmpeg -y -f concat -safe 0 -i "${listFile}" -c copy "${outFile}"`);
+
+    const finalBuf = await readFile(outFile);
+    await rm(tmpDir, { recursive: true, force: true });
+
+    job.progress = 95;
+    job.label = 'Guardando...';
+
+    // Guardar en DB
+    const asset = await prisma.mediaAsset.create({
+      data: {
+        type: 'video',
+        title: `${topic} — Video completo`,
+        subject, topic,
+        mimeType: 'video/mp4',
+        data: finalBuf,
+        size: finalBuf.length,
+        userId, orgId
+      }
+    });
+
+    job.status = 'completed';
+    job.assetId = asset.id;
+    job.progress = 100;
+    job.label = '✅ Video listo';
+  } catch (e) {
+    job.status = 'failed';
+    job.label = '❌ ' + e.message;
+    console.error('Long video error:', e.message);
+  }
+}
+
+// POST /api/media/video/long — iniciar
+router.post('/video/long', requireAuth, async (req, res) => {
+  const { subject, topic } = req.body;
+  if (!subject || !topic) return res.status(400).json({ error: 'subject y topic requeridos' });
+  const longJobId = `lv-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
+  longVideoJobs.set(longJobId, { status: 'running', step: 'init', label: 'Iniciando...', progress: 0 });
+  // Correr en background sin await
+  runLongVideoJob(longJobId, subject, topic, req.user.id, req.user.orgId, process.env.OPENAI_API_KEY)
+    .catch(e => console.error('Long video job error:', e));
+  res.json({ longJobId });
+});
+
+// GET /api/media/video/long/:jobId — poll
+router.get('/video/long/:jobId', requireAuth, (req, res) => {
+  const job = longVideoJobs.get(req.params.jobId);
+  if (!job) return res.status(404).json({ error: 'Job no encontrado' });
+  res.json(job);
+});
+
 // ── GET /api/media/assets — lista mis assets ───────────────
 router.get('/assets', requireAuth, async (req, res) => {
   const assets = await prisma.mediaAsset.findMany({
